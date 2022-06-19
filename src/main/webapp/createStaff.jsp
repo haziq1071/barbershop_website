@@ -154,7 +154,7 @@
                       <input type="hidden" name="action" value="signupStaff">
 
 	                    <div class="button staff">
-	                      <input type="submit" value="Daftar">
+						<a href="homepage.jsp"><input type="submit" value="Daftar"></a>
 	                    </div>
 	                </div> 
 	            </div>
