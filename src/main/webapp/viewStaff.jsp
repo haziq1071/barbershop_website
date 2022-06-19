@@ -15,7 +15,7 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a class="main-menu" href="homepage.html">
+          <a class="main-menu" href="homepage.jsp">
             <i class='bx bx-home'></i>
             <span class="links_name">LAMAN UTAMA</span>
           </a>
@@ -27,11 +27,11 @@
             <span class="links_name">BILIK</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="create-room.html">CIPTA INFO BILIK</a></li>
-            <li><a href="create-hall.html">CIPTA INFO DEWAN</a></li>
-            <li><a href="read for view.html">LIHAT INFO BILIK</a></li>    
-            <li><a href="read for update.html">KEMASKINI INFO BILIK</a></li>
-            <li><a href="read for delete.html">PADAM INFO BILIK</a></li>
+            <li><a href="create-room.jsp">CIPTA INFO BILIK</a></li>
+            <li><a href="create-hall.jsp">CIPTA INFO DEWAN</a></li>
+            <li><a href="read for view.jsp">LIHAT INFO BILIK</a></li>
+            <li><a href="read for update.jsp">KEMASKINI INFO BILIK</a></li>
+            <li><a href="read for delete.jsp">PADAM INFO BILIK</a></li>
           </ul>
         </li>
 
@@ -41,10 +41,10 @@
             <span class="links_name">TEMPAHAN</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="staffBooking.html">TEMPAH BILIK</a></li>
-            <li><a href="staffViewBooking">LIHAT TEMPAHAN</a></li>
-            <li><a href="staffDeleteBooking">PADAM TEMPAHAN</a></li>
-            <li><a href="staffApproveBooking">SAHKAN TEMPAHAN</a></li>
+            <li><a href="staffBooking.jsp">TEMPAH BILIK</a></li>
+            <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+            <li><a href="staffDeleteBooking.jsp">PADAM TEMPAHAN</a></li>
+            <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
           </ul>
         </li>
 
@@ -54,13 +54,13 @@
             <span class="links_name">AKAUN</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="viewStaff.html">LIHAT AKAUN</a></li>
-            <li><a href="updateStaff.html">KEMASKINI AKAUN</a></li>
-            <li><a href="deleteStaff.html">PADAM AKAUN</a></li>
+            <li><a href="viewStaff.jsp">LIHAT AKAUN</a></li>
+            <li><a href="updateStaff.jsp">KEMASKINI AKAUN</a></li>
+            <li><a href="deleteStaff.jsp">PADAM AKAUN</a></li>
           </ul>
         </li>
         <li class="log_out">
-          <a class="main-menu" href="loginAccount.html">
+          <a class="main-menu" href="index.jsp">
             <i class='bx bx-log-out'></i>
             <span class="links_name">LOG KELUAR</span>
           </a>
@@ -103,8 +103,8 @@
 
         <input type="hidden" name="action" value="viewStaff">
 
-				<a href="updateStaff.html"><button class="btn update">Kemaskini</button></a>
-        <a href="deleteStaff.html"><button class="btn cancel">Padam</button></a> 
+				<a href="updateStaff.jsp"><button class="btn update">Kemaskini</button></a>
+        <a href="deleteStaff.jsp"><button class="btn cancel">Padam</button></a>
 			</div>
 		</div>
 	</div>

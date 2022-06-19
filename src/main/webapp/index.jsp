@@ -54,12 +54,6 @@
             <span class="links_name">AKAUN</span>
           </a>
         </li>
-        <li class="log_out">
-          <a class="main-menu" href="#">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">LOG KELUAR</span>
-          </a>
-        </li>
       </ul>
   </div>
   <section class="home-section">
@@ -94,7 +88,7 @@
             </div>
             <div class="login-signup">
                 <span class="text">Tiada Akaun?
-                  <a href="createStaff.html" class="text signup-link">Daftar Segera!</a>
+                  <a href="createStaff.jsp" class="text signup-link">Daftar Segera!</a>
                 </span>
             </div>
           </form>
@@ -109,7 +103,7 @@
             </div>
             <div class="login-signup">
               <span class="text">Tiada Akaun?
-                <a href="createApplicant.html" class="text signup-link">Daftar Segera!</a>
+                <a href="createApplicant.jsp" class="text signup-link">Daftar Segera!</a>
               </span>
             </div>
           </form>
