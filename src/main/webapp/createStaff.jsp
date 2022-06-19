@@ -75,7 +75,7 @@
         <div class="contain_staff">
 	        <header class="main_title">PENDAFTARAN AKAUN</header>
 
-	        <form class="fstaff" action="StaffServlet" method="post" o<%--nsubmit="return myFunction()"--%>>
+	        <form class="fstaff" method="post" o<%--nsubmit="return myFunction()"--%>>
 	            <div class="form first">
 	                <div class="details personal">
 	                    <span class="title">Maklumat Peribadi</span>
@@ -155,7 +155,7 @@
                       <input type="hidden" name="action" value="signupStaff">
 
 	                    <div class="button staff">
-						<input type="submit" value="Daftar">
+						<input type="submit" value="Daftar" formaction="StaffServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
 	                    </div>
 	                </div> 
 	            </div>
