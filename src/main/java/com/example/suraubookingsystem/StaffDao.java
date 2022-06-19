@@ -17,7 +17,7 @@ public class StaffDao {
     Connection connection = null;
     try {
       Class.forName("org.postgresql.Driver");
-      connection = DriverManager.getConnection(dbURL, user, pass);
+      connection = DriverManager.getConnection(dbUrl, user, pass);
     } catch (SQLException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
@@ -41,7 +41,7 @@ public class StaffDao {
         preparedStatement.setString(4, staff.getStaffaddress());
         preparedStatement.setString(5, staff.getStaffphone());
         preparedStatement.setString(6, staff.getStaffemail());
-        preparedStatement.setString(7, staff.getStaffdateofbirth());
+        preparedStatement.setDate(7, staff.getStaffdateofbirth());
         preparedStatement.setString(8, staff.getStaffusername());
         preparedStatement.setString(9, staff.getStaffpassword());
         preparedStatement.setLong(10, staff.getSupervisorid());
@@ -49,7 +49,7 @@ public class StaffDao {
         out.println(preparedStatement);
         preparedStatement.executeUpdate();
       } catch (SQLException e) {
-          printSQLException1(e);
+          printSQLException(e);
       }
     }
   
@@ -64,7 +64,7 @@ public class StaffDao {
           statement.setString(4, staff.getStaffaddress());
           statement.setString(5, staff.getStaffphone());
           statement.setString(6, staff.getStaffemail());
-          statement.setString(7, staff.getStaffdateofbirth());
+          statement.setDate(7, staff.getStaffdateofbirth());
           statement.setString(8, staff.getStaffusername());
           statement.setString(9, staff.getStaffpassword());
           statement.setLong(10, staff.getSupervisorid());

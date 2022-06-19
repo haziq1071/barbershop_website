@@ -62,7 +62,7 @@ public class Staff implements Serializable{
 	public void setStaffemail(String staffemail) {
 		this.staffemail = staffemail;
 	}
-	public Date getStaffdateofbirth() {
+	public java.sql.Date getStaffdateofbirth() {
 		return staffdateofbirth;
 	}
 	public void setStaffdateofbirth(Date staffdateofbirth) {
