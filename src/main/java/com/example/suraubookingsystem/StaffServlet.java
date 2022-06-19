@@ -63,7 +63,6 @@ public class StaffServlet extends HttpServlet {
         /*######################################################( SINGNUP )#############################################################*/
 
         private void signupStaff(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-		int staffid = Integer.parseInt(request.getParameter("staffid")); 
 		String staffrole = request.getParameter("staffrole"); 
 		String staffname = request.getParameter("staffname");
 		String staffic = request.getParameter("staffic");
@@ -76,8 +75,7 @@ public class StaffServlet extends HttpServlet {
 		int supervisorid = Integer.parseInt(request.getParameter("supervisorid"));
 
         Staff staff = new Staff();
-        
-        staff.setStaffid(staffid);
+
         staff.setStaffrole(staffrole);
         staff.setStaffname(staffname);
         staff.setStaffic(staffic);
