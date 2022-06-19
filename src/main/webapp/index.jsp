@@ -84,7 +84,7 @@
 
                   <input type="hidden" name="action" value="loginStaff">
 
-                  <input type="submit" name="" value="Log Masuk">
+              <a href="homepage.jsp"><input type="submit" name="" value="Log Masuk"></a>
             </div>
             <div class="login-signup">
                 <span class="text">Tiada Akaun?
@@ -99,7 +99,7 @@
 
                <input type="hidden" name="action" value="loginApplicant">
 
-              <input type="submit" name="" value="Log Masuk">
+              <a href="homepage.jsp"><input type="submit" name="" value="Log Masuk"></a>
             </div>
             <div class="login-signup">
               <span class="text">Tiada Akaun?
