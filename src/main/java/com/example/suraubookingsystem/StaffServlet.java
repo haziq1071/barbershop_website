@@ -43,9 +43,9 @@ public class StaffServlet extends HttpServlet {
                 case "loginStaff":
                     loginStaff(request, response);
                     break;
-                case "viewStaff":
+                /*case "viewStaff":
                     viewStaff(request, response);
-                    break;
+                    break;*/
                 case "deleteStaff":
                     deleteStaff(request, response);
                     break;
@@ -165,7 +165,7 @@ public class StaffServlet extends HttpServlet {
         	int staffid = Integer.parseInt(request.getParameter("staffid")); 
     		String staffrole = request.getParameter("staffrole"); 
     		String staffname = request.getParameter("staffname"); 
-            String staffname = request.getParameter("staffic");
+            String staffic = request.getParameter("staffic");
     		String staffaddress = request.getParameter("staffaddress"); 
     		String staffphone = request.getParameter("staffphone");
     		String staffemail = request.getParameter("staffemail"); 

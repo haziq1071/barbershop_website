@@ -1,7 +1,7 @@
 package com.example.suraubookingsystem;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 public class Staff implements Serializable{
 	

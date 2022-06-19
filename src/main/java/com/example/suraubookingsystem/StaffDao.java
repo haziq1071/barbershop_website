@@ -75,7 +75,7 @@ public class StaffDao {
         return rowUpdated;
     }
 
-    public boolean deleteUser(int staffid) throws SQLException {
+    public boolean deleteStaff(int staffid) throws SQLException {
             boolean rowDeleted;
             try (Connection connection = getConnection();
                  PreparedStatement statement = connection.prepareStatement("delete from staff where staffid=?");) {
