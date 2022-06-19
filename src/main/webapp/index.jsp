@@ -1,24 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Laman Utama</title>
-	<meta charset="UTF-8">
-    <title> SignUp Staff Form </title>
-    <link rel="stylesheet" href="homePage.css">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Login Account Form </title>
+    <link rel="stylesheet" href="loginAccount.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
-    <div class="sidebar">
+  <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
     </div>
       <ul class="nav-links">
         <li>
-          <a class="main-menu" href="homepage.html">
+          <a class="main-menu" href="#">
             <i class='bx bx-home'></i>
             <span class="links_name">LAMAN UTAMA</span>
           </a>
@@ -30,11 +27,10 @@
             <span class="links_name">BILIK</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="create-room.html">CIPTA INFO BILIK</a></li>
-            <li><a href="create-hall.html">CIPTA INFO DEWAN</a></li>
-            <li><a href="read for view.html">LIHAT INFO BILIK</a></li>    
-            <li><a href="read for update.html">KEMASKINI INFO BILIK</a></li>
-            <li><a href="read for delete.html">PADAM INFO BILIK</a></li>
+            <li><a href="#">CIPTA INFO BILIK</a></li>
+            <li><a href="#">LIHAT INFO BILIK</a></li>
+            <li><a href="#">KEMASKINI INFO BILIK</a></li>
+            <li><a href="#">PADAM INFO BILIK</a></li>
           </ul>
         </li>
 
@@ -44,10 +40,11 @@
             <span class="links_name">TEMPAHAN</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="staffBooking.html">TEMPAH BILIK</a></li>
-            <li><a href="staffViewBooking">LIHAT TEMPAHAN</a></li>
-            <li><a href="staffDeleteBooking">PADAM TEMPAHAN</a></li>
-            <li><a href="staffApproveBooking">SAHKAN TEMPAHAN</a></li>
+            <li><a href="#">TEMPAH BILIK</a></li>
+            <li><a href="#">LIHAT TEMPAHAN</a></li>
+            <li><a href="#">KEMASKINI TEMPAHAN</a></li>
+            <li><a href="#">PADAM TEMPAHAN</a></li>
+            <li><a href="#">SAHKAN TEMPAHAN</a></li>
           </ul>
         </li>
 
@@ -56,14 +53,9 @@
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="viewStaff.html">LIHAT AKAUN</a></li>
-            <li><a href="updateStaff.html">KEMASKINI AKAUN</a></li>
-            <li><a href="deleteStaff.html">PADAM AKAUN</a></li>
-          </ul>
         </li>
         <li class="log_out">
-          <a class="main-menu" href="loginAccount.html">
+          <a class="main-menu" href="#">
             <i class='bx bx-log-out'></i>
             <span class="links_name">LOG KELUAR</span>
           </a>
@@ -78,17 +70,73 @@
       <div class="media_icons">
           <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/surau_ar_rahman_pchg/"><i class="fab fa-instagram"></i></a>
-      </div>
+        </div>
     </nav>
     <div class="home-content">
-        <div class="container">
-	        <header class="main_title">Laman Utama</header>
-	        <img src="banner.jpg" id="image" height="250" width="450">
-	        <br><br>
-	        <p>Ini adalah laman rasmi Surau Ar-Rahman.Laman ini membolehkan kakitangan, qariah dan orang ramai membuat tempahan bilik-bilik atau ruangan yang sedia ada di Surau Ar-Rahman. Harapan kami dari pihak surau ini adalah kehadiran para ahli qariah dan orang ramai akan dapat mengeratkan ukhwah sesama suadara seislam dan mengimarahkan rumah Allah SWT. InshaAllah.</p>
-	    </div>
-	</div>
+        <div class="hero">
+          <div class="form-box">
+          <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="staffLogin()">STAF</button>
+            <button type="button" class="toggle-btn" onclick="applicantLogin()">PEMOHON</button>
+          </div>
+          <div class="logo">
+            <img src="logoBlack.png">
+          </div>
+          <form id="staff" class="input-group">
+            <input type="text" class="input-field" placeholder="Nombor Staf" required>
+            <input type="password" class="input-field" placeholder="Kata Laluan" required>
+            <div class="input-box button">
+
+                  <input type="hidden" name="action" value="loginStaff">
+
+                  <input type="submit" name="" value="Log Masuk">
+            </div>
+            <div class="login-signup">
+                <span class="text">Tiada Akaun?
+                  <a href="createStaff.html" class="text signup-link">Daftar Segera!</a>
+                </span>
+            </div>
+          </form>
+          <form id="applicant" class="input-group">
+            <input type="text" class="input-field" placeholder="Nama Pengguna" required>
+            <input type="password" class="input-field" placeholder="Kata Laluan" required>
+            <div class="input-box button">
+
+               <input type="hidden" name="action" value="loginApplicant">
+
+              <input type="submit" name="" value="Log Masuk">
+            </div>
+            <div class="login-signup">
+              <span class="text">Tiada Akaun?
+                <a href="createApplicant.html" class="text signup-link">Daftar Segera!</a>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <script>
+
+    var x = document.getElementById("staff");
+    var y = document.getElementById("applicant");
+    var z = document.getElementById("btn");
+
+    function applicantLogin(){
+      x.style.left = "-400px";
+      y.style.left = "50px";
+      z.style.left = "110px";
+    }
+
+    function staffLogin(){
+      x.style.left = "50px";
+      y.style.left = "450px";
+      z.style.left = "0";
+    }
+ </script>
+
 </body>
 </html>
 
