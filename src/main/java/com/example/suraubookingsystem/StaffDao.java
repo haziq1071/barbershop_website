@@ -35,8 +35,8 @@ public class StaffDao {
     try (Connection connection = getConnection();
     PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword,supervisorid) values(?,?,?,?,?,?,?,?,?,?)");)
     {
-    	  preparedStatement.setString(1, staff.getStaffrole());
-    	  preparedStatement.setString(2, staff.getStaffname());
+        preparedStatement.setString(1, staff.getStaffrole());
+        preparedStatement.setString(2, staff.getStaffname());
         preparedStatement.setString(3, staff.getStaffic());
         preparedStatement.setString(4, staff.getStaffaddress());
         preparedStatement.setString(5, staff.getStaffphone());

@@ -74,7 +74,8 @@
     <div class="home-content">
         <div class="contain_staff">
 	        <header class="main_title">PENDAFTARAN AKAUN</header>
-	        <form class="fstaff" action="#" method="" onsubmit="return myFunction()">
+
+	        <form class="fstaff" action="StaffServlet" method="post" o<%--nsubmit="return myFunction()"--%>>
 	            <div class="form first">
 	                <div class="details personal">
 	                    <span class="title">Maklumat Peribadi</span>
@@ -154,19 +155,21 @@
                       <input type="hidden" name="action" value="signupStaff">
 
 	                    <div class="button staff">
-						<a href="homepage.jsp"><input type="submit" value="Daftar"></a>
+						<input type="submit" value="Daftar">
 	                    </div>
 	                </div> 
 	            </div>
 	        </form>
+
+
     	</div>
     </div>
   </section>
-  <script>
+<%--  <script>
     function myFunction() {
       alert("Akaun telah berjaya dicipta");
     }
-  </script>
+  </script>--%>
 </body>
 </html>
 
