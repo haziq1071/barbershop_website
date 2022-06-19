@@ -82,9 +82,9 @@
             <input type="password" class="input-field" placeholder="Kata Laluan" required>
             <div class="input-box button">
 
-                  <input type="hidden" name="action" value="loginStaff">
+              <input type="hidden" name="action" value="loginStaff">
 
-              <a href="homepage.jsp"><input type="submit" name="" value="Log Masuk"></a>
+              <input type="submit" name="" value="Log Masuk" onclick="location.href='homepage.jsp';">
             </div>
             <div class="login-signup">
                 <span class="text">Tiada Akaun?
@@ -99,7 +99,7 @@
 
                <input type="hidden" name="action" value="loginApplicant">
 
-              <a href="homepage.jsp"><input type="submit" name="" value="Log Masuk"></a>
+              <input type="submit" name="" value="Log Masuk" onclick="location.href='homepage.jsp';">
             </div>
             <div class="login-signup">
               <span class="text">Tiada Akaun?
