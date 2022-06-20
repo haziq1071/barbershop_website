@@ -87,22 +87,22 @@
 	                        </div>
 	                        <div class="input-field">
 	                            <label class="details">Jawatan</label>
-	                            <select required>
+	                            <select name="staffrole" required>
 	                                <option disabled selected>Pilih Jawatan</option>
-	                                <option name="staffrole" >Nazir</option>
-	                                <option name="staffrole">Timbalan Nazir</option>
-	                                <option name="staffrole">Imam 1</option>
-	                                <option name="staffrole">Imam 2</option>
-	                                <option name="staffrole">Bilal 1</option>
-	                                <option name="staffrole">Bilal 2</option>
-	                                <option name="staffrole">Bendahari</option>
-	                                <option name="staffrole">Setiausaha</option>
-	                                <option name="staffrole">Pembantu Setiausaha</option>
-	                                <option name="staffrole">AJK</option>
-	                                <option name="staffrole">Siak 1</option>
-	                                <option name="staffrole">Siak 2</option>
-	                                <option name="staffrole">Pemeriksa Kira-kira 1</option>
-	                                <option name="staffrole">Pemeriksa Kira-kira 2</option>
+	                                <option value="staffrole" >Nazir</option>
+	                                <option value="staffrole">Timbalan Nazir</option>
+	                                <option value="staffrole">Imam 1</option>
+	                                <option value="staffrole">Imam 2</option>
+	                                <option value="staffrole">Bilal 1</option>
+	                                <option value="staffrole">Bilal 2</option>
+	                                <option value="staffrole">Bendahari</option>
+	                                <option value="staffrole">Setiausaha</option>
+	                                <option value="staffrole">Pembantu Setiausaha</option>
+	                                <option value="staffrole">AJK</option>
+	                                <option value="staffrole">Siak 1</option>
+	                                <option value="staffrole">Siak 2</option>
+	                                <option value="staffrole">Pemeriksa Kira-kira 1</option>
+	                                <option value="staffrole">Pemeriksa Kira-kira 2</option>
 	                            </select>
 	                        </div>
 	                        <div class="input-field">
