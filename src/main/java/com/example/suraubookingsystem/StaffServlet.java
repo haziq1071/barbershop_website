@@ -134,6 +134,7 @@ public class StaffServlet extends HttpServlet {
 
                     }else{
                         out.println("<html><head></head><body onload=\"alert('User not exist!')\"></body></html>");
+                        response.sendRedirect("index.jsp");
                     }
                 }
             }
