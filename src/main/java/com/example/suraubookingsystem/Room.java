@@ -1,0 +1,57 @@
+package com.example.suraubookingsystem.room;
+
+import javax.servlet.http.Part;
+
+public class Room implements java.io.Serializable{
+	private int roomid;
+	private String roomname;
+	private int roomcapacity;
+	private boolean roomstatus;
+	private String soundsystem;
+
+	public Room() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Room(int roomid, String roomname, int roomcapacity, boolean roomstatus, String soundsystem) {
+		super();
+		this.roomid = roomid;
+		this.roomname = roomname;
+		this.roomcapacity = roomcapacity;
+		this.roomstatus = roomstatus;
+		this.soundsystem = soundsystem;
+	}
+	
+	public int getRoomid() {
+		return roomid;
+	}
+	public void setRoomid(int roomid) {
+		this.roomid = roomid;
+	}
+	public String getRoomname() {
+		return roomname;
+	}
+	public void setRoomname(String roomname) {
+		this.roomname = roomname;
+	}
+	public int getRoomcapacity() {
+		return roomcapacity;
+	}
+	public void setRoomcapacity(int roomcapacity) {
+		this.roomcapacity = roomcapacity;
+	}
+	public boolean isRoomstatus() {
+		return roomstatus;
+	}
+	public void setRoomstatus(boolean roomstatus) {
+		this.roomstatus = roomstatus;
+	}
+	public String getSoundsystem() {
+		return soundsystem;
+	}
+	public void setSoundsystem(String soundsystem) {
+		this.soundsystem = soundsystem;
+	}
+	
+	
+}

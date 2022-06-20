@@ -135,7 +135,11 @@ public class StaffServlet extends HttpServlet {
 
                     }else{
 
-                        response.sendRedirect("index.jsp");
+                        response.sendRedirect("index.jsp");    
+                        /*out.println("<script type=\"text/javascript\">");
+                        out.println("alert('Pengguna tidak wujud!');");
+                        out.println("location='index.jsp';");
+                        out.println("</script>");*/
 
                     }
                 }
