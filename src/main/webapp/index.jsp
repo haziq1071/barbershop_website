@@ -65,8 +65,8 @@
             <img src="logoBlack.png">
           </div>
           <form id="staff" class="input-group" action="StaffServlet" method="POST">
-            <input type="text" class="input-field" placeholder="Nombor Staf" required>
-            <input type="password" class="input-field" placeholder="Kata Laluan" required>
+            <input type="text" class="input-field" name="staffusername" placeholder="Nombor Staf" required>
+            <input type="password" class="input-field" name="staffpassword" placeholder="Kata Laluan" required>
             <div class="input-box button">
 
               <input type="hidden" name="action" value="loginStaff">

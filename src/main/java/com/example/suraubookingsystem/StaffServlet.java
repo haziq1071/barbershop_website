@@ -129,18 +129,7 @@ public class StaffServlet extends HttpServlet {
                     {
 
                         session.setAttribute("staffid", res.getInt(1));
-                        session.setAttribute("staffrole", res.getString(2));
-                        session.setAttribute("staffname", res.getString(3));
-                        session.setAttribute("staffic", res.getString(4));
-                        session.setAttribute("staffaddress", res.getString(5));
-                        session.setAttribute("staffphone", res.getString(6));
-                        session.setAttribute("staffemail", res.getString(7));
-                        session.setAttribute("staffdateofbirth", res.getDate(8));
-                        session.setAttribute("staffusername", res.getString(9)); 
-                        session.setAttribute("staffpassword", res.getString(10));
-                        session.setAttribute("supervisorid", res.getInt(11));
-                       
-                        response.sendRedirect("viewStaff.jsp");
+                        response.sendRedirect("homepage.jsp");
 
 
                     }else{
