@@ -124,11 +124,6 @@
 	                            <label class="details">Kata Laluan</label>
 	                            <input type="password" name="staffpassword"required>
 	                        </div>
-
-	                        <div class="input-field input-box">
-	                            <label class="details">Pengesahan Kata Laluan</label>
-	                            <input type="password" name="staffpassword"required>
-	                        </div>
 	                    </div>
 
                       <input type="hidden" name="action" value="signupStaff">
