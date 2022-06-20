@@ -8,7 +8,7 @@ import static java.lang.System.out;
 
 public class StaffDao {
   
-  String dbUrl = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
+  String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
   String user = "dnzxqagexabepj";
   String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294";
   
@@ -17,7 +17,7 @@ public class StaffDao {
     Connection connection = null;
     try {
       Class.forName("org.postgresql.Driver");
-      connection = DriverManager.getConnection(dbUrl, user, pass);
+      connection = DriverManager.getConnection(dbURL, user, pass);
     } catch (SQLException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
