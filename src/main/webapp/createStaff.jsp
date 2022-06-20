@@ -139,11 +139,6 @@
     	</div>
     </div>
   </section>
-<%--  <script>
-    function myFunction() {
-      alert("Akaun telah berjaya dicipta");
-    }
-  </script>--%>
 </body>
 </html>
 
