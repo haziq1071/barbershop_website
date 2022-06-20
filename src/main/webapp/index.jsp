@@ -10,7 +10,7 @@
    </head>
 
 
-  <%
+  <!---%
 
     String msg = (String) session.getAttribute("msg");
     if (msg.equals("failed"))
@@ -18,7 +18,7 @@
       out.print("alert('akaun tidak wujud!');");
     }
 
-  %>
+  %>--->
 
 
 
