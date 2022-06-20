@@ -135,10 +135,8 @@ public class StaffServlet extends HttpServlet {
                     }else{
                         /*session.setAttribute("msg", "failed");
                         response.sendRedirect("index.jsp");*/
-                        out.println("<script type=\"text/javascript\">");
-                        out.println("alert('User or password incorrect');");
-                        out.println("location='index.jsp';");
-                        out.println("</script>");
+                        out.println("<meta http-equiv='refresh' content='3;URL=index.jsp'>");//redirects after 3 seconds
+                        out.println("<p style='color:red;'>User or password incorrect!</p>");
                     }
                 }
             }
