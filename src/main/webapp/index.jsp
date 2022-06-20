@@ -77,14 +77,14 @@
           <div class="logo">
             <img src="logoBlack.png">
           </div>
-          <form id="staff" class="input-group">
+          <form id="staff" class="input-group" action="StaffServlet" method="post">
             <input type="text" class="input-field" placeholder="Nombor Staf" required>
             <input type="password" class="input-field" placeholder="Kata Laluan" required>
             <div class="input-box button">
 
               <input type="hidden" name="action" value="loginStaff">
 
-              <input type="submit" name="" value="Log Masuk" onclick="location.href='homepage.jsp';">
+              <input type="submit" name="" value="Log Masuk">
             </div>
             <div class="login-signup">
                 <span class="text">Tiada Akaun?
@@ -99,7 +99,7 @@
 
                <input type="hidden" name="action" value="loginApplicant">
 
-              <input type="submit" name="" value="Log Masuk" onclick="location.href='homepage.jsp';">
+              <input type="submit" name="" value="Log Masuk">
             </div>
             <div class="login-signup">
               <span class="text">Tiada Akaun?
