@@ -54,7 +54,7 @@
         <div class="contain_staff">
 	        <header class="main_title">PENDAFTARAN AKAUN</header>
 
-	        <form class="fstaff" method="post" o<%--nsubmit="return myFunction()"--%>>
+	        <form class="fstaff" method="post" >
 	            <div class="form first">
 	                <div class="details personal">
 	                    <span class="title">Maklumat Peribadi</span>
