@@ -19,7 +19,13 @@
     }
 
   %>--->
-
+  <c:if test="${not empty loginError}">
+    <script>
+      window.addEventListener("load",function(){
+        alert("${loginError}");
+      }
+    </script>
+  </c:if>
 
 
 <body>

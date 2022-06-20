@@ -136,8 +136,7 @@ public class StaffServlet extends HttpServlet {
                         /*session.setAttribute("msg", "failed");
                         response.sendRedirect("index.jsp");*/
 
-                        out.println("alert('User or password incorrect');");
-                        out.println("location='index.jsp';");
+                        request.setAttribute("loginError","Incorrect password");
 
                     }
                 }
