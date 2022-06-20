@@ -64,14 +64,14 @@
           <div class="logo">
             <img src="logoBlack.png">
           </div>
-          <form id="staff" class="input-group" action="StaffServlet" method="post">
+          <form id="staff" class="input-group" action="StaffServlet" method="POST">
             <input type="text" class="input-field" placeholder="Nombor Staf" required>
             <input type="password" class="input-field" placeholder="Kata Laluan" required>
             <div class="input-box button">
 
               <input type="hidden" name="action" value="loginStaff">
 
-              <input type="submit" name="" value="Log Masuk">
+              <input type="submit" name="submit" value="Log Masuk">
             </div>
             <div class="login-signup">
                 <span class="text">Tiada Akaun?
@@ -86,7 +86,7 @@
 
                <input type="hidden" name="action" value="loginApplicant">
 
-              <input type="submit" name="" value="Log Masuk">
+              <input type="submit" name="submit" value="Log Masuk">
             </div>
             <div class="login-signup">
               <span class="text">Tiada Akaun?
