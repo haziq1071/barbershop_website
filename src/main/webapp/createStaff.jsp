@@ -20,44 +20,23 @@
             <span class="links_name">LAMAN UTAMA</span>
           </a>
         </li>
-
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-box' ></i>
             <span class="links_name">BILIK</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="create-room.jsp">CIPTA INFO BILIK</a></li>
-            <li><a href="create-hall.jsp">CIPTA INFO DEWAN</a></li>
-            <li><a href="read for view.jsp">LIHAT INFO BILIK</a></li>
-            <li><a href="read for update.jsp">KEMASKINI INFO BILIK</a></li>
-            <li><a href="read for delete.jsp">PADAM INFO BILIK</a></li>
-          </ul>
         </li>
-
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-bookmark'></i>
             <span class="links_name">TEMPAHAN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="staffBooking.jsp">TEMPAH BILIK</a></li>
-            <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
-            <li><a href="staffDeleteBooking.jsp">PADAM TEMPAHAN</a></li>
-            <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
-          </ul>
         </li>
-
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="viewStaff.jsp">LIHAT AKAUN</a></li>
-            <li><a href="updateStaff.jsp">KEMASKINI AKAUN</a></li>
-            <li><a href="deleteStaff.jsp">PADAM AKAUN</a></li>
-          </ul>
         </li>
       </ul>
   </div>

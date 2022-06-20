@@ -26,12 +26,6 @@
             <i class='bx bx-box' ></i>
             <span class="links_name">BILIK</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="#">CIPTA INFO BILIK</a></li>
-            <li><a href="#">LIHAT INFO BILIK</a></li>
-            <li><a href="#">KEMASKINI INFO BILIK</a></li>
-            <li><a href="#">PADAM INFO BILIK</a></li>
-          </ul>
         </li>
 
         <li>
@@ -39,13 +33,6 @@
             <i class='bx bx-bookmark'></i>
             <span class="links_name">TEMPAHAN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="#">TEMPAH BILIK</a></li>
-            <li><a href="#">LIHAT TEMPAHAN</a></li>
-            <li><a href="#">KEMASKINI TEMPAHAN</a></li>
-            <li><a href="#">PADAM TEMPAHAN</a></li>
-            <li><a href="#">SAHKAN TEMPAHAN</a></li>
-          </ul>
         </li>
 
         <li>
