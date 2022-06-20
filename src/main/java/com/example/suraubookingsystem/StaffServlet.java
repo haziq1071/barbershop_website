@@ -30,7 +30,7 @@ public class StaffServlet extends HttpServlet {
 
     @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	//try	
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String action = request.getParameter("action");
