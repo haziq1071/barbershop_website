@@ -30,11 +30,11 @@
             <span class="links_name">BILIK</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="create-room.jsp">CIPTA INFO BILIK</a></li>
-            <li><a href="create-hall.jsp">CIPTA INFO DEWAN</a></li>
-            <li><a href="read for view.jsp">LIHAT INFO BILIK</a></li>
-            <li><a href="read for update.jsp">KEMASKINI INFO BILIK</a></li>
-            <li><a href="read for delete.jsp">PADAM INFO BILIK</a></li>
+            <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
+            <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
+            <li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
+            <li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
+            <li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
           </ul>
         </li>
 

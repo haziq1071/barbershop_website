@@ -29,13 +29,13 @@
             <i class='bx bx-box' ></i>
             <span class="links_name" id="min">BILIK</span>
           </a>
-          <ul class="sub-menu">    
-        <li><a href="create-room.html">CIPTA INFO BILIK</a></li>
-        <li><a href="create-hall.html">CIPTA INFO DEWAN</a></li>    
-        <li><a href="read for view.html">LIHAT INFO BILIK</a></li>    
-        <li><a href="read for update.html">KEMASKINI INFO BILIK</a></li>
-        <li><a href="read for delete.html">PADAM INFO BILIK</a></li>
-        </ul>
+          <ul class="sub-menu">
+            <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
+            <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
+            <li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
+            <li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
+            <li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
+          </ul>
         </li>
 
         <li>
