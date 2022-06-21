@@ -23,9 +23,6 @@
 			</a></li>
 
 			<li><a class="main-menu" href="#"> <i class='bx bx-box'></i>
-					<span class="links_name">BILIK</span>
-			</a>
-			<li><a class="main-menu" href="#"> <i class='bx bx-box'></i>
 					<span class="links_name" id="min">BILIK</span>
 			</a>
 			<ul class="sub-menu">
@@ -83,27 +80,35 @@
 				<form action="#" method="" onsubmit="return myFunction()">
 					<div class="form first">
 						<div class="details room">
-							<span class="title">Informasi DEWAN</span>
+							<span class="title">Informasi Dewan</span>
 
 							<div class="fields">
 								<div class="input-field input-box">
-									<label class="details">Nama Dewan </label> <input type="text"
-										name="roomname" required>
+									<label class="details">Nama Dewan </label> 
+									<input type="text" name="roomname" required>
 								</div>
 								<div class="input-field input-box">
-									<label class="details">Kapasiti</label> <input type="text"
-										name=roomcapacity " required>
+									<label class="details">Kapasiti</label>
+									<input type="text" name=roomcapacity " required>
 								</div>
 								<div class="input-field input-box">
-									<label class="details">Status Dewan</label> <select
-										name="roomstatus">
-										<option value="Available">Available</option>
-										<option value="Unavailable">Unavaible</option>
+									<label class="details">Status Dewan</label>
+									<select	name="roomstatus" required>
+										<option disabled selected>Pilih Status</option>
+										<option value="Boleh Digunakan">Boleh Digunakan</option>
+										<option value="Sedang Diselenggara">Sedang Diselenggara</option>
 									</select>
 								</div>
 								<div class="input-field input-box">
-									<label class="details">Sistem bunyi</label> <input type="text"
-										name="hallsound" required>
+									<label class="details">Sistem Bunyi</label> 
+									<input type="text" name="hallsound" required>
+									<select	name="hallsound" required>
+										<option disabled selected>Pilih Sistem Bunyi</option>
+										<option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
+										<option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
+										<option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
+										<option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
+									</select>
 								</div>
 							</div>
 							<div class="button staff">
