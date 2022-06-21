@@ -11,6 +11,18 @@
 </head>
 
 <body>
+  <%
+
+    int roomid = (Integer) session.getAttribute("roomid");
+%>
+<sql:setDataSource var="ic" driver="org.postgresql.Driver" url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379" user = "dnzxqagexabepj" password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+
+<sql:query dataSource="${ic}" var="oc">
+    <c:set var="romid" value="<%=roomid%>"/>
+    SELECT * from room where roomid = ?;
+    <sql:param value="${romid}" />
+</sql:query>
+
   <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
@@ -71,7 +83,7 @@
         </li>
       </ul>
   </div>
-
+  <c:forEach var="result" items="${oc.rows}">
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
@@ -95,14 +107,15 @@
     <div class="fields">
         <div class="details">
             <h1>INFORMASI DEWAN</h1>
+            <input type="number" name="roomdid"  value="${result.roomid}" hidden>
             <h2>Nama Dewan</h2>
-            <p class="input">${roomname}</p>
+            <p class="input">${result.roomname}</p>
             <h2>Kapasiti</h2>
-            <p class="input">${roomcapacity}</p>
+            <p class="input">${result.roomcapacity}</p>
             <h2>Status</h2>
-            <p class="input">${roomstatus}</p>
+            <p class="input">${result.roomstatus}</p>
             <h2>Sistem Bunyi</h2>
-            <p class="input">${soundsystem}</p>
+            <p class="input">${result.soundsystem}</p>
       </div><br><br>
 
     <div class="button staff">
@@ -115,5 +128,6 @@
 </div>
 </div>
 </section>
+</c:forEach>
 </body>
 </html>
