@@ -92,7 +92,7 @@
 		<img src="b01.jpeg" height="150px" width="200px" alt="pic1">
 		<!--  <img alt="pic2">-->
 		<div class="button staff">
-          <a href="deletehall-1.jsp"><input type="submit" value="Lihat"></a>
+          <a href="deleteHall-1.jsp"><input type="submit" value="Lihat"></a>
         </div>
 	</fieldset><br>
 	<fieldset id="fields" style="border-radius: 5px;">
