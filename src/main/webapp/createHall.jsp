@@ -56,7 +56,7 @@
 					<li><a href="deleteStaff.html">PADAM AKAUN</a></li>
 				</ul></li>
 
-			<li class="log_out"><a class="main-menu" href="#"> <i
+			<li class="log_out"><a class="main-menu" href="index.jsp"> <i
 					class='bx bx-log-out'></i> <span class="links_name">LOG
 						KELUAR</span>
 			</a></li>
