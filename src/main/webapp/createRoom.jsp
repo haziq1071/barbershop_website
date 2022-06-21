@@ -86,23 +86,23 @@
 							<div class="fields">
 								<div class="input-field input-box">
 									<label class="details">Nama Dewan </label> <input type="text"
-										name="roomname" required>
+										name="lecturename" required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label> <input type="text"
-										name="roomcapacity" required>
+										name="lecturecapacity" required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Status Dewan</label> 
 									<select
-										name="roomstatus">
+										name="lecturestatus">
 										<option value="Available">Available</option>
 										<option value="Unavailable">Unavaible</option>
 									</select>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Sistem bunyi</label> <input type="text"
-										name="soundsystem" required>
+										name="lecturesoundsystem" required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Bilangan Meja</label> <input type="text"
