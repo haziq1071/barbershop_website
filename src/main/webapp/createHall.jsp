@@ -79,7 +79,7 @@
 		<div class="home-content">
 			<div class="container">
 				<header class="main_title">PENAMBAHAN DEWAN</header>
-				<form action="#" method="" onsubmit="return myFunction()">
+				<form action="#" method="post" onsubmit="return myFunction()">
 					<div class="form first">
 						<div class="details room">
 							<span class="title">Informasi Dewan</span>
