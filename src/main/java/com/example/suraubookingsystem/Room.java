@@ -1,8 +1,8 @@
 package com.example.suraubookingsystem;
-
+import java.io.Serializable;
 import javax.servlet.http.Part;
 
-public class Room implements java.io.Serializable{
+public class Room implements Serializable{
 	private int roomid;
 	private String roomname;
 	private int roomcapacity;
@@ -13,14 +13,14 @@ public class Room implements java.io.Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Room(int roomid, String roomname, int roomcapacity, String roomstatus, String soundsystem) {
+	/*public Room(int roomid, String roomname, int roomcapacity, String roomstatus, String soundsystem) {
 		super();
 		this.roomid = roomid;
 		this.roomname = roomname;
 		this.roomcapacity = roomcapacity;
 		this.roomstatus = roomstatus;
 		this.soundsystem = soundsystem;
-	}
+	}*/
 	
 	public int getRoomid() {
 		return roomid;

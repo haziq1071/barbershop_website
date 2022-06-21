@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.servlet.http.Part;
 
-@MultipartConfig
+//@MultipartConfig
 @WebServlet(name = "RoomServlet", value = "/RoomServlet")
 public class RoomServlet extends HttpServlet {
 
@@ -29,7 +29,7 @@ public class RoomServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
         response.setContentType("text/html");
-        
+        PrintWriter out = response.getWriter();
         String action = request.getParameter("action");
 
         try {
@@ -55,7 +55,7 @@ public class RoomServlet extends HttpServlet {
 
         private void createroom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
         
-        int roomid = Integer.parseInt(request.getParameter("roomid"));
+       /* int roomid = Integer.parseInt(request.getParameter("roomid"));
         
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -70,7 +70,7 @@ public class RoomServlet extends HttpServlet {
         new File(appPath + "pic").mkdir();
         f.write(savePath);
 
-        try {
+        try {*/
 
     		String roomname = request.getParameter("roomname"); 
     		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
@@ -84,18 +84,19 @@ public class RoomServlet extends HttpServlet {
             room.setRoomstatus(roomstatus);
             room.setSoundsystem(soundsystem); 
     		
-    		rm.createroom(room,imageFileName,urlPathforDB);
+    		//rm.createroom(room,imageFileName,urlPathforDB);
+            rm.createroom(room);/*
             response.sendRedirect("displayRoomList.jsp");
 		    out.println("<script type=\"text/javascript\">");
             out.println("alert('Your details succesfully create a room.');");
             out.println("location='displayRoomList.jsp';");
-            out.println("</script>");
+            out.println("</script>");*/
 
             response.sendRedirect("createhall.jsp");
 
-        } catch (Exception e) {
+        /*} catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
 	}
         
