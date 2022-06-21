@@ -76,57 +76,76 @@
   </div>
 
 <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
-        <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
-      </div>
-        <div class="media_icons">
-          <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
-        </div>
-    </nav>
-
-	<div class="home-content">
-    <div class="container">
-        <header class="main_title">KEMASKINI DEWAN</header>
-        <form action="#" method="" onsubmit="return myFunction()">
-          <div class="form first">
-            <div class="details room">
-              <span class="title">INFORMASI DEWAN</span>
-
-              <div class="fields">
-                <div class="input-field input-box">
-                  <label class="details">Nama Bilik </label>
-                  <input type="text" name="roomname">
-                </div>
-                <div class="input-field input-box">
-                  <label class="details">Kapasiti</label>
-                  <input type="text" name="roomcapacity">
-                </div>
-              </div>
-            </div>
-            
-            <div class="details ID">
-              <span class="title">Fasiliti bilik</span>
-              <div class="fields">
-              <div class="input-field input-box">
-                <input type="text" name="soundsystem" >
-              </div>
-              <div class="button staff">
-                <input type="submit" value="KEMASKINI">
-              </div>
-            </div> 
-        </div>
+        <nav>
+          <div class="sidebar-button">
+            <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
           </div>
-      </form>
-  </div>
-</div>
+            <div class="media_icons">
+              <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+
+      	<div class="home-content">
+          <div class="container">
+              <header class="main_title">KEMASKINI DEWAN</header>
+              <form action="RoomServlet" method="POST">
+                <div class="form first">
+                  <div class="details room">
+                    <span class="title">INFORMASI DEWAN</span>
+
+                     <input type="number" name="roomid"  value="${roomid}" hidden>
+
+                    <div class="fields">
+                      <div class="input-field input-box">
+                        <label class="details">Nama Dewan</label>
+                        <input type="text" name="roomname" value="${roomname}">
+                      </div>
+                      <div class="input-field input-box">
+                        <label class="details">Kapasiti</label>
+                        <input type="text" name="roomcapacity" value="${roomcapacity}">
+                      </div>
+                      <div class="input-field input-box">
+                        <label class="details">Status Dewan</label>
+                        <select name="roomstatus" value="${roomstatus}">
+                          <option disabled selected>Pilih Status</option>
+                          <option value="Boleh Digunakan">Boleh Digunakan</option>
+                          <option value="Sedang Diselenggara">Sedang Diselenggara</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="details ID">
+                    <span class="title">Fasiliti bilik</span>
+                    <div class="fields">
+                      <div class="input-field input-box">
+                        <select name="soundsystem" value="${admsoundsystem}">
+                          <option disabled selected>Pilih Sistem Bunyi</option>
+                          <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
+                          <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
+                          <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
+                          <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
+                        </select>
+                      </div>
+                      <input type="hidden" name="action" value="updateRoom">
+                      <div class="button staff">
+                        <button type="submit" name="submit" >KEMASKINI</button><br><br>
+                      </div>
+                    </div> 
+                  </div>
+
+              </div>
+            </form>
+        </div>
+      </div>
   </section>
 </body>
+<!--
   <script>
     function myFunction(){
       alert("Bilik berjaya ditambah.");
     }
- </script>
+ </script>-->
 
 </html>

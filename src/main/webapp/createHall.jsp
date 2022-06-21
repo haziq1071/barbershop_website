@@ -87,15 +87,15 @@
 							<div class="fields">
 								<div class="input-field input-box">
 									<label class="details">Nama Dewan </label> 
-									<input type="text" name="roomname" required>
+									<input type="text" name="roomname" >
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name="roomcapacity"  required>
+									<input type="text" name="roomcapacity" >
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Status Dewan</label>
-									<select	name="roomstatus" required>
+									<select	name="roomstatus" >
 										<option disabled selected>Pilih Status</option>
 										<option value="Boleh Digunakan">Boleh Digunakan</option>
 										<option value="Sedang Diselenggara">Sedang Diselenggara</option>
@@ -103,7 +103,7 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Sistem Bunyi</label>
-									<select	name="soundsystem" required>
+									<select	name="soundsystem" >
 										<option disabled selected>Pilih Sistem Bunyi</option>
 										<option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
 										<option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
