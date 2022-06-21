@@ -6,14 +6,14 @@ public class Room implements java.io.Serializable{
 	private int roomid;
 	private String roomname;
 	private int roomcapacity;
-	private boolean roomstatus;
+	private String roomstatus;
 	private String soundsystem;
 
 	public Room() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Room(int roomid, String roomname, int roomcapacity, boolean roomstatus, String soundsystem) {
+	public Room(int roomid, String roomname, int roomcapacity, String roomstatus, String soundsystem) {
 		super();
 		this.roomid = roomid;
 		this.roomname = roomname;
@@ -40,10 +40,10 @@ public class Room implements java.io.Serializable{
 	public void setRoomcapacity(int roomcapacity) {
 		this.roomcapacity = roomcapacity;
 	}
-	public boolean isRoomstatus() {
+	public String getRoomstatus() {
 		return roomstatus;
 	}
-	public void setRoomstatus(boolean roomstatus) {
+	public void setRoomstatus(String roomstatus) {
 		this.roomstatus = roomstatus;
 	}
 	public String getSoundsystem() {

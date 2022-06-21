@@ -44,7 +44,7 @@ public class RoomDao {
 	    {
 	        ps.setString(1, rooms.getRoomname());
 	        ps.setInt(2, rooms.getRoomcapacity());
-	        ps.setBoolean(3, rooms.isRoomstatus());
+	        ps.setString(3, rooms.getRoomstatus());
 	        ps.setString(4, rooms.getSoundsystem());
 	        ps.setString(5,imageFileName);
             ps.setString(6, urlPathforDB);
@@ -86,7 +86,7 @@ public class RoomDao {
 	          ps.setInt(1, rooms.getRoomid());
 	          ps.setString(2, rooms.getRoomname());
 	          ps.setInt(3, rooms.getRoomcapacity());
-	          ps.setBoolean(4, rooms.isRoomstatus());
+	          ps.setString(4, rooms.getRoomstatus());
 	          ps.setString(5, rooms.getSoundsystem());
 	          ps.executeUpdate();
 	          

@@ -74,7 +74,7 @@ public class RoomServlet extends HttpServlet {
 
     		String roomname = request.getParameter("roomname"); 
     		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
-    		boolean roomstatus = Boolean.parseBoolean(request.getParameter("roomstatus"));
+    		String roomstatus = request.getParameter("roomstatus");
     		String soundsystem = request.getParameter("soundsystem");
 
             Room rooms = new Room();
@@ -121,7 +121,7 @@ public class RoomServlet extends HttpServlet {
                 	int roomid = Integer.parseInt(request.getParameter("roomid"));
                 	String roomname = request.getParameter("roomname"); 
             		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
-            		boolean roomstatus = Boolean.parseBoolean(request.getParameter("roomstatus"));
+            		String roomstatus = request.getParameter("roomstatus");
             		String soundsystem = request.getParameter("soundsystem");
             		
                     Room rooms = new Room();
