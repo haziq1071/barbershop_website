@@ -79,7 +79,7 @@ public class RoomDao {
 			return room;
 		}*/
 
-	    public void updateroom(Room rooms,String imageFileName,String urlPathforDB) throws SQLException, IOException {
+	    public void updateroom(Room room) throws SQLException, IOException {
 	  
 	        try (Connection connection = getConnection();
 	             PreparedStatement ps = connection.prepareStatement("UPDATE room SET roomid=?,roomname=?,roomcapacity=?,roomstatus=?,soundsystem=? WHERE roomid=?");)
