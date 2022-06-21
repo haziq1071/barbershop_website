@@ -12,6 +12,13 @@
 </head>
 
 <body>
+<sql:setDataSource var="ic" driver="org.postgresql.Driver" url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379" user="dnzxqagexabepj" 
+password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+
+<sql:query dataSource="${ic}" var="oc">
+    SELECT * from room where roomid=?
+</sql:query>
+
   <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
@@ -87,7 +94,10 @@
 	<div class="home-content">
     <div class="container">
         <header class="main_title">PADAM BILIK</header>
-	<form action="#" method="" onsubmit="return myFunction()">
+
+        <c:forEach var="result" items="${oc.rows}">
+
+	<form action="RoomServlet" method="post">
 		<div class="form first">
 			<div class="details room">
 			<span class="title">Bilik : B-01</span><br><br>
@@ -98,29 +108,36 @@
     
     <div class="fields">
       <div class="details">
-			<span class="title">Informasi Bilik</span><br>
-			<label class="details">Kapasiti </label><br>
-      <label class="details">- 30 orang</label>
-			<label class="details">Fasiliti </label>
-			<label class="details">- 15 meja panjang</label><br>
-      <label class="details">- 30 kerusi</label><br>
-      <label class="details">- 1 projektor</label><br>
-      <label class="details">- 1 Pembesar suara dan Mikrofon</label><br>
+			      <span class="title">INFORMASI DEWAN</span>
+            <input type="hidden" name="roomdid"  value="${result.roomid}">
+            <h2 class="title">Nama Dewan</h2>
+            <p class="details"><c:out value="${result.roomname}"/></p>
+            <h2 class="title">Kapasiti</h2>
+            <p class="details"><c:out value="${result.roomcapacity}"/></p>
+            <h2 class="title">Status</h2>
+            <p class="details"><c:out value="${result.roomstatus}"/></p>
+            <h2 class="title">Sistem Bunyi</h2>
+            <p class="details"><c:out value="${result.soundsystem}"/></p>
     </div><br><br>
+      <input type="hidden" name="action" value="deleteRoom">
 		<div class="button staff">
-      <input type="submit" value="PADAM">
+      <button type="submit" formaction="RoomServlet"
+                                onclick="return confirm('Anda pasti ingin padam dewan <c:out value="${result.roomname}"/> ?');">PADAM
+                    </button>
     </div>
 	</div>
 	</div>
 </div>
 	</form>
+   </c:forEach>
 </div>
 </div>
 </section>
+<!--
 <script>
 	function myFunction(){
 		alert("Bilik berjaya dipadam.");
 	}
 </script>
-
+--->
 </html>
