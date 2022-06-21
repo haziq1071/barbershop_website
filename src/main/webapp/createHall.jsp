@@ -100,8 +100,7 @@
 									</select>
 								</div>
 								<div class="input-field input-box">
-									<label class="details">Sistem Bunyi</label> 
-									<input type="text" name="hallsound" required>
+									<label class="details">Sistem Bunyi</label>
 									<select	name="hallsound" required>
 										<option disabled selected>Pilih Sistem Bunyi</option>
 										<option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
