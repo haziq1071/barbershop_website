@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <title>Option update room</title>
+    <title>Update Room</title>
   <link rel="stylesheet" href="createroom.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -92,16 +92,16 @@
 	<fieldset id="fields" style="border-radius: 5px;">
         <label class="title">B-01</label>
 		<img src="b01.jpeg" height="150px" width="200px" alt="pic1">
-		<img alt="pic2">
+		<!--  <img alt="pic2">-->
 		<div class="button staff">
-          <a href="update b01.html">Lihat</a>
+          <a href="update b01.html"><input type="button" value="Lihat"></a>
         </div>
 	</fieldset><br>
 	<fieldset id="fields" style="border-radius: 5px;">
 		<label class="title">B-02</label><br>
 		<img src="b02.jpeg" height="150px" width="200px" alt="pic1">
-		<img alt="pic2">
-		<img alt="pic3">
+		<!--  <img alt="pic2">
+		<img alt="pic3">-->
 		<div class="button staff">
             <input type="submit" value="Lihat">
         </div>
@@ -109,8 +109,8 @@
 	<fieldset id="fields" style="border-radius: 5px;">
 		<label class="title">B-03</label><br>
 		<img src="h1.jpeg" height="150px" width="200px" alt="pic1">
-		<img alt="pic2">
-		<img alt="pic3">
+		<!--  <img alt="pic2">
+		<img alt="pic3">-->
 		<div class="button staff">
             <input type="submit" value="Lihat">
         </div>
@@ -118,8 +118,8 @@
 	<fieldset id="fields" style="border-radius: 5px;">
 		<label class="title">B-04</label><br>
 		<img src="h2.jpeg" height="150px" width="200px" alt="pic1">
-		<img alt="pic2">
-		<img alt="pic3">
+		<!--  <img alt="pic2">
+		<img alt="pic3">-->
 		<div class="button staff">
             <input type="submit" value="Lihat">
         </div>
