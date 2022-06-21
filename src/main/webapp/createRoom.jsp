@@ -76,16 +76,16 @@
 
 		<div class="home-content">
 			<div class="container">
-				<header class="main_title">PENAMBAHAN DEWAN</header>
+				<header class="main_title">PENAMBAHAN BILIK KULIAH</header>
 				<form action="<%=request.getContextPath() %>/LectureServlet"
 					method=post onsubmit="return myFunction()">
 					<div class="form first">
 						<div class="details room">
-							<span class="title">Informasi Dewan</span>
+							<span class="title">Informasi Bilik</span>
 
 							<div class="fields">
 								<div class="input-field input-box">
-									<label class="details">Nama Dewan </label> <input type="text"
+									<label class="details">Nama Bilik </label> <input type="text"
 										name="lecturename" required>
 								</div>
 								<div class="input-field input-box">
