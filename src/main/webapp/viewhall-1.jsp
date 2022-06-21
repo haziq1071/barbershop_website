@@ -1,10 +1,9 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
-    <title> Read room </title>
+    <title> View Hall-1 </title>
     <link rel="stylesheet" href="createroom.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -87,36 +86,34 @@
 	<div class="home-content">
     <div class="container">
         <header class="main_title">Bilik : B-01</header>
-	<form action="#" method="">
 		<div class="form first">
 			<div class="details room">
 
 		<fieldset><!--start fieldset image bilik-->
-			<img alt="pic">
 		</fieldset><!--end fieldset gambar-->
     
     <div class="fields">
-      <div class="details">
-			<span class="title">Informasi Bilik</span><br>
-			<label class="details">Kapasiti </label><br>
-      <label class="details">- 30 orang</label>
-			<label class="details">Fasiliti </label>
-			<label class="details">- 15 meja panjang</label><br>
-      <label class="details">- 30 kerusi</label><br>
-      <label class="details">- 1 projektor</label><br>
-      <label class="details">- 1 Pembesar suara dan Mikrofon</label><br>
-    </div><br><br>
-    <a href="read for view.html">
-		<div class="button staff">
-      <input type="submit" value="KEMBALI">
+        <div class="details">
+            <h1>INFORMASI DEWAN</h1>
+            <h2>Nama Dewan</h2>
+            <p class="input">${roomname}</p>
+            <h2>Kapasiti</h2>
+            <p class="input">${roomcapacity}</p>
+            <h2>Status</h2>
+            <p class="input">${roomstatus}</p>
+            <h2>Sistem Bunyi</h2>
+            <p class="input">${soundsystem}</p>
+      </div><br><br>
+
+    <div class="button staff">
+      <a href="viewRoom.jsp"><input type="button" value="KEMBALI"></a>
     </div>
   </a>
 	</div>
 	</div>
 </div>
-	</form>
 </div>
 </div>
 </section>
-
+</body>
 </html>
