@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.servlet.http.Part;
 
-//@MultipartConfig
+@MultipartConfig
 @WebServlet(name = "RoomServlet", value = "/RoomServlet")
 public class RoomServlet extends HttpServlet {
 
