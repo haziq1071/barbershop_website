@@ -92,7 +92,7 @@ public class RoomServlet extends HttpServlet {
             out.println("location='displayRoomList.jsp';");
             out.println("</script>");*/
 
-            response.sendRedirect("homepage.jsp");
+            response.sendRedirect("index.jsp");
 
         /*} catch (Exception e) {
             e.printStackTrace();
