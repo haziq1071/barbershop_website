@@ -1,15 +1,11 @@
 package com.example.suraubookingsystem;
 
-import javax.servlet.http.Part;
 import java.io.*;
 import java.sql.*;
-import javax.servlet.http.Part;
 import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import static java.lang.System.out;
 @MultipartConfig
@@ -36,7 +32,7 @@ public class RoomDao {
 	  }
 	  
 	  
-	  public void createroom(Room room,String imageFileName,String urlPathforDB) throws SQLException, IOException  {
+	  public void createroom(Room room) throws SQLException, IOException  {
 	    
 	    // try-with-resource statement will auto close the connection.
 	    try (Connection connection = getConnection();
