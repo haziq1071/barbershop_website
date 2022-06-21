@@ -13,6 +13,17 @@
 </head>
 
 <body>
+<sql:setDataSource var="ic" driver="org.postgresql.Driver" url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379" user="dnzxqagexabepj" 
+password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+<%
+    int roomid = Integer.parseInt(request.getParameter("roomid"));
+%>
+<sql:query dataSource="${ic}" var="oc">
+    <c:set var="roomid" value="<%=roomid%>"/>
+    SELECT * from room where roomid=?
+    <sql:param value="${roomid}" />
+</sql:query>
+
   <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
@@ -89,25 +100,28 @@
       	<div class="home-content">
           <div class="container">
               <header class="main_title">KEMASKINI DEWAN</header>
-              <form action="RoomServlet" method="POST">
+
+              <c:forEach var="result" items="${oc.rows}">
+
+              <form name="HallInfoForm" action="RoomServlet" method="post" onsubmit="return confirm('Anda pasti ingin kemaskini?');"  enctype = "multipart/form-data">
                 <div class="form first">
                   <div class="details room">
                     <span class="title">INFORMASI DEWAN</span>
 
-                     <input type="number" name="roomid"  value="${roomid}" hidden>
+                     <input type="number" name="roomid" value="${result.roomid}" hidden>
 
                     <div class="fields">
                       <div class="input-field input-box">
                         <label class="details">Nama Dewan</label>
-                        <input type="text" name="roomname" value="${roomname}">
+                        <input type="text" name="roomname" value="${result.roomname}">
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Kapasiti</label>
-                        <input type="text" name="roomcapacity" value="${roomcapacity}">
+                        <input type="text" name="roomcapacity" value="${result.roomcapacity}">
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Status Dewan</label>
-                        <select name="roomstatus" value="${roomstatus}">
+                        <select name="roomstatus" value="${result.roomstatus}">
                           <option disabled selected>Pilih Status</option>
                           <option value="Boleh Digunakan">Boleh Digunakan</option>
                           <option value="Sedang Diselenggara">Sedang Diselenggara</option>
@@ -120,7 +134,7 @@
                     <span class="title">Fasiliti bilik</span>
                     <div class="fields">
                       <div class="input-field input-box">
-                        <select name="soundsystem" value="${admsoundsystem}">
+                        <select name="soundsystem" value="${result.soundsystem}">
                           <option disabled selected>Pilih Sistem Bunyi</option>
                           <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                           <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
@@ -140,6 +154,7 @@
         </div>
       </div>
   </section>
+  </c:forEach>
 </body>
 <!--
   <script>
