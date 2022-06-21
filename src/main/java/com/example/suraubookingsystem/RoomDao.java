@@ -37,16 +37,16 @@ public class RoomDao {
 	    
 	    // try-with-resource statement will auto close the connection.
 	    try (Connection connection = getConnection();
-	   		PreparedStatement ps = connection.prepareStatement("insert into room(roomid,roomname, roomcapacity, roomstatus, soundsystem) values(?,?,?,?,?)");)
+	   		PreparedStatement prepareStatement = connection.prepareStatement("insert into room(roomname, roomcapacity, roomstatus, soundsystem) values(?,?,?,?)");)
 	    {
-	        ps.setString(1, room.getRoomname());
-	        ps.setInt(2, room.getRoomcapacity());
-	        ps.setString(3, room.getRoomstatus());
-	        ps.setString(4, room.getSoundsystem());
+	    	prepareStatement.setString(1, room.getRoomname());
+	    	prepareStatement.setInt(2, room.getRoomcapacity());
+	    	prepareStatement.setString(3, room.getRoomstatus());
+	    	prepareStatement.setString(4, room.getSoundsystem());
 	        /*ps.setString(5,imageFileName);
             ps.setString(6, urlPathforDB);*/
-            out.println(ps);
-            ps.executeUpdate();
+            out.println(prepareStatement);
+            prepareStatement.executeUpdate();
 
 
 	      /*} catch (Exception e) {
