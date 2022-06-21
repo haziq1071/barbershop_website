@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <%
+<%
 
     int roomid = (Integer) session.getAttribute("roomid");
 %>
@@ -19,7 +19,7 @@
 
 <sql:query dataSource="${ic}" var="oc">
     <c:set var="romid" value="<%=roomid%>"/>
-    SELECT * from room where roomid = ?;
+    SELECT * from room where roomid = 1;
     <sql:param value="${romid}" />
 </sql:query>
 
