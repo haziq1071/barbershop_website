@@ -23,7 +23,7 @@
 			</a></li>
 
 			<li><a class="main-menu" href="#"> <i class='bx bx-box'></i>
-					<span class="links_name" id="min">BILIK</span>
+					<span class="links_name min">BILIK</span>
 			</a>
 				<ul class="sub-menu">
 					<li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
@@ -35,7 +35,7 @@
 			</li>
 
 			<li><a class="main-menu" href="#"> <i class='bx bx-bookmark'></i>
-					<span class="links_name" id="min">TEMPAHAN</span>
+					<span class="links_name min">TEMPAHAN</span>
 			</a>
 				<ul class="sub-menu">
 					<li><a href="staffBooking.html">TEMPAH BILIK</a></li>
