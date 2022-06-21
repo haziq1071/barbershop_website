@@ -11,14 +11,14 @@
 </head>
 
 <body>
-<%
 
+<!--
     int roomid = (Integer) session.getAttribute("roomid");
-%>
+--->
 <sql:setDataSource var="ic" driver="org.postgresql.Driver" url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379" user = "dnzxqagexabepj" password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    <c:set var="romid" value="<%=roomid%>"/>
+    
     SELECT * from room where roomid = 1;
     <sql:param value="${romid}" />
 </sql:query>
