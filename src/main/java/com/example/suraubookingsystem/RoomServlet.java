@@ -60,7 +60,7 @@ public class RoomServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        /*request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
+        request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
         String appPath = getServletContext().getRealPath("");
         Part f = request.getPart("hPic");
         String host = request.getScheme()+ "://" + request.getAttribute("thiss")+"/";
@@ -68,7 +68,7 @@ public class RoomServlet extends HttpServlet {
         String urlPathforDB=host + "pic/" + imageFileName;
         String savePath = appPath + "pic" + File.separator + imageFileName;
         new File(appPath + "pic").mkdir();
-        f.write(savePath);*/
+        f.write(savePath);
 
         try {
 
@@ -84,12 +84,12 @@ public class RoomServlet extends HttpServlet {
             room.setRoomstatus(roomstatus);
             room.setSoundsystem(soundsystem); 
     		
-    		/*rm.createroom(rooms,imageFileName,urlPathforDB);
+    		rm.createroom(room,imageFileName,urlPathforDB);
             response.sendRedirect("displayRoomList.jsp");
 		    out.println("<script type=\"text/javascript\">");
             out.println("alert('Your details succesfully create a room.');");
             out.println("location='displayRoomList.jsp';");
-            out.println("</script>");*/
+            out.println("</script>");
 
             rm.createroom(room);
             response.sendRedirect("index.jsp");
@@ -118,10 +118,9 @@ public class RoomServlet extends HttpServlet {
             new File(appPath + "pic").mkdir();
             f.write(savePath);
 
-            /*int roomid = Integer.parseInt(request.getParameter("roomid"));*/
+            int roomid = Integer.parseInt(request.getParameter("roomid"));
 
               try{
-                	int roomid = Integer.parseInt(request.getParameter("roomid"));
                 	String roomname = request.getParameter("roomname"); 
             		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
             		String roomstatus = request.getParameter("roomstatus");

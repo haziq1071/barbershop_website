@@ -36,7 +36,7 @@ public class RoomDao {
 	  }
 	  
 	  
-	  public void createroom(Room room) throws SQLException {
+	  public void createroom(Room room,String imageFileName,String urlPathforDB) throws SQLException, IOException  {
 	    
 	    // try-with-resource statement will auto close the connection.
 	    try (Connection connection = getConnection();
@@ -46,15 +46,15 @@ public class RoomDao {
 	        ps.setInt(2, room.getRoomcapacity());
 	        ps.setString(3, room.getRoomstatus());
 	        ps.setString(4, room.getSoundsystem());
-	        /*ps.setString(5,imageFileName);
-            ps.setString(6, urlPathforDB);*/
+	        ps.setString(5,imageFileName);
+            ps.setString(6, urlPathforDB);
             out.println(ps);
             ps.executeUpdate();
 
 
-	      } catch (SQLException e) {
-          printSQLException(e);
-      }
+	      } catch (Exception e) {
+            e.printStackTrace();
+          }
 	    }
 
 	  /*public  List<Room> selectAllRoom() {
@@ -79,16 +79,17 @@ public class RoomDao {
 			return room;
 		}*/
 
-	    public void updateroom(Room room) throws SQLException, IOException {
+	    public void updateroom(Room room,String imageFileName,String urlPathforDB) throws SQLException, IOException {
 	  
 	        try (Connection connection = getConnection();
 	             PreparedStatement ps = connection.prepareStatement("UPDATE room SET roomid=?,roomname=?,roomcapacity=?,roomstatus=?,soundsystem=? WHERE roomid=?");)
 	        {
-	          ps.setInt(1, room.getRoomid());
-	          ps.setString(2, room.getRoomname());
-	          ps.setInt(3, room.getRoomcapacity());
-	          ps.setString(4, room.getRoomstatus());
-	          ps.setString(5, room.getSoundsystem());
+	          
+	          ps.setString(1, room.getRoomname());
+	          ps.setInt(2, room.getRoomcapacity());
+	          ps.setString(3, room.getRoomstatus());
+	          ps.setString(4, room.getSoundsystem());
+	          ps.setInt(5, room.getRoomid());
 	          ps.executeUpdate();
 	          
 	        } catch (Exception e) {
@@ -108,7 +109,7 @@ public class RoomDao {
 	        }
 		
 
-	    private void printSQLException(SQLException ex) {
+	    /*private void printSQLException(SQLException ex) {
 	        for (Throwable e : ex) {
 	            if (e instanceof SQLException) {
 	                e.printStackTrace(System.err);
@@ -122,6 +123,6 @@ public class RoomDao {
 	                }
 	            }
 	        }
-	    } 
+	    } */
 		    
 }
