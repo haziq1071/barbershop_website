@@ -60,7 +60,7 @@ public class RoomServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
+        /*request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
         String appPath = getServletContext().getRealPath("");
         Part f = request.getPart("hPic");
         String host = request.getScheme()+ "://" + request.getAttribute("thiss")+"/";
@@ -68,7 +68,7 @@ public class RoomServlet extends HttpServlet {
         String urlPathforDB=host + "pic/" + imageFileName;
         String savePath = appPath + "pic" + File.separator + imageFileName;
         new File(appPath + "pic").mkdir();
-        f.write(savePath);
+        f.write(savePath);*/
 
         try {
 
@@ -77,19 +77,22 @@ public class RoomServlet extends HttpServlet {
     		String roomstatus = request.getParameter("roomstatus");
     		String soundsystem = request.getParameter("soundsystem");
 
-            Room rooms = new Room();
+            Room room = new Room();
 
-            rooms.setRoomname(roomname);
-            rooms.setRoomcapacity(roomcapacity);
-            rooms.setRoomstatus(roomstatus);
-            rooms.setSoundsystem(soundsystem); 
+            room.setRoomname(roomname);
+            room.setRoomcapacity(roomcapacity);
+            room.setRoomstatus(roomstatus);
+            room.setSoundsystem(soundsystem); 
     		
-    		rm.createroom(rooms,imageFileName,urlPathforDB);
+    		/*rm.createroom(rooms,imageFileName,urlPathforDB);
             response.sendRedirect("displayRoomList.jsp");
 		    out.println("<script type=\"text/javascript\">");
             out.println("alert('Your details succesfully create a room.');");
             out.println("location='displayRoomList.jsp';");
-            out.println("</script>");
+            out.println("</script>");*/
+
+            rm.createroom(room);
+            response.sendRedirect("index.jsp");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -124,16 +127,16 @@ public class RoomServlet extends HttpServlet {
             		String roomstatus = request.getParameter("roomstatus");
             		String soundsystem = request.getParameter("soundsystem");
             		
-                    Room rooms = new Room();
+                    Room room = new Room();
                     
-                    rooms.setRoomid(roomid);
-                    rooms.setRoomname(roomname);
-                    rooms.setRoomcapacity(roomcapacity);
-                    rooms.setRoomstatus(roomstatus);
-                    rooms.setSoundsystem(soundsystem); 
+                    room.setRoomid(roomid);
+                    room.setRoomname(roomname);
+                    room.setRoomcapacity(roomcapacity);
+                    room.setRoomstatus(roomstatus);
+                    room.setSoundsystem(soundsystem); 
 
                     
-                    rm.updateroom(rooms,imageFileName,urlPathforDB);
+                    rm.updateroom(room,imageFileName,urlPathforDB);
                     response.sendRedirect("displayRoomList.jsp");
                     out.println("<script type=\"text/javascript\">");
                     out.println("alert('Your room succesfully updated.');");

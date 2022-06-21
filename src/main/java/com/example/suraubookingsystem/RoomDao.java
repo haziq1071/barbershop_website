@@ -14,11 +14,11 @@ import java.sql.ResultSet;
 import static java.lang.System.out;
 @MultipartConfig
 public class RoomDao {
-
-	String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
+	
+	  String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
 	  String user = "dnzxqagexabepj";
 	  String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294";
-	  
+  
 	  protected Connection getConnection()
 	  {
 	    Connection connection = null;
@@ -36,24 +36,25 @@ public class RoomDao {
 	  }
 	  
 	  
-	  public void createroom(Room rooms,String imageFileName,String urlPathforDB) throws SQLException, IOException {
+	  public void createroom(Room room) throws SQLException {
 	    
 	    // try-with-resource statement will auto close the connection.
 	    try (Connection connection = getConnection();
 	   		PreparedStatement ps = connection.prepareStatement("insert into room(roomid,roomname, roomcapacity, roomstatus, soundsystem) values(?,?,?,?,?)");)
 	    {
-	        ps.setString(1, rooms.getRoomname());
-	        ps.setInt(2, rooms.getRoomcapacity());
-	        ps.setString(3, rooms.getRoomstatus());
-	        ps.setString(4, rooms.getSoundsystem());
-	        ps.setString(5,imageFileName);
-            ps.setString(6, urlPathforDB);
+	        ps.setString(1, room.getRoomname());
+	        ps.setInt(2, room.getRoomcapacity());
+	        ps.setString(3, room.getRoomstatus());
+	        ps.setString(4, room.getSoundsystem());
+	        /*ps.setString(5,imageFileName);
+            ps.setString(6, urlPathforDB);*/
+            out.println(ps);
             ps.executeUpdate();
 
 
-	      } catch (Exception e) {
-	          e.printStackTrace();
-	      }
+	      } catch (SQLException e) {
+          printSQLException(e);
+      }
 	    }
 
 	  /*public  List<Room> selectAllRoom() {
@@ -83,11 +84,11 @@ public class RoomDao {
 	        try (Connection connection = getConnection();
 	             PreparedStatement ps = connection.prepareStatement("UPDATE room SET roomid=?,roomname=?,roomcapacity=?,roomstatus=?,soundsystem=? WHERE roomid=?");)
 	        {
-	          ps.setInt(1, rooms.getRoomid());
-	          ps.setString(2, rooms.getRoomname());
-	          ps.setInt(3, rooms.getRoomcapacity());
-	          ps.setString(4, rooms.getRoomstatus());
-	          ps.setString(5, rooms.getSoundsystem());
+	          ps.setInt(1, room.getRoomid());
+	          ps.setString(2, room.getRoomname());
+	          ps.setInt(3, room.getRoomcapacity());
+	          ps.setString(4, room.getRoomstatus());
+	          ps.setString(5, room.getSoundsystem());
 	          ps.executeUpdate();
 	          
 	        } catch (Exception e) {

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -18,24 +16,28 @@
 			<img src="logoWhite.png">
 		</div>
 		<ul class="nav-links">
-			<li><a class="main-menu" href="homepage.html"> <i
-					class='bx bx-home'></i> <span class="links_name">LAMAN UTAMA</span>
-			</a></li>
-
-			<li><a class="main-menu" href="#"> <i class='bx bx-box'></i>
-					<span class="links_name" id="min">BILIK</span>
-			</a>
-			<ul class="sub-menu">
-				<li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
-				<li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-				<li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
-				<li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
-				<li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
-			</ul>
-		</li>
+			<li>
+				<a class="main-menu" href="homepage.html"> 
+					<i class='bx bx-home'></i> 
+					<span class="links_name">LAMAN UTAMA</span>
+				</a>
+			</li>
+			<li>
+				<a class="main-menu" href="#"> 
+					<i class='bx bx-box'></i>
+					<span class="links_name min">BILIK</span>
+				</a>
+				<ul class="sub-menu">
+					<li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
+					<li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
+					<li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
+					<li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
+					<li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
+				</ul>
+			</li>
 
 			<li><a class="main-menu" href="#"> <i class='bx bx-bookmark'></i>
-					<span class="links_name" id="min">TEMPAHAN</span>
+					<span class="links_name min">TEMPAHAN</span>
 			</a>
 				<ul class="sub-menu">
 					<li><a href="staffBooking.html">TEMPAH BILIK</a></li>
@@ -89,7 +91,7 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name=roomcapacity " required>
+									<input type="text" name="roomcapacity"  required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Status Dewan</label>
@@ -101,7 +103,7 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Sistem Bunyi</label>
-									<select	name="hallsound" required>
+									<select	name="soundsystem" required>
 										<option disabled selected>Pilih Sistem Bunyi</option>
 										<option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
 										<option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
@@ -110,8 +112,9 @@
 									</select>
 								</div>
 							</div>
+							<input type="hidden" name="action" value="createroom">
 							<div class="button staff">
-								<input type="submit" value="Tambah">
+								<input type="submit" value="Tambah" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
 						</div>
 					</div>
@@ -120,11 +123,11 @@
 		</div>
 	</section>
 
-	<script>
+	<!---<script>
     function myFunction(){
       alert("Bilik berjaya ditambah.");
     }
- </script>
+ </script>---->
 
 </body>
 </html>
