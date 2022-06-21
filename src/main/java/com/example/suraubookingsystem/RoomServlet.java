@@ -34,14 +34,14 @@ public class RoomServlet extends HttpServlet {
 
         try {
             switch (action) {
-                case "createroom":
-                    createroom(request, response);
+                case "createRoom":
+                    createRoom(request, response);
                     break;
-                case "deleteroom":
-                    deleteroom(request, response);
+                case "deleteRoom":
+                    deleteRoom(request, response);
                     break;
-                case "updateroom":
-                    updateroom(request, response);
+                case "updateRoom":
+                    updateRoom(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -54,7 +54,7 @@ public class RoomServlet extends HttpServlet {
         /*######################################################( CREATE ROOM )#############################################################*/
 
       //private void createroom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
-        private void createroom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+        private void createRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
        /* int roomid = Integer.parseInt(request.getParameter("roomid"));
         
         response.setContentType("text/html");
@@ -85,7 +85,7 @@ public class RoomServlet extends HttpServlet {
             room.setSoundsystem(soundsystem); 
     		
     		//rm.createroom(room,imageFileName,urlPathforDB);
-            rm.createroom(room);/*
+            rm.createRoom(room);/*
             response.sendRedirect("displayRoomList.jsp");
 		    out.println("<script type=\"text/javascript\">");
             out.println("alert('Your details succesfully create a room.');");
@@ -103,9 +103,9 @@ public class RoomServlet extends HttpServlet {
         /*######################################################( UPDATE )#############################################################*/
 
 
-        private void updateroom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
-
-        	response.setContentType("text/html");
+        //private void updateRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
+          private void updateRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+        	/*response.setContentType("text/html");
             PrintWriter out = response.getWriter();
 
             request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
@@ -120,12 +120,13 @@ public class RoomServlet extends HttpServlet {
 
             int roomid = Integer.parseInt(request.getParameter("roomid"));
 
-              try{
+              try{*/
+                    HttpSession session = request.getSession();
+                    int roomid = Integer.parseInt(request.getParameter("roomid"));
                 	String roomname = request.getParameter("roomname"); 
             		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
             		String roomstatus = request.getParameter("roomstatus");
             		String soundsystem = request.getParameter("soundsystem");
-            		
                     Room room = new Room();
                     
                     room.setRoomid(roomid);
@@ -134,7 +135,21 @@ public class RoomServlet extends HttpServlet {
                     room.setRoomstatus(roomstatus);
                     room.setSoundsystem(soundsystem); 
 
+                    session.removeAttribute("roomid");
+                    session.removeAttribute("roomname");
+                    session.removeAttribute("roomcapacity");
+                    session.removeAttribute("roomstatus");
+                    session.removeAttribute("soundsystem");                
                     
+                    session.setAttribute("roomid", roomid);
+                    session.setAttribute("roomname", roomname);
+                    session.setAttribute("roomcapacity", roomcapacity);
+                    session.setAttribute("roomstatus", roomstatus);
+                    session.setAttribute("soundsystem",soundsystem);
+
+                    response.sendRedirect("viewRoom.jsp");
+
+                    /*
                     rm.updateroom(room,imageFileName,urlPathforDB);
                     response.sendRedirect("displayRoomList.jsp");
                     out.println("<script type=\"text/javascript\">");
@@ -144,7 +159,7 @@ public class RoomServlet extends HttpServlet {
                 
                 } catch (Exception e) {
                     e.printStackTrace();
-                }
+                }*/
             }
 
 
@@ -152,9 +167,9 @@ public class RoomServlet extends HttpServlet {
 
         /*######################################################( DELETE )#############################################################*/
 
-	    private void deleteroom(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+	    private void deleteRoom(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 	        int roomid = Integer.parseInt(request.getParameter("roomid"));
-	        rm.deleteroom(roomid);
+	        rm.deleteRoom(roomid);
 	        response.sendRedirect("homepage.jsp");
 	    }
 

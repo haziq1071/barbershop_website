@@ -6,9 +6,9 @@ import javax.servlet.annotation.MultipartConfig;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-
 import static java.lang.System.out;
-@MultipartConfig
+
+//@MultipartConfig
 public class RoomDao {
 	
 	  String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
@@ -32,7 +32,8 @@ public class RoomDao {
 	  }
 	  
 	  
-	  public void createroom(Room room) throws SQLException, IOException  {
+	  //public void createroom(Room room) throws SQLException, IOException  {
+	  public void createRoom(Room room) throws SQLException  {
 	    
 	    // try-with-resource statement will auto close the connection.
 	    try (Connection connection = getConnection();
@@ -48,9 +49,12 @@ public class RoomDao {
             ps.executeUpdate();
 
 
-	      } catch (Exception e) {
+	      /*} catch (Exception e) {
             e.printStackTrace();
-          }
+          }*/
+          } catch (SQLException e) {
+          printSQLException(e);
+     	  }
 	    }
 
 	  /*public  List<Room> selectAllRoom() {
@@ -75,8 +79,9 @@ public class RoomDao {
 			return room;
 		}*/
 
-	    public void updateroom(Room room,String imageFileName,String urlPathforDB) throws SQLException, IOException {
-	  
+	    //public void updateroom(Room room,String imageFileName,String urlPathforDB) throws SQLException, IOException {
+	    	public boolean updateRoom(Room room) throws SQLException {
+	  			boolean rowUpdated;
 	        try (Connection connection = getConnection();
 	             PreparedStatement ps = connection.prepareStatement("UPDATE room SET roomid=?,roomname=?,roomcapacity=?,roomstatus=?,soundsystem=? WHERE roomid=?");)
 	        {
@@ -87,14 +92,18 @@ public class RoomDao {
 	          ps.setString(4, room.getSoundsystem());
 	          ps.setInt(5, room.getRoomid());
 	          ps.executeUpdate();
+
+	          rowUpdated = ps.executeUpdate() > 0;
 	          
-	        } catch (Exception e) {
+	        } 
+	        return rowUpdated;/*
+	        catch (Exception e) {
 	            e.printStackTrace();
-	        }
+	        }*/
 	    }
 
 
-	    public boolean deleteroom(int roomid) throws SQLException {
+	    public boolean deleteRoom(int roomid) throws SQLException {
 	            boolean rowDeleted;
 	            try (Connection connection = getConnection();
 	                 PreparedStatement ps = connection.prepareStatement("delete from room WHERE roomid=?");) {
@@ -105,7 +114,7 @@ public class RoomDao {
 	        }
 		
 
-	    /*private void printSQLException(SQLException ex) {
+	    private void printSQLException(SQLException ex) {
 	        for (Throwable e : ex) {
 	            if (e instanceof SQLException) {
 	                e.printStackTrace(System.err);
@@ -119,6 +128,6 @@ public class RoomDao {
 	                }
 	            }
 	        }
-	    } */
+	    } 
 		    
 }

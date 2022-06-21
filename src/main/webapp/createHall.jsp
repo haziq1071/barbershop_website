@@ -112,7 +112,7 @@
 									</select>
 								</div>
 							</div>
-							<input type="hidden" name="action" value="createroom">
+							<input type="hidden" name="action" value="createRoom">
 							<div class="button staff">
 								<input type="submit" value="Tambah" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
