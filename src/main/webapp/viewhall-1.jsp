@@ -98,7 +98,7 @@ password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 	<div class="home-content">
     <div class="container">
-        <header class="main_title">Bilik : B-01</header>
+        <header class="main_title">DEWAN: D-01</header>
 		<div class="form first">
 			<div class="details room">
 
@@ -107,16 +107,17 @@ password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
     
     <div class="fields">
         <div class="details">
-            <h1>INFORMASI DEWAN</h1>
+            <span class="title">INFORMASI DEWAN</span>
             <input type="number" name="roomdid"  value="${result.roomid}" hidden>
-            <h2>Nama Dewan</h2>
-            <p class="input">${result.roomname}</p>
-            <h2>Kapasiti</h2>
-            <p class="input">${result.roomcapacity}</p>
-            <h2>Status</h2>
-            <p class="input">${result.roomstatus}</p>
-            <h2>Sistem Bunyi</h2>
-            <p class="input">${result.soundsystem}</p>
+            <h2 class="title">Nama Dewan</h2>
+            <p class="details">${result.roomname}</p>
+            <h2 class="title">Kapasiti</h2>
+            <p class="details">${result.roomcapacity}</p>
+            <h2 class="title">Status</h2>
+            <p class="details">${result.roomstatus}</p>
+            <h2 class="title">Sistem Bunyi</h2>
+            <p class="details">${result.soundsystem}</p>
+
       </div><br><br>
 
     <div class="button staff">

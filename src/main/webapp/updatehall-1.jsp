@@ -88,24 +88,20 @@
 
 	<div class="home-content">
     <div class="container">
-        <header class="main_title">KEMASKINI BILIK</header>
+        <header class="main_title">KEMASKINI DEWAN</header>
         <form action="#" method="" onsubmit="return myFunction()">
           <div class="form first">
             <div class="details room">
-              <span class="title">Informasi Bilik</span>
+              <span class="title">INFORMASI DEWAN</span>
 
               <div class="fields">
                 <div class="input-field input-box">
                   <label class="details">Nama Bilik </label>
-                  <input type="text" name="roomname" placeholder="B-01">
+                  <input type="text" name="roomname">
                 </div>
-                <div class="input_field input_box" style="float: left;padding-left: 30px; width: 190px;"><!--start division upload image-->
-                  <label class ="details">Pilih Gambar : </label><br>
-                  <input type="file" id="answer" name="image" accept="image/*">
-                </div><!--end division letak gambar-->
                 <div class="input-field input-box">
                   <label class="details">Kapasiti</label>
-                  <input type="text" name="roomcapacity" placeholder="30 orang">
+                  <input type="text" name="roomcapacity">
                 </div>
               </div>
             </div>
@@ -114,27 +110,19 @@
               <span class="title">Fasiliti bilik</span>
               <div class="fields">
               <div class="input-field input-box">
-                <input type="text" name ="tablequantity" placeholder="15 meja">
-              </div>
-              <div class="input-field input-box">
-                <input type="text" name="chairquanity" placeholder="30 kerusi">
-              </div>
-              <div class="input-field input-box">
-                <input type="text" name="lectureequipment" placeholder="1 projektor">
-              </div>
-              <div class="input-field input-box">
-                <input type="text" name="soundsystem" placeholder="1 Pembesar suara dan mikrofon">
+                <input type="text" name="soundsystem" >
               </div>
               <div class="button staff">
                 <input type="submit" value="KEMASKINI">
               </div>
             </div> 
         </div>
+          </div>
       </form>
-    </div>
   </div>
+</div>
   </section>
-
+</body>
   <script>
     function myFunction(){
       alert("Bilik berjaya ditambah.");
