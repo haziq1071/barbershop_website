@@ -101,7 +101,7 @@ public class RoomDao {
 	            try (Connection connection = getConnection();
 	                 PreparedStatement ps = connection.prepareStatement("delete from room WHERE roomid=?");) {
 	                ps.setInt(1, roomid);
-	                rowDeleted = statement.executeUpdate() > 0;
+	                rowDeleted = ps.executeUpdate() > 0;
 	            }
 	            return rowDeleted;
 	        }

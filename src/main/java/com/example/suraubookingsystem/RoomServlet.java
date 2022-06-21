@@ -35,7 +35,7 @@ public class RoomServlet extends HttpServlet {
         try {
             switch (action) {
                 case "createroom":
-                    createoom(request, response);
+                    createroom(request, response);
                     break;
                 case "deleteroom":
                     deleteroom(request, response);
@@ -115,10 +115,10 @@ public class RoomServlet extends HttpServlet {
             new File(appPath + "pic").mkdir();
             f.write(savePath);
 
-            int roomid = Integer.parseInt(request.getParameter("roomid"));
+            /*int roomid = Integer.parseInt(request.getParameter("roomid"));*/
 
               try{
-                	int roomid = Integer.parseInt(request.getParameter("id"));
+                	int roomid = Integer.parseInt(request.getParameter("roomid"));
                 	String roomname = request.getParameter("roomname"); 
             		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
             		boolean roomstatus = Boolean.parseBoolean(request.getParameter("roomstatus"));
@@ -145,7 +145,7 @@ public class RoomServlet extends HttpServlet {
                 }
             }
 
-        }
+
 
 
         /*######################################################( DELETE )#############################################################*/

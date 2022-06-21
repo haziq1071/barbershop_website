@@ -1,4 +1,4 @@
-package com.example.suraubookingsystem.room;
+package com.example.suraubookingsystem;
 
 import javax.servlet.http.Part;
 
