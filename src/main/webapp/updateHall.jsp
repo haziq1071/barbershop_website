@@ -162,7 +162,7 @@
                     <span class="title">Fasiliti bilik</span>
                     <div class="fields">
                       <div class="input-field input-box">
-                        <label class="details" for="soundsystem">Sistem Bunyi</label>
+                        <label class="details" for="systemsound">Sistem Bunyi</label>
                         <!--
                         <select name="soundsystem" id="soundsystem" for="soundsystem" value="${result.soundsystem} active">
                           <option disabled selected>Pilih Sistem Bunyi</option>
