@@ -92,6 +92,7 @@
         <div class="container">
 		<div class="rightbox">
 			<div class="profile tabShow">
+			<input type="int" name="staffid" value="${staffid}" hidden>
 				<h1>MAKLUMAT STAF</h1>
 				<h2>Nama Penuh</h2>
 				<p class="input">${staffname}</p>
