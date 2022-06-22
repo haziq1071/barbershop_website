@@ -126,7 +126,7 @@ public class RoomServlet extends HttpServlet {
 
               //try{
                     //HttpSession session = request.getSession();
-                    //int roomid = Integer.parseInt(request.getParameter("roomid"));
+                    int roomid = Integer.parseInt(request.getParameter("roomid"));
                 	String roomname = request.getParameter("roomname"); 
             		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
             		String roomstatus = request.getParameter("roomstatus");
@@ -136,7 +136,7 @@ public class RoomServlet extends HttpServlet {
                     Room room = new Room();
                     //Staff staff = new Staff();
                     
-                    //room.setRoomid(roomid);
+                    room.setRoomid(roomid);
                     room.setRoomname(roomname);
                     room.setRoomcapacity(roomcapacity);
                     room.setRoomstatus(roomstatus);
