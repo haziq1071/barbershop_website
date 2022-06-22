@@ -122,6 +122,7 @@
 		</div>
 	</div>
     </div>
+    <input type="hidden" name="action" value="delete">
   </section>
 	</form>
 </body>
