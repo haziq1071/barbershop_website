@@ -84,7 +84,7 @@ public class RoomDao {
 	    	public boolean updateRoom(Room room) throws SQLException {
 	  			boolean rowUpdated;
 	        try (Connection connection = getConnection();
-	             PreparedStatement ps = connection.prepareStatement("UPDATE room SET roomid=?,roomname=?,roomcapacity=?,roomstatus=?,soundsystem=? WHERE roomid=?");)
+	             PreparedStatement ps = connection.prepareStatement("UPDATE room SET roomname=?,roomcapacity=?,roomstatus=?,soundsystem=? WHERE roomid=?");)
 	        {
 	          
 	          ps.setString(1, room.getRoomname());
