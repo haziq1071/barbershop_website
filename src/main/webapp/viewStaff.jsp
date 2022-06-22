@@ -19,7 +19,7 @@
             response.sendRedirect("index.jsp");
 
     %>
-<form action="RoomServlet" method="post">
+<form action="StaffServlet" method="post">
     <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
