@@ -1,8 +1,5 @@
-
-
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
     <title> update room </title>
@@ -13,15 +10,28 @@
 </head>
 
 <body>
-<sql:setDataSource var="ic" driver="org.postgresql.Driver" url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379" user="dnzxqagexabepj" 
-password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
-<%
-    int roomid = Integer.parseInt(request.getParameter("roomid"));
-%>
+<sql:setDataSource
+        var="ic"
+        driver="org.postgresql.Driver"
+        url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
+        user="dnzxqagexabepj"
+        password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+
 <sql:query dataSource="${ic}" var="oc">
-    <c:set var="roomid" value="<%=roomid%>"/>
-    SELECT * from room where roomid=?
-    <sql:param value="${roomid}" />
+  <%
+        int jroomid = 0;
+
+        if(request.getParameter("roomid")==null){
+            jroomid = (Integer) session.getAttribute("roomid");
+        }
+        else{
+            jroomid = Integer.parseInt(request.getParameter("roomid"));
+            session.setAttribute("roomid", jroomid);
+        }
+    %>
+    <c:set var="jroomid" value="<%=jroomid%>"/>
+    SELECT * FROM room WHERE roomid=?
+    <sql:param value="${jroomid}" />
 </sql:query>
 
   <div class="sidebar">
@@ -151,10 +161,10 @@ password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
               </div>
             </form>
+              </c:forEach>
         </div>
       </div>
   </section>
-  </c:forEach>
 </body>
 <!--
   <script>
