@@ -19,6 +19,7 @@
             response.sendRedirect("index.jsp");
 
     %>
+<form action="RoomServlet" method="post">
     <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
@@ -118,6 +119,7 @@
 	</div>
     </div>
   </section>
+	</form>
 </body>
 </html>
 
