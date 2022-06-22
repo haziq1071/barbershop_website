@@ -108,9 +108,10 @@ public class RoomServlet extends HttpServlet {
 
         //private void updateRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
           private void updateRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-        	response.setContentType("text/html");
+        	/*
+            response.setContentType("text/html");
             PrintWriter out = response.getWriter();
-            /*
+            
             request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
             String appPath = getServletContext().getRealPath("");
             Part f = request.getPart("hPic");
@@ -123,22 +124,24 @@ public class RoomServlet extends HttpServlet {
             */
             //int roomid = Integer.parseInt(request.getParameter("roomid"));
 
-              try{
+              //try{
                     //HttpSession session = request.getSession();
+                    //int roomid = Integer.parseInt(request.getParameter("roomid"));
                 	String roomname = request.getParameter("roomname"); 
             		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
             		String roomstatus = request.getParameter("roomstatus");
             		String soundsystem = request.getParameter("soundsystem");
-                    int staffid = Integer.parseInt(request.getParameter("staffid"));
+                    //int staffid = Integer.parseInt(request.getParameter("staffid"));
 
                     Room room = new Room();
-                    Staff staff = new Staff();
+                    //Staff staff = new Staff();
                     
-                    room.setRoomid(roomid);
+                    //room.setRoomid(roomid);
                     room.setRoomname(roomname);
                     room.setRoomcapacity(roomcapacity);
                     room.setRoomstatus(roomstatus);
-                    room.setSoundsystem(soundsystem); 
+                    room.setSoundsystem(soundsystem);
+                    //staff.setStaffid(staffid);
                     /*
                     session.removeAttribute("roomid");
                     session.removeAttribute("roomname");
@@ -152,8 +155,8 @@ public class RoomServlet extends HttpServlet {
                     session.setAttribute("roomstatus", roomstatus);
                     session.setAttribute("soundsystem",soundsystem);
                     */
-                    rm.updateRoom(room,staff);/*
-                    response.sendRedirect("viewRoom.jsp");
+                    rm.updateRoom(room);
+                    response.sendRedirect("viewRoom.jsp");/*
                     out.println("<script type=\"text/javascript\">");
                     out.println("alert('Dewan berjaya dikemaskini!');");
                     out.println("location='viewRoom.jsp';");
@@ -165,10 +168,10 @@ public class RoomServlet extends HttpServlet {
                     out.println("alert('Your room succesfully updated.');");
                     out.println("location='displayRoomList.jsp';");
                     out.println("</script>");*/
-                
-                } catch (Exception e) {
+                    /*
+                }catch (Exception e) {
                     e.printStackTrace();
-                }
+                }*/
             }
 
 
