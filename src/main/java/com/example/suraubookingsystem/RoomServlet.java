@@ -182,7 +182,7 @@ public class RoomServlet extends HttpServlet {
 	    private void deleteRoom(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 	        int roomid = Integer.parseInt(request.getParameter("roomid"));
 	        rm.deleteRoom(roomid);
-	        response.sendRedirect("homepage.jsp");
+	        response.sendRedirect("viewRoom.jsp");
 	    }
 
 
