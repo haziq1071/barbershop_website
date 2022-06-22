@@ -20,19 +20,17 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 <%
     int jroomid = Integer.parseInt(request.getParameter("roomid"));
+
+  if(request.getParameter("roomid")==null){
+    jroomid = (Integer) session.getAttribute("roomid");
+  }
+  else{
+    jroomid = Integer.parseInt(request.getParameter("roomid"));
+    session.setAttribute("roomid", jroomid);
+  }
 %>
 <sql:query dataSource="${ic}" var="oc">
-  <!--%
-        int jroomid = 0;
 
-        if(request.getParameter("roomid")==null){
-            jroomid = (Integer) session.getAttribute("roomid");
-        }
-        else{
-            jroomid = Integer.parseInt(request.getParameter("roomid"));
-            session.setAttribute("roomid", jroomid);
-        }
-    %-->
     <c:set var="jroomid" value="<%=jroomid%>"/>
     SELECT * FROM room WHERE roomid=?
     <sql:param value="${jroomid}"/>
