@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="createroom.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -20,7 +21,20 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    SELECT * from room where roomid=1
+  <%
+        int jroomid = 0;
+
+        if(request.getParameter("roomid")==null){
+            jroomid = (Integer) session.getAttribute("roomid");
+        }
+        else{
+            jroomid = Integer.parseInt(request.getParameter("roomid"));
+            session.setAttribute("roomid", jroomid);
+        }
+    %>
+    <c:set var="jroomid" value="<%=jroomid%>"/>
+    SELECT * FROM room WHERE roomid=?
+    <sql:param value="${jroomid}" />
 </sql:query>
 
   <div class="sidebar">
@@ -94,10 +108,10 @@
           <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
         </div>
     </nav>
-
+  <c:forEach var="result" items="${oc.rows}">
 	<div class="home-content">
     <div class="container">
-        <header class="main_title">DEWAN: D-01</header>
+        <header class="main_title" style="font-size: xx-large">${result.roomname}</header>
 		<div class="form first">
 			<div class="details room">
 
@@ -106,30 +120,44 @@
     
     <div class="fields">
         <div class="details">
-            <c:forEach var="result" items="${oc.rows}">
             <span class="title">INFORMASI DEWAN</span>
-            <input type="number" name="roomdid"  value="${result.roomid}" hidden>
-            <h2 class="title">Nama Dewan</h2>
-            <p class="details">${result.roomname}</p>
-            <h2 class="title">Kapasiti</h2>
-            <p class="details">${result.roomcapacity}</p>
-            <h2 class="title">Status</h2>
-            <p class="details">${result.roomstatus}</p>
-            <h2 class="title">Sistem Bunyi</h2>
-            <p class="details">${result.soundsystem}</p>
-
+            <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->
+            <img class="mySlides" src="b01.jpeg" style="width:100%">
+             <div class="coll">
+              <div class="overflow-auto">
+                  <div class="mytable">
+                  <table>
+                      <tr>
+                          <td colspan="2" class="title">Nama Dewan</td>
+                          <td colspan="3" class="details">${result.roomname}</td>
+                      </tr>
+                      <tr>
+                          <td colspan="2" class="title">Kapasiti</td>
+                          <td colspan="3" class="details">${result.roomcapacity}</td>
+                      </tr>
+                      <tr>
+                          <td colspan="2" class="title">Status</td>
+                          <td colspan="3" class="details">${result.roomstatus}</td>
+                      </tr>
+                      <tr>
+                          <td colspan="2" class="title">Sistem Bunyi</td>
+                          <td colspan="3" class="details">${result.soundsystem}</td>
+                      </tr>                 
+                   </table>
+                  </div>
+              </div>
+          </div>
       </div><br><br>
 
-    <div class="button staff">
+    <!--div class="button staff">
       <a href="viewRoom.jsp"><input type="button" value="KEMBALI"></a>
-    </div>
-  </a>
+    </div-->
 	</div>
 	</div>
 </div>
 </div>
 </div>
 </section>
-            </c:forEach>
+</c:forEach>
 </body>
 </html>

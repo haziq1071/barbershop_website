@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -85,47 +83,42 @@
         </div>
     </nav>
 
+  <sql:setDataSource
+        var="ic"
+        driver="org.postgresql.Driver"
+        url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
+        user="dnzxqagexabepj"
+        password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+
+  <sql:query dataSource="${ic}" var="oc">
+      SELECT * from room
+  </sql:query>
 
 <div class="home-content">
     <div class="container">
-        <header class="main_title">PILIHAN BILIK</header>
-	<form class="form first">
+         <c:forEach var="result" items="${oc.rows}">
+        <header class="main_title">PILIHAN DEWAN</header>
+
+	<form class="form first" action="" method="">
 	<fieldset id="fields" style="border-radius: 5px;">
-        <label class="title">B-01</label>
-		<img src="b01.jpeg" height="150px" width="200px" alt="pic1">
+        <label class="title" style="margin-top: 0%;">
+          <c:out value="Dewan ${result.roomname}"/>
+        </label>
+      
+    <!--div class="roompic"><img src="pic/${result.roomimagepic}"></div-->
+		<center><img src="b01.jpeg" height="250px" width="300px" alt="pic1"></center>
 		<!--  <img alt="pic2">-->
+
+    <input type="hidden" name="roomid" value="${result.roomid}">
+
 		<div class="button staff">
-          <a href="viewhall-1.jsp"><input type="button" value="Lihat"></a>
+          <!--a href="viewhall-1.jsp"><input type="button" value="Lihat"></a-->
+          <button formaction="viewHall.jsp" >Lihat Lagi</button>
         </div>
 	</fieldset><br>
-	<fieldset id="fields" style="border-radius: 5px;">
-		<label class="title">B-02</label><br>
-		<img src="b02.jpeg" height="150px" width="200px" alt="pic1">
-		<!--  <img alt="pic2">
-		<img alt="pic3">-->
-		<div class="button staff">
-            <a href="viewhall-2.jsp"><input type="button" value="Lihat"></a>
-        </div>
-	</fieldset><br>
-	<fieldset id="fields" style="border-radius: 5px;">
-		<label class="title">B-03</label><br>
-		<img src="h1.jpeg" height="150px" width="200px" alt="pic1">
-		<!--  <img alt="pic2">
-		<img alt="pic3">-->
-		<div class="button staff">
-            <a href="viewhall-3.jsp"><input type="button" value="Lihat"></a>
-        </div>
-	</fieldset><br>
-	<fieldset id="fields" style="border-radius: 5px;">
-		<label class="title">B-04</label><br>
-		<img src="h2.jpeg" height="150px" width="200px" alt="pic1">
-		<!--  <img alt="pic2">
-		<img alt="pic3">-->
-		<div class="button staff">
-            <a href="viewhall-4.jsp"><input type="button" value="Lihat"></a>
-        </div>
-	</fieldset>
+	
 	</form>
+</c:forEach>
 </div>
 </div>
 </section>
