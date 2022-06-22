@@ -108,9 +108,9 @@ public class RoomServlet extends HttpServlet {
 
         //private void updateRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
           private void updateRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-        	/*response.setContentType("text/html");
+        	response.setContentType("text/html");
             PrintWriter out = response.getWriter();
-
+            /*
             request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
             String appPath = getServletContext().getRealPath("");
             Part f = request.getPart("hPic");
@@ -120,12 +120,11 @@ public class RoomServlet extends HttpServlet {
             String savePath = appPath + "pic" + File.separator + imageFileName;
             new File(appPath + "pic").mkdir();
             f.write(savePath);
-
+            */
             int roomid = Integer.parseInt(request.getParameter("roomid"));
 
-              try{*/
+              try{
                     HttpSession session = request.getSession();
-                    int roomid = Integer.parseInt(request.getParameter("roomid"));
                 	String roomname = request.getParameter("roomname"); 
             		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
             		String roomstatus = request.getParameter("roomstatus");
@@ -150,19 +149,23 @@ public class RoomServlet extends HttpServlet {
                     session.setAttribute("roomstatus", roomstatus);
                     session.setAttribute("soundsystem",soundsystem);
 
+                    rm.updateRoom(room);
                     response.sendRedirect("viewRoom.jsp");
-
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Dewan berjaya dikemaskini!');");
+                    out.println("location='viewRoom.jsp';");
+                    out.println("</script>");
                     /*
                     rm.updateroom(room,imageFileName,urlPathforDB);
                     response.sendRedirect("displayRoomList.jsp");
                     out.println("<script type=\"text/javascript\">");
                     out.println("alert('Your room succesfully updated.');");
                     out.println("location='displayRoomList.jsp';");
-                    out.println("</script>");
+                    out.println("</script>");*/
                 
                 } catch (Exception e) {
                     e.printStackTrace();
-                }*/
+                }
             }
 
 

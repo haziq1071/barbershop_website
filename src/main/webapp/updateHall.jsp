@@ -16,9 +16,11 @@
         url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
         user="dnzxqagexabepj"
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
-
+<%
+    int jroomid = Integer.parseInt(request.getParameter("roomid"));
+%>
 <sql:query dataSource="${ic}" var="oc">
-  <%
+  <!--%
         int jroomid = 0;
 
         if(request.getParameter("roomid")==null){
@@ -28,7 +30,7 @@
             jroomid = Integer.parseInt(request.getParameter("roomid"));
             session.setAttribute("roomid", jroomid);
         }
-    %>
+    %-->
     <c:set var="jroomid" value="<%=jroomid%>"/>
     SELECT * FROM room WHERE roomid=?
     <sql:param value="${jroomid}" />
@@ -122,16 +124,16 @@
 
                     <div class="fields">
                       <div class="input-field input-box">
-                        <label class="details">Nama Dewan</label>
-                        <input type="text" name="roomname" value="${result.roomname}">
+                        <label class="details" for="roomname">Nama Dewan</label>
+                        <input type="text" name="roomname" id="roomname" value="${result.roomname}">
                       </div>
                       <div class="input-field input-box">
-                        <label class="details">Kapasiti</label>
-                        <input type="text" name="roomcapacity" value="${result.roomcapacity}">
+                        <label class="details" for="roomcapacity">Kapasiti</label>
+                        <input type="text" name="roomcapacity" id="roomcapacity" value="${result.roomcapacity}">
                       </div>
                       <div class="input-field input-box">
-                        <label class="details">Status Dewan</label>
-                        <select name="roomstatus" value="${result.roomstatus}">
+                        <label class="details" for="roomstatus">Status Dewan</label>
+                        <select name="roomstatus" id="roomstatus" value="${result.roomstatus}">
                           <option disabled selected>Pilih Status</option>
                           <option value="Boleh Digunakan">Boleh Digunakan</option>
                           <option value="Sedang Diselenggara">Sedang Diselenggara</option>
@@ -144,7 +146,7 @@
                     <span class="title">Fasiliti bilik</span>
                     <div class="fields">
                       <div class="input-field input-box">
-                        <select name="soundsystem" value="${result.soundsystem}">
+                        <select name="soundsystem" id="soundsystem" for="soundsystem" value="${result.soundsystem}">
                           <option disabled selected>Pilih Sistem Bunyi</option>
                           <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                           <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
