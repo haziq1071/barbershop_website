@@ -136,6 +136,7 @@
 
                         <select name="roomstatus" id="roomstatus" value="${result.roomstatus}">
                           <option disabled selected>Pilih Status</option>
+                          <option value="${result.roomstatus}" selected>${result.roomstatus}</option>
                           <option value="Boleh Digunakan">Boleh Digunakan</option>
                           <option value="Sedang Diselenggara">Sedang Diselenggara</option>
                         </select>
@@ -166,6 +167,7 @@
 
                         <select name="soundsystem" id="soundsystem" for="soundsystem" value="${result.soundsystem}">
                           <option disabled selected>Pilih Sistem Bunyi</option>
+                          <option value="${result.systemsound}" selected>${result.systemsound}</option>
                           <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                           <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
                           <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
