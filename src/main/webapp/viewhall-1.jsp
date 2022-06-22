@@ -18,11 +18,8 @@
         url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
         user="dnzxqagexabepj"
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
-<%
-    int staffid = (Integer) session.getAttribute("staffid");
-%>
+
 <sql:query dataSource="${ic}" var="oc">
-    <c:set var="staffid" value="<%=staffid%>"/>
     SELECT * from room where roomid=1
 </sql:query>
 
