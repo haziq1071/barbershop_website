@@ -33,7 +33,7 @@
     %-->
     <c:set var="jroomid" value="<%=jroomid%>"/>
     SELECT * FROM room WHERE roomid=?
-    <sql:param value="${jroomid}" />
+    <sql:param value="${jroomid}"/>
 </sql:query>
 
   <div class="sidebar">
@@ -133,11 +133,26 @@
                       </div>
                       <div class="input-field input-box">
                         <label class="details" for="roomstatus">Status Dewan</label>
+                        <!--
                         <select name="roomstatus" id="roomstatus" value="${result.roomstatus}">
                           <option disabled selected>Pilih Status</option>
                           <option value="Boleh Digunakan">Boleh Digunakan</option>
                           <option value="Sedang Diselenggara">Sedang Diselenggara</option>
                         </select>
+                        --->
+                        <c:set var = "rmstatus" scope = "session" value = "${result.roomstatus}"/>
+                        <c:if test = "${rmstatus == 'Boleh Digunakan'}">
+                            <select name="roomstatus" id="roomstatus">
+                                <option value="${result.roomstatus}">${result.roomstatus}</option>
+                                <option value="Sedang Diselenggara">Sedang Diselenggara</option>
+                            </select>
+                        </c:if>
+                        <c:if test = "${rmstatus == 'Sedang Diselenggara'}">
+                            <select name="roomstatus" id="roomstatus">
+                                <option value="${result.roomstatus}">${result.roomstatus}</option>
+                                <option value="Boleh Digunakan">Boleh Digunakan</option>
+                            </select>
+                        </c:if>
                       </div>
                     </div>
                   </div>
@@ -146,6 +161,8 @@
                     <span class="title">Fasiliti bilik</span>
                     <div class="fields">
                       <div class="input-field input-box">
+                        <label class="details" for="soundsystem">Sistem Bunyi</label>
+                        <!--
                         <select name="soundsystem" id="soundsystem" for="soundsystem" value="${result.soundsystem}">
                           <option disabled selected>Pilih Sistem Bunyi</option>
                           <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
@@ -153,6 +170,41 @@
                           <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
                           <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
                         </select>
+                        -->
+                         <c:set var = "system" scope = "session" value = "${result.systemsound}"/>
+                         <c:if test = "${system == 'Mikrofon Sahaja'}">
+                            <select name="systemsound" id="systemsound">
+                                <option value="${result.systemsound}">${result.systemsound}</option>
+                                <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
+                                <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
+                                <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
+                            </select>
+                         </c:if>
+                         <c:if test = "${system == 'Mikrofon Dan Speaker'}">
+                            <select name="systemsound" id="systemsound">
+                                <option value="${result.systemsound}">${result.systemsound}</option>
+                                <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
+                                <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
+                                <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
+                            </select>
+                         </c:if>
+                         <c:if test = "${system == 'Set Sistem Bar Bunyi'}">
+                            <select name="systemsound" id="systemsound">
+                                <option value="${result.systemsound}">${result.systemsound}</option>
+                                <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
+                                <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
+                                <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
+                            </select>
+                         </c:if>
+                         <c:if test = "${system == 'Set Sistem Bunyi Hi-fi'}">
+                            <select name="systemsound" id="systemsound">
+                                <option value="${result.systemsound}">${result.systemsound}</option>
+                                <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
+                                <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
+                                <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
+                            </select>
+                         </c:if>
+
                       </div>
                       <input type="hidden" name="action" value="updateRoom">
                       <div class="button staff">
