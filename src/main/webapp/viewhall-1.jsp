@@ -23,7 +23,7 @@
 %>
 <sql:query dataSource="${ic}" var="oc">
     <c:set var="staffid" value="<%=staffid%>"/>
-    SELECT * from staff where roomid=1
+    SELECT * from room where roomid=1
 </sql:query>
 
   <div class="sidebar">
