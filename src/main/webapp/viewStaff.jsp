@@ -97,8 +97,8 @@
 			<div class="profile tabShow">
 				<h1>MAKLUMAT STAF</h1>
 				<input type="int" name="staffid" value="${staffid}" hidden>
-				<label>Nama Penuh</label><br>
-				<label>${staffname}</label>
+				<h2>Nama Penuh</h2>
+				<p class="input">${staffname}</p>
 				<h2>Kad Pengenalan</h2>
 				<p class="input">${staffic}</p>
 				<h2>Tarikh Lahir</h2>
