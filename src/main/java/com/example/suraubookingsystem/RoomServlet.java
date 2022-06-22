@@ -121,22 +121,25 @@ public class RoomServlet extends HttpServlet {
             new File(appPath + "pic").mkdir();
             f.write(savePath);
             */
-            int roomid = Integer.parseInt(request.getParameter("roomid"));
+            //int roomid = Integer.parseInt(request.getParameter("roomid"));
 
               try{
-                    HttpSession session = request.getSession();
+                    //HttpSession session = request.getSession();
                 	String roomname = request.getParameter("roomname"); 
             		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
             		String roomstatus = request.getParameter("roomstatus");
             		String soundsystem = request.getParameter("soundsystem");
+                    int staffid = Integer.parseInt(request.getParameter("staffid"));
+
                     Room room = new Room();
+                    Staff staff = new Staff();
                     
                     room.setRoomid(roomid);
                     room.setRoomname(roomname);
                     room.setRoomcapacity(roomcapacity);
                     room.setRoomstatus(roomstatus);
                     room.setSoundsystem(soundsystem); 
-
+                    /*
                     session.removeAttribute("roomid");
                     session.removeAttribute("roomname");
                     session.removeAttribute("roomcapacity");
@@ -148,8 +151,8 @@ public class RoomServlet extends HttpServlet {
                     session.setAttribute("roomcapacity", roomcapacity);
                     session.setAttribute("roomstatus", roomstatus);
                     session.setAttribute("soundsystem",soundsystem);
-
-                    rm.updateRoom(room);
+                    */
+                    rm.updateRoom(room,staff);/*
                     response.sendRedirect("viewRoom.jsp");
                     out.println("<script type=\"text/javascript\">");
                     out.println("alert('Dewan berjaya dikemaskini!');");
