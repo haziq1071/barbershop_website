@@ -9,6 +9,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
+
+
     <%
 
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -19,6 +21,7 @@
             response.sendRedirect("index.jsp");
 
     %>
+<form action="StaffServlet" method="post">
     <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
@@ -87,11 +90,13 @@
           <a href="https://www.instagram.com/surau_ar_rahman_pchg/"><i class="fab fa-instagram"></i></a>
         </div>
     </nav>
+   
     <div class="home-content">
         <div class="container">
 		<div class="rightbox">
 			<div class="profile tabShow">
 				<h1>MAKLUMAT STAF</h1>
+				<input type="int" name="staffid" value="${staffid}" hidden>
 				<h2>Nama Penuh</h2>
 				<p class="input">${staffname}</p>
 				<h2>Kad Pengenalan</h2>
@@ -118,6 +123,7 @@
 	</div>
     </div>
   </section>
+	</form>
 </body>
 </html>
 
