@@ -11,15 +11,18 @@
 </head>
 
 <body>
-<sql:setDataSource var="ic" driver="org.postgresql.Driver" url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379" user="dnzxqagexabepj" 
-password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+<sql:setDataSource
+        var="ic"
+        driver="org.postgresql.Driver"
+        url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
+        user="dnzxqagexabepj"
+        password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 <%
-    int roomid = Integer.parseInt(request.getParameter("roomid"));
+    int staffid = (Integer) session.getAttribute("staffid");
 %>
 <sql:query dataSource="${ic}" var="oc">
-    <c:set var="roomid" value="<%=roomid%>"/>
-    SELECT * from room where roomid=?
-    <sql:param value="${roomid}" />
+    <c:set var="staffid" value="<%=staffid%>"/>
+    SELECT * from staff where roomid=1
 </sql:query>
 
   <div class="sidebar">
@@ -82,7 +85,7 @@ password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
         </li>
       </ul>
   </div>
-  <c:forEach var="result" items="${oc.rows}">
+
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
@@ -105,6 +108,7 @@ password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
     
     <div class="fields">
         <div class="details">
+            <c:forEach var="result" items="${oc.rows}">
             <span class="title">INFORMASI DEWAN</span>
             <input type="number" name="roomdid"  value="${result.roomid}" hidden>
             <h2 class="title">Nama Dewan</h2>
@@ -128,6 +132,6 @@ password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 </div>
 </div>
 </section>
-</c:forEach>
+            </c:forEach>
 </body>
 </html>

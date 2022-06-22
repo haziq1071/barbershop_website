@@ -76,16 +76,19 @@ public class RoomServlet extends HttpServlet {
     		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
     		String roomstatus = request.getParameter("roomstatus");
     		String soundsystem = request.getParameter("soundsystem");
+            int staffid = Integer.parseInt(request.getParameter("staffid"));
 
             Room room = new Room();
+            Staff staff = new Staff();
 
             room.setRoomname(roomname);
             room.setRoomcapacity(roomcapacity);
             room.setRoomstatus(roomstatus);
-            room.setSoundsystem(soundsystem); 
+            room.setSoundsystem(soundsystem);
+            staff.setStaffid(staffid);
     		
     		//rm.createroom(room,imageFileName,urlPathforDB);
-            rm.createRoom(room);/*
+            rm.createRoom(room,staff);/*
             response.sendRedirect("displayRoomList.jsp");
 		    out.println("<script type=\"text/javascript\">");
             out.println("alert('Your details succesfully create a room.');");
