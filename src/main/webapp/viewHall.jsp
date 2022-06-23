@@ -117,9 +117,6 @@
         <section class="wrapper top">
 
             <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->
-              <div class="img">
-                <img src="hall-1.jpg" alt="" class="image1">
-              </div>
               <div class="containerRoom">
                <div class="text">
                   <h2>${result.roomname}</h2>
