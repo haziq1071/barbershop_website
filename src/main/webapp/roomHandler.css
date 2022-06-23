@@ -260,6 +260,7 @@ nav .sidebar-button i{
     width: 100%;
     border-radius: 6px;
     padding: 20px;
+    padding-top: 10px;
     margin: 0 15px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -371,7 +372,7 @@ nav .sidebar-button i{
 .wrapper .text {
   background: #3f9cc1;
   padding: 50px;
-  width: 45%;
+  width: 50%;
   height: 380px;
   position: absolute;
   top: -13%;
@@ -388,6 +389,7 @@ nav .sidebar-button i{
 
 .wrapper h2 {
   font-weight: 400;
+  margin-bottom: 15px;
 }
 
 .wrapper p {
