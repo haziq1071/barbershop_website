@@ -113,7 +113,7 @@
   <c:forEach var="result" items="${oc.rows}">
 	<div class="home-content">
     <div class="container">
-        <header class="main_title" style="font-size: xx-large">INFORMASI DEWAN</header>
+      <header class="main_title" style="font-size: xx-large">INFORMASI DEWAN</header>
         <section class="wrapper top">
 
             <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->

@@ -98,7 +98,7 @@
       </ul>
   </div>
 
-  <section class="home-section">
+<section class="home-section">
     <nav>
       <div class="sidebar-button">
         <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
@@ -110,62 +110,37 @@
     </nav>
   <c:forEach var="result" items="${oc.rows}">
   <div class="home-content">
-    <form action="" method="post">
+  <form action="" method="post">
     <div class="container">
         <header class="main_title" style="font-size: xx-large">${result.roomname}</header>
-    <div class="form first">
-      <div class="details room">
-
-    <fieldset><!--start fieldset image bilik-->
-    </fieldset><!--end fieldset gambar-->
-    
-    <div class="fields">
-        <div class="details">
-            <span class="title">INFORMASI DEWAN</span>
-
-            <input type="number" name="roomid"  value="${result.roomid}" hidden>
+        <input type="number" name="roomid"  value="${result.roomid}" hidden>
+          <section class="wrapper top">
             <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->
-            <img class="mySlides" src="b01.jpeg" style="width:100%">
-             <div class="coll">
-              <div class="overflow-auto">
-                  <div class="mytable">
-                  <table>
-                      <tr>
-                          <td colspan="2" class="title">Nama Dewan</td>
-                          <td colspan="3" class="details">${result.roomname}</td>
-                      </tr>
-                      <tr>
-                          <td colspan="2" class="title">Kapasiti</td>
-                          <td colspan="3" class="details">${result.roomcapacity}</td>
-                      </tr>
-                      <tr>
-                          <td colspan="2" class="title">Status</td>
-                          <td colspan="3" class="details">${result.roomstatus}</td>
-                      </tr>
-                      <tr>
-                          <td colspan="2" class="title">Sistem Bunyi</td>
-                          <td colspan="3" class="details">${result.soundsystem}</td>
-                      </tr>                 
-                   </table>
-                  </div>
-              </div>
-          </div>
-      </div><br><br>
+
+               <div class="containerRoom">
+                 <div class="text">
+                    <h2>Dewan ${result.roomname}</h2>
+                      <div class="content">
+                               <span>Kapasiti:</span>
+                               <span>${result.roomcapacity}</span>
+                               <span>Status:</span>
+                               <span>${result.roomstatus}</span>
+                               <span>Sistem Bunyi:</span>
+                               <span>${result.soundsystem}</span>               
+                      </div>
+                 </div>
+                </div>
+          </section>
+
 
        <input type="hidden" name="action"  value="deleteRoom">
         <button type="submit" 
                 formaction="RoomServlet"
                 onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">Delete
         </button>
-    <!--div class="button staff">
-      <a href="viewRoom.jsp"><input type="button" value="KEMBALI"></a>
-    </div-->
+    </div>
+  </form>
   </div>
-  </div>
-</div>
-</div>
-</form>
-</div>
 </section>
 </c:forEach>
 </body>
