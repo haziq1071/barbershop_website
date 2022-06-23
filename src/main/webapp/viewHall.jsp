@@ -120,31 +120,24 @@
               <div class="containerRoom">
                <div class="text">
                   <h2>${result.roomname}</h2>
-                  <div class="left">
-                      <div class="img">
-                        <img src="hall-1.jpg" alt="" class="image1">
-                      </div>
-                  </div>
-                  <div class="right">
-                      <div class="content">
-                           <div class="box flex">
-                              <span>Nama:</span>
-                              <span>Dewan ${result.roomname}</span>
+                    <div class="content">
+                          <div class="box flex">
+                             <span>Nama:</span>
+                             <span>Dewan ${result.roomname}</span>
                           </div>
-                           <div class="box flex">
-                              <span>Kapasiti:</span>
-                              <span>${result.roomcapacity}</span>
+                          <div class="box flex">
+                             <span>Kapasiti:</span>
+                             <span>${result.roomcapacity}</span>
                           </div>
-                           <div class="box flex">
-                              <span>Status:</span>
-                              <span>${result.roomstatus}</span>
+                          <div class="box flex">
+                             <span>Status:</span>
+                             <span>${result.roomstatus}</span>
                           </div>
-                           <div class="box flex">
-                              <span>Sistem Bunyi:</span>
-                              <span>${result.soundsystem}</span>
+                          <div class="box flex">
+                             <span>Sistem Bunyi:</span>
+                             <span>${result.soundsystem}</span>
                           </div>                 
-                      </div>
-                  </div>
+                    </div>
                </div>
               </div>
         </section>
