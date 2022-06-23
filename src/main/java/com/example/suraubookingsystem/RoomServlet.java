@@ -68,9 +68,9 @@ public class RoomServlet extends HttpServlet {
         String urlPathforDB=host + "pic/" + imageFileName;
         String savePath = appPath + "pic" + File.separator + imageFileName;
         new File(appPath + "pic").mkdir();
-        f.write(savePath);
+        f.write(savePath);*/
 
-        try {*/
+        try {
 
     		String roomname = request.getParameter("roomname"); 
     		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
@@ -97,9 +97,9 @@ public class RoomServlet extends HttpServlet {
 
             response.sendRedirect("homepage.jsp");
 
-        /*} catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
 
 	}
         
