@@ -121,12 +121,16 @@
                  <div class="text">
                     <h2>Dewan ${result.roomname}</h2>
                       <div class="content">
-                               <span>Kapasiti:</span>
-                               <span>${result.roomcapacity}</span>
-                               <span>Status:</span>
-                               <span>${result.roomstatus}</span>
-                               <span>Sistem Bunyi:</span>
-                               <span>${result.soundsystem}</span>               
+                        <span>Kapasiti:</span>
+                        <span>${result.roomcapacity}</span>
+                        <span>Status:</span>
+                        <span>${result.roomstatus}</span>
+                        <span>Sistem Bunyi:</span>
+                        <span>${result.soundsystem}</span>  
+
+                        <button type="submit" class="update" formaction="RoomServlet"
+                        onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">Delete
+                        </button>             
                       </div>
                  </div>
                 </div>
@@ -134,9 +138,6 @@
 
 
        <input type="hidden" name="action"  value="deleteRoom">
-        <button type="submit" class="update" formaction="RoomServlet"
-                onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">Delete
-        </button>
     </div>
   </form>
   </div>
