@@ -55,10 +55,10 @@ public class RoomServlet extends HttpServlet {
 
       //private void createroom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
         private void createRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-        /*int roomid = Integer.parseInt(request.getParameter("roomid"));
+        //int staffid = Integer.parseInt(request.getParameter("staffid"));
         
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
+        PrintWriter out = response.getWriter();/*
 
         request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
         String appPath = getServletContext().getRealPath("");
@@ -68,8 +68,8 @@ public class RoomServlet extends HttpServlet {
         String urlPathforDB=host + "pic/" + imageFileName;
         String savePath = appPath + "pic" + File.separator + imageFileName;
         new File(appPath + "pic").mkdir();
-        f.write(savePath);*/
-
+        f.write(savePath);
+        */
         try {
 
     		String roomname = request.getParameter("roomname"); 
@@ -86,7 +86,7 @@ public class RoomServlet extends HttpServlet {
             room.setRoomcapacity(roomcapacity);
             room.setRoomstatus(roomstatus);
             room.setSoundsystem(soundsystem);
-            //staff.setStaffid(staffid);
+            //room.setStaffid(staffid);
     		
     		//rm.createroom(room,imageFileName,urlPathforDB);
             rm.createRoom(room,staff);/*
