@@ -121,8 +121,7 @@
   </fieldset><br>
   
   </form>
-</div>
--->
+--> <form action="" method="">
       <div class="containerRoom flex">
         <div class="left">
           <div class="img">
@@ -143,6 +142,7 @@
           </div>
         </div>
       </div>
+    </form>
   </section>
   </c:forEach>
 </div>
