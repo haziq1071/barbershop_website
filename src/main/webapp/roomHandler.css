@@ -369,8 +369,6 @@ nav .sidebar-button i{
   padding: 7px 15px;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
   cursor: pointer;
-  margin-top: 15px;
-  margin-left: 55px;
 }
 .delete:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
