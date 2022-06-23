@@ -58,7 +58,8 @@ public class RoomServlet extends HttpServlet {
         //int staffid = Integer.parseInt(request.getParameter("staffid"));
         
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();/*
+        /*
+        PrintWriter out = response.getWriter();
 
         request.setAttribute("thiss", "surau-ar-rahman.herokuapp.com");
         String appPath = getServletContext().getRealPath("");
@@ -69,8 +70,8 @@ public class RoomServlet extends HttpServlet {
         String savePath = appPath + "pic" + File.separator + imageFileName;
         new File(appPath + "pic").mkdir();
         f.write(savePath);
-        */
-        try {
+        
+        try {*/
 
     		String roomname = request.getParameter("roomname"); 
     		int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
@@ -80,7 +81,7 @@ public class RoomServlet extends HttpServlet {
             //int roomid = Integer.parseInt(request.getParameter("roomid"));
 
             Room room = new Room();
-            Staff staff = new Staff();
+            //Staff staff = new Staff();
             //room.setRoomid(roomid);
             room.setRoomname(roomname);
             room.setRoomcapacity(roomcapacity);
@@ -89,7 +90,7 @@ public class RoomServlet extends HttpServlet {
             //room.setStaffid(staffid);
     		
     		//rm.createRoom(room,imageFileName,urlPathforDB);
-            rm.createRoom(room,staff);/*
+            rm.createRoom(room);/*
             response.sendRedirect("displayRoomList.jsp");
 		    out.println("<script type=\"text/javascript\">");
             out.println("alert('Your details succesfully create a room.');");
@@ -98,9 +99,9 @@ public class RoomServlet extends HttpServlet {
 
             response.sendRedirect("homepage.jsp");
 
-        } catch (Exception e) {
+        /*} catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
 	}
         

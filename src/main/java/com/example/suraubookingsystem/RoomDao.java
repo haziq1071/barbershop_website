@@ -33,17 +33,17 @@ public class RoomDao {
 	  
 	  
 	  //public void createroom(Room room) throws SQLException, IOException  {
-	  public void createRoom(Room room, Staff staff) throws SQLException  {
+	  public void createRoom(Room room) throws SQLException  {
 	    
 	    // try-with-resource statement will auto close the connection.
 	    try (Connection connection = getConnection();
-	   		PreparedStatement prepareStatement = connection.prepareStatement("insert into room(roomname, roomcapacity, roomstatus, soundsystem, staffid) values(?,?,?,?,?)");)
+	   		PreparedStatement prepareStatement = connection.prepareStatement("insert into room(roomname, roomcapacity, roomstatus, soundsystem) values(?,?,?,?)");)
 	    {
 	    	prepareStatement.setString(1, room.getRoomname());
 	    	prepareStatement.setInt(2, room.getRoomcapacity());
 	    	prepareStatement.setString(3, room.getRoomstatus());
 	    	prepareStatement.setString(4, room.getSoundsystem());
-			prepareStatement.setInt(5, staff.getStaffid());
+			//prepareStatement.setInt(5, staff.getStaffid());
 	        /*ps.setString(5,imageFileName);
             ps.setString(6, urlPathforDB);
             out.println(prepareStatement);*/
