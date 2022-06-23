@@ -5,7 +5,7 @@
 
 <head>
     <title>Delete room</title>
-  <link rel="stylesheet" href="createroom.css">
+  <link rel="stylesheet"   href="roomHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,24 +97,25 @@
   </sql:query>
 
 <div class="home-content">
+    <section class="about top" id="about"> 
     <div class="container">
          <c:forEach var="result" items="${oc.rows}">
-        <header class="main_title">PILIHAN DEWAN</header>
-
+        <header class="main_title">PILIHAN DEWAN</header><br>
+<!--
   <form class="form first" action="" method="">
   <fieldset id="fields" style="border-radius: 5px;">
         <label class="title" style="margin-top: 0%;">
           <c:out value="Dewan ${result.roomname}"/>
         </label>
-      
-    <!--div class="roompic"><img src="pic/${result.roomimagepic}"></div-->
+    
+    <div class="roompic"><img src="pic/${result.roomimagepic}"></div>
     <center><img src="b01.jpeg" height="250px" width="300px" alt="pic1"></center>
-    <!--  <img alt="pic2">-->
+     <img alt="pic2">
 
     <input type="hidden" name="roomid" value="${result.roomid}">
 
     <div class="button staff">
-          <!--a href="viewhall-1.jsp"><input type="button" value="Lihat"></a-->
+          <a href="viewhall-1.jsp"><input type="button" value="Lihat"></a>
           <button formaction="deleteHall.jsp" >Lihat Lagi</button>
         </div>
   </fieldset><br>
@@ -122,6 +123,28 @@
   </form>
 </c:forEach>
 </div>
+-->
+      <div class="containerRoom flex">
+        <div class="left">
+          <div class="img">
+            <img src="hall-2.jpg" alt="" class="image1">
+
+          </div>
+        </div>
+        <div class="right">
+          <div class="heading">
+            <h5></h5>
+            <h2><c:out value="Dewan ${result.roomname}"/></h2>
+            <p>Merupakan dewan utama bagi surau-Ar-Rahman, Puchong Jaya. Tujuan dewan ini adalah sebagai ruang solat dan tempat bagi aktiviti-aktiviti keagamaan seperti ceramah agama, majlis akad nikah dan sebagai.</p>
+            <p>Diharapkan setiap jemaah dapat menjaga dan menggunakan dewan ini dengan sebaiknya bagi kegunaan bersama.</p>
+
+            <input type="hidden" name="roomid" value="${result.roomid}">
+
+              <button class="btn update" formaction="deleteHall.jsp">LIHAT PERINCIAN</button>
+          </div>
+        </div>
+      </div>
+  </section>
 </div>
 </section>
   <!--<script src="script.js"></script>-->
