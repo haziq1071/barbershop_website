@@ -18,7 +18,7 @@
 
 	<div class="sidebar">
 		<div class="logo-details">
-			<img src="logoWhite.png" alt="">
+			<img src="logoWhite.png">
 		</div>
 		<ul class="nav-links">
 			<li>
@@ -117,10 +117,10 @@
 									</select>
 								</div>
 							</div>
-                            <input type="hidden" name="staffid" value="${staffid}">
+                            <!--input type="hidden" name="staffid" value="${staffid}"-->
 							<input type="hidden" name="action" value="createRoom">
 							<div class="button staff">
-								<button type="submit" value="createRoom" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">Tambah</button>
+								<input type="submit" value="Tambah" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
 						</div>
 					</div>
