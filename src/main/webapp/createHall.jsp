@@ -84,7 +84,7 @@
 		<div class="home-content">
 			<div class="container">
 				<header class="main_title">PENAMBAHAN DEWAN</header>
-				<form action="RoomServlet" method="post">
+				<form action="" method="post">
 					<div class="form first">
 						<div class="details room">
 							<span class="title">Informasi Dewan</span>
