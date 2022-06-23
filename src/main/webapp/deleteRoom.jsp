@@ -108,7 +108,12 @@
         </label>
       
     <!--div class="roompic"><img src="pic/${result.roomimagepic}"></div-->
-    <center><img src="b01.jpeg" height="250px" width="300px" alt="pic1"></center>
+    <!--center><img src="b01.jpeg" height="250px" width="300px" alt="pic1"></center-->
+    <div class="left">
+        <div class="img">
+          <img src="hall-2.jpg" alt="" class="image1">
+        </div>
+      </div>
     <!--  <img alt="pic2">-->
 
     <input type="hidden" name="roomid" value="${result.roomid}">
