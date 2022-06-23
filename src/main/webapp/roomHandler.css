@@ -359,6 +359,45 @@ nav .sidebar-button i{
 .update:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
+  .wrapper {
+  background-image: url("hall-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 480px;
+  position: relative;
+}
+
+.wrapper .text {
+  background: #3f9cc1;
+  padding: 50px;
+  width: 40%;
+  height: 600px;
+  position: absolute;
+  top: -13%;
+  right: 10%;
+  padding-top: 10%;
+  color: white;
+}
+
+.wrapper .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 30px;
+}
+
+.wrapper h2 {
+  font-weight: 400;
+}
+
+.wrapper p {
+  margin: 20px 0 50px 0;
+  line-height: 30px;
+}
+
+.wrapper i {
+  margin: 5px 20px 0 0;
+}
 /*
 .main_title::before{
   content: "";
