@@ -113,31 +113,40 @@
   <c:forEach var="result" items="${oc.rows}">
 	<div class="home-content">
     <div class="container">
-        <header class="main_title" style="font-size: xx-large">${result.roomname}</header>
+        <header class="main_title" style="font-size: xx-large">INFORMASI DEWAN</header>
         <section class="wrapper top">
 
             <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->
-
+              <div class="img">
+                <img src="hall-1.jpg" alt="" class="image1">
+              </div>
               <div class="containerRoom">
                <div class="text">
-                  <h2>Dewan Mubarak</h2>
-                  <div class="content">
-                       <div class="box flex">
-                          <span>Nama Dewan</span>
-                          <span>${result.roomname}</span>
+                  <h2>${result.roomname}</h2>
+                  <div class="left">
+                      <div class="img">
+                        <img src="hall-1.jpg" alt="" class="image1">
                       </div>
-                       <div class="box flex">
-                          <span>Kapasiti</span>
-                          <span>${result.roomcapacity}</span>
+                  </div>
+                  <div class="right">
+                      <div class="content">
+                           <div class="box flex">
+                              <span>Nama:</span>
+                              <span>Dewan ${result.roomname}</span>
+                          </div>
+                           <div class="box flex">
+                              <span>Kapasiti:</span>
+                              <span>${result.roomcapacity}</span>
+                          </div>
+                           <div class="box flex">
+                              <span>Status:</span>
+                              <span>${result.roomstatus}</span>
+                          </div>
+                           <div class="box flex">
+                              <span>Sistem Bunyi:</span>
+                              <span>${result.soundsystem}</span>
+                          </div>                 
                       </div>
-                       <div class="box flex">
-                          <span>Status</span>
-                          <span>${result.roomstatus}</span>
-                      </div>
-                       <div class="box flex">
-                          <span>Sistem Bunyi</span>
-                          <span>${result.soundsystem}</span>
-                      </div>                 
                   </div>
                </div>
               </div>
