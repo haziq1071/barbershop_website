@@ -79,7 +79,7 @@
 		<div class="home-content">
 			<div class="container">
 				<header class="main_title">PENAMBAHAN DEWAN</header>
-				<form method="post" >
+				<form name="RoomInfoForm" method="post" action="" >
 					<div class="form first">
 						<div class="details room">
 							<span class="title">Informasi Dewan</span>
@@ -112,9 +112,10 @@
 									</select>
 								</div>
 							</div>
+							<input type="hidden" name="staffid" value="${staffid}">
 							<input type="hidden" name="action" value="createRoom">
 							<div class="button staff">
-								<input type="submit" value="TAMBAH" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
+								<input type="submit" name="submit" value="TAMBAH" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
 						</div>
 					</div>
