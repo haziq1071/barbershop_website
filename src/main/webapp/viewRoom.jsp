@@ -123,10 +123,6 @@
     <!--  <img alt="pic2">-->
 
     <input type="hidden" name="roomid" value="${result.roomid}">
-
-    <div class="button staff">
-          <!--a href="viewhall-1.jsp"><input type="button" value="Lihat"></a-->
-        </div>
   </fieldset><br>
   
   </form>

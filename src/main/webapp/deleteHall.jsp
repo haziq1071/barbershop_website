@@ -112,7 +112,7 @@
   <div class="home-content">
   <form action="" method="post">
     <div class="container">
-        <header class="main_title" style="font-size: xx-large">${result.roomname}</header>
+      <header class="main_title" style="font-size: xx-large">INFORMASI DEWAN</header>
         <input type="number" name="roomid"  value="${result.roomid}" hidden>
           <section class="wrapper top">
             <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->
@@ -134,8 +134,7 @@
 
 
        <input type="hidden" name="action"  value="deleteRoom">
-        <button type="submit" 
-                formaction="RoomServlet"
+        <button type="submit" class="update" formaction="RoomServlet"
                 onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">Delete
         </button>
     </div>
