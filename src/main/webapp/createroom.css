@@ -286,7 +286,7 @@ nav .sidebar-button i{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 490px;
+    min-height: 400px;
     background-color: #fff;
     overflow: hidden;
 }
