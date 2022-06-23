@@ -121,15 +121,15 @@
                <div class="text">
                   <h2>Dewan ${result.roomname}</h2>
                     <div class="content">
-                          <div class="box flex">
+                          <div class="box">
                              <span>Kapasiti:</span>
                              <span>${result.roomcapacity}</span>
                           </div>
-                          <div class="box flex">
+                          <div class="box">
                              <span>Status:</span>
                              <span>${result.roomstatus}</span>
                           </div>
-                          <div class="box flex">
+                          <div class="box">
                              <span>Sistem Bunyi:</span>
                              <span>${result.soundsystem}</span>
                           </div>                 
