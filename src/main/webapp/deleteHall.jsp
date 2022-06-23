@@ -128,7 +128,7 @@
                         <span>Sistem Bunyi:</span>
                         <span>${result.soundsystem}</span>  
 
-                        <button type="submit" class="update" formaction="RoomServlet"
+                        <button type="submit" class="delete" formaction="RoomServlet"
                         onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">Delete
                         </button>             
                       </div>
