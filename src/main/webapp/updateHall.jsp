@@ -210,7 +210,7 @@
                       </div>
                       <input type="hidden" name="action" value="updateRoom">
                       <div class="button staff">
-                        <button type="submit" name="submit" >KEMASKINI</button><br><br>
+                        <button type="submit" class="update" name="submit" >KEMASKINI</button><br><br>
                       </div>
                     </div> 
                   </div>
