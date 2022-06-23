@@ -119,7 +119,7 @@
             <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->
               <div class="containerRoom">
                <div class="text">
-                  <h2>${result.roomname}</h2>
+                  <h2>Dewan ${result.roomname}</h2>
                     <div class="content">
                           <div class="box flex">
                              <span>Nama:</span>
