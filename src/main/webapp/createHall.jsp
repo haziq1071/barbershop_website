@@ -11,9 +11,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<%
-    int staffid = (Integer) session.getAttribute("staffid");
-%>
 	<div class="sidebar">
 		<div class="logo-details">
 			<img src="logoWhite.png">
@@ -115,7 +112,7 @@
 									</select>
 								</div>
 							</div>
- 							<input type="hidden" name="action" value="createRoom">
+							<input type="hidden" name="action" value="createRoom">
 							<div class="button staff">
 								<input type="submit" value="TAMBAH" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
