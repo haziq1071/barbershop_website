@@ -84,7 +84,7 @@
 		<div class="home-content">
 			<div class="container">
 				<header class="main_title">PENAMBAHAN DEWAN</header>
-				<form method="post">
+				<form action="" method="post">
 					<div class="form first">
 						<div class="details room">
 							<span class="title">Informasi Dewan</span>
@@ -107,6 +107,7 @@
 									</select>
 								</div>
 								<div class="input-field input-box">
+									<span class="title">Fasiliti bilik</span>
 									<label class="details">Sistem Bunyi</label>
 									<select	name="soundsystem" >
 										<option disabled selected>Pilih Sistem Bunyi</option>
@@ -119,8 +120,9 @@
 							</div>
                             <input type="hidden" name="staffid" value="${staffid}">
 							<input type="hidden" name="action" value="createRoom">
+							<br>
 							<div class="button staff">
-								<input type="submit" value="Tambah" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
+								<input type="submit" value="TAMBAH" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
 						</div>
 					</div>
