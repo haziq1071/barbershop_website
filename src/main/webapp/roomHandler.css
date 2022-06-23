@@ -264,7 +264,10 @@ nav .sidebar-button i{
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
-
+.containerRoom {
+  max-width: 80%;
+  margin: auto;
+}
 .main_title{
   font-size: 25px;
   font-weight: 500;

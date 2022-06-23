@@ -102,27 +102,25 @@
         <header class="main_title">PILIHAN DEWAN</header>
   <c:forEach var="result" items="${oc.rows}">
   <form class="form first" action="" method="">
-  <fieldset id="fields" style="border-radius: 5px;">
-        <label class="title" style="margin-top: 0%;">
-          <c:out value="Dewan ${result.roomname}"/>
-        </label>
-      
+  <fieldset id="fields" style="border-radius: 5px;">    
     <!--div class="roompic"><img src="pic/${result.roomimagepic}"></div-->
     <!--center><img src="b01.jpeg" height="250px" width="300px" alt="pic1"></center-->
-    <div class="left">
-        <div class="img">
-          <img src="hall-2.jpg" alt="" class="image1">
+      <div class="containerRoom flex">
+        <div class="left">
+            <div class="img">
+              <img src="hall-2.jpg" alt="" class="image1">
+            </div>
         </div>
-    </div>
-    <div class="right">
-        <div class="heading">
-          <h5></h5>
-          <h2><c:out value="Dewan ${result.roomname}"/></h2>
-          <p>Merupakan dewan utama bagi surau-Ar-Rahman, Puchong Jaya. Tujuan dewan ini adalah sebagai ruang solat dan tempat bagi aktiviti-aktiviti keagamaan seperti ceramah agama, majlis akad nikah dan sebagai.</p>
-          <p>Diharapkan setiap jemaah dapat menjaga dan menggunakan dewan ini dengan sebaiknya bagi kegunaan bersama.</p>
-          <button class="btn1" formaction="deleteHall.jsp">LIHAT TERPERINCI</button>
+        <div class="right">
+            <div class="heading">
+              <h5></h5>
+              <h2><c:out value="Dewan ${result.roomname}"/></h2>
+              <p>Merupakan dewan utama bagi surau-Ar-Rahman, Puchong Jaya. Tujuan dewan ini adalah sebagai ruang solat dan tempat bagi aktiviti-aktiviti keagamaan seperti ceramah agama, majlis akad nikah dan sebagai.</p>
+              <p>Diharapkan setiap jemaah dapat menjaga dan menggunakan dewan ini dengan sebaiknya bagi kegunaan bersama.</p>
+              <button class="update" formaction="deleteHall.jsp">LIHAT TERPERINCI</button>
+            </div>
         </div>
-    </div>
+      </div> 
     <!--  <img alt="pic2">-->
 
     <input type="hidden" name="roomid" value="${result.roomid}">
