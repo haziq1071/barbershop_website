@@ -83,7 +83,7 @@
 		<div class="home-content">
 			<div class="container">
 				<header class="main_title">PENAMBAHAN DEWAN</header>
-				<form method="post" action="RoomServlet" enctype = "multipart/form-data">
+				<form method="post" >
 					<div class="form first">
 						<div class="details room">
 							<span class="title">Informasi Dewan</span>
