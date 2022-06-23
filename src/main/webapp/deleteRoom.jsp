@@ -121,7 +121,6 @@
   </fieldset><br>
   
   </form>
-</c:forEach>
 </div>
 -->
       <div class="containerRoom flex">
@@ -145,6 +144,7 @@
         </div>
       </div>
   </section>
+  </c:forEach>
 </div>
 </section>
   <!--<script src="script.js"></script>-->
