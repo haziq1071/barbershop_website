@@ -98,9 +98,9 @@
 
 <div class="home-content">
     <div class="container">
-         <c:forEach var="result" items="${oc.rows}">
+       
         <header class="main_title">PILIHAN DEWAN</header>
-
+  <c:forEach var="result" items="${oc.rows}">
   <form class="form first" action="" method="">
   <fieldset id="fields" style="border-radius: 5px;">
         <label class="title" style="margin-top: 0%;">
