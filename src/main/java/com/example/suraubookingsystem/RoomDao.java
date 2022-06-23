@@ -45,8 +45,8 @@ public class RoomDao {
 	    	prepareStatement.setString(4, room.getSoundsystem());
 			prepareStatement.setInt(5, staff.getStaffid());
 	        /*ps.setString(5,imageFileName);
-            ps.setString(6, urlPathforDB);*/
-            out.println(prepareStatement);
+            ps.setString(6, urlPathforDB);
+            out.println(prepareStatement);*/
             prepareStatement.executeUpdate();
 
 
