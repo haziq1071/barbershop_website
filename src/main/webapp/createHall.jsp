@@ -122,7 +122,7 @@
 							<input type="hidden" name="action" value="createRoom">
 							<br>
 							<div class="button staff">
-								<input type="submit" value="TAMBAH" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
+								<input type="submit" value="Tambah" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
 						</div>
 					</div>
