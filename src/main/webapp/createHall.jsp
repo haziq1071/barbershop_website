@@ -107,6 +107,7 @@
 									</select>
 								</div>
 								<div class="input-field input-box">
+									<span class="title">Fasiliti bilik</span>
 									<label class="details">Sistem Bunyi</label>
 									<select	name="soundsystem" >
 										<option disabled selected>Pilih Sistem Bunyi</option>
