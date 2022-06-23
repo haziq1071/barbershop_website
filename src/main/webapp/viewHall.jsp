@@ -122,10 +122,6 @@
                   <h2>Dewan ${result.roomname}</h2>
                     <div class="content">
                           <div class="box flex">
-                             <span>Nama:</span>
-                             <span>Dewan ${result.roomname}</span>
-                          </div>
-                          <div class="box flex">
                              <span>Kapasiti:</span>
                              <span>${result.roomcapacity}</span>
                           </div>
