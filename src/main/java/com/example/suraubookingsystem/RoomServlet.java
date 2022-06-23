@@ -55,7 +55,7 @@ public class RoomServlet extends HttpServlet {
 
       //private void createroom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException, ServletException {
         private void createRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-       /* int roomid = Integer.parseInt(request.getParameter("roomid"));
+        /*int roomid = Integer.parseInt(request.getParameter("roomid"));
         
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
