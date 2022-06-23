@@ -88,7 +88,7 @@ public class RoomServlet extends HttpServlet {
             room.setSoundsystem(soundsystem);
             //room.setStaffid(staffid);
     		
-    		//rm.createroom(room,imageFileName,urlPathforDB);
+    		//rm.createRoom(room,imageFileName,urlPathforDB);
             rm.createRoom(room,staff);/*
             response.sendRedirect("displayRoomList.jsp");
 		    out.println("<script type=\"text/javascript\">");

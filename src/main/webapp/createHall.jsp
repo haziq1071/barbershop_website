@@ -79,7 +79,7 @@
 		<div class="home-content">
 			<div class="container">
 				<header class="main_title">PENAMBAHAN DEWAN</header>
-				<form name="RoomInfoForm" method="post" action="" >
+				<form name="RoomInfoForm" method="post">
 					<div class="form first">
 						<div class="details room">
 							<span class="title">Informasi Dewan</span>
