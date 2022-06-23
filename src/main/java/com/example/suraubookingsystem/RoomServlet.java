@@ -97,7 +97,7 @@ public class RoomServlet extends HttpServlet {
 
             response.sendRedirect("homepage.jsp");
 
-        } catch (Exception e) {
+        /*} catch (Exception e) {
             e.printStackTrace();
         }
 
