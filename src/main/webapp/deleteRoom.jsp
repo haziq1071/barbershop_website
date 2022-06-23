@@ -113,7 +113,16 @@
         <div class="img">
           <img src="hall-2.jpg" alt="" class="image1">
         </div>
-      </div>
+    </div>
+    <div class="right">
+        <div class="heading">
+          <h5></h5>
+          <h2>Dewan</h2>
+          <p>Merupakan dewan utama bagi surau-Ar-Rahman, Puchong Jaya. Tujuan dewan ini adalah sebagai ruang solat dan tempat bagi aktiviti-aktiviti keagamaan seperti ceramah agama, majlis akad nikah dan sebagai.</p>
+          <p>Diharapkan setiap jemaah dapat menjaga dan menggunakan dewan ini dengan sebaiknya bagi kegunaan bersama.</p>
+          <button class="btn1">LIHAT TERPERINCI</button>
+        </div>
+    </div>
     <!--  <img alt="pic2">-->
 
     <input type="hidden" name="roomid" value="${result.roomid}">
