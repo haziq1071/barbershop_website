@@ -129,7 +129,7 @@
                         <span>${result.soundsystem}</span>  
 
                         <button type="submit" class="delete" formaction="RoomServlet"
-                        onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">PADAM
+                        onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">DELETE
                         </button>             
                       </div>
                  </div>
