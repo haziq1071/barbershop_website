@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
     <title> View Hall-1 </title>
-    <link rel="stylesheet" href="createroom.css">
+    <link rel="stylesheet" href="roomHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -99,6 +99,7 @@
   </div>
 
   <section class="home-section">
+
     <nav>
       <div class="sidebar-button">
         <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
@@ -108,55 +109,30 @@
           <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
         </div>
     </nav>
+
   <c:forEach var="result" items="${oc.rows}">
 	<div class="home-content">
     <div class="container">
-        <header class="main_title" style="font-size: xx-large">${result.roomname}</header>
-		<div class="form first">
-			<div class="details room">
+      <header class="main_title" style="font-size: xx-large">INFORMASI DEWAN</header>
+        <section class="wrapper top">
 
-		<fieldset><!--start fieldset image bilik-->
-		</fieldset><!--end fieldset gambar-->
-    
-    <div class="fields">
-        <div class="details">
-            <span class="title">INFORMASI DEWAN</span>
             <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->
-            <img class="mySlides" src="b01.jpeg" style="width:100%">
-             <div class="coll">
-              <div class="overflow-auto">
-                  <div class="mytable">
-                  <table>
-                      <tr>
-                          <td colspan="2" class="title">Nama Dewan</td>
-                          <td colspan="3" class="details">${result.roomname}</td>
-                      </tr>
-                      <tr>
-                          <td colspan="2" class="title">Kapasiti</td>
-                          <td colspan="3" class="details">${result.roomcapacity}</td>
-                      </tr>
-                      <tr>
-                          <td colspan="2" class="title">Status</td>
-                          <td colspan="3" class="details">${result.roomstatus}</td>
-                      </tr>
-                      <tr>
-                          <td colspan="2" class="title">Sistem Bunyi</td>
-                          <td colspan="3" class="details">${result.soundsystem}</td>
-                      </tr>                 
-                   </table>
-                  </div>
+              <div class="containerRoom">
+               <div class="text">
+                  <h2>Dewan ${result.roomname}</h2>
+                    <div class="content">
+                             <span>Kapasiti:</span>
+                             <span>${result.roomcapacity}</span>
+                             <span>Status:</span>
+                             <span>${result.roomstatus}</span>
+                             <span>Sistem Bunyi:</span>
+                             <span>${result.soundsystem}</span>               
+                    </div>
+               </div>
               </div>
-          </div>
-      </div><br><br>
-
-    <!--div class="button staff">
-      <a href="viewRoom.jsp"><input type="button" value="KEMBALI"></a>
-    </div-->
-	</div>
-	</div>
-</div>
-</div>
-</div>
+        </section>
+      </div>
+    </div>
 </section>
 </c:forEach>
 </body>

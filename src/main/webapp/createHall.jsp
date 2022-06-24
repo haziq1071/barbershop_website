@@ -11,11 +11,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<%
-    int staffid = (Integer) session.getAttribute("staffid");
-
-%>
-
 	<div class="sidebar">
 		<div class="logo-details">
 			<img src="logoWhite.png">
@@ -84,7 +79,7 @@
 		<div class="home-content">
 			<div class="container">
 				<header class="main_title">PENAMBAHAN DEWAN</header>
-				<form method="post">
+				<form name="createRoom" method="post">
 					<div class="form first">
 						<div class="details room">
 							<span class="title">Informasi Dewan</span>
@@ -117,10 +112,9 @@
 									</select>
 								</div>
 							</div>
-                            <input type="hidden" name="staffid" value="${staffid}">
 							<input type="hidden" name="action" value="createRoom">
 							<div class="button staff">
-								<input type="submit" value="Tambah" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
+								<input type="submit" name="createRoom" value="TAMBAH" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
 						</div>
 					</div>

@@ -117,6 +117,7 @@
 										type="text" name="lectureequipment" required>
 								</div>
 							</div>
+							<br>
 							<div class="button staff">
 								<input type="submit" value="Tambah">
 							</div>

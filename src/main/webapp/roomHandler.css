@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-/*tukar design ruang*/
 *{
   margin: 0;
   padding: 0;
@@ -259,7 +258,6 @@ nav .sidebar-button i{
     position: relative;
     max-width: 900px;
     width: 100%;
-    height: 430px;
     border-radius: 6px;
     padding: 20px;
     margin-top: 10px;
@@ -267,13 +265,155 @@ nav .sidebar-button i{
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
-
+.containerRoom {
+  max-width: 80%;
+  margin: auto;
+}
 .main_title{
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
 
+.flex {
+  display: flex;
+}
+
+/*--------------about--------*/
+.top {
+  margin-top: 10%;
+}
+
+.mtop {
+  margin-top: 5%;
+}
+
+.left, .right {
+  width: 50%;
+}
+
+.about {
+  margin-bottom: 50px;
+}
+
+.about .img {
+  position: relative;
+}
+
+.image1 {
+  width: 350px;
+  height: 430px;
+  margin-top: 15px;
+}
+
+.heading {
+  position: relative;
+}
+
+.heading::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100px;
+  height: 4px;
+}
+
+.heading h5 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding-top: 20px;
+}
+
+.heading h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 20px 0 40px 0;
+  margin-left: 45px;
+  color: #222222;
+}
+
+.heading p {
+  margin-bottom: 20px;
+  line-height: 25px;
+  color: #5f5f5f;
+  margin: 0 0 20px 50px;
+}
+
+.heading .btn1 {
+  margin: 50px 0 20px 50px;
+}
+
+.update{
+  text-transform: uppercase;
+  font-size: 15px;
+  border: 0;
+  color: #fff;
+  background: linear-gradient(to right, #009ffd,#2a2a72);
+  padding: 7px 15px;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: 45px;
+}
+.update:hover{
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  .delete{
+  text-transform: uppercase;
+  font-size: 15px;
+  border: 0;
+  color: #fff;
+  background: linear-gradient(to right, #009ffd,#2a2a72);
+  padding: 7px 15px;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
+  cursor: pointer;
+}
+.delete:hover{
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  .wrapper {
+  background-image: url("hall-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.wrapper .text {
+  background: #3f9cc1;
+  padding: 50px;
+  width: 50%;
+  height: 385px;
+  position: absolute;
+  top: -13%;
+  right: 10%;
+  padding-top: 10%;
+  color: white;
+}
+
+.wrapper .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 30px;
+}
+
+.wrapper h2 {
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+
+.wrapper p {
+  margin: 20px 0 50px 0;
+  line-height: 30px;
+}
+
+.wrapper i {
+  margin: 5px 20px 0 0;
+}
+/*
 .main_title::before{
   content: "";
   position: absolute;
@@ -288,7 +428,7 @@ nav .sidebar-button i{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 350px;
+    min-height: 490px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -411,44 +551,15 @@ form .fields .input-field{
  }
 
  form .button input:hover{
-  /* transform: scale(0.99); */
+   transform: scale(0.99); 
+
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
-.update{
-  text-transform: uppercase;
-  font-size: 15px;
-  border: 0;
-  color: #fff;
-  background: linear-gradient(to right, #009ffd,#2a2a72);
-  padding: 7px 15px;
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
-  cursor: pointer;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  margin-left: 45px;
-}
-.update:hover{
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
-.updateHall{
-  text-transform: uppercase;
-  font-size: 15px;
-  border: 0;
-  color: #fff;
-  background: linear-gradient(to right, #009ffd,#2a2a72);
-  padding: 7px 15px;
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
-  cursor: pointer;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  margin-left: 15px;
-}
-.updateHall:hover{
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
+
   .linkbutton:hover{
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
+
 .linkbutton{
   height: 100%;
    width: 100%;
@@ -461,7 +572,7 @@ form .fields .input-field{
    cursor: pointer;
    transition: all 0.3s ease;
    background: linear-gradient(to right, #009ffd,#2a2a72);
-}
+}*/
 
 /* Responsive Media Query */
 @media (max-width: 1240px) {
@@ -543,4 +654,32 @@ form .fields .input-field{
     margin-bottom: 15px;
     width: 100%;
   }
+}
+
+@media only screen and (max-width:768px) {
+
+  .about .container {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .wrapper .text {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width:768px) {
+
+  .about p{
+    margin: 50px 0 0 0;
+  }
+
+  .wrapper .text {
+    padding: 10px;
+    height: 600px;
+  }
+
 }

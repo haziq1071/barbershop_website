@@ -5,7 +5,7 @@
 
 <head>
     <title>View room</title>
-  <link rel="stylesheet" href="createroom.css">
+  <link rel="stylesheet"  href="roomHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,28 +98,34 @@
 
 <div class="home-content">
     <div class="container">
-         <c:forEach var="result" items="${oc.rows}">
+       
         <header class="main_title">PILIHAN DEWAN</header>
-
-	<form class="form first" action="" method="">
-	<fieldset id="fields" style="border-radius: 5px;">
-        <label class="title" style="margin-top: 0%;">
-          <c:out value="Dewan ${result.roomname}"/>
-        </label>
-      
+  <c:forEach var="result" items="${oc.rows}">
+  <form class="form first" action="" method="">
+  <fieldset id="fields" style="border-radius: 5px;">    
     <!--div class="roompic"><img src="pic/${result.roomimagepic}"></div-->
-		<center><img src="b01.jpeg" height="250px" width="300px" alt="pic1"></center>
-		<!--  <img alt="pic2">-->
+    <!--center><img src="b01.jpeg" height="250px" width="300px" alt="pic1"></center-->
+      <div class="containerRoom flex">
+        <div class="left">
+            <div class="img">
+              <img src="hall-2.jpg" alt="" class="image1">
+            </div>
+        </div>
+        <div class="right">
+            <div class="heading">
+              <h2><c:out value="Dewan ${result.roomname}"/></h2>
+              <p>Merupakan dewan utama bagi surau-Ar-Rahman, Puchong Jaya. Tujuan dewan ini adalah sebagai ruang solat dan tempat bagi aktiviti-aktiviti keagamaan seperti ceramah agama, majlis akad nikah dan sebagai.</p>
+              <p>Diharapkan setiap jemaah dapat menjaga dan menggunakan dewan ini dengan sebaiknya bagi kegunaan bersama.</p>
+              <button class="update" formaction="viewHall.jsp">LIHAT TERPERINCI</button>
+            </div>
+        </div>
+      </div> 
+    <!--  <img alt="pic2">-->
 
     <input type="hidden" name="roomid" value="${result.roomid}">
-
-		<div class="button staff">
-          <!--a href="viewhall-1.jsp"><input type="button" value="Lihat"></a-->
-          <button formaction="viewHall.jsp" >Lihat Lagi</button>
-        </div>
-	</fieldset><br>
-	
-	</form>
+  </fieldset><br>
+  
+  </form>
 </c:forEach>
 </div>
 </div>
