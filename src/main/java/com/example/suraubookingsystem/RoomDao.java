@@ -8,7 +8,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import static java.lang.System.out;
 
-//@MultipartConfig
 public class RoomDao {
 	
 	  String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
@@ -30,9 +29,7 @@ public class RoomDao {
 	    }
 	    return connection;
 	  }
-	  
-	  
-	  //public void createroom(Room room) throws SQLException, IOException  {
+
 	  public void createRoom(Room room) throws SQLException  {
 	    
 	    // try-with-resource statement will auto close the connection.
@@ -43,44 +40,13 @@ public class RoomDao {
 	    	prepareStatement.setInt(2, room.getRoomcapacity());
 	    	prepareStatement.setString(3, room.getRoomstatus());
 	    	prepareStatement.setString(4, room.getSoundsystem());
-			//prepareStatement.setInt(5, staff.getStaffid());
-	        /*ps.setString(5,imageFileName);
-            ps.setString(6, urlPathforDB);
-            out.println(prepareStatement);*/
             prepareStatement.executeUpdate();
 
-
-	      /*} catch (Exception e) {
-            e.printStackTrace();
-          }*/
           } catch (SQLException e) {
           printSQLException(e);
      	  }
 	    }
 
-	  /*public  List<Room> selectAllRoom() {
-
-			List<Room> room = new ArrayList<>();
-			try (Connection connection = getConnection();
-				PreparedStatement preparedStatement = connection.prepareStatement("select * from room");) {
-				System.out.println(preparedStatement);
-				
-				ResultSet rs = preparedStatement.executeQuery();
-				while (rs.next()) {
-					int roomid = rs.getInt("roomid");
-					String roomname = rs.getString("roomname");
-					int roomcapasity = rs.getInt("roomcapacity");
-					Boolean roomstatus = rs.getBoolean("roomstatus");
-					String soundsystem = rs.getString("soundsystem");
-					room.add(new Room(roomid, roomname, roomcapasity, roomstatus, soundsystem));
-				}
-			} catch (SQLException e) {
-				printSQLException(e);
-			}
-			return room;
-		}*/
-
-	    //public void updateroom(Room room,String imageFileName,String urlPathforDB) throws SQLException, IOException {
 	    	public boolean updateRoom(Room room) throws SQLException {
 	  			boolean rowUpdated;
 	        try (Connection connection = getConnection();
@@ -97,10 +63,7 @@ public class RoomDao {
 	          rowUpdated = ps.executeUpdate() > 0;
 	          
 	        } 
-	        return rowUpdated;/*
-	        catch (Exception e) {
-	            e.printStackTrace();
-	        }*/
+	        return rowUpdated;
 	    }
 
 
@@ -113,7 +76,6 @@ public class RoomDao {
 	            }
 	            return rowDeleted;
 	        }
-		
 
 	    private void printSQLException(SQLException ex) {
 	        for (Throwable e : ex) {

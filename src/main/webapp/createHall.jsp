@@ -123,12 +123,6 @@
 		</div>
 	</section>
 
-	<!---<script>
-    function myFunction(){
-      alert("Bilik berjaya ditambah.");
-    }
- </script>---->
-
 </body>
 </html>
 

@@ -103,8 +103,7 @@
   <c:forEach var="result" items="${oc.rows}">
   <form class="form first" action="" method="">
   <fieldset id="fields" style="border-radius: 5px;">    
-    <!--div class="roompic"><img src="pic/${result.roomimagepic}"></div-->
-    <!--center><img src="b01.jpeg" height="250px" width="300px" alt="pic1"></center-->
+
       <div class="containerRoom flex">
         <div class="left">
             <div class="img">
@@ -119,13 +118,11 @@
               <button class="update" formaction="deleteHall.jsp">LIHAT TERPERINCI</button>
             </div>
         </div>
-      </div> 
-    <!--  <img alt="pic2">-->
+      </div>
 
     <input type="hidden" name="roomid" value="${result.roomid}">
 
     <div class="button staff">
-          <!--a href="viewhall-1.jsp"><input type="button" value="Lihat"></a-->
         </div>
   </fieldset><br>
   
@@ -134,7 +131,6 @@
 </div>
 </div>
 </section>
-  <!--<script src="script.js"></script>-->
 </body>
 
 </html>

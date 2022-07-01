@@ -119,13 +119,11 @@
               <button class="update" formaction="updateHall.jsp">LIHAT TERPERINCI</button>
             </div>
         </div>
-      </div> 
-    <!--  <img alt="pic2">-->
+      </div>
 
     <input type="hidden" name="roomid" value="${result.roomid}">
 
     <div class="button staff">
-          <!--a href="viewhall-1.jsp"><input type="button" value="Lihat"></a-->
         </div>
   </fieldset><br>
   

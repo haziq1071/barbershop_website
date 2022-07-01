@@ -133,13 +133,7 @@
                       </div>
                       <div class="input-field input-box">
                         <label class="details" for="roomstatus">Status Dewan</label>
-                        <!--
-                        <select name="roomstatus" id="roomstatus" value="${result.roomstatus} active">
-                          <option disabled selected>Pilih Status</option>
-                          <option value="Boleh Digunakan">Boleh Digunakan</option>
-                          <option value="Sedang Diselenggara">Sedang Diselenggara</option>
-                        </select>
-                        -->
+
                         <c:set var = "rmstatus" scope = "session" value = "${result.roomstatus}"/>
                         <c:if test = "${rmstatus == 'Boleh Digunakan'}">
                             <select name="roomstatus" id="roomstatus">
@@ -163,16 +157,6 @@
                     <div class="fields">
                       <div class="input-field input-box">
                         <label class="details" for="soundsystem">Sistem Bunyi</label>
-                        <!--
-                        <select name="soundsystem" id="soundsystem" for="soundsystem" value="${result.soundsystem} active">
-                          <option disabled selected>Pilih Sistem Bunyi</option>
-                          <option value="${result.soundsystem}" selected>${result.soundsystem}</option>
-                          <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
-                          <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
-                          <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
-                          <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
-                        </select>
-                        -->
                          <c:set var = "system" scope = "session" value = "${result.soundsystem}"/>
                          <c:if test = "${system == 'Mikrofon Sahaja'}">
                             <select name="soundsystem" id="soundsystem">
@@ -223,11 +207,4 @@
       </div>
   </section>
 </body>
-<!--
-  <script>
-    function myFunction(){
-      alert("Bilik berjaya ditambah.");
-    }
- </script>-->
-
 </html>
