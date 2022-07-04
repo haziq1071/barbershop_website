@@ -167,6 +167,7 @@ public class StaffServlet extends HttpServlet {
     		String staffusername = request.getParameter("staffusername");
     		String staffpassword = request.getParameter("staffpassword"); 
     		int supervisorid = Integer.parseInt(request.getParameter("supervisorid"));
+
             Staff staff = new Staff();
             
             staff.setStaffid(staffid);
@@ -181,7 +182,10 @@ public class StaffServlet extends HttpServlet {
     		staff.setStaffpassword(staffpassword);
     		staff.setSupervisorid(supervisorid);
 
-            session.removeAttribute("staffid");
+            st.updateStaff(staff);
+            session.removeAttribute("staff");
+            session.setAttribute("staff", staff);
+            /*session.removeAttribute("staffid");
             session.removeAttribute("staffrole");
             session.removeAttribute("staffname");
             session.removeAttribute("staffic");
@@ -191,10 +195,10 @@ public class StaffServlet extends HttpServlet {
             session.removeAttribute("staffdateofbirth");
             session.removeAttribute("staffusername");
             session.removeAttribute("staffpassword");
-            session.removeAttribute("supervisorid");
+            session.removeAttribute("supervisorid");*/
             
             
-            session.setAttribute("staffid", staffid);
+            /*session.setAttribute("staffid", staffid);
             session.setAttribute("staffrole", staffrole);
             session.setAttribute("staffname", staffname);
             session.setAttribute("staffic", staffic);
@@ -204,7 +208,7 @@ public class StaffServlet extends HttpServlet {
             session.setAttribute("staffdateofbirth",staffdateofbirth);
             session.setAttribute("staffusername",staffusername);
             session.setAttribute("staffpassword",staffpassword);
-            session.setAttribute("supervisorid",supervisorid);
+            session.setAttribute("supervisorid",supervisorid);*/
 
 
             response.sendRedirect("viewStaff.jsp");
