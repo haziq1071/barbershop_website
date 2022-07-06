@@ -21,7 +21,6 @@
             response.sendRedirect("index.jsp");
 
     %>
-<form action="StaffServlet" method="post">
     <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
@@ -89,11 +88,12 @@
     <div class="home-content">
         <div class="container">
 		<div class="rightbox">
+		<form action="StaffServlet" method="post">	
 			<div class="profile tabShow">
 				<h1>MAKLUMAT STAF</h1>
 				<input type="int" name="staffid" value="${staffid}" hidden>
-				<label>NAMA PENUH</label><br>
-				<label>${staffname}</label>
+				<h2>NAMA PENUH</h2><br>
+				<p class="input">${staffname}</p>
 				<h2>Kad Pengenalan</h2>
 				<p class="input">${staffic}</p>
 				<h2>Tarikh Lahir</h2>
@@ -106,19 +106,22 @@
 				<p class="input">${staffphone}</p>
 				<h2>Jawatan</h2>
 				<p class="input">${staffrole}</p>
-        <h2>Penyelia ID</h2>
-        <p class="input">${supervisorid}</p>
-		    <h2>Nombor Staf</h2>
-		    <p class="input">${staffusername}</p>
-		    <h2>Kata Laluan</h2>
-		    <p class="input">${staffpassword}</p>
+		        <h2>Penyelia ID</h2>
+		        <p class="input">${supervisorid}</p>
+				<h2>Nombor Staf</h2>
+				<p class="input">${staffusername}</p>
+				<h2>Kata Laluan</h2>
+				<p class="input">${staffpassword}</p>
+
+				<a href="updateStaff.jsp"><button class="btn update">Kemaskini</button></a>
+				<a href="#"><button class="btn cancel">Padam</button></a> 
 
 			</div>
+		</form>
 		</div>
 	</div>
     </div>
   </section>
-	</form>
 </body>
 </html>
 

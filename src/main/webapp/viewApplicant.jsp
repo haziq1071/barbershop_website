@@ -70,35 +70,40 @@
       <div class="media_icons">
           <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/surau_ar_rahman_pchg/"><i class="fab fa-instagram"></i></a>
-        </div>
+      </div>
     </nav>
     <div class="home-content">
         <div class="container">
-		<div class="rightbox">
-			<div class="profile tabShow">
-				<h1>MAKLUMAT PEMOHON</h1>
-				<h2>Nama Penuh</h2>
-				<p class="input">Akhyar Rashid</p>
-				<h2>Kad Pengenalan</h2>
-				<p class="input">010323-05-6064</p>
-				<h2>Tarikh Lahir</h2>
-				<p class="input">24/2/2001</p>
-				<h2>Alamat</h2>
-				<p class="input">No. 48, Taman Nusa Damai, Selangor.</p>
-				<h2>Email</h2>
-				<p class="input">akhyarrashid@gmail.com</p>
-				<h2>Nombor Telefon</h2>
-				<p class="input">018-5676570</p>
-		        <h2>Nama Pengguna</h2>
-		        <p class="input">akhyar4576</p>
-		        <h2>Kata Laluan</h2>
-		        <p class="input">akhyar05</p>
-				<a href="updateApplicant.html"><button class="btn update">Kemaskini</button></a>
-				<a href="#"><button class="btn cancel">Padam</button></a>        
-			</div>
-		</div>
+    	<div class="rightbox">
+        <form action="ApplicantServlet" method="post">    
+    		<div class="profile tabShow">
+    			<h1>MAKLUMAT PEMOHON</h1>
+           		<input type="int" name="applicantid" value="${applicantid}" hidden>
+    			<h2>Nama Penuh</h2>
+    			<p class="input">${applicantname}</p>
+    			<h2>Kad Pengenalan</h2>
+    			<p class="input">${applicantic}</p>
+    			<h2>Tarikh Lahir</h2>
+    			<p class="input">${applicantdateofbirth}</p>
+    			<h2>Alamat</h2>
+    			<p class="input">${applicantaddress}</p>
+    			<h2>Email</h2>
+    			<p class="input">${applicantemail}</p>
+    			<h2>Nombor Telefon</h2>
+    			<p class="input">${applicantphone}</p>
+	    	    <h2>Nama Pengguna</h2>
+	    	    <p class="input">${applicantusername}</p>
+	    	    <h2>Kata Laluan</h2>
+	    	    <p class="input">${applicantpassword}</p>
+
+    			<a href="updateApplicant.jsp"><button class="btn update">Kemaskini</button></a>
+    			<a href="#"><button class="btn cancel">Padam</button></a>  
+
+    		</div>
+        </form>
+        </div>
+        </div>
 	</div>
-    </div>
   </section>
 </body>
 </html>
