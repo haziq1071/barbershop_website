@@ -62,15 +62,10 @@
         </li>
 
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="viewStaff.jsp">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="viewStaff.jsp">LIHAT AKAUN</a></li>
-            <li><a href="updateStaff.jsp">KEMASKINI AKAUN</a></li>
-            <li><a href="deleteStaff.jsp">PADAM AKAUN</a></li>
-          </ul>
         </li>
         <li class="log_out">
           <a class="main-menu" href="index.jsp">

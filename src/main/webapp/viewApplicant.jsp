@@ -1,12 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Laman Utama</title>
-	<meta charset="UTF-8">
-    <title> SignUp Staff Form </title>
-    <link rel="stylesheet" href="homePage.css">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> View Applicant Form </title>
+    <link rel="stylesheet" href="accountHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +15,7 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a class="main-menu" href="homepage.jsp">
+          <a class="main-menu" href="#">
             <i class='bx bx-home'></i>
             <span class="links_name">LAMAN UTAMA</span>
           </a>
@@ -30,11 +27,10 @@
             <span class="links_name">BILIK</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
-            <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-            <li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
-            <li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
-            <li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
+            <li><a href="#">CIPTA INFO BILIK</a></li>
+            <li><a href="#">LIHAT INFO BILIK</a></li>
+            <li><a href="#">KEMASKINI INFO BILIK</a></li>
+            <li><a href="#">PADAM INFO BILIK</a></li>
           </ul>
         </li>
 
@@ -44,21 +40,22 @@
             <span class="links_name">TEMPAHAN</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="staffBooking.jsp">TEMPAH BILIK</a></li>
-            <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
-            <li><a href="staffDeleteBooking.jsp">PADAM TEMPAHAN</a></li>
-            <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
+            <li><a href="#">TEMPAH BILIK</a></li>
+            <li><a href="#">LIHAT TEMPAHAN</a></li>
+            <li><a href="#">KEMASKINI TEMPAHAN</a></li>
+            <li><a href="#">PADAM TEMPAHAN</a></li>
+            <li><a href="#">SAHKAN TEMPAHAN</a></li>
           </ul>
         </li>
 
         <li>
-          <a class="main-menu" href="viewStaff.jsp">
+          <a class="main-menu" href="#">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
         </li>
         <li class="log_out">
-          <a class="main-menu" href="index.jsp">
+          <a class="main-menu" href="#">
             <i class='bx bx-log-out'></i>
             <span class="links_name">LOG KELUAR</span>
           </a>
@@ -73,16 +70,35 @@
       <div class="media_icons">
           <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/surau_ar_rahman_pchg/"><i class="fab fa-instagram"></i></a>
-      </div>
+        </div>
     </nav>
     <div class="home-content">
         <div class="container">
-	        <header class="main_title">Laman Utama</header>
-	        <img src="banner.jpg" id="image" height="250" width="450">
-	        <br><br>
-	        <p>Ini adalah laman rasmi Surau Ar-Rahman.Laman ini membolehkan kakitangan, qariah dan orang ramai membuat tempahan bilik-bilik atau ruangan yang sedia ada di Surau Ar-Rahman. Harapan kami dari pihak surau ini adalah kehadiran para ahli qariah dan orang ramai akan dapat mengeratkan ukhwah sesama suadara seislam dan mengimarahkan rumah Allah SWT. InshaAllah.</p>
-	    </div>
+		<div class="rightbox">
+			<div class="profile tabShow">
+				<h1>MAKLUMAT PEMOHON</h1>
+				<h2>Nama Penuh</h2>
+				<p class="input">Akhyar Rashid</p>
+				<h2>Kad Pengenalan</h2>
+				<p class="input">010323-05-6064</p>
+				<h2>Tarikh Lahir</h2>
+				<p class="input">24/2/2001</p>
+				<h2>Alamat</h2>
+				<p class="input">No. 48, Taman Nusa Damai, Selangor.</p>
+				<h2>Email</h2>
+				<p class="input">akhyarrashid@gmail.com</p>
+				<h2>Nombor Telefon</h2>
+				<p class="input">018-5676570</p>
+		        <h2>Nama Pengguna</h2>
+		        <p class="input">akhyar4576</p>
+		        <h2>Kata Laluan</h2>
+		        <p class="input">akhyar05</p>
+				<a href="updateApplicant.html"><button class="btn update">Kemaskini</button></a>
+				<a href="#"><button class="btn cancel">Padam</button></a>        
+			</div>
+		</div>
 	</div>
+    </div>
   </section>
 </body>
 </html>
