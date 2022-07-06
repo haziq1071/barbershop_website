@@ -49,7 +49,7 @@
         </li>
 
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="viewApplicant.jsp">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>

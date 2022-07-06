@@ -130,16 +130,12 @@ public class StaffServlet extends HttpServlet {
 
                         session.setAttribute("staffid", res.getInt(1));
                         
-                        response.sendRedirect("homepage.jsp");
+                        response.sendRedirect("homepageStaff.jsp");
 
 
                     }else{
 
                         response.sendRedirect("index.jsp");    
-                        /*out.println("<script type=\"text/javascript\">");
-                        out.println("alert('Pengguna tidak wujud!');");
-                        out.println("location='index.jsp';");
-                        out.println("</script>");*/
 
                     }
                 }

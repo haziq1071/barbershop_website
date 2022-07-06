@@ -1,9 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title> View Applicant Form </title>
-    <link rel="stylesheet" href="accountHandler.css">
+<html>
+<head>
+	<title>Laman Utama</title>
+	<meta charset="UTF-8">
+    <title> Appplicant Homepage </title>
+    <link rel="stylesheet" href="homepage.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +18,7 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="homepage.jsp">
             <i class='bx bx-home'></i>
             <span class="links_name">LAMAN UTAMA</span>
           </a>
@@ -27,10 +30,11 @@
             <span class="links_name">BILIK</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="#">CIPTA INFO BILIK</a></li>
-            <li><a href="#">LIHAT INFO BILIK</a></li>
-            <li><a href="#">KEMASKINI INFO BILIK</a></li>
-            <li><a href="#">PADAM INFO BILIK</a></li>
+            <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
+            <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
+            <li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
+            <li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
+            <li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
           </ul>
         </li>
 
@@ -40,11 +44,9 @@
             <span class="links_name">TEMPAHAN</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="#">TEMPAH BILIK</a></li>
-            <li><a href="#">LIHAT TEMPAHAN</a></li>
-            <li><a href="#">KEMASKINI TEMPAHAN</a></li>
-            <li><a href="#">PADAM TEMPAHAN</a></li>
-            <li><a href="#">SAHKAN TEMPAHAN</a></li>
+            <li><a href="staffBooking.jsp">TEMPAH BILIK</a></li>
+            <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+            <li><a href="staffDeleteBooking.jsp">PADAM TEMPAHAN</a></li>
           </ul>
         </li>
 
@@ -55,7 +57,7 @@
           </a>
         </li>
         <li class="log_out">
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="index.jsp">
             <i class='bx bx-log-out'></i>
             <span class="links_name">LOG KELUAR</span>
           </a>
@@ -74,35 +76,11 @@
     </nav>
     <div class="home-content">
         <div class="container">
-    	<div class="rightbox">
-        <form action="ApplicantServlet" method="post">    
-    		<div class="profile tabShow">
-    			<h1>MAKLUMAT PEMOHON</h1>
-           		<input type="int" name="applicantid" value="${applicantid}" hidden>
-    			<h2>Nama Penuh</h2>
-    			<p class="input">${applicantname}</p>
-    			<h2>Kad Pengenalan</h2>
-    			<p class="input">${applicantic}</p>
-    			<h2>Tarikh Lahir</h2>
-    			<p class="input">${applicantdateofbirth}</p>
-    			<h2>Alamat</h2>
-    			<p class="input">${applicantaddress}</p>
-    			<h2>Email</h2>
-    			<p class="input">${applicantemail}</p>
-    			<h2>Nombor Telefon</h2>
-    			<p class="input">${applicantphone}</p>
-	    	    <h2>Nama Pengguna</h2>
-	    	    <p class="input">${applicantusername}</p>
-	    	    <h2>Kata Laluan</h2>
-	    	    <p class="input">${applicantpassword}</p>
-
-    			<a href="updateApplicant.jsp"><button class="btn update">Kemaskini</button></a>
-    			<a href="#"><button class="btn cancel">Padam</button></a>  
-
-    		</div>
-        </form>
-        </div>
-        </div>
+	        <header class="main_title">Laman Utama</header>
+	        <img src="banner.jpg" id="image" height="250" width="450">
+	        <br><br>
+	        <p>Ini adalah laman rasmi Surau Ar-Rahman.Laman ini membolehkan kakitangan, qariah dan orang ramai membuat tempahan bilik-bilik atau ruangan yang sedia ada di Surau Ar-Rahman. Harapan kami dari pihak surau ini adalah kehadiran para ahli qariah dan orang ramai akan dapat mengeratkan ukhwah sesama suadara seislam dan mengimarahkan rumah Allah SWT. InshaAllah.</p>
+	    </div>
 	</div>
   </section>
 </body>
