@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> SignUp Staff Form </title>
+    <title> SignUp Applicant Form </title>
     <link rel="stylesheet" href="signupAccount.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -20,6 +20,7 @@
             <span class="links_name">LAMAN UTAMA</span>
           </a>
         </li>
+
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-box' ></i>
@@ -51,10 +52,9 @@
         </div>
     </nav>
     <div class="home-content">
-        <div class="contain_staff">
+        <div class="contain_applicant">
 	        <header class="main_title">PENDAFTARAN AKAUN</header>
-
-	        <form class="fstaff" method="post" >
+	        <form class="fapplicant" action="#">
 	            <div class="form first">
 	                <div class="details personal">
 	                    <span class="title">Maklumat Peribadi</span>
@@ -62,52 +62,28 @@
 	                    <div class="fields">
 	                        <div class="input-field input-box">
 	                            <label class="details">Nama Penuh</label>
-	                            <input type="text" name="staffname"required>
+	                            <input type="text" name="applicantname" required>
 	                        </div>
 	                        <div class="input-field input-box">
 	                            <label class="details">Kad Pengenalan</label>
-	                            <input type="text" name="staffic"placeholder="xxxxxx-xx-xxxx" required>
+	                            <input type="text" name="applicantic" placeholder="xxxxxx-xx-xxxx" required>
 	                        </div>
 	                        <div class="input-field">
 	                            <label class="details">Tarikh Lahir</label>
-	                            <input type="date" name="staffdateofbirth"required>
+	                            <input type="date" name="applicantdateofbirth" required>
 	                        </div>
 	                        <div class="input-field input-box">
 	                            <label class="details">Alamat</label>
-	                             <input type="text" name="staffaddress"required>
+	                            <input type="text" name="applicantaddress" required>
 	                        </div>
 	                        <div class="input-field input-box">
 	                            <label class="details">Email</label>
-	                            <input type="email" name="staffemail"required>
+	                            <input type="email" name="applicantemail" required>
 	                        </div>
 
 	                        <div class="input-field input-box">
 	                            <label class="details">Nombor Telefon</label>
-	                            <input type="text" name="staffphone" required>
-	                        </div>
-	                        <div class="input-field">
-	                            <label class="details">Jawatan</label>
-	                            <select name="staffrole" required>
-	                                <option disabled selected>Pilih Jawatan</option>
-	                                <option value="Nazir">Nazir</option>
-	                                <option value="Timbalan Nazir">Timbalan Nazir</option>
-	                                <option value="Imam 1">Imam 1</option>
-	                                <option value="Imam 2">Imam 2</option>
-	                                <option value="Bilal 1">Bilal 1</option>
-	                                <option value="Bilal 2">Bilal 2</option>
-	                                <option value="Bendahari">Bendahari</option>
-	                                <option value="Setiausaha">Setiausaha</option>
-	                                <option value="Pembantu Setiausaha">Pembantu Setiausaha</option>
-	                                <option value="AJK">AJK</option>
-	                                <option value="Siak 1">Siak 1</option>
-	                                <option value="Siak 2">Siak 2</option>
-	                                <option value="Pemeriksa Kira-kira 1">Pemeriksa Kira-kira 1</option>
-	                                <option value="Pemeriksa Kira-kira 2">Pemeriksa Kira-kira 2</option>
-	                            </select>
-	                        </div>
-	                        <div class="input-field">
-	                            <label class="details">ID Penyelia</label>
-	                            <input type="text" name="supervisorid">
+	                            <input type="text" name="applicantphone" required>
 	                        </div>
 	                    </div>
 	                </div>
@@ -116,29 +92,33 @@
 
 	                    <div class="fields">
 	                        <div class="input-field input-box">
-	                            <label class="details">Nombor Staf</label>
-	                              <input type="text" name="staffusername" required>
+	                            <label class="details">Nama Pengguna</label>
+	                            <input type="text" name="applicantusername" required>
 	                        </div>
 
 	                        <div class="input-field input-box">
 	                            <label class="details">Kata Laluan</label>
-	                            <input type="password" name="staffpassword" required>
+	                            <input type="password" name="applicantpassword" required>
 	                        </div>
+
+	                        <div class="input-field input-box">
+	                            <label class="details">Pengesahan Kata Laluan</label>
+	                            <input type="password" required>
+	                        </div>
+
+	                        <input type="hidden" name="action" value="signupApplicant">
 	                    </div>
-
-                      <input type="hidden" name="action" value="signupStaff">
-
-	                    <div class="button staff">
-						<input type="submit" value="Daftar" formaction="StaffServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
+	                    <div class="button applicant">
+	                      <input type="submit" value="Daftar" formaction="ApplicantServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
+	                    </div>
 	                    </div>
 	                </div> 
 	            </div>
 	        </form>
-
-
     	</div>
     </div>
   </section>
+
 </body>
 </html>
 

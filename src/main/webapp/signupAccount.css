@@ -227,7 +227,6 @@ nav .sidebar-button i{
     height: 580px;
     border-radius: 6px;
     padding: 20px;
-    padding-bottom: 580px;
     margin: 0 15px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
@@ -257,7 +256,7 @@ nav .sidebar-button i{
 .fstaff{
     position: relative;
     margin-top: 16px;
-    min-height: 500px;
+    min-height: 750px;
     background-color: #fff;
     overflow: hidden;
 }
