@@ -92,7 +92,7 @@
 			<div class="profile tabShow">
 				<h1>MAKLUMAT STAF</h1>
 				<input type="int" name="staffid" value="${staffid}" hidden>
-				<h2>NAMA PENUH</h2><br>
+				<h2>NAMA PENUH</h2>
 				<p class="input">${staffname}</p>
 				<h2>Kad Pengenalan</h2>
 				<p class="input">${staffic}</p>

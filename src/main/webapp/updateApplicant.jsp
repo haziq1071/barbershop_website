@@ -94,7 +94,7 @@
         <h2>Kata Laluan</h2>
         <input type="password" class="input" value="akhyar05">
 				<button class="btn update">Kemaskini</button>
-				<a href="viewApplicant.html"><button class="btn cancel">Batal</button></a>  
+				<a href="viewApplicant.jsp"><button class="btn cancel">Batal</button></a>  
 			</div>
 		</div>
 	</div>
