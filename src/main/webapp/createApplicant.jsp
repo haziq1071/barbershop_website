@@ -20,7 +20,6 @@
             <span class="links_name">LAMAN UTAMA</span>
           </a>
         </li>
-
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-box' ></i>
@@ -54,7 +53,7 @@
     <div class="home-content">
         <div class="contain_applicant">
 	        <header class="main_title">PENDAFTARAN AKAUN</header>
-	        <form class="fapplicant" action="#">
+	        <form class="fapplicant" method="post">
 	            <div class="form first">
 	                <div class="details personal">
 	                    <span class="title">Maklumat Peribadi</span>
@@ -100,25 +99,19 @@
 	                            <label class="details">Kata Laluan</label>
 	                            <input type="password" name="applicantpassword" required>
 	                        </div>
-
-	                        <div class="input-field input-box">
-	                            <label class="details">Pengesahan Kata Laluan</label>
-	                            <input type="password" required>
-	                        </div>
-
-	                        <input type="hidden" name="action" value="signupApplicant">
 	                    </div>
+
+	                    <input type="hidden" name="action" value="signupApplicant">
+
 	                    <div class="button applicant">
 	                      <input type="submit" value="Daftar" formaction="ApplicantServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
 	                    </div>
-	                    </div>
-	                </div> 
-	            </div>
+	                </div>
+	             </div> 
 	        </form>
     	</div>
     </div>
   </section>
-
 </body>
 </html>
 

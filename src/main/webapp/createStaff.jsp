@@ -53,7 +53,6 @@
     <div class="home-content">
         <div class="contain_staff">
 	        <header class="main_title">PENDAFTARAN AKAUN</header>
-
 	        <form class="fstaff" method="post" >
 	            <div class="form first">
 	                <div class="details personal">
@@ -126,7 +125,7 @@
 	                        </div>
 	                    </div>
 
-                      <input type="hidden" name="action" value="signupStaff">
+                        <input type="hidden" name="action" value="signupStaff">
 
 	                    <div class="button staff">
 						<input type="submit" value="Daftar" formaction="StaffServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
@@ -134,8 +133,6 @@
 	                </div> 
 	            </div>
 	        </form>
-
-
     	</div>
     </div>
   </section>
