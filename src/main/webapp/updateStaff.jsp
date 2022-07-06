@@ -73,7 +73,7 @@
         </div>
     </nav>
     <div class="home-content">
-        <div class="container">
+        <div class="container-staff">
 		<div class="rightbox">
 			<div class="profile tabShow">
 				<h1>MAKLUMAT STAF</h1>

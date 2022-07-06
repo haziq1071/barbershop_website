@@ -219,6 +219,16 @@ nav .sidebar-button i{
 	margin-top: 5px;
 	box-shadow: 2px 5px 20px rgba(119,119,119,5);
 }
+.container-staff {
+  background: #fff;
+  width: 500px;
+  height: 650px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-shadow: 2px 5px 20px rgba(119,119,119,5);
+}
 .rightbox{
 	width: 60%;
 	margin-left: 17%;

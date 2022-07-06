@@ -86,7 +86,7 @@
     </nav>
    
     <div class="home-content">
-        <div class="container">
+        <div class="container-staff">
 		<div class="rightbox">
 		<form action="StaffServlet" method="post">	
 			<div class="profile tabShow">
