@@ -160,7 +160,7 @@ public class ApplicantServlet extends HttpServlet{
         session.removeAttribute("applicant");
         session.setAttribute("applicant", applicant);
 
-        response.sendRedirect("viewStaff.jsp");
+        response.sendRedirect("viewApplicant.jsp");
     }
 
     /*######################################################( DELETE )#############################################################*/
