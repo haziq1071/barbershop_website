@@ -24,27 +24,19 @@
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-box' ></i>
-            <span class="links_name">BILIK</span>
+            <span class="links_name">RUANGAN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="#">CIPTA INFO BILIK</a></li>
-            <li><a href="#">LIHAT INFO BILIK</a></li>
-            <li><a href="#">KEMASKINI INFO BILIK</a></li>
-            <li><a href="#">PADAM INFO BILIK</a></li>
-          </ul>
         </li>
 
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-bookmark'></i>
-            <span class="links_name">TEMPAHAN</span>
+            <span class="links_name">RUANGAN</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="#">TEMPAH BILIK</a></li>
+            <li><a href="#">TEMPAH RUANG</a></li>
             <li><a href="#">LIHAT TEMPAHAN</a></li>
-            <li><a href="#">KEMASKINI TEMPAHAN</a></li>
             <li><a href="#">PADAM TEMPAHAN</a></li>
-            <li><a href="#">SAHKAN TEMPAHAN</a></li>
           </ul>
         </li>
 
@@ -78,23 +70,23 @@
         <form action="ApplicantServlet" method="post">    
     		<div class="profile tabShow">
     			<h1>MAKLUMAT PEMOHON</h1>
-           		<input type="int" name="applicantid" value="${applicantid}" hidden>
+           		<input type="int" name="applicantid" value="${applicant.applicantid}" hidden>
     			<h2>Nama Penuh</h2>
-    			<p class="input">${applicantname}</p>
+    			<p class="input">${applicant.applicantname}</p>
     			<h2>Kad Pengenalan</h2>
-    			<p class="input">${applicantic}</p>
+    			<p class="input">${applicant.applicantic}</p>
     			<h2>Tarikh Lahir</h2>
-    			<p class="input">${applicantdateofbirth}</p>
+    			<p class="input">${applicant.applicantdateofbirth}</p>
     			<h2>Alamat</h2>
-    			<p class="input">${applicantaddress}</p>
+    			<p class="input">${applicant.applicantaddress}</p>
     			<h2>Email</h2>
-    			<p class="input">${applicantemail}</p>
+    			<p class="input">${applicant.applicantemail}</p>
     			<h2>Nombor Telefon</h2>
-    			<p class="input">${applicantphone}</p>
+    			<p class="input">${applicant.applicantphone}</p>
 	    	    <h2>Nama Pengguna</h2>
-	    	    <p class="input">${applicantusername}</p>
+	    	    <p class="input">${applicant.applicantusername}</p>
 	    	    <h2>Kata Laluan</h2>
-	    	    <p class="input">${applicantpassword}</p>
+	    	    <p class="input">${applicant.applicantpassword}</p>
 
     			<a href="updateApplicant.jsp"><button class="btn update">Kemaskini</button></a>
     			<a href="#"><button class="btn cancel">Padam</button></a>  
