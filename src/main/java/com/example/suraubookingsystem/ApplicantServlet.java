@@ -159,7 +159,6 @@ public class ApplicantServlet extends HttpServlet{
         app.updateApplicant(applicant);
         session.removeAttribute("applicant");
         session.setAttribute("applicant", applicant);
-
         response.sendRedirect("viewApplicant.jsp");
     }
 
