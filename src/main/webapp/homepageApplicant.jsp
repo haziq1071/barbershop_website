@@ -46,7 +46,7 @@
         </li>
 
         <li>
-          <a class="main-menu" href="viewApplicant.jsp">
+          <a class="main-menu" href="applicantViewAccount.jsp">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
