@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Laman Utama</title>
 	<meta charset="UTF-8">
-    <title> SignUp Staff Form </title>
-    <link rel="stylesheet" href="homepage.css">
+    <title> Staff Homepage</title>
+    <link rel="stylesheet" href="homePage.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">

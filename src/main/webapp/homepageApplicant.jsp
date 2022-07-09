@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Laman Utama</title>
 	<meta charset="UTF-8">
-    <title> Appplicant Homepage </title>
-    <link rel="stylesheet" href="homepage.css">
+    <title> Applicant Homepage </title>
+    <link rel="stylesheet" href="homePage.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,24 +16,21 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a class="main-menu" href="homepage.jsp">
+          <a class="main-menu" href="homepageApplicant.jsp">
             <i class='bx bx-home'></i>
             <span class="links_name">LAMAN UTAMA</span>
           </a>
         </li>
 
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="viewSpace.jsp">
             <i class='bx bx-box' ></i>
             <span class="links_name">BILIK</span>
           </a>
-          <ul class="sub-menu">
+          <!--ul class="sub-menu">
             <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
             <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-            <li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
-            <li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
-            <li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
-          </ul>
+          </ul-->
         </li>
 
         <li>
