@@ -127,7 +127,7 @@
                         <p class="input">${staff.staffpassword}</p>
 
                         <input type="hidden" name="action" value="deleteStaff">
-                        <a href="staffUpdateAccount.jsp"><button class="btn update">Kemaskini</button></a>
+                        <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">Kemaskini</button>
                         <button class="btn cancel"type="submit"formaction="StaffServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >Padam</button>
                     </div>
                     </form>
