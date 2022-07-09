@@ -92,10 +92,10 @@
       <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
       	  <c:forEach var="space" items="${oc.rows}">
       	  <form action="" method="post">
+      	  <input type="hidden" name="spaceid" value="${space.spaceid}">
           <section class="wrapper top">
                 <div class="containerRoom">
                  <div class="text">
-                 	<input type="hidden" name="spaceid" value="${space.spaceid}">
                     <h2>${space.spacename}</h2>
                       <div class="content">
                         <span>Kapasiti:</span>
