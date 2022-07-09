@@ -94,7 +94,7 @@ public class ApplicantServlet extends HttpServlet{
             String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"; //ni password dri heroku database
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
-            String sql  ="SELECT * from applicant";
+            String sql  ="SELECT applicantid, applicantname, applicantusername, applicantpassword from applicant";
 
             if (conn != null){
                 DatabaseMetaData dm = conn.getMetaData();
@@ -110,15 +110,23 @@ public class ApplicantServlet extends HttpServlet{
                 while (res.next()){
                     if(applicantusername.equals(res.getString("applicantusername")) && applicantpassword.equals(res.getString("applicantpassword")))
                     {
+                        Applicant applicant = new Applicant();
 
-                        session.setAttribute("applicantid", res.getInt(1));
+                        applicant.setApplicantid(res.getInt(1));
+                        applicant.setApplicantname(res.getString(2));
+                        applicant.setApplicantusername(res.getString(3));
+                        applicant.setApplicantpassword(res.getString(4));
+
+                        session.setAttribute("applicantid", applicant.getApplicantid());
+                        session.setAttribute("applicantname", applicant.getApplicantname());
+                        session.setAttribute("applicantusername",applicant.getApplicantusername());
+                        session.setAttribute("applicantpassword",applicant.getApplicantpassword());
 
                         response.sendRedirect("homepageApplicant.jsp");
 
-
                     }else{
 
-                        response.sendRedirect("index.jsp");
+                        out.println("User not exist");
 
                     }
                 }
@@ -127,6 +135,7 @@ public class ApplicantServlet extends HttpServlet{
             e.printStackTrace();
         }
     }
+
 
     /*######################################################( UPDATE )#############################################################*/
 
@@ -159,7 +168,7 @@ public class ApplicantServlet extends HttpServlet{
         app.updateApplicant(applicant);
         session.removeAttribute("applicant");
         session.setAttribute("applicant", applicant);
-        response.sendRedirect("viewApplicant.jsp");
+        response.sendRedirect("applicantViewAccount.jsp");
     }
 
     /*######################################################( DELETE )#############################################################*/
@@ -169,4 +178,6 @@ public class ApplicantServlet extends HttpServlet{
         app.deleteApplicant(applicantid);
         response.sendRedirect("index.jsp");
     }
+
 }
+
