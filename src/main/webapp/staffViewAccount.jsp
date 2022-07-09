@@ -101,6 +101,7 @@
         <div class="home-content">
             <div class="container">
                 <div class="rightbox">
+                    <form action="" method="post">
                     <div class="profile tabShow">
                         <h1>MAKLUMAT STAFF</h1>
                         <input type="hidden" name="staffid" value="${staff.staffid}">
@@ -126,8 +127,8 @@
                         <p class="input">${staff.staffpassword}</p>
 
                         <input type="hidden" name="action" value="deleteStaff">
-                        <a href="staffUpdateAccount.jsp"><button class="btn update"type="submit"onclick="form.action='staffUpdateAccount.jsp'">Kemaskini</button></a>
-                        <button class="btn cancel"type="submit"formaction="TenantServlet" onclick="return confirm('Confirm delete your profile?');" >Padam</button>
+                        <a href="staffUpdateAccount.jsp"><button class="btn update">Kemaskini</button></a>
+                        <button class="btn cancel"type="submit"formaction="StaffServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >Padam</button>
                     </div>
                     </form>
                 </div>

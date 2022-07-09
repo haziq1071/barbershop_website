@@ -101,6 +101,7 @@
         <div class="home-content">
             <div class="container">
                 <div class="rightbox">
+                    <form action="" method="post">
                     <div class="profile tabShow">
                         <h1>MAKLUMAT PEMOHON</h1>
                         <input type="hidden" name="applicantid" value="${applicant.applicantid}"/>
@@ -122,9 +123,10 @@
                         <p class="input">${applicant.applicantpassword}</p>
                         <input type="hidden" name="action" value="deleteApplicant">
                         <a href="applicantUpdateAccount.jsp"><button class="btn update">Kemaskini</button></a>
-                        <button class="btn cancel"formaction="ApplicantServlet" onclick="return confirm('Confirm delete your profile?');">Padam</button>
+                        <button class="btn cancel"formaction="ApplicantServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');">Padam</button>
 
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
