@@ -43,9 +43,6 @@ public class StaffServlet extends HttpServlet {
                 case "loginStaff":
                     loginStaff(request, response);
                     break;
-                /*case "viewStaff":
-                    viewStaff(request, response);
-                    break;*/
                 case "deleteStaff":
                     deleteStaff(request, response);
                     break;
@@ -111,7 +108,7 @@ public class StaffServlet extends HttpServlet {
             String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"; //ni password dri heroku database
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
-            String sql  ="SELECT * from staff";
+            String sql  ="SELECT staffid,staffname,staffusername,staffpassword from staff";
 
             if (conn != null){
                 DatabaseMetaData dm = conn.getMetaData();
@@ -128,14 +125,23 @@ public class StaffServlet extends HttpServlet {
                     if(staffusername.equals(res.getString("staffusername")) && staffpassword.equals(res.getString("staffpassword")))
                     {
 
-                        session.setAttribute("staffid", res.getInt(1));
-                        
-                        response.sendRedirect("homepageStaff.jsp");
+                        Staff staff = new Staff();
 
+                        staff.setStaffid(res.getInt(1));
+                        staff.setStaffname(res.getString(2));
+                        staff.setStaffusername(res.getString(3));
+                        staff.setStaffpassword(res.getString(4));
+
+                        session.setAttribute("staffid", staff.getStaffid());
+                        session.setAttribute("staffname", staff.getStaffname());
+                        session.setAttribute("staffusername",staff.getStaffusername());
+                        session.setAttribute("staffpassword",staff.getStaffpassword());
+
+                        response.sendRedirect("homepage.jsp");
 
                     }else{
 
-                        response.sendRedirect("index.jsp");    
+                        out.println("User not exist");
 
                     }
                 }
@@ -146,78 +152,51 @@ public class StaffServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-        /*######################################################( UPDATE )#############################################################*/
+    /*######################################################( UPDATE )#############################################################*/
 
 
-        private void updateStaff(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+    private void updateStaff(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
-        	HttpSession session = request.getSession();
-        	int staffid = Integer.parseInt(request.getParameter("staffid")); 
-    		String staffrole = request.getParameter("staffrole"); 
-    		String staffname = request.getParameter("staffname"); 
-            String staffic = request.getParameter("staffic");
-    		String staffaddress = request.getParameter("staffaddress"); 
-    		String staffphone = request.getParameter("staffphone");
-    		String staffemail = request.getParameter("staffemail"); 
-    		Date staffdateofbirth = Date.valueOf(request.getParameter("staffdateofbirth"));
-    		String staffusername = request.getParameter("staffusername");
-    		String staffpassword = request.getParameter("staffpassword"); 
-    		int supervisorid = Integer.parseInt(request.getParameter("supervisorid"));
+        HttpSession session = request.getSession();
+        int staffid = Integer.parseInt(request.getParameter("staffid"));
+        String staffrole = request.getParameter("staffrole");
+        String staffname = request.getParameter("staffname");
+        String staffic = request.getParameter("staffic");
+        String staffaddress = request.getParameter("staffaddress");
+        String staffphone = request.getParameter("staffphone");
+        String staffemail = request.getParameter("staffemail");
+        Date staffdateofbirth = Date.valueOf(request.getParameter("staffdateofbirth"));
+        String staffusername = request.getParameter("staffusername");
+        String staffpassword = request.getParameter("staffpassword");
+        int supervisorid = Integer.parseInt(request.getParameter("supervisorid"));
 
-            Staff staff = new Staff();
-            
-            staff.setStaffid(staffid);
-            staff.setStaffrole(staffrole);
-            staff.setStaffname(staffname);
-            staff.setStaffname(staffic);
-    		staff.setStaffaddress(staffaddress);
-    		staff.setStaffphone(staffphone);
-    		staff.setStaffemail(staffemail);
-    		staff.setStaffdateofbirth(staffdateofbirth);
-    		staff.setStaffusername(staffusername);
-    		staff.setStaffpassword(staffpassword);
-    		staff.setSupervisorid(supervisorid);
+        Staff staff = new Staff();
 
-            st.updateStaff(staff);
-            session.removeAttribute("staff");
-            session.setAttribute("staff", staff);
-            /*session.removeAttribute("staffid");
-            session.removeAttribute("staffrole");
-            session.removeAttribute("staffname");
-            session.removeAttribute("staffic");
-            session.removeAttribute("staffaddress");
-            session.removeAttribute("staffphone");
-            session.removeAttribute("staffemail");
-            session.removeAttribute("staffdateofbirth");
-            session.removeAttribute("staffusername");
-            session.removeAttribute("staffpassword");
-            session.removeAttribute("supervisorid");*/
-            
-            
-            /*session.setAttribute("staffid", staffid);
-            session.setAttribute("staffrole", staffrole);
-            session.setAttribute("staffname", staffname);
-            session.setAttribute("staffic", staffic);
-            session.setAttribute("staffaddress", staffaddress);
-            session.setAttribute("staffphone",staffphone);
-            session.setAttribute("staffemail",staffemail);
-            session.setAttribute("staffdateofbirth",staffdateofbirth);
-            session.setAttribute("staffusername",staffusername);
-            session.setAttribute("staffpassword",staffpassword);
-            session.setAttribute("supervisorid",supervisorid);*/
+        staff.setStaffid(staffid);
+        staff.setStaffrole(staffrole);
+        staff.setStaffname(staffname);
+        staff.setStaffname(staffic);
+        staff.setStaffaddress(staffaddress);
+        staff.setStaffphone(staffphone);
+        staff.setStaffemail(staffemail);
+        staff.setStaffdateofbirth(staffdateofbirth);
+        staff.setStaffusername(staffusername);
+        staff.setStaffpassword(staffpassword);
+        staff.setSupervisorid(supervisorid);
+
+        st.updateStaff(staff);
+        session.removeAttribute("staff");
+        session.setAttribute("staff", staff);
+        response.sendRedirect("staffViewAccount.jsp");
+    }
 
 
-            response.sendRedirect("viewStaff.jsp");
-        }
+    /*######################################################( DELETE )#############################################################*/
 
-
-        /*######################################################( DELETE )#############################################################*/
-
-	    private void deleteStaff(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
-	        int staffid = Integer.parseInt(request.getParameter("staffid"));
-	        st.deleteStaff(staffid);
-	        response.sendRedirect("index.jsp");
-	    }
+    private void deleteStaff(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        int staffid = Integer.parseInt(request.getParameter("staffid"));
+        st.deleteStaff(staffid);
+        response.sendRedirect("index.jsp");
+    }
 
 }
-
