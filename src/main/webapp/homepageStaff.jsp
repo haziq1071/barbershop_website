@@ -23,7 +23,7 @@
         </li>
 
         <li>
-          <a class="main-menu" href="viewSpace.jsp">
+          <a class="main-menu" href="staffViewSpace.jsp">
             <i class='bx bx-box' ></i>
             <span class="links_name">RUANG</span>
           </a>
