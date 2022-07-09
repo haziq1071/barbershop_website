@@ -385,6 +385,7 @@ nav .sidebar-button i{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
   .wrapper {
+  background-image: url("hall-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -394,13 +395,13 @@ nav .sidebar-button i{
 
 .wrapper .text {
   background: #3f9cc1;
-  padding: 0px;
-  width: 800px;
-  height: 500px;
+  padding: 50px;
+  width: 535px;
+  height: 435px;
   position: absolute;
-  top: 0%;
-  right: 0%;
-  padding-top: 0%;
+  top: -13%;
+  right: 10%;
+  padding-top: 10%;
   color: white;
 }
 
