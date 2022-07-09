@@ -90,12 +90,12 @@
     <div class="container">
     <a href="staffCreateSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
       <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
+      	  <c:forEach var="space" items="${oc.rows}">
+      	  <form action="" method="post">
           <section class="wrapper top">
-          <c:forEach var="space" items="${oc.rows}">
-          <form action="" method="post">
-          <input type="hidden" name="spaceid" value="${space.spaceid}">
                 <div class="containerRoom">
                  <div class="text">
+                 	<input type="hidden" name="spaceid" value="${space.spaceid}">
                     <h2>${space.spacename}</h2>
                       <div class="content">
                         <span>Kapasiti:</span>
@@ -116,9 +116,9 @@
                       </div>
                  </div>
                 </div>
-          </form>
-          </c:forEach>
           </section>
+  		  </form>
+  		  </c:forEach>
   	</div>
   </div>
 </section>
