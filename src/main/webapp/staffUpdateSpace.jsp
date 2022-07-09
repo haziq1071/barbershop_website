@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html>
 <html>
-<head>
+<head lang="en" dir="ltr">
   <meta charset="UTF-8">
     <title> Update Space Form</title>
     <link rel="stylesheet" href="createspace.css">
@@ -10,8 +10,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
+	<sql:setDataSource
+        var="ic"
+        driver="org.postgresql.Driver"
+        url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
+        user="dnzxqagexabepj"
+        password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+
+<sql:query dataSource="${ic}" var="oc">
+    <%
+        int jspaceid = 0;
+
+        if(request.getParameter("spaceid")==null){
+            jspaceid = (Integer) session.getAttribute("spaceid");
+        }
+        else{
+            jspaceid = Integer.parseInt(request.getParameter("spaceid"));
+            session.setAttribute("spaceid", jspaceid);
+        }
+    %>
+    <c:set var="jspaceid" value="<%=jspaceid%>"/>
+    SELECT * FROM space WHERE spaceid=?
+    <sql:param value="${jspaceid}" />
+</sql:query>
   <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
@@ -95,25 +117,25 @@
                     <div class="fields">
                       <div class="input-field input-box">
                       	<input type="hidden" name="spaceid" value="${space.spaceid}"/>
-                        <label class="details" for="spacename">Nama Dewan</label>
-                        <input type="text" name="spacename" id="spacename" value="${space.spacename}">
+                        <label class="details" >Nama Dewan</label>
+                        <input type="text" name="spacename" value="${space.spacename}">
                       </div>
                       <div class="input-field input-box">
-                        <label class="details" for="spacecapacity">Kapasiti</label>
-                        <input type="text" name="spacecapacity" id="spacecapacity" value="${space.spacecapacity}">
+                        <label class="details">Kapasiti</label>
+                        <input type="text" name="spacecapacity" value="${space.spacecapacity}">
                       </div>
                       <div class="input-field input-box">
-                        <label class="details" for="spacestatus">Status Dewan</label>
+                        <label class="details">Status Dewan</label>
 
                         <c:set var = "spstatus" scope = "session" value = "${space.spacestatus}"/>
                         <c:if test = "${spstatus == 'Boleh Digunakan'}">
-                            <select name="spacestatus" id="spacestatus">
+                            <select name="spacestatus">
                                 <option value="${space.spacestatus}">${result.roomstatus}</option>
                                 <option value="Sedang Diselenggara">Sedang Diselenggara</option>
                             </select>
                         </c:if>
                         <c:if test = "${spstatus == 'Sedang Diselenggara'}">
-                            <select name="spacestatus" id="spacestatus">
+                            <select name="spacestatus">
                                 <option value="${space.spacestatus}">${result.roomstatus}</option>
                                 <option value="Boleh Digunakan">Boleh Digunakan</option>
                             </select>
@@ -127,10 +149,10 @@
                     <span class="title">Fasiliti bilik</span>
                     <div class="fields">
                       <div class="input-field input-box">
-                        <label class="details" for="soundsystem">Sistem Bunyi</label>
+                        <label class="details">Sistem Bunyi</label>
                          <c:set var = "system" scope = "session" value = "${result.soundsystem}"/>
                          <c:if test = "${system == 'Mikrofon Sahaja'}">
-                            <select name="soundsystem" id="soundsystem">
+                            <select name="soundsystem">
                                 <option value="${space.soundsystem}">${result.soundsystem}</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
                                 <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
@@ -138,7 +160,7 @@
                             </select>
                          </c:if>
                          <c:if test = "${system == 'Mikrofon Dan Speaker'}">
-                            <select name="soundsystem" id="soundsystem">
+                            <select name="soundsystem">
                                 <option value="${space.soundsystem}">${result.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
@@ -146,7 +168,7 @@
                             </select>
                          </c:if>
                          <c:if test = "${system == 'Set Sistem Bar Bunyi'}">
-                            <select name="soundsystem" id="soundsystem">
+                            <select name="soundsystem">
                                 <option value="${space.soundsystem}">${result.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
@@ -154,7 +176,7 @@
                             </select>
                          </c:if>
                          <c:if test = "${system == 'Set Sistem Bunyi Hi-fi'}">
-                            <select name="soundsystem" id="soundsystem">
+                            <select name="soundsystem">
                                 <option value="${space.soundsystem}">${result.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
@@ -163,16 +185,17 @@
                          </c:if>  
                       </div>
                        <div class="input-field input-box">
-                        <label class="details" for="tablequantity">Kuantiti Meja</label>
-                        <input type="text" name="tablequantity" id="tablequantity" value="${space.tablequantity}">
+                        <label class="details" >Kuantiti Meja</label>
+                        <input type="text" name="tablequantity" value="${space.tablequantity}">
                       </div>
                        <div class="input-field input-box">
-                        <label class="details" for="chairquantity">Kuantiti Kerusi</label>
-                        <input type="text" name="chairquantity" id="chairquantity" value="${space.chairquantity}">
+                        <label class="details">Kuantiti Kerusi</label>
+                        <input type="text" name="chairquantity" value="${space.chairquantity}">
                       </div>
                       <input type="hidden" name="action" value="updateSpace">
                       <div class="button staff">
-                        <input type="submit" class="updateHall" name="submit" value="KEMASKINI">
+                        <a href="staffViewSpace.jsp"><button class="update">Simpan</button></a>
+                        <a href="staffViewSpace.jsp"><button class="cancel">Batal</button></a>
                         <br><br>
                       </div>
                     </div> 
