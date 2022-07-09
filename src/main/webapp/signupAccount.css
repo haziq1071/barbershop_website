@@ -249,14 +249,14 @@ nav .sidebar-button i{
 .fapplicant{
     position: relative;
     margin-top: 16px;
-    min-height: 450px;
+    min-height: 440px;
     background-color: #fff;
     overflow: hidden;
 }
 .fstaff{
     position: relative;
     margin-top: 16px;
-    min-height: 480px;
+    min-height: 500px;
     background-color: #fff;
     overflow: hidden;
 }
