@@ -424,8 +424,8 @@ form .fields .input-field{
   padding: 10px 35px;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
   cursor: pointer;
-  margin-left: 370px;
-  margin-top: 25px;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 .update:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
@@ -439,8 +439,8 @@ form .fields .input-field{
   padding: 10px 35px;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
   cursor: pointer;
-  margin-left: 20px;
-  margin-top: 25px;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 .delete:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
