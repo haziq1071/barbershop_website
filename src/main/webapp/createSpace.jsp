@@ -111,6 +111,14 @@
 										<option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
 									</select>
 								</div>
+								<div class="input-field input-box">
+									<label class="details">Bilangan Meja</label>
+									<input type="text" name="tablequantity" >
+								</div>
+								<div class="input-field input-box">
+									<label class="details">Bilangan Kerusi</label>
+									<input type="text" name="chairquantity" >
+								</div>
 							</div>
 							<input type="hidden" name="action" value="createRoom">
 							<div class="button staff">

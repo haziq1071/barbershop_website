@@ -54,16 +54,14 @@
     </li>
 
     <li>
-      <a class="main-menu" href="#">
+      <a class="main-menu" href="viewSpace.jsp">
         <i class='bx bx-box' ></i>
-        <span class="links_name">BILIK</span>
+        <span class="links_name">RUANG</span>
       </a>
-      <ul class="sub-menu">
+      <!--ul class="sub-menu">
         <li><a href="#">CIPTA INFO BILIK</a></li>
         <li><a href="#">LIHAT INFO BILIK</a></li>
-        <li><a href="#">KEMASKINI INFO BILIK</a></li>
-        <li><a href="#">PADAM INFO BILIK</a></li>
-      </ul>
+      </ul-->
     </li>
 
     <li>
@@ -81,13 +79,13 @@
     </li>
 
     <li>
-      <a class="main-menu" href="viewApplicant.jsp">
+      <a class="main-menu" href="applicantViewAccount.jsp">
         <i class='bx bx-user'></i>
         <span class="links_name">AKAUN</span>
       </a>
     </li>
     <li class="log_out">
-      <a class="main-menu" href="#">
+      <a class="main-menu" href="index.jsp">
         <i class='bx bx-log-out'></i>
         <span class="links_name">LOG KELUAR</span>
       </a>
@@ -128,7 +126,9 @@
               <input type="text" name="applicantusername" class="input" value = "${applicant.applicantusername}" >
               <h2>Kata Laluan</h2>
               <input type="text" name="applicantpassword" class="input" value = "${applicant.applicantpassword}" >
+
               <input type="hidden" name="action" value="updateApplicant">
+              
               <a href="applicantViewAccount.jsp"><button class="btn update">Simpan</button></a>
               <a href="applicantViewAccount.jsp"><button class="btn cancel">Batal</button></a>
             </div>

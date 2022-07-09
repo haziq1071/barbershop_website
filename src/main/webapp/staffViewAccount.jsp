@@ -128,7 +128,7 @@
 
                         <input type="hidden" name="action" value="deleteStaff">
                         <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">Kemaskini</button>
-                        <button class="btn cancel"type="submit"formaction="StaffServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >Padam</button>
+                        <button class="btn cancel" formaction="StaffServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >Padam</button>
                     </div>
                     </form>
                 </div>

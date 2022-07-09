@@ -100,7 +100,7 @@
         <div class="home-content">
             <div class="container-staff">
                 <div class="rightbox">
-                    <form action="" method="POST">
+                    <form action="StaffServlet" method="post">
                         <div class="profile tabShow">
                             <h1>MAKLUMAT STAF</h1>
                             <input type="hidden" name="staffid" value="${staff.staffid}"/>

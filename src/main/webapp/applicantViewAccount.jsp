@@ -11,7 +11,7 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title> View Applicant Form </title>
+    <title> View Applicant Profile </title>
     <link rel="stylesheet" href="accountHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -55,9 +55,9 @@
         </li>
 
         <li>
-            <a class="main-menu" href="#">
+            <a class="main-menu" href="viewSpace.jsp">
                 <i class='bx bx-box' ></i>
-                <span class="links_name">RUANGAN</span>
+                <span class="links_name">RUANG</span>
             </a>
         </li>
 
@@ -121,9 +121,10 @@
                         <p class="input">${applicant.applicantusername}</p>
                         <h2>Kata Laluan</h2>
                         <p class="input">${applicant.applicantpassword}</p>
+
                         <input type="hidden" name="action" value="deleteApplicant">
                         <button class="btn update" onclick="form.action='applicantUpdateAccount.jsp'">Kemaskini</button>
-                        <button class="btn cancel"formaction="ApplicantServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');">Padam</button>
+                        <button class="btn cancel" formaction="ApplicantServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');">Padam</button>
                     </div>
                     </form>
                 </div>
