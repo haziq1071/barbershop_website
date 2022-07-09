@@ -18,23 +18,20 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a class="main-menu" href="homepage.jsp">
+          <a class="main-menu" href="homepageStaff.jsp">
             <i class='bx bx-home'></i>
             <span class="links_name">LAMAN UTAMA</span>
           </a>
         </li>
 
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="viewSpace.jsp">
             <i class='bx bx-box' ></i>
-            <span class="links_name">BILIK</span>
+            <span class="links_name">RUANG</span>
           </a>
           <ul class="sub-menu">
             <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
             <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-            <li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
-            <li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
-            <li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
           </ul>
         </li>
 
@@ -52,7 +49,7 @@
         </li>
 
         <li>
-          <a class="main-menu" href="viewStaff.jsp">
+          <a class="main-menu" href="staffViewAccount.jsp">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
