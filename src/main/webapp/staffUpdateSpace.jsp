@@ -12,30 +12,6 @@
 </head>
 
 <body>
-<sql:setDataSource
-        var="ic"
-        driver="org.postgresql.Driver"
-        url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
-        user="dnzxqagexabepj"
-        password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
-<%
-    int jroomid = Integer.parseInt(request.getParameter("roomid"));
-
-  if(request.getParameter("roomid")==null){
-    jroomid = (Integer) session.getAttribute("roomid");
-  }
-  else{
-    jroomid = Integer.parseInt(request.getParameter("roomid"));
-    session.setAttribute("roomid", jroomid);
-  }
-%>
-<sql:query dataSource="${ic}" var="oc">
-
-    <c:set var="jroomid" value="<%=jroomid%>"/>
-    SELECT * FROM room WHERE roomid=?
-    <sql:param value="${jroomid}"/>
-</sql:query>
-
   <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">

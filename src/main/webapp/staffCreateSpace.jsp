@@ -17,7 +17,7 @@
 		</div>
 		<ul class="nav-links">
 			<li>
-				<a class="main-menu" href="homepage.html"> 
+				<a class="main-menu" href="homepageStaff.jsp">
 					<i class='bx bx-home'></i> 
 					<span class="links_name">LAMAN UTAMA</span>
 				</a>
