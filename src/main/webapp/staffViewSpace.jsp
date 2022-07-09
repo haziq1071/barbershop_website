@@ -108,12 +108,11 @@
                         <span>${space.tablequantity}</span>
                         <span>Kuantiti Kerusi:</span>
                         <span>${space.chairquantity}</span> 
-
-                        <input type="hidden" name="action" value="deleteSpace">
-                        <a href="staffUpdateSpace.jsp"><button class="update">KEMASKINI</button></a>
-                        <button class="delete" formaction="SpaceServlet"
-                        onclick="return confirm('Pasti padam dewan <c:out value="${space.spacename}"/> ?');">PADAM</button>             
                       </div>
+                      <input type="hidden" name="action" value="deleteSpace">
+                      <a href="staffUpdateSpace.jsp"><button class="update">KEMASKINI</button></a>
+                      <button class="delete" formaction="SpaceServlet"
+                      onclick="return confirm('Pasti padam dewan <c:out value="${space.spacename}"/> ?');">PADAM</button>    
                  </div>
                 </div>
           </section>

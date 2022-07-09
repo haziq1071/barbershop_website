@@ -265,14 +265,20 @@ nav .sidebar-button i{
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
-.containerRoom {
-  max-width: 80%;
-  margin: auto;
+  .wrapper {
+  /*
+  background-image: url("hall-1.jpg");*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+  position: relative;
 }
 .main_title{
   font-size: 25px;
   font-weight: 500;
   position: relative;
+  margin-left: 30px;
 }
 
 .flex {
@@ -352,7 +358,7 @@ nav .sidebar-button i{
   padding: 10px 15px;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
   cursor: pointer;
-  margin-left: 700px;
+  margin-left: 630px;
 }
 .add:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
@@ -366,6 +372,8 @@ nav .sidebar-button i{
   padding: 10px 35px;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
   cursor: pointer;
+  margin-left: 370px;
+  margin-top: 25px;
 }
 .update:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
@@ -376,10 +384,11 @@ nav .sidebar-button i{
   border: 0;
   color: #fff;
   background: linear-gradient(to right, #ff0000,#990000);
-  padding: 7px 12px;
+  padding: 10px 35px;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
   cursor: pointer;
   margin-left: 20px;
+  margin-top: 25px;
 }
 .delete:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
@@ -398,27 +407,27 @@ nav .sidebar-button i{
   background: #3f9cc1;
   padding: 20px;
   width: 750px;
-  height: 450px;
+  height: 390px;
   position: absolute;
-  right: 10%;
+  right: 30px;
   color: white;
   margin-bottom: 5px;
 }
 
 .content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 10px;
+  grid-template-columns: repeat(2, 0.3fr);
+  grid-row-gap: 20px;
 }
 
 .wrapper h2 {
   font-weight: 400;
   margin-bottom: 35px;
+  margin-left: 20px;
 }
 
-.wrapper p {
-  margin: 20px 0 50px 0;
-  line-height: 30px;
+.wrapper span {
+  margin-left: 20px;
 }
 
 .wrapper i {
