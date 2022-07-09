@@ -394,19 +394,19 @@ nav .sidebar-button i{
   position: relative;
 }
 
-.wrapper .text {
+.text {
   background: #3f9cc1;
   padding: 20px;
   width: 750px;
   height: 450px;
   position: absolute;
-  /*top: -13%;
+  top: -13%;
   right: 10%;
-  padding-top: 10%;*/
+  padding-top: 10%;
   color: white;
 }
 
-.wrapper .content {
+.content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-row-gap: 30px;
