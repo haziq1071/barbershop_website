@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-    <title> update room </title>
+    <title> Update Space Form</title>
     <link rel="stylesheet" href="createroom.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -84,42 +84,37 @@
               <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
             </div>
         </nav>
-
+        <c:forEach var="space" items="${oc.rows}">
       	<div class="home-content">
           <div class="container">
-              <header class="main_title">KEMASKINI DEWAN</header>
-
-              <c:forEach var="result" items="${oc.rows}">
-
-              <form name="HallInfoForm" action="RoomServlet" method="post" onsubmit="return confirm('Anda pasti ingin kemaskini?');"  enctype = "multipart/form-data">
+          	  <form action="SpaceServlet" method="post">
+              <header class="main_title">KEMASKINI RUANG</header>
                 <div class="form first">
                   <div class="details room">
                     <span class="title">INFORMASI DEWAN</span>
-
-                     <input type="number" name="roomid" value="${result.roomid}" hidden>
-
                     <div class="fields">
                       <div class="input-field input-box">
-                        <label class="details" for="roomname">Nama Dewan</label>
-                        <input type="text" name="roomname" id="roomname" value="${result.roomname}">
+                      	<input type="hidden" name="spaceid" value="${space.spaceid}"/>
+                        <label class="details" for="spacename">Nama Dewan</label>
+                        <input type="text" name="spacename" id="spacename" value="${space.spacename}">
                       </div>
                       <div class="input-field input-box">
-                        <label class="details" for="roomcapacity">Kapasiti</label>
-                        <input type="text" name="roomcapacity" id="roomcapacity" value="${result.roomcapacity}">
+                        <label class="details" for="spacecapacity">Kapasiti</label>
+                        <input type="text" name="spacecapacity" id="spacecapacity" value="${space.spacecapacity}">
                       </div>
                       <div class="input-field input-box">
-                        <label class="details" for="roomstatus">Status Dewan</label>
+                        <label class="details" for="spacestatus">Status Dewan</label>
 
-                        <c:set var = "rmstatus" scope = "session" value = "${result.roomstatus}"/>
-                        <c:if test = "${rmstatus == 'Boleh Digunakan'}">
-                            <select name="roomstatus" id="roomstatus">
-                                <option value="${result.roomstatus}">${result.roomstatus}</option>
+                        <c:set var = "spstatus" scope = "session" value = "${space.spacestatus}"/>
+                        <c:if test = "${spstatus == 'Boleh Digunakan'}">
+                            <select name="spacestatus" id="spacestatus">
+                                <option value="${space.spacestatus}">${result.roomstatus}</option>
                                 <option value="Sedang Diselenggara">Sedang Diselenggara</option>
                             </select>
                         </c:if>
-                        <c:if test = "${rmstatus == 'Sedang Diselenggara'}">
-                            <select name="roomstatus" id="roomstatus">
-                                <option value="${result.roomstatus}">${result.roomstatus}</option>
+                        <c:if test = "${spstatus == 'Sedang Diselenggara'}">
+                            <select name="spacestatus" id="spacestatus">
+                                <option value="${space.spacestatus}">${result.roomstatus}</option>
                                 <option value="Boleh Digunakan">Boleh Digunakan</option>
                             </select>
                         </c:if>
@@ -136,7 +131,7 @@
                          <c:set var = "system" scope = "session" value = "${result.soundsystem}"/>
                          <c:if test = "${system == 'Mikrofon Sahaja'}">
                             <select name="soundsystem" id="soundsystem">
-                                <option value="${result.soundsystem}">${result.soundsystem}</option>
+                                <option value="${space.soundsystem}">${result.soundsystem}</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
                                 <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
                                 <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
@@ -144,7 +139,7 @@
                          </c:if>
                          <c:if test = "${system == 'Mikrofon Dan Speaker'}">
                             <select name="soundsystem" id="soundsystem">
-                                <option value="${result.soundsystem}">${result.soundsystem}</option>
+                                <option value="${space.soundsystem}">${result.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
                                 <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
@@ -152,7 +147,7 @@
                          </c:if>
                          <c:if test = "${system == 'Set Sistem Bar Bunyi'}">
                             <select name="soundsystem" id="soundsystem">
-                                <option value="${result.soundsystem}">${result.soundsystem}</option>
+                                <option value="${space.soundsystem}">${result.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
                                 <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
@@ -160,15 +155,22 @@
                          </c:if>
                          <c:if test = "${system == 'Set Sistem Bunyi Hi-fi'}">
                             <select name="soundsystem" id="soundsystem">
-                                <option value="${result.soundsystem}">${result.soundsystem}</option>
+                                <option value="${space.soundsystem}">${result.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
                                 <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
                             </select>
-                         </c:if>
-                            
+                         </c:if>  
                       </div>
-                      <input type="hidden" name="action" value="updateRoom">
+                       <div class="input-field input-box">
+                        <label class="details" for="tablequantity">Kuantiti Meja</label>
+                        <input type="text" name="tablequantity" id="tablequantity" value="${space.tablequantity}">
+                      </div>
+                       <div class="input-field input-box">
+                        <label class="details" for="chairquantity">Kuantiti Kerusi</label>
+                        <input type="text" name="chairquantity" id="chairquantity" value="${space.chairquantity}">
+                      </div>
+                      <input type="hidden" name="action" value="updateSpace">
                       <div class="button staff">
                         <input type="submit" class="updateHall" name="submit" value="KEMASKINI">
                         <br><br>
@@ -178,9 +180,9 @@
 
               </div>
             </form>
-              </c:forEach>
         </div>
       </div>
+    </c:forEach>
   </section>
 </body>
 </html>

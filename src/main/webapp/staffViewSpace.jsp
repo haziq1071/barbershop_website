@@ -110,7 +110,7 @@
                         <span>${space.chairquantity}</span> 
                       </div>
                       <input type="hidden" name="action" value="deleteSpace">
-                      <a href="staffUpdateSpace.jsp"><button class="update">KEMASKINI</button></a>
+                      <button class="update" onclick="form.action='staffUpdateSpace.jsp'">KEMASKINI</button>
                       <button class="delete" formaction="SpaceServlet"
                       onclick="return confirm('Pasti padam dewan <c:out value="${space.spacename}"/> ?');">PADAM</button>    
                  </div>
