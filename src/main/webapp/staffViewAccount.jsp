@@ -99,7 +99,7 @@
     </nav>
     <c:forEach var="staff" items="${oc.rows}">
         <div class="home-content">
-            <div class="container">
+            <div class="container-staff">
                 <div class="rightbox">
                     <form action="" method="post">
                     <div class="profile tabShow">
