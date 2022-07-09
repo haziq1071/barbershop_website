@@ -14,35 +14,6 @@
     <div class="logo-details">
       <img src="logoWhite.png">
     </div>
-      <ul class="nav-links">
-        <li>
-          <a class="main-menu" href="#">
-            <i class='bx bx-home'></i>
-            <span class="links_name">LAMAN UTAMA</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="main-menu" href="#">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">BILIK</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="main-menu" href="#">
-            <i class='bx bx-bookmark'></i>
-            <span class="links_name">TEMPAHAN</span>
-          </a>
-        </li>
-
-        <li>
-          <a class="main-menu" href="#">
-            <i class='bx bx-user'></i>
-            <span class="links_name">AKAUN</span>
-          </a>
-        </li>
-      </ul>
   </div>
   <section class="home-section">
     <nav>
@@ -76,7 +47,7 @@
             </div>
             <div class="login-signup">
                 <span class="text">Tiada Akaun?
-                  <a href="createStaff.jsp" class="text signup-link">Daftar Segera!</a>
+                  <a href="staffCreateAccount.jsp" class="text signup-link">Daftar Segera!</a>
                 </span>
             </div>
           </form>
@@ -91,7 +62,7 @@
             </div>
             <div class="login-signup">
               <span class="text">Tiada Akaun?
-                <a href="createApplicant.jsp" class="text signup-link">Daftar Segera!</a>
+                <a href="applicantCreateAccount.jsp" class="text signup-link">Daftar Segera!</a>
               </span>
             </div>
           </form>

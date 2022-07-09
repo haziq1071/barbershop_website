@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-    <title> View Hall-1 </title>
+    <title> Create Space </title>
     <link rel="stylesheet" href="roomHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -43,24 +43,21 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a class="main-menu" href="homepage.html">
+          <a class="main-menu" href="homepage.jsp">
             <i class='bx bx-home'></i>
             <span class="links_name">LAMAN UTAMA</span>
           </a>
         </li>
 
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="viewSpace.jsp">
             <i class='bx bx-box' ></i>
-            <span class="links_name" id="min">BILIK</span>
+            <span class="links_name" id="min">RUANG</span>
           </a>
-          <ul class="sub-menu">
+          <!--ul class="sub-menu">
             <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
             <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-            <li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
-            <li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
-            <li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
-          </ul>
+          </ul-->
         </li>
 
         <li>
@@ -78,28 +75,22 @@
         </li>
 
        <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="staffViewAccount.jsp">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="viewStaff.html">LIHAT AKAUN</a></li>
-            <li><a href="updateStaff.html">KEMASKINI AKAUN</a></li>
-            <li><a href="deleteStaff.html">PADAM AKAUN</a></li>
-          </ul>
         </li>
         
         <li class="log_out">
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="index.jsp">
             <i class='bx bx-log-out'></i>
             <span class="links_name">LOG KELUAR</span>
           </a>
         </li>
-      </ul>
+     </ul>
   </div>
 
-  <section class="home-section">
-
+<section class="home-section">
     <nav>
       <div class="sidebar-button">
         <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
@@ -109,31 +100,39 @@
           <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
         </div>
     </nav>
-
-  <c:forEach var="result" items="${oc.rows}">
-	<div class="home-content">
+  <div class="home-content">
     <div class="container">
-      <header class="main_title" style="font-size: xx-large">INFORMASI DEWAN</header>
-        <section class="wrapper top">
+    <a href="createSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
+      <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
+        <c:forEach var="result" items="${oc.rows}">
+        <input type="number" name="roomid"  value="${result.roomid}" hidden>
+        <form action="" method="post">
+          <section class="wrapper top">
+                <div class="containerRoom">
+                 <div class="text">
+                    <h2>Dewan ${result.roomname}</h2>
+                      <div class="content">
+                        <span>Kapasiti:</span>
+                        <span>${result.roomcapacity}</span>
+                        <span>Status:</span>
+                        <span>${result.roomstatus}</span>
+                        <span>Sistem Bunyi:</span>
+                        <span>${result.soundsystem}</span>  
 
-            <!--img class="mySlides" src="pic/${result.roomimagepic}" style="width:100%"-->
-              <div class="containerRoom">
-               <div class="text">
-                  <h2>Dewan ${result.roomname}</h2>
-                    <div class="content">
-                             <span>Kapasiti:</span>
-                             <span>${result.roomcapacity}</span>
-                             <span>Status:</span>
-                             <span>${result.roomstatus}</span>
-                             <span>Sistem Bunyi:</span>
-                             <span>${result.soundsystem}</span>               
-                    </div>
-               </div>
-              </div>
-        </section>
-      </div>
-    </div>
+                        <a href="updateSpace.jsp"><button class="update">KEMASKINI
+                        </button></a>
+                        <input type="hidden" name="action"  value="deleteRoom">
+                        <button type="submit" class="delete" formaction="RoomServlet"
+                        onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">PADAM
+                        </button>             
+                      </div>
+                 </div>
+                </div>
+          </section>
+  		</form>
+  		</c:forEach>
+  	</div>
+  </div>
 </section>
-</c:forEach>
 </body>
 </html>
