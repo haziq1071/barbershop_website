@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
     <title> Update Space Form</title>
-    <link rel="stylesheet" href="createroom.css">
+    <link rel="stylesheet" href="createspace.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-box' ></i>
-            <span class="links_name" id="min">BILIK</span>
+            <span class="links_name" >BILIK</span>
           </a>
           <ul class="sub-menu">
             <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
@@ -41,7 +41,7 @@
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-bookmark'></i>
-            <span class="links_name" id="min">TEMPAHAN</span>
+            <span class="links_name" >TEMPAHAN</span>
           </a>
           <ul class="sub-menu">
             <li><a href="staffBooking.html">TEMPAH BILIK</a></li>
