@@ -129,23 +129,23 @@
                         <c:set var = "spstatus" scope = "session" value = "${space.spacestatus}"/>
                         <c:if test = "${spstatus == 'Boleh Digunakan'}">
                             <select name="spacestatus">
-                                <option value="${space.spacestatus}">${result.roomstatus}</option>
+                                <option value="${space.spacestatus}">${space.roomstatus}</option>
                                 <option value="Sedang Diselenggara">Sedang Diselenggara</option>
                             </select>
                         </c:if>
                         <c:if test = "${spstatus == 'Sedang Diselenggara'}">
                             <select name="spacestatus">
-                                <option value="${space.spacestatus}">${result.roomstatus}</option>
+                                <option value="${space.spacestatus}">${space.roomstatus}</option>
                                 <option value="Boleh Digunakan">Boleh Digunakan</option>
                             </select>
                         </c:if> 
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Sistem Bunyi</label>
-                         <c:set var = "system" scope = "session" value = "${result.soundsystem}"/>
+                         <c:set var = "system" scope = "session" value = "${space.soundsystem}"/>
                          <c:if test = "${system == 'Mikrofon Sahaja'}">
                             <select name="soundsystem">
-                                <option value="${space.soundsystem}">${result.soundsystem}</option>
+                                <option value="${space.soundsystem}">${space.soundsystem}</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
                                 <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
                                 <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
@@ -153,7 +153,7 @@
                          </c:if>
                          <c:if test = "${system == 'Mikrofon Dan Speaker'}">
                             <select name="soundsystem">
-                                <option value="${space.soundsystem}">${result.soundsystem}</option>
+                                <option value="${space.soundsystem}">${space.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
                                 <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
@@ -161,7 +161,7 @@
                          </c:if>
                          <c:if test = "${system == 'Set Sistem Bar Bunyi'}">
                             <select name="soundsystem">
-                                <option value="${space.soundsystem}">${result.soundsystem}</option>
+                                <option value="${space.soundsystem}">${space.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
                                 <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
@@ -169,7 +169,7 @@
                          </c:if>
                          <c:if test = "${system == 'Set Sistem Bunyi Hi-fi'}">
                             <select name="soundsystem">
-                                <option value="${space.soundsystem}">${result.soundsystem}</option>
+                                <option value="${space.soundsystem}">${space.soundsystem}</option>
                                 <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
                                 <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
                                 <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
