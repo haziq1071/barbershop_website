@@ -279,10 +279,10 @@ nav .sidebar-button i{
   display: flex;
 }
 
-/*--------------about--------
+/*--------------about--------*/
 .top {
-  margin-top: 10%;
-}*/
+  margin-top: 10px;
+}
 
 .mtop {
   margin-top: 5%;
