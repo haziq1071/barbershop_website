@@ -122,9 +122,8 @@
                         <h2>Kata Laluan</h2>
                         <p class="input">${applicant.applicantpassword}</p>
                         <input type="hidden" name="action" value="deleteApplicant">
-                        <a href="applicantUpdateAccount.jsp"><button class="btn update">Kemaskini</button></a>
+                        <button class="btn update" onclick="form.action='applicantUpdateAccount.jsp'">Kemaskini</button>
                         <button class="btn cancel"formaction="ApplicantServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');">Padam</button>
-
                     </div>
                     </form>
                 </div>
