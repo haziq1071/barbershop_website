@@ -384,19 +384,11 @@ nav .sidebar-button i{
 .delete:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
-  .wrapper {
-  background-image: url("hall-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 400px;
-  position: relative;
-}
 
 .wrapper .text {
   background: #3f9cc1;
   padding: 50px;
-  width: 50%;
+  width: 435px;
   height: 435px;
   position: absolute;
   top: -13%;
@@ -424,166 +416,6 @@ nav .sidebar-button i{
 .wrapper i {
   margin: 5px 20px 0 0;
 }
-/*
-.main_title::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 30px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-}
-
-.container form{
-    position: relative;
-    margin-top: 16px;
-    min-height: 490px;
-    background-color: #fff;
-    overflow: hidden;
-}
-.container form .form{
-    position: absolute;
-    background-color: #fff;
-    transition: 0.3s ease;
-}
-form.secActive .form.first{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-100%);
-}
-.details{
-  display: block;
-  font-weight: 350;
-  margin-bottom: 0px;
-}
-.container form .title{
-    display: block;
-    margin-bottom: 8px;
-    font-size: 18px;
-    font-weight: 500;
-    margin: 6px 0;
-    color: #333;
-}
-
-.container form .fields{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-form .fields .input-field{
-    display: flex;
-    width: calc(100% / 3 - 15px);
-    flex-direction: column;
-    margin: 4px 0;
-}
-.input-field input, select{
-    outline: none;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 0 15px;
-    height: 42px;
-    margin: 8px 0;
-}
-.input-field input :focus,
-.input-field select:focus{
-    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
-}
-.input-field select,
-.input-field input[type="date"]{
-    color: #707070;
-}
-.input-field input[type="date"]:valid{
-    color: #333;
-}
-.input-box input{
-  height: 45px;
-  width: 100%;
-  outline: none;
-  font-size: 16px;
-  border-radius: 5px;
-  padding-left: 15px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-}
-.input-box input:focus,
-.input-box input:valid{
-  border-color: #9b59b6;
-}
-.container form button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    max-width: 200px;
-    width: 100%;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
-    margin: 25px 0;
-    background-color: #4070f4;
-    transition: all 0.3s linear;
-    cursor: pointer;
-}
-.container form .btnText{
-    font-size: 14px;
-    font-weight: 400;
-}
- form .button{
-   height: 45px;
-   margin: 10px;
- }
- form .staff{
-   margin-top: 0px;
-   padding-bottom: 5px;
- }
-  form .applicant{
-   margin-top: 50px;
- }
- form .button input{
-   height: 100%;
-   width: 100%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(to right, #009ffd,#2a2a72);
- }
-
- form .button input:hover{
-   transform: scale(0.99); 
-
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
-
-  .linkbutton:hover{
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
-
-.linkbutton{
-  height: 100%;
-   width: 100%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(to right, #009ffd,#2a2a72);
-}*/
 
 /* Responsive Media Query */
 @media (max-width: 1240px) {
