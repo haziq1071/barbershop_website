@@ -385,12 +385,12 @@ form .fields .input-field{
     font-weight: 400;
 }
  form .button{
-   height: 45px;
+   height: 50px;
    margin: 10px;
  }
  form .staff{
-   margin-top: 0px;
-   padding-bottom: 5px;
+   margin-top: 30px;
+   padding: 5px;
  }
   form .applicant{
    margin-top: 50px;
@@ -441,7 +441,7 @@ form .fields .input-field{
 .btn:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
-.btn a{
+.btn{
   display: flex;
   text-decoration: none;
   transition: all 0.4s ease;
