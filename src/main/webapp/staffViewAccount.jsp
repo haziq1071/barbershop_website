@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 9/7/2022
-  Time: 11:12 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html>
@@ -127,9 +120,9 @@
                         <p class="input">${staff.staffpassword}</p>
 
                         <input type="hidden" name="action" value="deleteStaff">
-                        <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">Kemaskini</button>
+                        <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">KEMASKINI</button>
                         <button class="btn cancel" formaction="StaffServlet" 
-                        onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >Padam</button>
+                        onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >PADAM</button>
                     </div>
                     </form>
                 </div>

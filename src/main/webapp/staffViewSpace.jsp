@@ -4,14 +4,13 @@
 <html>
 <head>
   <meta charset="UTF-8">
-    <title> Create Space </title>
+    <title> View Space </title>
     <link rel="stylesheet" href="roomHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
 <sql:setDataSource
         var="ic"
@@ -30,16 +29,16 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a class="main-menu" href="homepage.jsp">
+          <a class="main-menu" href="homepageStaff.jsp">
             <i class='bx bx-home'></i>
             <span class="links_name">LAMAN UTAMA</span>
           </a>
         </li>
 
         <li>
-          <a class="main-menu" href="viewSpace.jsp">
+          <a class="main-menu" href="staffViewSpace.jsp">
             <i class='bx bx-box' ></i>
-            <span class="links_name" id="min">RUANG</span>
+            <span class="links_name">RUANG</span>
           </a>
           <!--ul class="sub-menu">
             <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
@@ -50,7 +49,7 @@
         <li>
           <a class="main-menu" href="#">
             <i class='bx bx-bookmark'></i>
-            <span class="links_name" id="min">TEMPAHAN</span>
+            <span class="links_name">TEMPAHAN</span>
           </a>
           <ul class="sub-menu">
             <li><a href="staffBooking.html">TEMPAH BILIK</a></li>
@@ -91,27 +90,29 @@
     <div class="container">
     <a href="staffCreateSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
       <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
-        <c:forEach var="result" items="${oc.rows}">
-        <input type="number" name="spaceid"  value="${result.spaceid}" hidden>
+        <c:forEach var="space" items="${oc.rows}">
         <form action="" method="post">
+        <input type="hidden" name="spaceid" value="${space.spaceid}">
           <section class="wrapper top">
                 <div class="containerRoom">
                  <div class="text">
-                    <h2>Dewan ${result.roomname}</h2>
+                    <h2>${space.spacename}</h2>
                       <div class="content">
                         <span>Kapasiti:</span>
-                        <span>${result.roomcapacity}</span>
+                        <span>${space.spacecapacity}</span>
                         <span>Status:</span>
-                        <span>${result.roomstatus}</span>
+                        <span>${space.spacestatus}</span>
                         <span>Sistem Bunyi:</span>
-                        <span>${result.soundsystem}</span>  
+                        <span>${space.soundsystem}</span> 
+                        <span>Kuantiti Meja:</span>
+                        <span>${space.tablequantity}</span>
+                        <span>Kuantiti Kerusi:</span>
+                        <span>${space.chairquantity}</span> 
 
-                        <a href="staffUpdateSpace.jsp"><button class="update">KEMASKINI
-                        </button></a>
-                        <input type="hidden" name="action"  value="deleteSpace">
-                        <button type="submit" class="delete" formaction="SpaceServlet"
-                        onclick="return confirm('Pasti padam dewan <c:out value="${result.spacename}"/> ?');">PADAM
-                        </button>             
+                        <input type="hidden" name="action" value="deleteSpace">
+                        <a href="staffUpdateSpace.jsp"><button class="update">KEMASKINI</button></a>
+                        <button class="delete" formaction="SpaceServlet"
+                        onclick="return confirm('Pasti padam dewan <c:out value="${space.spacename}"/> ?');">PADAM</button>             
                       </div>
                  </div>
                 </div>
