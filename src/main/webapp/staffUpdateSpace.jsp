@@ -113,11 +113,11 @@
               <header class="main_title">KEMASKINI RUANG</header>
                 <div class="form first">
                   <div class="details room">
-                    <span class="title">INFORMASI DEWAN</span>
+                    <span class="title">INFORMASI RUANG</span>
                     <div class="fields">
                       <div class="input-field input-box">
                       	<input type="hidden" name="spaceid" value="${space.spaceid}"/>
-                        <label class="details" >Nama Dewan</label>
+                        <label class="details" >Nama</label>
                         <input type="text" name="spacename" value="${space.spacename}">
                       </div>
                       <div class="input-field input-box">
@@ -125,8 +125,7 @@
                         <input type="text" name="spacecapacity" value="${space.spacecapacity}">
                       </div>
                       <div class="input-field input-box">
-                        <label class="details">Status Dewan</label>
-
+                        <label class="details">Status</label>
                         <c:set var = "spstatus" scope = "session" value = "${space.spacestatus}"/>
                         <c:if test = "${spstatus == 'Boleh Digunakan'}">
                             <select name="spacestatus">
@@ -139,15 +138,8 @@
                                 <option value="${space.spacestatus}">${result.roomstatus}</option>
                                 <option value="Boleh Digunakan">Boleh Digunakan</option>
                             </select>
-                        </c:if>
-                        
+                        </c:if> 
                       </div>
-                    </div>
-                  </div>
-                  
-                  <div class="details ID">
-                    <span class="title">Fasiliti bilik</span>
-                    <div class="fields">
                       <div class="input-field input-box">
                         <label class="details">Sistem Bunyi</label>
                          <c:set var = "system" scope = "session" value = "${result.soundsystem}"/>
@@ -184,23 +176,21 @@
                             </select>
                          </c:if>  
                       </div>
-                       <div class="input-field input-box">
+                      <div class="input-field input-box">
                         <label class="details" >Kuantiti Meja</label>
                         <input type="text" name="tablequantity" value="${space.tablequantity}">
                       </div>
                        <div class="input-field input-box">
                         <label class="details">Kuantiti Kerusi</label>
                         <input type="text" name="chairquantity" value="${space.chairquantity}">
-                      </div>
+                      </div>                    
                       <input type="hidden" name="action" value="updateSpace">
                       <div class="button staff">
                         <a href="staffViewSpace.jsp"><button class="update">Simpan</button></a>
                         <a href="staffViewSpace.jsp"><button class="cancel">Batal</button></a>
-                        <br><br>
                       </div>
                     </div> 
                   </div>
-
               </div>
             </form>
         </div>

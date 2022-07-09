@@ -79,11 +79,10 @@
 				<form method="post">
 					<div class="form first">
 						<div class="details room">
-							<span class="title">Informasi Ruang</span>
-
+							<span class="title">INFORMASI RUANG</span>
 							<div class="fields">
 								<div class="input-field input-box">
-									<label class="details">Nama Ruang</label> 
+									<label class="details">Nama</label> 
 									<input type="text" name="spacename" >
 								</div>
 								<div class="input-field input-box">
@@ -91,7 +90,7 @@
 									<input type="text" name="spacecapacity" >
 								</div>
 								<div class="input-field input-box">
-									<label class="details">Status Dewan</label>
+									<label class="details">Status</label>
 									<select	name="spacestatus" >
 										<option disabled selected>Pilih Status</option>
 										<option value="Boleh Digunakan">Boleh Digunakan</option>
@@ -109,11 +108,11 @@
 									</select>
 								</div>
 								<div class="input-field input-box">
-									<label class="details">Bilangan Meja</label>
+									<label class="details">Kuantiti Meja</label>
 									<input type="text" name="tablequantity" >
 								</div>
 								<div class="input-field input-box">
-									<label class="details">Bilangan Kerusi</label>
+									<label class="details">Kuantiti Kerusi</label>
 									<input type="text" name="chairquantity" >
 								</div>
 							</div>
