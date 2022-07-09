@@ -126,16 +126,16 @@
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Status</label>
-                        <c:set var = "spstatus" scope = "session" value = "${space.spacestatus}"/>
-                        <c:if test = "${spstatus == 'Boleh Digunakan'}">
+                        <c:set var = "status" scope = "session" value = "${space.spacestatus}"/>
+                        <c:if test = "${status == 'Boleh Digunakan'}">
                             <select name="spacestatus">
-                                <option value="${space.spacestatus}">${space.roomstatus}</option>
+                                <option value="${space.spacestatus}">${space.spacestatus}</option>
                                 <option value="Sedang Diselenggara">Sedang Diselenggara</option>
                             </select>
                         </c:if>
-                        <c:if test = "${spstatus == 'Sedang Diselenggara'}">
+                        <c:if test = "${status == 'Sedang Diselenggara'}">
                             <select name="spacestatus">
-                                <option value="${space.spacestatus}">${space.roomstatus}</option>
+                                <option value="${space.spacestatus}">${space.spacestatus}</option>
                                 <option value="Boleh Digunakan">Boleh Digunakan</option>
                             </select>
                         </c:if> 
