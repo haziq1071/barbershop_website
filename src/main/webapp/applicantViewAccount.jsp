@@ -124,7 +124,8 @@
 
                         <input type="hidden" name="action" value="deleteApplicant">
                         <button class="btn update" onclick="form.action='applicantUpdateAccount.jsp'">Kemaskini</button>
-                        <button class="btn cancel" formaction="ApplicantServlet" onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');">Padam</button>
+                        <button class="btn cancel" formaction="ApplicantServlet" 
+                        onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');">Padam</button>
                     </div>
                     </form>
                 </div>

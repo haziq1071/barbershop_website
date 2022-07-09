@@ -56,7 +56,7 @@ public class StaffDao {
     public boolean updateStaff(Staff staff) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE staff set staffrole=?,staffname=?,staffic=?,staffaddress=?,staffphone=?,staffemail=?,staffdateofbirth=?,staffusername=?,staffpassword=?,supervisorid=? where staffid=?");)
+             PreparedStatement statement = connection.prepareStatement("UPDATE staff set staffrole=?,staffname=?,staffic=?,staffaddress=?,staffphone=?,staffemail=?,staffdateofbirth=?,staffusername=?,staffpassword=?,supervisorid=?where staffid=?");)
         {
           statement.setString(1, staff.getStaffrole());
           statement.setString(2, staff.getStaffname());
@@ -84,8 +84,6 @@ public class StaffDao {
             }
             return rowDeleted;
         }
-    
-    
     
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
