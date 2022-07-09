@@ -103,7 +103,7 @@ public class SpaceServlet extends HttpServlet {
 
         session.removeAttribute("space");
         session.setAttribute("space", space);
-        response.sendRedirect("staffViewAccount.jsp");
+        response.sendRedirect("staffViewSpace.jsp");
 
 
     }
