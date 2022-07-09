@@ -1,7 +1,7 @@
 package com.example.suraubookingsystem;
 import java.io.Serializable;
 import javax.servlet.http.Part;
-//test
+
 public class Room implements Serializable{
 	private int roomid;
 	private String roomname;
