@@ -256,7 +256,7 @@ nav .sidebar-button i{
 
 .container{
     position: relative;
-    max-width: 900px;
+    max-width: 850px;
     width: 100%;
     border-radius: 6px;
     padding: 20px;
@@ -402,12 +402,13 @@ nav .sidebar-button i{
   position: absolute;
   right: 10%;
   color: white;
+  margin-bottom: 5px;
 }
 
 .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 30px;
+  grid-row-gap: 10px;
 }
 
 .wrapper h2 {
