@@ -22,15 +22,15 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a class="main-menu" href="#">
+            <a class="main-menu" href="homepageStaff.jsp">
                 <i class='bx bx-home'></i>
                 <span class="links_name">LAMAN UTAMA</span>
             </a>
         </li>
         <li>
-            <a class="main-menu" href="#">
+            <a class="main-menu" href="staffViewSpace.jsp">
                 <i class='bx bx-box' ></i>
-                <span class="links_name">BILIK</span>
+                <span class="links_name">RUANG</span>
             </a>
         </li>
         <li>
@@ -136,7 +136,7 @@
                         <input type="hidden" name="action" value="signupStaff">
 
                         <div class="button staff">
-                            <input type="submit" value="Daftar" formaction="StaffServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
+                            <input type="submit" value="DAFTAR" formaction="StaffServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
                         </div>
                     </div>
                 </div>

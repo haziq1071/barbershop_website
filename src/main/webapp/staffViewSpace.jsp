@@ -89,10 +89,10 @@
     </nav>
   <div class="home-content">
     <div class="container">
-    <a href="createSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
+    <a href="staffCreateSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
       <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
         <c:forEach var="result" items="${oc.rows}">
-        <input type="number" name="roomid"  value="${result.roomid}" hidden>
+        <input type="number" name="spaceid"  value="${result.spaceid}" hidden>
         <form action="" method="post">
           <section class="wrapper top">
                 <div class="containerRoom">
@@ -106,11 +106,11 @@
                         <span>Sistem Bunyi:</span>
                         <span>${result.soundsystem}</span>  
 
-                        <a href="updateSpace.jsp"><button class="update">KEMASKINI
+                        <a href="staffUpdateSpace.jsp"><button class="update">KEMASKINI
                         </button></a>
-                        <input type="hidden" name="action"  value="deleteRoom">
-                        <button type="submit" class="delete" formaction="RoomServlet"
-                        onclick="return confirm('Pasti padam dewan <c:out value="${result.roomname}"/> ?');">PADAM
+                        <input type="hidden" name="action"  value="deleteSpace">
+                        <button type="submit" class="delete" formaction="SpaceServlet"
+                        onclick="return confirm('Pasti padam dewan <c:out value="${result.spacename}"/> ?');">PADAM
                         </button>             
                       </div>
                  </div>

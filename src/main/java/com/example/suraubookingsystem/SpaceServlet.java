@@ -1,5 +1,4 @@
 package com.example.suraubookingsystem;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +20,7 @@ public class SpaceServlet extends HttpServlet {
     public void init() {
         sp = new SpaceDao();
     }
-
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }

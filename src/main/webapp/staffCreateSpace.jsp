@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<title>Create Hall Form</title>
+<title>Create Space Form</title>
 <link rel="stylesheet" href="createroom.css">
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
 	rel='stylesheet'>
@@ -23,9 +23,9 @@
 				</a>
 			</li>
 			<li>
-				<a class="main-menu" href="#"> 
+				<a class="main-menu" href="staffViewSpace.jsp"> 
 					<i class='bx bx-box'></i>
-					<span class="links_name min">BILIK</span>
+					<span class="links_name min">RUANG</span>
 				</a>
 				<ul class="sub-menu">
 					<li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
@@ -78,24 +78,24 @@
 
 		<div class="home-content">
 			<div class="container">
-				<header class="main_title">PENAMBAHAN DEWAN</header>
-				<form name="createRoom" method="post">
+				<header class="main_title">PENAMBAHAN RUANG</header>
+				<form method="post">
 					<div class="form first">
 						<div class="details room">
-							<span class="title">Informasi Dewan</span>
+							<span class="title">Informasi Ruang</span>
 
 							<div class="fields">
 								<div class="input-field input-box">
-									<label class="details">Nama Dewan </label> 
-									<input type="text" name="roomname" >
+									<label class="details">Nama Ruang</label> 
+									<input type="text" name="spacename" >
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name="roomcapacity" >
+									<input type="text" name="spacecapacity" >
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Status Dewan</label>
-									<select	name="roomstatus" >
+									<select	name="spacestatus" >
 										<option disabled selected>Pilih Status</option>
 										<option value="Boleh Digunakan">Boleh Digunakan</option>
 										<option value="Sedang Diselenggara">Sedang Diselenggara</option>
@@ -120,9 +120,9 @@
 									<input type="text" name="chairquantity" >
 								</div>
 							</div>
-							<input type="hidden" name="action" value="createRoom">
+							<input type="hidden" name="action" value="createSpace">
 							<div class="button staff">
-								<input type="submit" name="createRoom" value="TAMBAH" formaction="RoomServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
+								<input type="submit" value="TAMBAH" formaction="SpaceServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
 							</div>
 						</div>
 					</div>
