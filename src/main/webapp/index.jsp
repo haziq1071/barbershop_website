@@ -51,9 +51,9 @@
                 </span>
             </div>
           </form>
-          <form id="applicant" class="input-group">
-            <input type="text" class="input-field" placeholder="Nama Pengguna" required>
-            <input type="password" class="input-field" placeholder="Kata Laluan" required>
+          <form id="applicant" class="input-group" action="ApplicantServlet" method="POST">
+            <input type="text" class="input-field" name="applicantusername"  placeholder="Nama Pengguna" required>
+            <input type="password" class="input-field" name="applicantpassword" placeholder="Kata Laluan" required>
             <div class="input-box button">
 
                <input type="hidden" name="action" value="loginApplicant">
