@@ -99,7 +99,7 @@ public class SpaceServlet extends HttpServlet {
         space.setTablequantity(tablequantity);
         space.setChairquantity(chairquantity);
 
-        sp.createSpace(space);
+        sp.updateSpace(space);
 
         session.removeAttribute("space");
         session.setAttribute("space", space);
