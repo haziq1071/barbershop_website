@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import static java.lang.System.out;
 
 public class ApplicantDao {
-    String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
-    String user = "dnzxqagexabepj";
-    String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294";
+  String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
+  String user = "dnzxqagexabepj";
+  String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294";
 
     protected Connection getConnection()
     {
@@ -25,27 +25,29 @@ public class ApplicantDao {
         }
         return connection;
     }
+
     public void signupApplicant (Applicant applicant) throws SQLException {
 
         // try-with-resource statement will auto close the connection.
     try(Connection connection = getConnection();
-    PreparedStatement preparedStatement = connection.prepareStatement("insert into applicant(applicantname,applicantic,applicantaddress,applicantphone,applicantemail,applicantdateofbirth,applicantusername,applicantpassword) values(?,?,?,?,?,?,?,?)");)
+    PreparedStatement preparedStatement = connection.prepareStatement("insert into applicant(applicantname,applicantic,applicantdateofbirth,applicantaddress,applicantemail,applicantphone,applicantusername,applicantpassword) values(?,?,?,?,?,?,?,?)");)
     {
         preparedStatement.setString(1, applicant.getApplicantname());
         preparedStatement.setString(2, applicant.getApplicantic());
-        preparedStatement.setString(3, applicant.getApplicantaddress());
-        preparedStatement.setString(4, applicant.getApplicantphone());
+        preparedStatement.setDate(3, applicant.getApplicantdateofbirth());
+        preparedStatement.setString(4, applicant.getApplicantaddress());
         preparedStatement.setString(5, applicant.getApplicantemail());
-        preparedStatement.setDate(6, applicant.getApplicantdateofbirth());
+        preparedStatement.setString(6, applicant.getApplicantphone());
         preparedStatement.setString(7, applicant.getApplicantusername());
         preparedStatement.setString(8, applicant.getApplicantpassword());
 
         out.println(preparedStatement);
         preparedStatement.executeUpdate();
-    } catch (SQLException e) {
-        printSQLException(e);
+      } catch (SQLException e) {
+          printSQLException(e);
+      }
     }
-    }
+
     public boolean updateApplicant(Applicant applicant) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();

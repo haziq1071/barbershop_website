@@ -8,12 +8,16 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+
 @WebServlet(name = "ApplicantServlet", value = "/ApplicantServlet")
 public class ApplicantServlet extends HttpServlet{
+
     private ApplicantDao app;
     public void init() {
         app = new ApplicantDao();
     }
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
@@ -21,6 +25,8 @@ public class ApplicantServlet extends HttpServlet{
         session.invalidate();
         response.sendRedirect("index.jsp");
     }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //try
         response.setContentType("text/html");
@@ -35,9 +41,6 @@ public class ApplicantServlet extends HttpServlet{
                 case "loginApplicant":
                     loginApplicant(request, response);
                     break;
-                /*case "viewApplicant":
-                    viewApplicant(request, response);
-                    break;*/
                 case "deleteApplicant":
                     deleteApplicant(request, response);
                     break;
@@ -49,15 +52,16 @@ public class ApplicantServlet extends HttpServlet{
             throw new ServletException(ex);
         }
     }
+    
     /*######################################################( SINGNUP )#############################################################*/
 
     private void signupApplicant(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
         String applicantname = request.getParameter("applicantname");
         String applicantic = request.getParameter("applicantic");
-        String applicantaddress = request.getParameter("applicantaddress");
-        String applicantphone = request.getParameter("applicantphone");
-        String applicantemail = request.getParameter("applicantemail");
         Date applicantdateofbirth = Date.valueOf(request.getParameter("applicantdateofbirth"));
+        String applicantaddress = request.getParameter("applicantaddress");
+        String applicantemail = request.getParameter("applicantemail");
+        String applicantphone = request.getParameter("applicantphone");
         String applicantusername = request.getParameter("applicantusername");
         String applicantpassword = request.getParameter("applicantpassword");
 
@@ -65,10 +69,10 @@ public class ApplicantServlet extends HttpServlet{
 
         applicant.setApplicantname(applicantname);
         applicant.setApplicantic(applicantic);
-        applicant.setApplicantaddress(applicantaddress);
-        applicant.setApplicantphone(applicantphone);
-        applicant.setApplicantemail(applicantemail);
         applicant.setApplicantdateofbirth(applicantdateofbirth);
+        applicant.setApplicantaddress(applicantaddress);
+        applicant.setApplicantemail(applicantemail);
+        applicant.setApplicantphone(applicantphone);
         applicant.setApplicantusername(applicantusername);
         applicant.setApplicantpassword(applicantpassword);
 
@@ -131,11 +135,11 @@ public class ApplicantServlet extends HttpServlet{
                     }
                 }
             }
+
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-
 
     /*######################################################( UPDATE )#############################################################*/
 
