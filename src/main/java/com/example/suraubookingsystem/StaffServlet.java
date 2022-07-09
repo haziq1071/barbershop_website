@@ -174,7 +174,7 @@ public class StaffServlet extends HttpServlet {
         staff.setStaffid(staffid);
         staff.setStaffrole(staffrole);
         staff.setStaffname(staffname);
-        staff.setStaffname(staffic);
+        staff.setStaffic(staffic);
         staff.setStaffaddress(staffaddress);
         staff.setStaffphone(staffphone);
         staff.setStaffemail(staffemail);
