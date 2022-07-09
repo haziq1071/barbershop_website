@@ -137,7 +137,7 @@ public class StaffServlet extends HttpServlet {
                         session.setAttribute("staffusername",staff.getStaffusername());
                         session.setAttribute("staffpassword",staff.getStaffpassword());
 
-                        response.sendRedirect("homepage.jsp");
+                        response.sendRedirect("homepageStaff.jsp");
 
                     }else{
 
