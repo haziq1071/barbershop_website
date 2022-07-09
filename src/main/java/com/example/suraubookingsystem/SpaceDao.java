@@ -1,9 +1,9 @@
 package com.example.suraubookingsystem;
 
-import java.io.*;
-import java.sql.*;
-import javax.servlet.annotation.MultipartConfig;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import static java.lang.System.out;
 
 public class SpaceDao {
@@ -13,25 +13,25 @@ public class SpaceDao {
     String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294";
 
     protected Connection getConnection()
-    {
-        Connection connection = null;
-        try {
-            Class.forName("oracle.jdbc.OracleDriver");
-            connection = DriverManager.getConnection(dbURL, user, pass);
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return connection;
+  {
+    Connection connection = null;
+    try {
+      Class.forName("org.postgresql.Driver");
+      connection = DriverManager.getConnection(dbURL, user, pass);
+    } catch (SQLException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
     }
+    return connection;
+  }
 
     public void createSpace(Space space) throws SQLException  {
 
         try (Connection connection = getConnection();
-             PreparedStatement prepareStatement = connection.prepareStatement("insert into space( spacename, spacecapacity, spacestatus, soundsystem, tablequantity, chairquantity) values(?,?,?,?,?,?)");)
+             PreparedStatement prepareStatement = connection.prepareStatement("insert into space(spacename,spacecapacity,spacestatus,soundsystem,tablequantity,chairquantity) values(?,?,?,?,?,?)");)
         {
             prepareStatement.setString(1, space.getSpacename());
             prepareStatement.setInt(2, space.getSpacecapacity());
@@ -39,6 +39,8 @@ public class SpaceDao {
             prepareStatement.setString(4, space.getSoundsystem());
             prepareStatement.setInt(5, space.getTablequantity());
             prepareStatement.setInt(6, space.getChairquantity());
+
+            out.println(prepareStatement);
             prepareStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -49,9 +51,8 @@ public class SpaceDao {
     public boolean updateSpace(Space space) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=?, tablequantity=?, chairquantity=? WHERE spaceid=?");)
+             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=?,tablequantity=?,chairquantity=?where spaceid=?");)
         {
-
             ps.setString(1, space.getSpacename());
             ps.setInt(2, space.getSpacecapacity());
             ps.setString(3, space.getSpacestatus());
@@ -59,7 +60,6 @@ public class SpaceDao {
             ps.setInt(5, space.getTablequantity());
             ps.setInt(6, space.getChairquantity());
             ps.setInt(7, space.getSpaceid());
-            ps.executeUpdate();
 
             rowUpdated = ps.executeUpdate() > 0;
 
@@ -67,11 +67,10 @@ public class SpaceDao {
         return rowUpdated;
     }
 
-
     public boolean deleteSpace(int spaceid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("delete from space WHERE spaceid=?");) {
+             PreparedStatement ps = connection.prepareStatement("delete from space where spaceid=?");) {
             ps.setInt(1, spaceid);
             rowDeleted = ps.executeUpdate() > 0;
         }

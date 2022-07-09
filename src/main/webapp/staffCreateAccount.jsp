@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: HP
-  Date: 9/7/2022
-  Time: 11:10 AM
-  To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>

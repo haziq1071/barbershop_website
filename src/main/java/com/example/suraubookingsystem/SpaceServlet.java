@@ -1,30 +1,32 @@
 package com.example.suraubookingsystem;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
-import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
 
-/**
- * Servlet implementation class SpaceServlet
- */
 @WebServlet(name = "SpaceServlet", value = "/SpaceServlet")
 public class SpaceServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
 
     private SpaceDao sp;
     public void init() {
         sp = new SpaceDao();
     }
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    	HttpSession session = request.getSession();
+        session.removeAttribute("staffid");
+        session.invalidate();
+        response.sendRedirect("index.jsp");
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
