@@ -396,11 +396,10 @@ nav .sidebar-button i{
 .wrapper .text {
   background: #3f9cc1;
   padding: 50px;
-  width: 735px;
+  width: 750px;
   height: 435px;
   position: absolute;
-  top: -13%;
-  /*right: 10%;*/
+  /*top: -13%750 right: 10%;*/
   padding-top: 10%;
   color: white;
 }
