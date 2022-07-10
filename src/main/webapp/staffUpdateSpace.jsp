@@ -185,7 +185,8 @@
                         <input type="text" name="chairquantity" value="${space.chairquantity}">
                       </div> 
                       <input type="hidden" name="action" value="updateSpace">
-                      <a href="staffViewSpace.jsp"><button class="button staff">KEMASKINI</button></a>               
+                      <a href="staffViewSpace.jsp"><button class="update">KEMASKINI</button></a>
+                      <a href="staffViewSpace.jsp"><button class="delete">BATAL</button></a>                   
                     </div> 
                   </div>
               </div>
