@@ -343,21 +343,6 @@ nav .sidebar-button i{
 .heading .btn1 {
   margin: 50px 0 20px 50px;
 }
-.add{
-  text-transform: uppercase;
-  font-size: 15px;
-  border: 0;
-  color: #fff;
-  background: linear-gradient(to right, #009ffd,#2a2a72);
-  padding: 10px 15px;
-  box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
-  cursor: pointer;
-  margin-left: 895px;
-}
-.add:hover{
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  }
-
 .container table{
  position: absolute;
  z-index: 2;
@@ -365,7 +350,7 @@ nav .sidebar-button i{
  margin-top: 15%;
  margin-right: 5px;
  transform: translate(-50%,-50%);
- width: 100px; 
+ width: 400px; 
  border-collapse: collapse;
  border-spacing: 0;
  box-shadow: 0 2px 15px rgba(64,64,64,.7);
@@ -397,13 +382,17 @@ tr:nth-child(even){
 }
 
 td button:nth-child(1) {
+    background-color: #4CAF50;
+    margin-right: 5px;
+}
+td button:nth-child(2) {
     background-color: #f80000;
 }
 
 button {
     outline: none;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
     padding: 10px;
     color: #ffffff;
