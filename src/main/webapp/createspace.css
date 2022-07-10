@@ -414,6 +414,11 @@ form .fields .input-field{
   /* transform: scale(0.99); */
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
+
+  .details a{
+  	text-decoration: none;
+  	display: flex;
+  }
   
 .update{
   text-transform: uppercase;
