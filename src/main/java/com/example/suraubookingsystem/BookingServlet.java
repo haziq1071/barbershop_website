@@ -6,7 +6,6 @@ import javax.servlet.annotation.*;
 import java.io.*;
 import java.sql.Date;
 import java.sql.SQLException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -15,14 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-
-@MultipartConfig
 @WebServlet(name = "BookingServlet", value = "/BookingServlet")
 public class BookingServlet extends HttpServlet {
 
     //private static final long serialVersionUID = 1L;
     private BookingDao bd;
-
     public void init() {
         bd = new BookingDao();
     }
@@ -30,13 +26,17 @@ public class BookingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
+        session.removeAttribute("staffid");
+        session.invalidate();
+        response.sendRedirect("index.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         response.setContentType("text/html");
-
+        PrintWriter out = response.getWriter();
         String action = request.getParameter("action");
 
         try {
@@ -63,19 +63,17 @@ public class BookingServlet extends HttpServlet {
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        } 
     }
 
     /*######################################################( Staff Create Booking )#############################################################*/
 
-    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws Exception {
+    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
-        HttpSession session = request.getSession();
-
+        //HttpSession session = request.getSession();
         int staffid = Integer.parseInt(request.getParameter("staffid"));
         int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+        String spacename = request.getParameter("spacename");
         Date eventdate = Date.valueOf(request.getParameter("eventdate"));
         String bookingdescription = request.getParameter("bookingdescription");
 
@@ -86,6 +84,7 @@ public class BookingServlet extends HttpServlet {
 
         staff.setStaffid(staffid);
         space.setSpaceid(spaceid);
+        space.setSpacename(spacename);
         booking.setEventdate(eventdate);
         booking.setBookingdescription(bookingdescription);
 
