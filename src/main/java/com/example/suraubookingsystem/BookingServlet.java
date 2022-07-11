@@ -67,13 +67,13 @@ public class BookingServlet extends HttpServlet {
 
     /*######################################################( Staff Create Booking )#############################################################*/
 
-    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws Exception {
+    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
-        HttpSession session = request.getSession();
-        //response.setContentType("text/html");
-        //PrintWriter out = response.getWriter();
+        //HttpSession session = request.getSession();
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
 
-     //try{
+     try{
         int staffid = Integer.parseInt(request.getParameter("staffid"));
         //int spaceid = Integer.parseInt(request.getParameter("spaceid"));
         Date eventdate = Date.valueOf(request.getParameter("eventdate"));
@@ -93,14 +93,14 @@ public class BookingServlet extends HttpServlet {
 
         //bd.staffcreatebooking(staff, space, booking);
         bd.staffcreatebooking(booking,staffid);
-        response.sendRedirect("staffViewBooking.jsp");
-        /*} catch (Exception e) {
+        //response.sendRedirect("staffViewBooking.jsp");
+        } catch (Exception e) {
                 e.printStackTrace();
             }
         out.println("<script type=\"text/javascript\">");
-        out.println("alert('You succesfully create!');");
+        out.println("alert('Tempahan telah berjaya dibuat!');");
         out.println("location='staffViewBooking.jsp';");
-        out.println("</script>");*/
+        out.println("</script>");
     }
       /*######################################################( Applicant Create Booking )#############################################################*/
 
