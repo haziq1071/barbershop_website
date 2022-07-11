@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+@MultipartConfig
 @WebServlet(name = "BookingServlet", value = "/BookingServlet")
 public class BookingServlet extends HttpServlet {
 
@@ -66,10 +67,13 @@ public class BookingServlet extends HttpServlet {
 
     /*######################################################( Staff Create Booking )#############################################################*/
 
-    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws Exception {
+    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
-        HttpSession session = request.getSession();
+        //HttpSession session = request.getSession();
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
 
+     try{
         int staffid = Integer.parseInt(request.getParameter("staffid"));
         //int spaceid = Integer.parseInt(request.getParameter("spaceid"));
         Date eventdate = Date.valueOf(request.getParameter("eventdate"));
@@ -77,19 +81,26 @@ public class BookingServlet extends HttpServlet {
         String bookingspace = request.getParameter("bookingspace");
 
 
-        Staff staff = new Staff();
+        //Staff staff = new Staff();
         //Space space = new Space();
         Booking booking = new Booking();
 
-        staff.setStaffid(staffid);
+        //staff.setStaffid(staffid);
         //space.setSpaceid(spaceid);
         booking.setEventdate(eventdate);
         booking.setBookingdescription(bookingdescription);
         booking.setBookingspace(bookingspace);
 
         //bd.staffcreatebooking(staff, space, booking);
-        bd.staffcreatebooking(staff, booking);
-        response.sendRedirect("staffViewBooking.jsp");
+        bd.staffcreatebooking(booking,staffid);
+        //response.sendRedirect("staffViewBooking.jsp");
+        } catch (Exception e) {
+                e.printStackTrace();
+            }
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('You succesfully create!');");
+        out.println("location='staffViewBooking.jsp';");
+        out.println("</script>");
     }
       /*######################################################( Applicant Create Booking )#############################################################*/
 

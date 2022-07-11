@@ -28,18 +28,19 @@ public class BookingDao {
         return connection;
     }
 
-    public void staffcreatebooking(Staff staff,Booking booking) throws Exception{
+    public void staffcreatebooking(Booking booking, int staffid) throws Exception{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(staffid,eventdate,bookingdescription,bookingspace) values(?,?,?,?)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(bookingdescription,eventdate,staffid,bookingspace) values(?,?,?,?)");)
         {
 
-            preparedStatement.setInt(1, staff.getStaffid());
+            preparedStatement.setString(1, booking.getBookingdescription());
             //preparedStatement.setInt(2, space.getSpaceid());
             preparedStatement.setDate(2, booking.getEventdate());
-            preparedStatement.setString(3, booking.getBookingdescription());
+            preparedStatement.setInt(3, staffid);
             preparedStatement.setString(4, booking.getBookingspace());
 
-            out.println(preparedStatement);
+            //out.println(preparedStatement);
+            //preparedStatement.executeUpdate();
             preparedStatement.executeUpdate();
         }
         catch (SQLException e) {
