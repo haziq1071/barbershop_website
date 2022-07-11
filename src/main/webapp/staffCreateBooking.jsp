@@ -20,8 +20,8 @@
     if(session.getAttribute("staffid")==null)
         response.sendRedirect("index.jsp");
 
-    int bookingid = Integer.parseInt(request.getParameter("bookingid"));
-    //int spaceidid = Integer.parseInt(request.getParameter("spaceid"));
+    int staffid = Integer.parseInt(request.getParameter("staffid"));
+    int spaceidid = Integer.parseInt(request.getParameter("spaceid"));
 %>
 
 <sql:setDataSource
