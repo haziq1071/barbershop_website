@@ -20,7 +20,6 @@
     if(session.getAttribute("staffid")==null)
         response.sendRedirect("index.jsp");
 
-    int staffid = Integer.parseInt(request.getParameter("staffid"));
     int spaceidid = Integer.parseInt(request.getParameter("spaceid"));
 %>
 
