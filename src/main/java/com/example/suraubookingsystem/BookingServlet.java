@@ -25,18 +25,14 @@ public class BookingServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        HttpSession session = request.getSession();
-        session.removeAttribute("staffid");
-        session.invalidate();
-        response.sendRedirect("index.jsp");
+            
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
+
         String action = request.getParameter("action");
 
         try {
@@ -63,17 +59,19 @@ public class BookingServlet extends HttpServlet {
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
-        } 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /*######################################################( Staff Create Booking )#############################################################*/
 
-    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws Exception {
 
-        //HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
+
         int staffid = Integer.parseInt(request.getParameter("staffid"));
         int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-        String spacename = request.getParameter("spacename");
         Date eventdate = Date.valueOf(request.getParameter("eventdate"));
         String bookingdescription = request.getParameter("bookingdescription");
 
@@ -84,7 +82,6 @@ public class BookingServlet extends HttpServlet {
 
         staff.setStaffid(staffid);
         space.setSpaceid(spaceid);
-        space.setSpacename(spacename);
         booking.setEventdate(eventdate);
         booking.setBookingdescription(bookingdescription);
 
