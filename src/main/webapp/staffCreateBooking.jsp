@@ -92,6 +92,7 @@
 					   <option disabled selected>Pilih Ruang</option>
 					   <c:forEach var="space" items="${oc.rows}">
 					   <option value="${space.spacename}">${space.spacename}</option>
+					   <option value="${space.spacename}">${space.spacename}</option>
 					   <input type="hidden" name="spaceid" value="${space.spaceid}">
 					   </c:forEach>
 					</select>
