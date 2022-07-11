@@ -91,10 +91,10 @@
                     <select	name="spacename" >
 					   <option disabled selected>Pilih Ruang</option>
 					   <c:forEach var="space" items="${oc.rows}">
-					   <option value="${space.spacename}">${space.spacename}</option>
 					   <input type="hidden" name="spaceid" value="${space.spaceid}">
+					   <option value="${space.spacename}">${space.spacename}</option>
+					   </c:forEach>
 					</select>
-					</c:forEach>
                   </div>      
                 </div>
                 <input type="hidden" name="action" value="staffcreatebooking">
