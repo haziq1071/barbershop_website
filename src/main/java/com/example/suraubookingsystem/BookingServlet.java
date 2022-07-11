@@ -71,23 +71,24 @@ public class BookingServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         int staffid = Integer.parseInt(request.getParameter("staffid"));
-        int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+        //int spaceid = Integer.parseInt(request.getParameter("spaceid"));
         Date eventdate = Date.valueOf(request.getParameter("eventdate"));
         String bookingdescription = request.getParameter("bookingdescription");
         String bookingspace = request.getParameter("bookingspace");
 
 
         Staff staff = new Staff();
-        Space space = new Space();
+        //Space space = new Space();
         Booking booking = new Booking();
 
         staff.setStaffid(staffid);
-        space.setSpaceid(spaceid);
+        //space.setSpaceid(spaceid);
         booking.setEventdate(eventdate);
         booking.setBookingdescription(bookingdescription);
         booking.setBookingspace(bookingspace);
 
-        bd.staffcreatebooking(staff, space, booking);
+        //bd.staffcreatebooking(staff, space, booking);
+        bd.staffcreatebooking(staff, booking);
         response.sendRedirect("staffViewBooking.jsp");
     }
       /*######################################################( Applicant Create Booking )#############################################################*/
