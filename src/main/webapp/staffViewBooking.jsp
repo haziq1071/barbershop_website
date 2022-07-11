@@ -100,7 +100,7 @@
     </div>
       	  <table class="container">
            <tr>
-             <th>NO.TEMPAHAN</th>
+             <th>NO. TEMPAHAN</th>
              <th>NAMA RUANG</th>
              <th>TARIKH TEMPAHAN</th>
              <th>TARIKH AKTIVITI</th>
@@ -118,7 +118,12 @@
              <td>${result.eventdate}</td>
              <td>${result.bookingdescription}</td>
              <td>Diluluskan</td>
-             <td><button><i class="fa-solid fa-trash"></i></button></td>
+             <td>
+              <input type="hidden" name="action" value="staffcancelbooking">
+              <button formaction="BookingServlet"
+               onclick="return confirm('Adakah anda yakin untuk padam tempahan anda?');"/> ?');"><i class="fa-solid fa-trash"></i>
+              </button>
+            </td>
            </tr>
            </form>
            </c:forEach>
