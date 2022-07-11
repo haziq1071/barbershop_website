@@ -87,14 +87,14 @@
                     <input type="text" name="bookingdescription">
                   </div>
                   <div class="input-box">
-                  	<c:forEach var="space" items="${oc.rows}">
                     <span class="details">Nama Ruang</span>
+                    <c:forEach var="space" items="${oc.rows}">
                     <select	name="spacename" >
 					   <option disabled selected>Pilih Ruang</option>
 					   <option value="${space.spacename}">${space.spacename}</option>
 					   <input type="hidden" name="spaceid" value="${space.spaceid}">
-					   </c:forEach>
 					</select>
+					</c:forEach>
                   </div>      
                 </div>
                 <input type="hidden" name="action" value="staffcreatebooking">
