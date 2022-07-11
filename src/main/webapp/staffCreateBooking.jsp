@@ -11,6 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+<%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response.setHeader("Pragma", "no-cache");
+    response.setHeader("Expires", "0");
+
+    if(session.getAttribute("staffid")==null)
+        response.sendRedirect("index.jsp");
+%>
+
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
@@ -97,6 +107,14 @@
 					<input type="hidden" name="spaceid" value="${space.spaceid}">
                   </div>      
                 </div>
+                <!--div>
+                    <input type="text" id="bookingdate">
+                    <script>
+                        var today = new Date();
+                        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                        document.getElementById("bookingdate").value = date;
+                    </script>
+                </div-->
                 <input type="hidden" name="action" value="staffcreatebooking">
                 <div class="button">
                   <input type="submit" value="TEMPAH" formaction="BookingServlet" onclick="return confirm('Tempahan telah berjaya dibuat!');">
