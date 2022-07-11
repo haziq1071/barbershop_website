@@ -13,6 +13,14 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+   <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response.setHeader("Pragma", "no-cache");
+    response.setHeader("Expires", "0");
+
+    if(session.getAttribute("staffid")==null)
+        response.sendRedirect("index.jsp");
+  %>
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
@@ -21,7 +29,7 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-  SELECT * from space
+  SELECT * from booking
 </sql:query>
 
   <div class="sidebar">
@@ -94,21 +102,27 @@
              <th>NO.TEMPAHAN</th>
              <th>NAMA RUANG</th>
              <th>TARIKH TEMPAHAN</th>
+             <th>NAMA PENEMPAH</th>
              <th>TARIKH AKTIVITI</th>
              <th>PERINCIAN AKTIVITI</th>
              <th>TINDAKAN</th>
            </tr>
+           <c:forEach var="result" items="${oc.rows}">
+            <form action="" method="post">
             <tr>
-             <td>1</td>
-             <td>Dewan 1</td>
+             <td>${result.bookingid}</td>
+             <td>${result.bookingspace}</td>
              <td>23/4/2022</td>
-             <td>27/4/2022</td>
-             <td>Majlis Akad Nikah</td>
+             <td>Safawi Bin Rashid</td>
+             <td>${result.eventdate}</td>
+             <td>${result.bookingdescription}</td>
              <td>
              	<button><i class="fa-solid fa-check"></i></button>
              	<button><i class="fa-solid fa-xmark"></i></button>
              </td>
            </tr>
+           </form>
+           </c:forEach>
          </table>
   	</div>
   </div>
