@@ -5,17 +5,24 @@ import java.sql.Date;
 public class Booking implements Serializable{
     private int bookingid;
     private String bookingdescription;
-    private int spaceid;
     private Date eventdate;
     private Date bookingdate;
     private String bookingstatus;
-    private int applicantid;
-    private int staffid;
     private int approveid;
+
     public Booking() {
-        super();
-        // TODO Auto-generated constructor stub
+     
     }
+
+    public Booking(int bookingid, String bookingdescription, Date eventdate, Date bookingdate, String bookingstatus, int approveid) {
+        this.bookingid = bookingid;
+        this.bookingdescription = bookingdescription;
+        this.eventdate = eventdate;
+        this.bookingdate = bookingdate;
+        this.bookingstatus = bookingstatus;
+        this.approveid = approveid;
+    }
+
     public int getBookingid() {
         return bookingid;
     }
@@ -27,12 +34,6 @@ public class Booking implements Serializable{
     }
     public void setBookingdescription(String bookingdescription) {
         this.bookingdescription = bookingdescription;
-    }
-    public int getSpaceid() {
-        return spaceid;
-    }
-    public void setSpaceid(int spaceid) {
-        this.spaceid = spaceid;
     }
     public Date getEventdate() {
         return eventdate;
@@ -51,18 +52,6 @@ public class Booking implements Serializable{
     }
     public void setBookingstatus(String bookingstatus) {
         this.bookingstatus = bookingstatus;
-    }
-    public int getApplicantid() {
-        return applicantid;
-    }
-    public void setApplicantid(int applicantid) {
-        this.applicantid = applicantid;
-    }
-    public int getStaffid() {
-        return staffid;
-    }
-    public void setStaffid(int staffid) {
-        this.staffid = staffid;
     }
     public int getApproveid() {
         return approveid;

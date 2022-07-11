@@ -8,15 +8,15 @@ import java.sql.SQLException;
 import static java.lang.System.out;
 
 public class BookingDao {
-    String dbURL = "jdbc:oracle:thin:@localhost:1521:XE";
-    String user = "ibooking";
-    String pass = "system";
+    String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
+    String user = "dnzxqagexabepj";
+    String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294";
 
     protected Connection getConnection()
     {
         Connection connection = null;
         try {
-            Class.forName("oracle.jdbc.OracleDriver");
+            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(dbURL, user, pass);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -28,9 +28,9 @@ public class BookingDao {
         return connection;
     }
 
-    public void staffCreateBooking(Staff staff, Space space, Booking booking) throws Exception{
+    public void staffcreatebooking(Staff staff, Space space, Booking booking) throws Exception{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("insert into BOOKING(bookingid,staffid,spaceid,eventdate,bookingdescription) values(bookingid_seq.NEXTVAL,?,?,?,?)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(staffid,spaceid,eventdate,bookingdescription) values(?,?,?,?)");)
         {
 
             preparedStatement.setInt(1, staff.getStaffid());
@@ -46,16 +46,45 @@ public class BookingDao {
         }
     }
 
+    public void applicantcreatebooking(Applicant applicant, Space space, Booking booking) throws Exception{
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(applicantid,spaceid,eventdate,bookingdescription) values(?,?,?,?)");)
+        {
+
+            preparedStatement.setInt(1, applicant.getApplicantid());
+            preparedStatement.setInt(2, space.getSpaceid());
+            preparedStatement.setDate(3, booking.getEventdate());
+            preparedStatement.setString(4, booking.getBookingdescription());
+
+            out.println(preparedStatement);
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException e) {
+            printSQLException(e);
+        }
+    }
+
     public boolean staffcancelbooking(int bookingid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("update BOOKING set bookingstatus = 'batal' where BOOKINGID=?");) {
+             PreparedStatement statement = connection.prepareStatement("delete from booking where bookingid=?");) {
             statement.setInt(1, bookingid);
             rowDeleted = statement.executeUpdate() > 0;
         }
         return rowDeleted;
     }
-    public void staffapprovedbooking(int bookingid,int spaceid) throws SQLException, FileNotFoundException {
+
+    public boolean applicantcancelbooking(int bookingid) throws SQLException {
+        boolean rowDeleted;
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement("delete from booking where bookingid=?");) {
+            statement.setInt(1, bookingid);
+            rowDeleted = statement.executeUpdate() > 0;
+        }
+        return rowDeleted;
+    }
+
+    public void staffapprovedbooking(int bookingid,int spaceid) throws SQLException {
         String bookingstatus="Approved";
 
         try (Connection connection = getConnection();
@@ -74,14 +103,15 @@ public class BookingDao {
             }
         }
     }
-    public void staffrejectbooking(int bookingid) throws SQLException, FileNotFoundException {
+    public void staffrejectbooking(int bookingid) throws SQLException {
 
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS='Approved' WHERE BOOKINGID=?");) {
-            statement.setInt(1, bookingid);
-            statement.executeUpdate();
+             statement.setInt(1, bookingid);
+             statement.executeUpdate();
         }
     }
+    
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
