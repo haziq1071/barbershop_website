@@ -9,6 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<sql:setDataSource
+        var="ic"
+        driver="org.postgresql.Driver"
+        url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
+        user="dnzxqagexabepj"
+        password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+
+<sql:query dataSource="${ic}" var="oc">
+  SELECT * from space
+</sql:query>
 <div class="sidebar">
     <div class="logo-details">
         <img src="logoWhite.png">
@@ -31,13 +41,23 @@
                 <i class='bx bx-bookmark'></i>
                 <span class="links_name">TEMPAHAN</span>
             </a>
+            <ul class="sub-menu">
+				<li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+				<li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
+			</ul>
         </li>
         <li>
-            <a class="main-menu" href="#">
+            <a class="main-menu" href="staffViewAccount.jsp">
                 <i class='bx bx-user'></i>
                 <span class="links_name">AKAUN</span>
             </a>
         </li>
+        <li class="log_out">
+			<a class="main-menu" href="index.jsp"> 
+			<i class='bx bx-log-out'></i> 
+			<span class="links_name">LOG KELUAR</span>
+			</a>
+		</li>
     </ul>
 </div>
 <section class="home-section">
@@ -54,23 +74,30 @@
         <div class="container">
             <div class="title">DAFTAR TEMPAHAN</div>
             <div class="content">
-              <form action="#">
+              <form method="post">
                 <div class="user-details">
                   <div class="input-box">
                     <span class="details">Tarikh Aktiviti</span>
-                    <input type="date" required>
+                    <input type="date" name="eventdate" >
                   </div>
                   <div class="input-box">
                     <span class="details">Perincian Aktiviti</span>
-                    <input type="text" required>
+                    <input type="text" name="bookingdescription">
                   </div>
                   <div class="input-box">
                     <span class="details">Nama Ruang</span>
-                    <input type="text" required>
+                    <select	name="spacename" >
+					   <option disabled selected>Pilih Ruang</option>
+					   <c:forEach var="space" items="${oc.rows}">
+					   <input type="hidden" name="spaceid" value="${space.spaceid}">
+					   <option value="${space.spacename}">${space.spacename}</option>
+					   </c:forEach>
+					</select>
                   </div>      
                 </div>
+                <input type="hidden" name="action" value="staffcreatebooking">
                 <div class="button">
-                  <input type="submit" value="TEMPAH">
+                  <input type="submit" value="TEMPAH" formaction="BookingServlet" onclick="return confirm('Tempahan telah berjaya dibuat!');">
                 </div>
               </form>
             </div>

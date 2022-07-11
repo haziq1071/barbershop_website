@@ -33,30 +33,35 @@
 				</ul-->
 			</li>
 
-			<li><a class="main-menu" href="#"> <i class='bx bx-bookmark'></i>
+			<li>
+				<a class="main-menu" href="#"> 
+					<i class='bx bx-bookmark'></i>
 					<span class="links_name min">TEMPAHAN</span>
-			</a>
+				</a>
 				<ul class="sub-menu">
-					<li><a href="staffBooking.html">TEMPAH BILIK</a></li>
-					<li><a href="staffViewBooking.html">LIHAT TEMPAHAN</a></li>
-					<li><a href="staffUpdateBooking.html">KEMASKINI TEMPAHAN</a></li>
-					<li><a href="staffDeleteBooking.html">PADAM TEMPAHAN</a></li>
-					<li><a href="staffApproveBooking.html">SAHKAN TEMPAHAN</a></li>
-				</ul></li>
+					<li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+					<li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
+				</ul>
+			</li>
 
-			<li><a class="main-menu" href="#"> <i class='bx bx-user'></i>
+			<li>
+				<a class="main-menu" href="staffViewAccount.jsp"> 
+					<i class='bx bx-user'></i>
 					<span class="links_name">AKAUN</span>
-			</a>
+				</a>
 				<ul class="sub-menu">
 					<li><a href="viewStaff.html">LIHAT AKAUN</a></li>
 					<li><a href="updateStaff.html">KEMASKINI AKAUN</a></li>
 					<li><a href="deleteStaff.html">PADAM AKAUN</a></li>
-				</ul></li>
+				</ul>
+			</li>
 
-			<li class="log_out"><a class="main-menu" href="index.jsp"> <i
-					class='bx bx-log-out'></i> <span class="links_name">LOG
-						KELUAR</span>
-			</a></li>
+			<li class="log_out">
+				<a class="main-menu" href="index.jsp"> 
+				<i class='bx bx-log-out'></i> 
+				<span class="links_name">LOG KELUAR</span>
+				</a>
+		    </li>
 		</ul>
 	</div>
 
