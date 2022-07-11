@@ -120,8 +120,11 @@
              <td>Diluluskan</td>
              <td>
               <input type="hidden" name="action" value="staffcancelbooking">
-              <button formaction="BookingServlet"
+              <!--button formaction="BookingServlet"
                onclick="return confirm('Adakah anda yakin untuk padam tempahan anda?');"/> ?');"><i class="fa-solid fa-trash"></i>
+              </button-->
+              <button formaction="BookingServlet">
+                <i class="fa-solid fa-trash"></i>
               </button>
             </td>
            </tr>
