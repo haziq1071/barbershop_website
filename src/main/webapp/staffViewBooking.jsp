@@ -29,7 +29,7 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-  SELECT * from space
+  SELECT * from booking
 </sql:query>
 
   <div class="sidebar">
@@ -105,20 +105,23 @@
              <th>TARIKH TEMPAHAN</th>
              <th>TARIKH AKTIVITI</th>
              <th>PERINCIAN AKTIVITI</th>
-             <th>TARIKH DILULUSKAN</th>
              <th>STATUS</th>
              <th>TINDAKAN</th>
            </tr>
+            <c:forEach var="result" items="${oc.rows}">
+            <form action="" method="post">
+            <input type="hidden" name="bookingid" value="${result.bookingid}">
             <tr>
-             <td>1</td>
-             <td>Dewan 1</td>
+             <td>${result.bookingid}</td> 
+             <td>${result.bookingspace}</td>
              <td>23/4/2022</td>
-             <td>27/4/2022</td>
-             <td>Majlis Akad Nikah</td>
-             <td>25/4/2022</td>
+             <td>${result.eventdate}</td>
+             <td>${result.bookingdescription}</td>
              <td>Diluluskan</td>
              <td><button><i class="fa-solid fa-trash"></i></button></td>
            </tr>
+           </form>
+           </c:forEach>
          </table>
   	</div>
   </div>
