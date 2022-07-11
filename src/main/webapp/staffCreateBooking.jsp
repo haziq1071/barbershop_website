@@ -88,7 +88,7 @@
                   </div>
                   <div class="input-box">
                     <span class="details">Nama Ruang</span>
-                    <select	name="spacename" >
+                    <select	name="bookingspace" >
 					   <option disabled selected>Pilih Ruang</option>
 					   <c:forEach var="space" items="${oc.rows}">
 					   <option value="${space.spacename}">${space.spacename}</option>

@@ -9,18 +9,20 @@ public class Booking implements Serializable{
     private Date bookingdate;
     private String bookingstatus;
     private int approveid;
+    private String bookingspace;
 
     public Booking() {
      
     }
 
-    public Booking(int bookingid, String bookingdescription, Date eventdate, Date bookingdate, String bookingstatus, int approveid) {
+    public Booking(int bookingid, String bookingdescription, Date eventdate, Date bookingdate, String bookingstatus, int approveid, String bookingspace) {
         this.bookingid = bookingid;
         this.bookingdescription = bookingdescription;
         this.eventdate = eventdate;
         this.bookingdate = bookingdate;
         this.bookingstatus = bookingstatus;
         this.approveid = approveid;
+        this.bookingspace = bookingspace;
     }
 
     public int getBookingid() {
@@ -58,5 +60,11 @@ public class Booking implements Serializable{
     }
     public void setApproveid(int approveid) {
         this.approveid = approveid;
+    }
+    public String getBookingspace() {
+        return bookingspace;
+    }
+    public void setBookingspace(String bookingspace) {
+        this.bookingspace = bookingspace;
     }
 }
