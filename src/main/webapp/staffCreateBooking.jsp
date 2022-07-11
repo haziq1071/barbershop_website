@@ -93,8 +93,8 @@
 					   <c:forEach var="space" items="${oc.rows}">
 					   <option value="${space.spacename}">${space.spacename}</option>
 					   </c:forEach>
-					   <input type="hidden" name="spaceid" value="${space.spaceid}">
 					</select>
+					<input type="hidden" name="spaceid" value="${space.spaceid}">
                   </div>      
                 </div>
                 <input type="hidden" name="action" value="staffcreatebooking">
