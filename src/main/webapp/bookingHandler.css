@@ -396,9 +396,9 @@ tr:nth-child(even){
  background-color: #eeeeee;
 }
 
-td button:nth-child(1) {
+/*td button:nth-child(1) {
     background-color: #f80000;
-}
+}*/
 
 button {
     outline: none;
@@ -407,6 +407,7 @@ button {
     cursor: pointer;
     padding: 10px;
     color: #ffffff;
+    background-color: #f80000;
 }
 button:hover{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
