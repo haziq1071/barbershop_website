@@ -123,13 +123,13 @@
                             </select>
                         </div>
                     </div>
-                    <script>
+                    <!--script>
                     var today = new Date();
                     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
                     document.getElementById("bookingdate").value = date;
-                    </script>
+                    </script-->
                     <c:forEach items="${sid.rows}" var="staff">
-                        <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/>
+                        <!--input type="hidden" name="bookingstatus" value="Telah Dimajukan"/-->
                         <input type="hidden" name="staffid" value="${staff.staffid}"/>
                     </c:forEach>
                     <input type="hidden" name="action" value="staffcreatebooking">
