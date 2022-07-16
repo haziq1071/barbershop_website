@@ -46,7 +46,7 @@
     JOIN space s
     ON b.spaceid = s.spaceid
     JOIN staff st
-    ON b.staffid = st.staffid
+    ON st.staffid = b.staffid
     WHERE bookingid=?
     <sql:param value="${jbookingid}" />
 </sql:query>
