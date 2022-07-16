@@ -29,19 +29,20 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    (SELECT *
+    SELECT *
     FROM booking b
     JOIN space s
     ON b.spaceid = s.spaceid
     JOIN staff st
-    ON b.staffid = st.staffid)
-    AND
-    (SELECT *
+    ON b.staffid = st.staffid
+</sql:query>
+<sql:query dataSource="${ic}" var="ac">
+    SELECT *
     FROM booking b
     JOIN space s
     ON b.spaceid = s.spaceid
     JOIN applicant a
-    ON b.applicantid = a.applicantid)
+    ON b.applicantid = a.applicantid
 </sql:query>
 
 <div class="sidebar">
@@ -122,6 +123,25 @@
                         <tr>
                             <td>${result.bookingid}</td>
                             <td>${result.staffname}</td>
+                            <td>${result.spacename}</td>
+                            <td>${result.bookingdate}</td>
+                            <td>${result.eventdate}</td>
+                            <td>${result.bookingdescription}</td>
+                            <td>${result.bookingstatus}</td>
+                            <td>
+                                <input type="hidden" name="action" value="staffapprovedbooking">
+                                <button formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')"><i class="fa-solid fa-check"></i></button>
+                                <button><i class="fa-solid fa-xmark"></i></button>
+                            </td>
+                        </tr>
+                        </form>
+                    </c:forEach>
+                    <c:forEach var="result" items="${ac.rows}">
+                        <form action="" method="post">
+                        <input type="hidden" name="bookingid" value="${result.bookingid}">
+                        <tr>
+                            <td>${result.bookingid}</td>
+                            <td>${result.applicantname}</td>
                             <td>${result.spacename}</td>
                             <td>${result.bookingdate}</td>
                             <td>${result.eventdate}</td>
