@@ -126,9 +126,7 @@
               <td>${result.bookingstatus}</td>
               <td>
                 <input type="hidden" name="action" value="applicantcancelbooking">
-                <button formaction="BookingServlet"  onclick="return confirm('Adakah anda yakin untuk batalkan tempahan?')">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
+                <button formaction="BookingServlet"  onclick="return confirm('Adakah anda yakin untuk batalkan tempahan?')">BATAL</button>
               </td>
             </tr>
           </form>

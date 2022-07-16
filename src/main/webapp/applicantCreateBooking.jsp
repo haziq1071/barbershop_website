@@ -12,7 +12,15 @@
 </head>
 <body>
 
+<%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response.setHeader("Pragma", "no-cache");
+    response.setHeader("Expires", "0");
 
+    if(session.getAttribute("applicantid")==null)
+        response.sendRedirect("index.jsp");
+
+%>
 
 <sql:setDataSource
         var="ic"
@@ -105,13 +113,14 @@
               <span class="details">Nama Ruang</span>
               <select class="form-control" id="spaceid" name="spaceid">
                 <c:forEach items="${oc.rows}" var="space">
-                  <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spaceid}" /> - <c:out value="${space.spacename}" /></option>
+                  <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
                 </c:forEach>
               </select>
             </div>
           </div>
           <c:forEach items="${aid.rows}" var="applicant">
             <input type="hidden" name="applicantid" value="${applicant.applicantid}"/>
+            <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/>
           </c:forEach>
           <input type="hidden" name="action" value="applicantcreatebooking">
           <div class="button">

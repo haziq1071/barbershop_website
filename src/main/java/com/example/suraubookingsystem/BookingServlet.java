@@ -131,6 +131,7 @@ public class BookingServlet extends HttpServlet {
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
             Date eventdate = Date.valueOf(request.getParameter("eventdate"));
             String bookingdescription = request.getParameter("bookingdescription");
+            String bookingstatus = request.getParameter("bookingstatus");
 
 
             Applicant applicant = new Applicant();
@@ -141,6 +142,7 @@ public class BookingServlet extends HttpServlet {
             space.setSpaceid(spaceid);
             booking.setEventdate(eventdate);
             booking.setBookingdescription(bookingdescription);
+            booking.setBookingstatus(bookingstatus);
 
             bd.applicantcreatebooking(booking, space, applicant);
         } catch (Exception e) {

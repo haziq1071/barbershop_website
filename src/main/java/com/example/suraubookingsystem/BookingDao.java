@@ -46,12 +46,13 @@ public class BookingDao {
 
     public void applicantcreatebooking(Booking booking, Space space, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,EVENTDATE,SPACEID,APPLICANTID) VALUES (?,?,?,?)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGSTATUS,EVENTDATE,SPACEID,APPLICANTID) VALUES (?,?,?,?,?)");)
         {
             preparedStatement.setString(1, booking.getBookingdescription());
-            preparedStatement.setDate(2, booking.getEventdate());
-            preparedStatement.setInt(3, space.getSpaceid());
-            preparedStatement.setInt(4, applicant.getApplicantid());
+            preparedStatement.setString(2, booking.getBookingstatus());
+            preparedStatement.setDate(3, booking.getEventdate());
+            preparedStatement.setInt(4, space.getSpaceid());
+            preparedStatement.setInt(5, applicant.getApplicantid());
             preparedStatement.executeUpdate();
         }
         catch (Exception e) {
@@ -61,7 +62,7 @@ public class BookingDao {
     public boolean staffcancelbooking(int bookingid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("update BOOKING set bookingstatus = 'Batal' where BOOKINGID=?");) {
+             PreparedStatement statement = connection.prepareStatement("update BOOKING set bookingstatus = 'Dibatalkan' where BOOKINGID=?");) {
             statement.setInt(1, bookingid);
             rowDeleted = statement.executeUpdate() > 0;
         }
@@ -70,7 +71,7 @@ public class BookingDao {
     public boolean applicantcancelbooking(int bookingid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("update BOOKING set bookingstatus = 'Batal' where BOOKINGID=?");) {
+             PreparedStatement statement = connection.prepareStatement("update BOOKING set bookingstatus = 'Dibatalkan' where BOOKINGID=?");) {
             statement.setInt(1, bookingid);
             rowDeleted = statement.executeUpdate() > 0;
         }
