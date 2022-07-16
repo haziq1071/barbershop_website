@@ -74,25 +74,25 @@ public class BookingServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
      try{
-        //int staffid = Integer.parseInt(request.getParameter("staffid"));
+        int staffid = Integer.parseInt(request.getParameter("staffid"));
         //int spaceid = Integer.parseInt(request.getParameter("spaceid"));
         Date eventdate = Date.valueOf(request.getParameter("eventdate"));
         String bookingdescription = request.getParameter("bookingdescription");
         String bookingspace = request.getParameter("bookingspace");
 
 
-        //Staff staff = new Staff();
+        Staff staff = new Staff();
         //Space space = new Space();
         Booking booking = new Booking();
 
-        //staff.setStaffid(staffid);
+        staff.setStaffid(staffid);
         //space.setSpaceid(spaceid);
         booking.setEventdate(eventdate);
         booking.setBookingdescription(bookingdescription);
         booking.setBookingspace(bookingspace);
 
         //bd.staffcreatebooking(staff, space, booking);
-        bd.staffcreatebooking(booking);
+        bd.staffcreatebooking(staff,booking);
         //response.sendRedirect("staffViewBooking.jsp");
         } catch (Exception e) {
                 e.printStackTrace();

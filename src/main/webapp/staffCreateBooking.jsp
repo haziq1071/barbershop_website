@@ -88,6 +88,7 @@
             <div class="title">DAFTAR TEMPAHAN</div>
             <div class="content">
               <form method="post">
+                  <input type="hidden" name="staffid" value="${staffid}">
                 <div class="user-details">
                   <div class="input-box">
                     <span class="details">Tarikh Aktiviti</span>
