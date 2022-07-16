@@ -1,8 +1,9 @@
 package com.example.suraubookingsystem;
 import java.io.Serializable;
-import javax.servlet.http.Part;
 
 public class Space implements Serializable{
+
+    private static final long serialVersionUID = 1L;
     private int spaceid;
     private String spacename;
     private int spacecapacity;
@@ -11,10 +12,7 @@ public class Space implements Serializable{
     private int tablequantity;
     private int chairquantity;
 
-    public Space() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+    public Space() {}
 
     public int getSpaceid() {
         return spaceid;
