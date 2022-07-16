@@ -30,8 +30,25 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-  SELECT * from space
+    SELECT spaceid,spacename from space
 </sql:query>
+<sql:query dataSource="${ic}" var="sid">
+    <%
+        int jstaffid = 0;
+
+        if(request.getParameter("staffid")==null){
+            jstaffid = (Integer) session.getAttribute("staffid");
+        }
+        else{
+            jstaffid = Integer.parseInt(request.getParameter("staffid"));
+            session.setAttribute("staffid", jstaffid);
+        }
+    %>
+    <c:set var="jstaffid" value="<%=jstaffid%>"/>
+    SELECT staffid FROM staff WHERE staffid=?
+    <sql:param value="${jstaffid}" />
+</sql:query>
+
 <div class="sidebar">
     <div class="logo-details">
         <img src="logoWhite.png">
@@ -55,9 +72,9 @@
                 <span class="links_name">TEMPAHAN</span>
             </a>
             <ul class="sub-menu">
-				<li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
-				<li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
-			</ul>
+                <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+                <li><a href="staffApproveBooking.jsp">PENGESAHAN TEMPAHAN</a></li>
+            </ul>
         </li>
         <li>
             <a class="main-menu" href="staffViewAccount.jsp">
@@ -66,11 +83,11 @@
             </a>
         </li>
         <li class="log_out">
-			<a class="main-menu" href="index.jsp"> 
-			<i class='bx bx-log-out'></i> 
-			<span class="links_name">LOG KELUAR</span>
-			</a>
-		</li>
+            <a class="main-menu" href="index.jsp">
+                <i class='bx bx-log-out'></i>
+                <span class="links_name">LOG KELUAR</span>
+            </a>
+        </li>
     </ul>
 </div>
 <section class="home-section">
@@ -87,42 +104,34 @@
         <div class="container">
             <div class="title">DAFTAR TEMPAHAN</div>
             <div class="content">
-              <form method="post">
-                  <input type="hidden" name="staffid" value="${staffid}">
-                <div class="user-details">
-                  <div class="input-box">
-                    <span class="details">Tarikh Aktiviti</span>
-                    <input type="date" name="eventdate" >
-                  </div>
-                  <div class="input-box">
-                    <span class="details">Perincian Aktiviti</span>
-                    <input type="text" name="bookingdescription">
-                  </div>
-                  <div class="input-box">
-                    <span class="details">Nama Ruang</span>
-                    <select	name="bookingspace" >
-					   <option disabled selected>Pilih Ruang</option>
-					   <c:forEach var="space" items="${oc.rows}">
-					   <option value="${space.spacename}">${space.spacename}</option>
-					   </c:forEach>
-					</select>
-					<input type="hidden" name="spaceid" value="${space.spaceid}">
-                  </div>      
-                </div>
-                <!--div>
-                    <input type="text" id="bookingdate">
-                    <script>
-                        var today = new Date();
-                        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-                        document.getElementById("bookingdate").value = date;
-                    </script>
-                </div-->
-                <input type="hidden" name="action" value="staffcreatebooking">
-                <div class="button">
-                  <input type="submit" value="TEMPAH" formaction="BookingServlet" >
-                  <!--input type="submit" value="TEMPAH" formaction="BookingServlet" onclick="return confirm('Tempahan telah berjaya dibuat!');"-->
-                </div>
-              </form>
+                <form method="post">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Tarikh Aktiviti</span>
+                            <input type="date" name="eventdate" >
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Perincian Aktiviti</span>
+                            <input type="text" name="bookingdescription">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Nama Ruang</span>
+                            <select class="form-control" id="spaceid" name="spaceid">
+                                <c:forEach items="${oc.rows}" var="space">
+                                    <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spaceid}" /> - <c:out value="${space.spacename}" /></option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                    </div>
+                    <c:forEach items="${sid.rows}" var="staff">
+                        <input type="hidden" name="staffid" value="${staff.staffid}"/>
+                    </c:forEach>
+                    <input type="hidden" name="action" value="staffcreatebooking">
+                    <div class="button">
+                        <input type="submit" value="TEMPAH" formaction="BookingServlet">
+                        <!--input type="submit" value="TEMPAH" formaction="BookingServlet" onclick="return confirm('Tempahan telah berjaya dibuat!');"-->
+                    </div>
+                </form>
             </div>
         </div>
     </div>
