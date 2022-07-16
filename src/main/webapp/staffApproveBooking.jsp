@@ -29,26 +29,12 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    <%
-        int jbookingid = 0;
-
-        if(request.getParameter("bookingid")==null){
-            jbookingid = (Integer) session.getAttribute("bookingid");
-        }
-        else{
-            jbookingid = Integer.parseInt(request.getParameter("bookingid"));
-            session.setAttribute("bookingid", jbookingid);
-        }
-    %>
-    <c:set var="jbookingid" value="<%=jbookingid%>"/>
     SELECT *
     FROM booking b
     JOIN space s
     ON b.spaceid = s.spaceid
     JOIN staff st
-    ON st.staffid = b.staffid
-    WHERE bookingid=?
-    <sql:param value="${jbookingid}" />
+    ON b.staffid = st.staffid
 </sql:query>
 
 <div class="sidebar">
