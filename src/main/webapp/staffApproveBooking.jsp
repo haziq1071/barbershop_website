@@ -21,7 +21,7 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    SELECT bookingid, spacename, NVL2(st.staffid,st.staffname,a.applicantname) applicantname, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, bookingdescription, bookingstatus
+    SELECT bookingid, spacename, staffname, applicantname, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, bookingdescription, bookingstatus
     FROM booking b
     JOIN space s
     ON b.spaceid = s.spaceid
@@ -92,7 +92,6 @@
             <div class="table_header">
                 <header class="main_title" style="font-size: xx-large">SENARAI TEMPAHAN</header>
             </div>
-            <form action="" method="post">
                 <table class="container">
                     <tr>
                         <th>NO.TEMPAHAN</th>
@@ -104,24 +103,26 @@
                         <th>STATUS TEMPAHAN</th>
                         <th>TINDAKAN</th>
                     </tr>
-                    <c:forEach var="book" items="${oc.rows}">
+                    <c:forEach var="result" items="${oc.rows}">
+                        <form action="" method="post">
+                        <input type="hidden" name="bookingid" value="${result.bookingid}">
                         <tr>
-                            <td>${book.bookingid}</td>
-                            <td>${book.staffname}</td>
-                            <td>${book.spacename}</td>
-                            <td>${book.bookingdate}</td>
-                            <td>${book.eventdate}</td>
-                            <td>${book.bookingdescription}</td>
-                            <td>${book.bookingstatus}</td>
+                            <td>${result.bookingid}</td>
+                            <td>${result.staffname}</td>
+                            <td>${result.spacename}</td>
+                            <td>${result.bookingdate}</td>
+                            <td>${result.eventdate}</td>
+                            <td>${result.bookingdescription}</td>
+                            <td>${result.bookingstatus}</td>
                             <td>
                                 <input type="hidden" name="action" value="staffapprovedbooking">
                                 <button formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')"><i class="fa-solid fa-check"></i></button>
                                 <button><i class="fa-solid fa-xmark"></i></button>
                             </td>
                         </tr>
+                        </form>
                     </c:forEach>
                 </table>
-            </form>
         </div>
     </div>
 </section>
