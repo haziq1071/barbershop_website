@@ -72,6 +72,7 @@ public class BookingServlet extends HttpServlet {
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
             Date eventdate = Date.valueOf(request.getParameter("eventdate"));
             String bookingdescription = request.getParameter("bookingdescription");
+            String bookingstatus = request.getParameter("bookingstatus");
 
             Staff staff = new Staff();
             Space space = new Space();
@@ -81,6 +82,7 @@ public class BookingServlet extends HttpServlet {
             space.setSpaceid(spaceid);
             booking.setEventdate(eventdate);
             booking.setBookingdescription(bookingdescription);
+            booking.setBookingstatus(bookingstatus);
 
             bd.staffcreatebooking(booking, space, staff);
             //bd.staffcreatebooking(booking);
