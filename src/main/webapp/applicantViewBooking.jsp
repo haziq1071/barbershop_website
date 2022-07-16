@@ -62,7 +62,7 @@
     <li>
       <a class="main-menu" href="applicantViewSpace.jsp">
         <i class='bx bx-box' ></i>
-        <span class="links_name">RUANGAN</span>
+        <span class="links_name">RUANG</span>
       </a>
     </li>
 
@@ -126,7 +126,7 @@
               <td>${result.bookingstatus}</td>
               <td>
                 <input type="hidden" name="action" value="applicantcancelbooking">
-                <button formaction="BookingServlet"  onclick="return confirm('Adakah anda yakin untuk batalkan tempahan?')">BATAL</button>
+                <button formaction="BookingServlet"  onclick="return confirm('Adakah anda yakin untuk batalkan tempahan ini?')">BATAL</button>
               </td>
             </tr>
           </form>

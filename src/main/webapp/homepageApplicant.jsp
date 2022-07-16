@@ -34,15 +34,10 @@
         </li>
 
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="applicantViewBooking.jsp">
             <i class='bx bx-bookmark'></i>
             <span class="links_name">TEMPAHAN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="staffBooking.jsp">TEMPAH BILIK</a></li>
-            <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
-            <li><a href="staffDeleteBooking.jsp">PADAM TEMPAHAN</a></li>
-          </ul>
         </li>
 
         <li>
