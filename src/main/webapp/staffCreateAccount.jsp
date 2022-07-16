@@ -120,9 +120,10 @@
                             <div class="input-field">
                                 <label class="details">Nama Penyelia</label>
                                 <select class="form-control" id="supervisorid" name="supervisorid">
-                                	<option disabled selected>Pilih Penyelia</option>
-                                	<option value="Tiada Penyelia">Tiada Penyelia</option>
+           
                                     <c:forEach items="${oc.rows}" var="staff">
+                                    	<option disabled selected>Pilih Penyelia</option>
+                                		<option value="Tiada Penyelia">Tiada Penyelia</option>
                                         <option value="<c:out value="${staff.staffid}"/>"><c:out value="${staff.staffname}" /></option>
                                     </c:forEach>
                                 </select>
