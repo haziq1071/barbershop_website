@@ -123,9 +123,15 @@
                             </select>
                         </div>
                     </div>
+                    <script>
+                    var today = new Date();
+                    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                    document.getElementById("currentDate").value = date;
+                    </script>
                     <c:forEach items="${sid.rows}" var="staff">
                         <input type="hidden" name="staffid" value="${staff.staffid}"/>
                         <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/>
+                        <input type="hidden" name="bookingdate" value=date />
                     </c:forEach>
                     <input type="hidden" name="action" value="staffcreatebooking">
                     <div class="button">
