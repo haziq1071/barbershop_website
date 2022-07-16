@@ -9,7 +9,6 @@ public class Booking implements Serializable{
     private Date bookingdate;
     private String bookingstatus;
     private int approveid;
-    private Date bookingapprovaldate;
 
     public Booking() {
 
@@ -22,7 +21,6 @@ public class Booking implements Serializable{
         this.bookingdate = bookingdate;
         this.bookingstatus = bookingstatus;
         this.approveid = approveid;
-        this.bookingapprovaldate = bookingapprovaldate;
 
     }
 
@@ -61,14 +59,6 @@ public class Booking implements Serializable{
     }
     public void setApproveid(int approveid) {
         this.approveid = approveid;
-    }
-
-    public Date getBookingapprovaldate() {
-        return bookingapprovaldate;
-    }
-
-    public void setBookingapprovaldate(Date bookingapprovaldate) {
-        this.bookingapprovaldate = bookingapprovaldate;
     }
 
 }

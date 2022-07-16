@@ -118,11 +118,16 @@
                             <span class="details">Nama Ruang</span>
                             <select class="form-control" id="spaceid" name="spaceid">
                                 <c:forEach items="${oc.rows}" var="space">
-                                    <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spaceid}" /> - <c:out value="${space.spacename}" /></option>
+                                    <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
                                 </c:forEach>
                             </select>
                         </div>
                     </div>
+                    <script>
+                    var today = new Date();
+                    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                    document.getElementById("bookingdate").value = date;
+                    </script>
                     <c:forEach items="${sid.rows}" var="staff">
                         <input type="hidden" name="staffid" value="${staff.staffid}"/>
                     </c:forEach>
