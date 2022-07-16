@@ -80,7 +80,7 @@ public class BookingServlet extends HttpServlet {
         String bookingdescription = request.getParameter("bookingdescription");
         String bookingspace = request.getParameter("bookingspace");
 
-
+        //
         Staff staff = new Staff();
         //Space space = new Space();
         Booking booking = new Booking();
