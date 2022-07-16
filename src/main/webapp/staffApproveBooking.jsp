@@ -35,6 +35,13 @@
     ON b.spaceid = s.spaceid
     JOIN staff st
     ON b.staffid = st.staffid
+
+    SELECT *
+    FROM booking b
+    JOIN space s
+    ON b.spaceid = s.spaceid
+    JOIN applicant a
+    ON b.applicantid = a.applicantid
 </sql:query>
 
 <div class="sidebar">
