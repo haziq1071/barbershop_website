@@ -5,12 +5,11 @@ public class Space implements Serializable{
 
     private static final long serialVersionUID = 1L;
     private int spaceid;
+    private String spacetype;
     private String spacename;
     private int spacecapacity;
     private String spacestatus;
     private String soundsystem;
-    private int tablequantity;
-    private int chairquantity;
 
     public Space() {}
 
@@ -20,6 +19,14 @@ public class Space implements Serializable{
 
     public void setSpaceid(int spaceid) {
         this.spaceid = spaceid;
+    }
+
+    public String getSpacetype() {
+        return spacetype;
+    }
+
+    public void setSpacetype(String spacetype) {
+        this.spacetype = spacetype;
     }
 
     public String getSpacename() {
@@ -53,22 +60,5 @@ public class Space implements Serializable{
     public void setSoundsystem(String soundsystem) {
         this.soundsystem = soundsystem;
     }
-
-    public int getTablequantity() {
-        return tablequantity;
-    }
-
-    public void setTablequantity(int tablequantity) {
-        this.tablequantity = tablequantity;
-    }
-
-    public int getChairquantity() {
-        return chairquantity;
-    }
-
-    public void setChairquantity(int chairquantity) {
-        this.chairquantity = chairquantity;
-    }
-
 
 }

@@ -44,6 +44,9 @@ public class SpaceServlet extends HttpServlet {
                 case "updateSpace":
                     updateSpace(request, response);
                     break;
+                case "createLecture":
+                    createLecture(request, response);
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
@@ -56,21 +59,19 @@ public class SpaceServlet extends HttpServlet {
 
     private void createSpace(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
+        String spacetype = request.getParameter("spacetype");
         String spacename = request.getParameter("spacename");
         int spacecapacity = Integer.parseInt(request.getParameter("spacecapacity"));
         String spacestatus = request.getParameter("spacestatus");
         String soundsystem = request.getParameter("soundsystem");
-        int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
-        int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));
 
         Space space = new Space();
 
+        space.setSpacetype(spacetype);
         space.setSpacename(spacename);
         space.setSpacecapacity(spacecapacity);
         space.setSpacestatus(spacestatus);
         space.setSoundsystem(soundsystem);
-        space.setTablequantity(tablequantity);
-        space.setChairquantity(chairquantity);
 
         sp.createSpace(space);
         response.sendRedirect("staffViewSpace.jsp");
@@ -82,22 +83,20 @@ public class SpaceServlet extends HttpServlet {
     private void updateSpace(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
         HttpSession session = request.getSession();
         int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+        String spacetype = request.getParameter("spacetype");
         String spacename = request.getParameter("spacename");
         int spacecapacity = Integer.parseInt(request.getParameter("spacecapacity"));
         String spacestatus = request.getParameter("spacestatus");
         String soundsystem = request.getParameter("soundsystem");
-        int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
-        int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));
 
         Space space = new Space();
 
         space.setSpaceid(spaceid);
+        space.setSpacetype(spacetype);
         space.setSpacename(spacename);
         space.setSpacecapacity(spacecapacity);
         space.setSpacestatus(spacestatus);
         space.setSoundsystem(soundsystem);
-        space.setTablequantity(tablequantity);
-        space.setChairquantity(chairquantity);
 
         sp.updateSpace(space);
 
@@ -116,5 +115,25 @@ public class SpaceServlet extends HttpServlet {
         sp.deleteSpace(spaceid);
         response.sendRedirect("staffViewSpace.jsp");
     }
+
+    /*######################################################(CREATE LECTURE)#############################################################*/
+
+    private void createLecture(HttpServletRequest request, HttpServletResponse response)
+                throws SQLException, IOException {
+           
+            int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+            int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
+            int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));        
+            
+            Lecture lecture= new Lecture();
+
+            lecture.setSpaceid(spaceid);
+            lecture.setTablequantity(tablequantity);
+            lecture.setChairquantity(chairquantity);
+            
+            sp.createLecture(lecture);
+            
+          response.sendRedirect("staffViewSpace.jsp");
+        }
 
 }
