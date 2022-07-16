@@ -35,8 +35,6 @@
     ON b.spaceid = s.spaceid
     JOIN staff st
     ON b.staffid = st.staffid
-    JOIN applicant a
-    ON b.applicantid = a.applicantid
 </sql:query>
 
 <div class="sidebar">
