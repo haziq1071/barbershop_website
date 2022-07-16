@@ -27,7 +27,6 @@
 <sql:query dataSource="${ic}" var="aid">
   <%
     int japplicantid = 0;
-
     if(request.getParameter("applicantid")==null){
       japplicantid = (Integer) session.getAttribute("applicantid");
     }

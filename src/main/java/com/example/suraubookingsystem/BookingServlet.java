@@ -1,5 +1,4 @@
 package com.example.suraubookingsystem;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -13,11 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-//
+
 @MultipartConfig
 @WebServlet(name = "BookingServlet", value = "/BookingServlet")
 public class BookingServlet extends HttpServlet {
-
     //private static final long serialVersionUID = 1L;
     private BookingDao bd;
     public void init() {
@@ -26,7 +24,7 @@ public class BookingServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+            
     }
 
     @Override
@@ -35,7 +33,6 @@ public class BookingServlet extends HttpServlet {
         response.setContentType("text/html");
 
         String action = request.getParameter("action");
-
         try {
             switch (action) {
                 case "staffcreatebooking":
@@ -64,11 +61,8 @@ public class BookingServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-
     /*######################################################( Staff Create Booking )#############################################################*/
-
     private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-
         //HttpSession session = request.getSession();
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
@@ -78,7 +72,6 @@ public class BookingServlet extends HttpServlet {
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
             Date eventdate = Date.valueOf(request.getParameter("eventdate"));
             String bookingdescription = request.getParameter("bookingdescription");
-            //String bookingstatus = request.getParameter("bookingstatus");
 
             Staff staff = new Staff();
             Space space = new Space();
@@ -88,7 +81,6 @@ public class BookingServlet extends HttpServlet {
             space.setSpaceid(spaceid);
             booking.setEventdate(eventdate);
             booking.setBookingdescription(bookingdescription);
-            //booking.setBookingstatus(bookingstatus);
 
             bd.staffcreatebooking(booking, space, staff);
             //bd.staffcreatebooking(booking);
@@ -101,7 +93,7 @@ public class BookingServlet extends HttpServlet {
         out.println("location='staffViewBooking.jsp';");
         out.println("</script>");
     }
-
+      
     private void staffcancelbooking(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         int bookingid = Integer.parseInt(request.getParameter("bookingid"));
@@ -109,6 +101,7 @@ public class BookingServlet extends HttpServlet {
         response.sendRedirect("staffViewBooking.jsp");
     }
 
+    
     private void staffapprovedbooking(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
 
@@ -118,13 +111,11 @@ public class BookingServlet extends HttpServlet {
         int bookingid = Integer.parseInt(request.getParameter("bookingid"));
         bd.staffapprovedbooking(bookingid);
 
-
         out.println("<script type=\"text/javascript\">");
         out.println("alert('Anda telah berjaya meluluskan tempahan ini!');");
         out.println("location='staffApproveBooking.jsp';");
         out.println("</script>");
     }
-
 
     /*######################################################( Applicant Create Booking )#############################################################*/
     private void applicantcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {

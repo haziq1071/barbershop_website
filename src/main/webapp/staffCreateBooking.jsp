@@ -118,7 +118,7 @@
                             <span class="details">Nama Ruang</span>
                             <select class="form-control" id="spaceid" name="spaceid">
                                 <c:forEach items="${oc.rows}" var="space">
-                                    <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
+                                    <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spaceid}" /> - <c:out value="${space.spacename}" /></option>
                                 </c:forEach>
                             </select>
                         </div>

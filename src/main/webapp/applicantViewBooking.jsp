@@ -17,7 +17,6 @@
   response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
   response.setHeader("Pragma", "no-cache");
   response.setHeader("Expires", "0");
-
   if(session.getAttribute("applicantid")==null)
     response.sendRedirect("index.jsp");
 %>
@@ -31,7 +30,6 @@
 <sql:query dataSource="${ic}" var="oc">
   <%
     int japplicantid = 0;
-
     if(request.getParameter("applicantid")==null){
       japplicantid = (Integer) session.getAttribute("applicantid");
     }
@@ -140,4 +138,4 @@
   </div>
 </section>
 </body>
-</html>
+</html> 
