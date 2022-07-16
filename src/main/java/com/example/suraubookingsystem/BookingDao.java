@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import static java.lang.System.out;
-//
+
 public class BookingDao {
     String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
     String user = "dnzxqagexabepj";
@@ -28,52 +28,44 @@ public class BookingDao {
         return connection;
     }
 
-    public void staffcreatebooking(Staff staff,Booking booking) throws SQLException{
+    public void staffcreatebooking(Booking booking, Space space, Staff staff) throws SQLException{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,EVENTDATE,BOOKINGSPACE, STAFFID) VALUES (?,?,?,?)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGID,BOOKINGDESCRIPTION,EVENTDATE,SPACEID,STAFFID) VALUES (bookingid_seq.NEXTVAL,?,?,?,?)");)
         {
-
             preparedStatement.setString(1, booking.getBookingdescription());
-            //preparedStatement.setInt(2, space.getSpaceid());
             preparedStatement.setDate(2, booking.getEventdate());
-            //preparedStatement.setInt(3, staffid);
-            preparedStatement.setString(3, booking.getBookingspace());
+            preparedStatement.setInt(3, space.getSpaceid());
             preparedStatement.setInt(4, staff.getStaffid());
-
-            //out.println(preparedStatement);
             preparedStatement.executeUpdate();
-            
+
         }
-        //catch (SQLException e) {
         catch (Exception e) {
-            //printSQLException(e);
             e.printStackTrace();
         }
     }
 
-    public void applicantcreatebooking(Applicant applicant, Space space, Booking booking) throws Exception{
+
+    public void applicantcreatebooking(Booking booking, Space space, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(applicantid,spaceid,eventdate,bookingdescription,bookingspace) values(?,?,?,?,?)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGID,BOOKINGDESCRIPTION,EVENTDATE,SPACEID,APPLICANTID) VALUES (bookingid_seq.NEXTVAL,?,?,?,?)");)
         {
+            preparedStatement.setString(1, booking.getBookingdescription());
+            preparedStatement.setDate(2, booking.getEventdate());
+            preparedStatement.setInt(3, space.getSpaceid());
+            preparedStatement.setInt(4, applicant.getApplicantid());
 
-            preparedStatement.setInt(1, applicant.getApplicantid());
-            preparedStatement.setInt(2, space.getSpaceid());
-            preparedStatement.setDate(3, booking.getEventdate());
-            preparedStatement.setString(4, booking.getBookingdescription());
-            preparedStatement.setString(5, booking.getBookingspace());
-
-            out.println(preparedStatement);
             preparedStatement.executeUpdate();
+
         }
-        catch (SQLException e) {
-            printSQLException(e);
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public boolean staffcancelbooking(int bookingid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("delete from booking where bookingid=?");) {
+             PreparedStatement statement = connection.prepareStatement("update BOOKING set bookingstatus = 'Batal' where BOOKINGID=?");) {
             statement.setInt(1, bookingid);
             rowDeleted = statement.executeUpdate() > 0;
         }
@@ -83,41 +75,27 @@ public class BookingDao {
     public boolean applicantcancelbooking(int bookingid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("delete from booking where bookingid=?");) {
+             PreparedStatement statement = connection.prepareStatement("update BOOKING set bookingstatus = 'Batal' where BOOKINGID=?");) {
             statement.setInt(1, bookingid);
             rowDeleted = statement.executeUpdate() > 0;
         }
         return rowDeleted;
     }
 
-    public void staffapprovedbooking(int bookingid,int spaceid) throws SQLException {
-        String bookingstatus="Approved";
+    public void staffapprovedbooking(int bookingid) throws SQLException, FileNotFoundException {
+        String bookingstatus="Diluluskan";
 
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=? WHERE BOOKINGID=?");) {
+             PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=? BOOKINGAPPROVALDATE=localtimestamp WHERE BOOKINGID=?");) {
 
             statement.setString(1, bookingstatus);
             statement.setInt(2, bookingid);
             int row = statement.executeUpdate();
-
-            if (row == 1){
-                PreparedStatement statement2 = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS='DIBATALKAN' WHERE BOOKINGSTATUS='DALAM PROGRESS' AND spaceid=?");
-                statement2.setInt(1, spaceid);
-                statement2.executeUpdate();
-                System.out.println("Semua tempahan dalam progress akan dibatalkan setelah salah satu disahkan");
-
-            }
         }
-    }
-    public void staffrejectbooking(int bookingid) throws SQLException {
 
-        try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS='Approved' WHERE BOOKINGID=?");) {
-             statement.setInt(1, bookingid);
-             statement.executeUpdate();
-        }
     }
-    
+
+
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {
