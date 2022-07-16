@@ -88,11 +88,11 @@
         </div>
     </nav>
     <div class="home-content">
-        <div class="table">
+        <div class="container">
             <div class="table_header">
                 <header class="main_title" style="font-size: xx-large">SENARAI TEMPAHAN</header>
             </div>
-                <table class="container">
+                <table>
                     <tr>
                         <th>NO.TEMPAHAN</th>
                         <th>NAMA PEMOHON</th>
