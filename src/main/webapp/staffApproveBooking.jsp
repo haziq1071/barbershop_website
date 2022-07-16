@@ -13,6 +13,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response.setHeader("Pragma", "no-cache");
+    response.setHeader("Expires", "0");
+
+    if(session.getAttribute("staffid")==null)
+        response.sendRedirect("index.jsp");
+%>
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
@@ -21,7 +29,7 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    SELECT bookingid, spacename, staffname, applicantname, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, bookingdescription, bookingstatus
+    SELECT *
     FROM booking b
     JOIN space s
     ON b.spaceid = s.spaceid
