@@ -107,15 +107,15 @@
                     <c:forEach var="book" items="${oc.rows}">
                         <tr>
                             <td>${book.bookingid}</td>
-                            <td>${book.applicantname}</td>
+                            <td>${book.staffname}</td>
                             <td>${book.spacename}</td>
                             <td>${book.bookingdate}</td>
                             <td>${book.eventdate}</td>
                             <td>${book.bookingdescription}</td>
                             <td>${book.bookingstatus}</td>
                             <td>
-                                <input type="hidden" name="action" value="staffapprovebooking">
-                                <button formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan?')"><i class="fa-solid fa-check"></i></button>
+                                <input type="hidden" name="action" value="staffapprovedbooking">
+                                <button formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')"><i class="fa-solid fa-check"></i></button>
                                 <button><i class="fa-solid fa-xmark"></i></button>
                             </td>
                         </tr>

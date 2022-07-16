@@ -80,11 +80,14 @@ public class BookingDao {
     public void staffapprovedbooking(int bookingid) throws SQLException, FileNotFoundException {
         String bookingstatus="Diluluskan";
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=? BOOKINGAPPROVALDATE=localtimestamp WHERE BOOKINGID=?");) {
+             PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=? WHERE BOOKINGID=?");) {
             statement.setString(1, bookingstatus);
             statement.setInt(2, bookingid);
             int row = statement.executeUpdate();
+            //rowUpdated = statement.executeUpdate() > 0;
+
         }
+        //return rowUpdated;
     }
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
