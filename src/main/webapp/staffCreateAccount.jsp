@@ -19,7 +19,7 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    SELECT staffid,staffname from staff
+    SELECT staffname from staff
 </sql:query>
 <div class="sidebar">
     <div class="logo-details">
@@ -121,7 +121,7 @@
                                 <label class="details">Nama Penyelia</label>
                                 <select class="form-control" id="supervisorid" name="supervisorid">
                                     <c:forEach items="${oc.rows}" var="staff">
-                                        <option value="<c:out value="${staff.staffid}"/>"><c:out value="${staff.staffname}" />: ID - <c:out value="${staff.staffid}" /></option>
+                                        <option value="<c:out value="${staff.staffid}"/>"><c:out value="${staff.staffname}" /></option>
                                     </c:forEach>
                                 </select>
                             </div>
