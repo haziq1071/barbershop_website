@@ -275,6 +275,7 @@ nav .sidebar-button i{
     padding: 20px;
     margin-top: 10px;
     margin-right: 5px;
+    margin-bottom: 10px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
@@ -349,7 +350,6 @@ nav .sidebar-button i{
  margin-left: 400px;
  margin-top: 15%;
  margin-right: 5px;
- margin-bottom: 5px;
  transform: translate(-50%,-50%);
  width: 400px; 
  border-collapse: collapse;
