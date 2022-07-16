@@ -36,7 +36,7 @@
     JOIN staff st
     ON b.staffid = st.staffid
     JOIN applicant a
-    ON a.applicantid = b.applicantid
+    ON b.applicantid = a.applicantid
 </sql:query>
 
 <div class="sidebar">
