@@ -133,7 +133,6 @@ public class BookingServlet extends HttpServlet {
             String bookingdescription = request.getParameter("bookingdescription");
             String bookingstatus = request.getParameter("bookingstatus");
 
-
             Applicant applicant = new Applicant();
             Space space = new Space();
             Booking booking = new Booking();
