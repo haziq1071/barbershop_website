@@ -30,14 +30,13 @@ public class BookingDao {
 
     public void staffcreatebooking(Booking booking, Space space, Staff staff) throws SQLException{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGSTATUS,EVENTDATE,BOOKINGDATE,SPACEID,STAFFID) VALUES (?,?,?,?,?,?)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGSTATUS,EVENTDATE,SPACEID,STAFFID) VALUES (?,?,?,?,?)");)
         {
             preparedStatement.setString(1, booking.getBookingdescription());
             preparedStatement.setString(2, booking.getBookingstatus());
             preparedStatement.setDate(3, booking.getEventdate());
-            preparedStatement.setDate(4, booking.getBookingdate());
-            preparedStatement.setInt(5, space.getSpaceid());
-            preparedStatement.setInt(6, staff.getStaffid());
+            preparedStatement.setInt(4, space.getSpaceid());
+            preparedStatement.setInt(5, staff.getStaffid());
             preparedStatement.executeUpdate();
         }
         catch (Exception e) {
