@@ -130,7 +130,7 @@
                             <td>${result.bookingstatus}</td>
                             <td>
                                 <input type="hidden" name="action" value="staffapprovedbooking">
-                                <button formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')"><i class="fa-solid fa-check"></i></button>
+                                <button class="approve" formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')"><i class="fa-solid fa-check"></i></button>
                                 <button><i class="fa-solid fa-xmark"></i></button>
                             </td>
                         </tr>
@@ -149,10 +149,12 @@
                             <td>
                                 <form action="" method="post">
                                 <input type="hidden" name="action" value="staffapprovedbooking">
+                                <input type="hidden" name="bookingid" value="${result.bookingid}">
                                 <button class="approve" formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')"><i class="fa-solid fa-check"></i></button>
                                 </form>
                                 <form action="" method="post">
                                 <input type="hidden" name="action" value="staffrejectbooking">
+                                <input type="hidden" name="bookingid" value="${result.bookingid}">
                                 <button class="reject" formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk menolak tempahan ini?')"><i class="fa-solid fa-xmark"></i></button>
                                 </form>
                             </td>
