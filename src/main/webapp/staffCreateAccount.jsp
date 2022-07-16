@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -9,6 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<sql:setDataSource
+        var="ic"
+        driver="org.postgresql.Driver"
+        url="jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"
+        user="dnzxqagexabepj"
+        password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
+
+<sql:query dataSource="${ic}" var="oc">
+    SELECT staffid,staffname from staff
+</sql:query>
 <div class="sidebar">
     <div class="logo-details">
         <img src="logoWhite.png">
@@ -107,7 +119,11 @@
                             </div>
                             <div class="input-field">
                                 <label class="details">ID Penyelia</label>
-                                <input type="text" name="supervisorid">
+                                <select class="form-control" id="supervisorid" name="supervisorid">
+                                    <c:forEach items="${oc.rows}" var="staff">
+                                        <option value="<c:out value="${staff.staffid}"/>"><c:out value="${staff.staffid}" /> - <c:out value="${staff.staffname}" /></option>
+                                    </c:forEach>
+                                </select>
                             </div>
                         </div>
                     </div>
