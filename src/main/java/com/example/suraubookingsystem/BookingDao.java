@@ -33,7 +33,7 @@ public class BookingDao {
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGSTATUS,EVENTDATE,SPACEID,STAFFID) VALUES (?,Telah Dimajukan,?,?,?)");)
         {
             preparedStatement.setString(1, booking.getBookingdescription());
-            //preparedStatement.setString(2, booking.getBookingstatus());
+            preparedStatement.setString(2, booking.getBookingstatus());
             preparedStatement.setDate(3, booking.getEventdate());
             preparedStatement.setInt(4, space.getSpaceid());
             preparedStatement.setInt(5, staff.getStaffid());
