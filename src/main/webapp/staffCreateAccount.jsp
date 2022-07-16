@@ -123,7 +123,7 @@
            
                                     <c:forEach items="${oc.rows}" var="staff">
                                     	<option disabled selected>Pilih Penyelia</option>
-                                		<option value="Tiada Penyelia">Tiada Penyelia</option>
+                                		<option value="<c:out value="${staff.null}"/>Tiada Penyelia</option>
                                         <option value="<c:out value="${staff.staffid}"/>"><c:out value="${staff.staffname}" /></option>
                                     </c:forEach>
                                 </select>
