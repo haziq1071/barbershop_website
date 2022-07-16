@@ -269,7 +269,7 @@ nav .sidebar-button i{
 }
 .container{
     position: relative;
-    width: 1090px;
+    width: 1110px;
     height: 150px;
     border-radius: 6px;
     padding: 20px;
@@ -381,11 +381,11 @@ tr:nth-child(even){
  background-color: #eeeeee;
 }
 
-td button:nth-child(1) {
+button:nth-child(1) {
     background-color: #4CAF50;
-    margin-right: 5px;
+    margin-right: 7px;
 }
-td button:nth-child(2) {
+button:nth-child(2) {
     background-color: #f80000;
 }
 

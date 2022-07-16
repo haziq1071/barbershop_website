@@ -137,7 +137,6 @@
                         </form>
                     </c:forEach>
                     <c:forEach var="result" items="${ac.rows}">
-                        <form action="" method="post">
                         <input type="hidden" name="bookingid" value="${result.bookingid}">
                         <tr>
                             <td>${result.bookingid}</td>
@@ -148,12 +147,16 @@
                             <td>${result.bookingdescription}</td>
                             <td>${result.bookingstatus}</td>
                             <td>
+                                <form action="" method="post">
                                 <input type="hidden" name="action" value="staffapprovedbooking">
                                 <button formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')"><i class="fa-solid fa-check"></i></button>
-                                <button><i class="fa-solid fa-xmark"></i></button>
+                                </form>
+                                <form action="" method="post">
+                                <input type="hidden" name="action" value="staffrejectbooking">
+                                <button formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk menolak tempahan ini?')"><i class="fa-solid fa-xmark"></i></button>
+                                </form>
                             </td>
                         </tr>
-                        </form>
                     </c:forEach>
                 </table>
         </div>

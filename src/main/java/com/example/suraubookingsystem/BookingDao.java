@@ -84,10 +84,18 @@ public class BookingDao {
             statement.setString(1, bookingstatus);
             statement.setInt(2, bookingid);
             int row = statement.executeUpdate();
-            //rowUpdated = statement.executeUpdate() > 0;
 
         }
-        //return rowUpdated;
+    }
+    public void staffrejectbooking(int bookingid) throws SQLException, FileNotFoundException {
+        String bookingstatus="Ditolak";
+        try (Connection connection = getConnection();
+             PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=? WHERE BOOKINGID=?");) {
+            statement.setString(1, bookingstatus);
+            statement.setInt(2, bookingid);
+            int row = statement.executeUpdate();
+
+        }
     }
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {

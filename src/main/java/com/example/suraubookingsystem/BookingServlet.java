@@ -50,9 +50,9 @@ public class BookingServlet extends HttpServlet {
                 case "staffapprovedbooking":
                     staffapprovedbooking(request, response);
                     break;
-                /* case "staffrejectbooking":
+                case "staffrejectbooking":
                     staffrejectbooking(request, response);
-                    break;*/
+                    break;
 
             }
         } catch (SQLException ex) {
@@ -103,7 +103,6 @@ public class BookingServlet extends HttpServlet {
         response.sendRedirect("staffViewBooking.jsp");
     }
 
-    
     private void staffapprovedbooking(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
 
@@ -115,6 +114,21 @@ public class BookingServlet extends HttpServlet {
 
         out.println("<script type=\"text/javascript\">");
         out.println("alert('Anda telah berjaya meluluskan tempahan ini!');");
+        out.println("location='staffApproveBooking.jsp';");
+        out.println("</script>");
+    }
+
+    private void staffrejectbooking(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        int bookingid = Integer.parseInt(request.getParameter("bookingid"));
+        bd.staffrejectbooking(bookingid);
+
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('Anda telah berjaya menolak tempahan ini!');");
         out.println("location='staffApproveBooking.jsp';");
         out.println("</script>");
     }
