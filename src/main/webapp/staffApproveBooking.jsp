@@ -29,19 +29,19 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    SELECT *
+    (SELECT *
     FROM booking b
     JOIN space s
     ON b.spaceid = s.spaceid
     JOIN staff st
-    ON b.staffid = st.staffid
+    ON b.staffid = st.staffid)
     AND
-    SELECT *
+    (SELECT *
     FROM booking b
     JOIN space s
     ON b.spaceid = s.spaceid
     JOIN applicant a
-    ON b.applicantid = a.applicantid
+    ON b.applicantid = a.applicantid)
 </sql:query>
 
 <div class="sidebar">
