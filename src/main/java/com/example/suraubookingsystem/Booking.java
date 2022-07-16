@@ -14,7 +14,7 @@ public class Booking implements Serializable{
 
     }
 
-    public Booking(int bookingid, String bookingdescription, Date eventdate, Date bookingdate, String bookingstatus, int approveid, Date bookingapprovaldate) {
+    public Booking(int bookingid, String bookingdescription, Date eventdate, Date bookingdate, String bookingstatus, int approveid) {
         this.bookingid = bookingid;
         this.bookingdescription = bookingdescription;
         this.eventdate = eventdate;
