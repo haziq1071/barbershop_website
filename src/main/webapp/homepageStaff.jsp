@@ -81,7 +81,7 @@
 	        <header class="main_title">Laman Utama</header>
 	        <img src="banner.jpg" id="image" height="250" width="450">
 	        <br><br>
-	        <p>Ini adalah laman rasmi Surau Ar-Rahman.Laman ini membolehkan kakitangan, qariah dan orang ramai membuat tempahan bilik-bilik atau ruangan yang sedia ada di Surau Ar-Rahman. Harapan kami dari pihak surau ini adalah kehadiran para ahli qariah dan orang ramai akan dapat mengeratkan ukhwah sesama suadara seislam dan mengimarahkan rumah Allah SWT. InshaAllah.</p>
+	        <p>Selamat datang ke laman rasmi Surau Ar-Rahman, Puchong Jaya! Laman ini bertujuan bagi membolehkan kakitangan, qariah dan orang ramai membuat tempahan dewan atau bilik yang terdapat di dalam Surau Ar-Rahman bagi mengadakan majlis atau kuliah. Harapan kami dari pihak Surau Ar-Rahman adalah bagi menggalakkan kehadiran orang ramai agar dapat mengeratkan ukhwah diantara saudara sesama seislam dan mengimarahkan rumah Allah SWT. InshaAllah.</p>
 	    </div>
 	</div>
   </section>
