@@ -11,14 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <%
+<%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
     response.setHeader("Expires", "0");
 
     if(session.getAttribute("staffid")==null)
         response.sendRedirect("index.jsp");
-  %>
+%>
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
@@ -38,10 +38,24 @@
             session.setAttribute("staffid", jstaffid);
         }
     %>
+    <sql:query dataSource="${ic}" var="sv">
+        <c:set var="jstaffid" value="<%=jstaffid%>"/>
+        Select m.staffid AS "Supervisorid", m.staffname AS "Supervisor"
+        from staff s
+        join staff m
+        on s.supervisorid = m.staffid
+        WHERE s.staffid=?
+        <sql:param value="${jstaffid}" />
+    </sql:query>
+
     <c:set var="jstaffid" value="<%=jstaffid%>"/>
-    SELECT * FROM staff WHERE staffid=?
+    SELECT staffid,staffname,staffic,staffdateofbirth,staffaddress,staffemail,staffphone,staffrole,staffusername,staffpassword
+    from staff
+    WHERE staffid=?
     <sql:param value="${jstaffid}" />
 </sql:query>
+
+
 
 <div class="sidebar">
     <div class="logo-details">
@@ -102,35 +116,40 @@
             <div class="container-staff">
                 <div class="rightbox">
                     <form action="" method="post">
-                    <div class="profile tabShow">
-                        <h1>MAKLUMAT STAFF</h1>
-                        <input type="hidden" name="staffid" value="${staff.staffid}">
-                        <h2>NAMA PENUH</h2>
-                        <p class="input">${staff.staffname}</p>
-                        <h2>Kad Pengenalan</h2>
-                        <p class="input">${staff.staffic}</p>
-                        <h2>Tarikh Lahir</h2>
-                        <p class="input">${staff.staffdateofbirth}</p>
-                        <h2>Alamat</h2>
-                        <p class="input">${staff.staffaddress}</p>
-                        <h2>Email</h2>
-                        <p class="input">${staff.staffemail}</p>
-                        <h2>Nombor Telefon</h2>
-                        <p class="input">${staff.staffphone}</p>
-                        <h2>Jawatan</h2>
-                        <p class="input">${staff.staffrole}</p>
-                        <h2>Penyelia ID</h2>
-                        <p class="input">${staff.supervisorid}</p>
-                        <h2>Nombor Staf</h2>
-                        <p class="input">${staff.staffusername}</p>
-                        <h2>Kata Laluan</h2>
-                        <p class="input">${staff.staffpassword}</p>
+                        <div class="profile tabShow">
+                            <h1>MAKLUMAT STAFF</h1>
+                            <input type="hidden" name="staffid" value="${staff.staffid}">
+                            <h2>NAMA PENUH</h2>
+                            <p class="input">${staff.staffname}</p>
+                            <h2>Kad Pengenalan</h2>
+                            <p class="input">${staff.staffic}</p>
+                            <h2>Tarikh Lahir</h2>
+                            <p class="input">${staff.staffdateofbirth}</p>
+                            <h2>Alamat</h2>
+                            <p class="input">${staff.staffaddress}</p>
+                            <h2>Email</h2>
+                            <p class="input">${staff.staffemail}</p>
+                            <h2>Nombor Telefon</h2>
+                            <p class="input">${staff.staffphone}</p>
+                            <h2>Jawatan</h2>
+                            <p class="input">${staff.staffrole}</p>
 
-                        <input type="hidden" name="action" value="deleteStaff">
-                        <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">KEMASKINI</button>
-                        <button class="btn cancel" formaction="StaffServlet" 
-                        onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >PADAM</button>
-                    </div>
+                            <h2>Penyelia</h2>
+                            <c:forEach var="staff" items="${sv.rows}">
+                                <p class="input">${staff.Supervisorid} - ${staff.Supervisor}</p>
+                            </c:forEach>
+                            <c:forEach var="staff" items="${oc.rows}">
+                                <h2>Nombor Staf</h2>
+                                <p class="input">${staff.staffusername}</p>
+                                <h2>Kata Laluan</h2>
+                                <p class="input">${staff.staffpassword}</p>
+                            </c:forEach>
+
+                            <input type="hidden" name="action" value="deleteStaff">
+                            <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">KEMASKINI</button>
+                            <button class="btn cancel" formaction="StaffServlet"
+                                    onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >PADAM</button>
+                        </div>
                     </form>
                 </div>
             </div>

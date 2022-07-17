@@ -82,7 +82,7 @@ public class BookingDao {
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=?WHERE BOOKINGID=?");) {
             statement.setString(1, bookingstatus);
-            statement.setInt(3, bookingid);
+            statement.setInt(2, bookingid);
             int row = statement.executeUpdate();
 
         }

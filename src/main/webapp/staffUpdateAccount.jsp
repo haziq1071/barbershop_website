@@ -11,14 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <%
+<%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
     response.setHeader("Expires", "0");
 
     if(session.getAttribute("staffid")==null)
         response.sendRedirect("index.jsp");
-  %>
+%>
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
@@ -38,9 +38,26 @@
             session.setAttribute("staffid", jstaffid);
         }
     %>
+    <sql:query dataSource="${ic}" var="sv">
+        <c:set var="jstaffid" value="<%=jstaffid%>"/>
+        Select m.staffid AS "Supervisorid", m.staffname AS "Supervisor"
+        from staff s
+        join staff m
+        on s.supervisorid = m.staffid
+        WHERE s.staffid=?
+        <sql:param value="${jstaffid}" />
+    </sql:query>
+
+
     <c:set var="jstaffid" value="<%=jstaffid%>"/>
-    SELECT * FROM staff WHERE staffid=?
+    SELECT staffid,staffname,staffic,staffdateofbirth,staffaddress,staffemail,staffphone,staffrole,staffusername,staffpassword
+    from staff
+    WHERE staffid=?
     <sql:param value="${jstaffid}" />
+</sql:query>
+
+<sql:query dataSource="${ic}" var="st">
+    SELECT staffid,staffname from staff
 </sql:query>
 <div class="sidebar">
     <div class="logo-details">
@@ -118,12 +135,24 @@
                             <input type="text" class="input" name="staffphone" value = "${staff.staffphone}">
                             <h2>Jawatan</h2>
                             <input type="text" class="input" name="staffrole" value = "${staff.staffrole}">
-                            <h2>ID Penyelia</h2>
-                            <input type="text" class="input" name="supervisorid" value = "${staff.supervisorid}">
-                            <h2>Nombor Staf</h2>
-                            <input type="text" class="input" name="staffusername" value = "${staff.staffusername}">
-                            <h2>Kata Laluan</h2>
-                            <input type="password" class="input" name="staffpassword" value = "${staff.staffpassword}">
+
+                            <h2>Penyelia</h2>
+
+                            <select class="input" id="supervisorid" name="supervisorid">
+                                <c:forEach var="staff" items="${sv.rows}">
+                                    <option value="<c:out value="${staff.Supervisorid}"/>"><c:out value="${staff.Supervisor}" /></option>
+                                </c:forEach>
+                                <c:forEach items="${st.rows}" var="staff">
+                                    <option value="<c:out value="${staff.staffid}"/>"><c:out value="${staff.staffname}" /></option>
+                                </c:forEach>
+                            </select>
+
+                            <c:forEach var="staff" items="${oc.rows}">
+                                <h2>Nombor Staf</h2>
+                                <input type="text" class="input" name="staffusername" value = "${staff.staffusername}">
+                                <h2>Kata Laluan</h2>
+                                <input type="text" class="input" name="staffpassword" value = "${staff.staffpassword}">
+                            </c:forEach>
                             <input type="hidden" name="action" value="updateStaff">
                             <a href="staffViewAccount.jsp"><button class="btn update">Simpan</button></a>
                             <a href="staffViewAccount.jsp"><button class="btn cancel">Batal</button></a>
