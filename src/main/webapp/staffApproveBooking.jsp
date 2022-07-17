@@ -35,6 +35,7 @@
     ON b.spaceid = s.spaceid
     JOIN staff st
     ON b.staffid = st.staffid
+    ORDER BY eventdate
 </sql:query>
 <sql:query dataSource="${ic}" var="ac">
     SELECT *
@@ -43,6 +44,7 @@
     ON b.spaceid = s.spaceid
     JOIN applicant a
     ON b.applicantid = a.applicantid
+    ORDER BY eventdate
 </sql:query>
 
 <div class="sidebar">
