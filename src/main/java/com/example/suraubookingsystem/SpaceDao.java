@@ -73,27 +73,6 @@ public class SpaceDao {
         return rowDeleted;
     }
 
-     public void createLecture (Lecture lecture) throws SQLException {
-
-        // try-with-resource statement will auto close the connection.
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement
-                     ("insert into lecture(spaceid,tablequantity,chairquantity) values(?,?,?)"))
-
-        {
-            ps.setInt(1, lecture.getSpaceid());
-            ps.setInt(2, lecture.getTablequantity());
-            ps.setInt(3, lecture.getChairquantity());
-            
-      
-            out.println(ps);
-            ps.executeUpdate();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
             if (e instanceof SQLException) {

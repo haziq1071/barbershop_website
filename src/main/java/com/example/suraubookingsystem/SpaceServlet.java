@@ -13,8 +13,16 @@ import java.sql.*;
 public class SpaceServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private SpaceDao sp;
+    private RoomDao rm;
+
+    HttpSession session = null;
+
     public void init() {
         sp = new SpaceDao();
+    }
+
+    public SpaceServlet() {
+        rm = new RoomDao();
     }
     
     @Override
@@ -44,8 +52,14 @@ public class SpaceServlet extends HttpServlet {
                 case "updateSpace":
                     updateSpace(request, response);
                     break;
-                case "createLecture":
-                    createLecture(request, response);
+                case "createRoom":
+                    createRoom(request, response);
+                    break;
+                case "updateRoom":
+                    updateSpace(request, response);
+                    break;
+                case "deleteRoom":
+                    deleteSpace(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -103,7 +117,6 @@ public class SpaceServlet extends HttpServlet {
 
     }
 
-
     /*######################################################( DELETE )#############################################################*/
 
     private void deleteSpace(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
@@ -112,24 +125,65 @@ public class SpaceServlet extends HttpServlet {
         response.sendRedirect("staffViewSpace.jsp");
     }
 
-    /*######################################################(CREATE LECTURE)#############################################################*/
+    /*######################################################(CREATE ROOM)#############################################################*/
 
-    private void createLecture(HttpServletRequest request, HttpServletResponse response)
+    private void createRoom(HttpServletRequest request, HttpServletResponse response)
                 throws SQLException, IOException {
            
-            int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+            String spacename = request.getParameter("spacename");
+            int spacecapacity = Integer.parseInt(request.getParameter("spacecapacity"));
+            String spacestatus = request.getParameter("spacestatus");
+            String soundsystem = request.getParameter("soundsystem");
             int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
             int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));        
             
-            Lecture lecture= new Lecture();
-
-            lecture.setSpaceid(spaceid);
-            lecture.setTablequantity(tablequantity);
-            lecture.setChairquantity(chairquantity);
+            //Room room = new Room(spacename,spacecapacity,spacestatus,soundsystem,tablequantity,chairquantity);
+            Room room = new Room();
+            room.setSpacename(spacename);
+            room.setSpacecapacity(spacecapacity);
+            room.setSpacestatus(spacestatus);
+            room.setSoundsystem(soundsystem);
+            room.setTablequantity(tablequantity);
+            room.setChairquantity(chairquantity);
             
-            sp.createLecture(lecture);
+            rm.createRoom(room);
             
-          response.sendRedirect("staffViewSpace.jsp");
+          response.sendRedirect("staffViewRoom.jsp");
         }
+        /*######################################################( UPDATE )#############################################################*/
 
-}
+        private void updateRoom(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+            HttpSession session = request.getSession();
+            int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+            String spacename = request.getParameter("spacename");
+            int spacecapacity = Integer.parseInt(request.getParameter("spacecapacity"));
+            String spacestatus = request.getParameter("spacestatus");
+            String soundsystem = request.getParameter("soundsystem");
+            int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
+            int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));
+
+            Room room = new Room();
+
+            room.setSpaceid(spaceid);
+            room.setSpacename(spacename);
+            room.setSpacecapacity(spacecapacity);
+            room.setSpacestatus(spacestatus);
+            room.setSoundsystem(soundsystem);
+            room.setTablequantity(tablequantity);
+            room.setChairquantity(chairquantity);
+
+            rm.updateRoom(room);
+
+            session.removeAttribute("room");
+            session.setAttribute("room", room);
+            response.sendRedirect("staffViewRoom.jsp");
+
+        }
+        /*######################################################( DELETE )#############################################################*/
+
+        private void deleteRoom(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+            int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+            sp.deleteSpace(spaceid);
+            response.sendRedirect("staffViewRoom.jsp");
+        }
+    }
