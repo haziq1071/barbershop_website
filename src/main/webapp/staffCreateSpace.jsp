@@ -84,20 +84,12 @@
 
 		<div class="home-content">
 			<div class="container">
-				<header class="main_title">PENAMBAHAN RUANG</header>
+				<header class="main_title">PENAMBAHAN DEWAN</header>
 				<form method="post">
 					<div class="form first">
 						<div class="details room">
-							<span class="title">INFORMASI RUANG</span>
+							<span class="title">INFORMASI DEWAN</span>
 							<div class="fields">
-								<div class="input-field input-box">
-									<label class="details">Jenis Ruang</label>
-									<select	name="spacetype" >
-										<option disabled selected>Pilih Jenis Ruang</option>
-										<option value="Dewan">Dewan</option>
-										<option value="Bilik Kuliah">Bilik Kuliah</option>
-									</select>
-								</div>
 								<div class="input-field input-box">
 									<label class="details">Nama</label> 
 									<input type="text" name="spacename">

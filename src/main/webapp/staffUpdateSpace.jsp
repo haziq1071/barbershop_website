@@ -103,10 +103,10 @@
       	<div class="home-content">
           <div class="container">
           	  <form action="SpaceServlet" method="post">
-              <header class="main_title">KEMASKINI RUANG</header>
+              <header class="main_title">KEMASKINI DEWAN</header>
                 <div class="form first">
                   <div class="details room">
-                    <span class="title">INFORMASI RUANG</span>
+                    <span class="title">INFORMASI DEWAN</span>
                     <div class="fields">
                       <div class="input-field input-box">
                       	<input type="hidden" name="spaceid" value="${space.spaceid}"/>
@@ -135,49 +135,9 @@
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Sistem Bunyi</label>
-                         <c:set var = "system" scope = "session" value = "${space.soundsystem}"/>
-                         <c:if test = "${system == 'Mikrofon Sahaja'}">
-                            <select name="soundsystem">
-                                <option value="${space.soundsystem}">${space.soundsystem}</option>
-                                <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
-                                <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
-                                <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
-                            </select>
-                         </c:if>
-                         <c:if test = "${system == 'Mikrofon Dan Speaker'}">
-                            <select name="soundsystem">
-                                <option value="${space.soundsystem}">${space.soundsystem}</option>
-                                <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
-                                <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
-                                <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
-                            </select>
-                         </c:if>
-                         <c:if test = "${system == 'Set Sistem Bar Bunyi'}">
-                            <select name="soundsystem">
-                                <option value="${space.soundsystem}">${space.soundsystem}</option>
-                                <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
-                                <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
-                                <option value="Set Sistem Bunyi Hi-fi">Set Sistem Bunyi Hi-fi</option>
-                            </select>
-                         </c:if>
-                         <c:if test = "${system == 'Set Sistem Bunyi Hi-fi'}">
-                            <select name="soundsystem">
-                                <option value="${space.soundsystem}">${space.soundsystem}</option>
-                                <option value="Mikrofon Sahaja">Mikrofon Sahaja</option>
-                                <option value="Mikrofon Dan Speaker">Mikrofon Dan Speaker</option>
-                                <option value="Set Sistem Bar Bunyi">Set Sistem Bar Bunyi</option>
-                            </select>
-                         </c:if>  
+                        <input type="text" name="soundsystem" value="${space.soundsystem}">
                       </div>
-                      <div class="input-field input-box">
-                        <label class="details" >Kuantiti Meja</label>
-                        <input type="text" name="tablequantity" value="${space.tablequantity}">
-                      </div>
-                       <div class="input-field input-box">
-                        <label class="details">Kuantiti Kerusi</label>
-                        <input type="text" name="chairquantity" value="${space.chairquantity}">
-                      </div> 
-                      <input type="hidden" name="action" value="updateSpace">
+                          <input type="hidden" name="action" value="updateSpace">
                       <a href="staffViewSpace.jsp"><button class="update">KEMASKINI</button></a>
                       <a href="staffViewSpace.jsp"><button class="delete">BATAL</button></a>                   
                     </div> 

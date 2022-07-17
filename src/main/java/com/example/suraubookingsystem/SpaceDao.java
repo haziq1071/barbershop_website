@@ -31,13 +31,12 @@ public class SpaceDao {
     public void createSpace(Space space) throws SQLException  {
 
         try (Connection connection = getConnection();
-             PreparedStatement prepareStatement = connection.prepareStatement("insert into space(spacetype,spacename,spacecapacity,spacestatus,soundsystem) values(?,?,?,?,?)");)
+             PreparedStatement prepareStatement = connection.prepareStatement("insert into space(spacename,spacecapacity,spacestatus,soundsystem) values(?,?,?,?)");)
         {
-            prepareStatement.setString(1, space.getSpacetype());
-            prepareStatement.setString(2, space.getSpacename());
-            prepareStatement.setInt(3, space.getSpacecapacity());
-            prepareStatement.setString(4, space.getSpacestatus());
-            prepareStatement.setString(5, space.getSoundsystem());
+            prepareStatement.setString(1, space.getSpacename());
+            prepareStatement.setInt(2, space.getSpacecapacity());
+            prepareStatement.setString(3, space.getSpacestatus());
+            prepareStatement.setString(4, space.getSoundsystem());
 
             out.println(prepareStatement);
             prepareStatement.executeUpdate();
@@ -50,14 +49,13 @@ public class SpaceDao {
     public boolean updateSpace(Space space) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacetype=?,spacename=?,spacecapacity=?,spacestatus=?,soundsystem=? where spaceid=?");)
+             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=? where spaceid=?");)
         {
-            ps.setString(1, space.getSpacetype());
-            ps.setString(2, space.getSpacename());
-            ps.setInt(3, space.getSpacecapacity());
-            ps.setString(4, space.getSpacestatus());
-            ps.setString(5, space.getSoundsystem());
-            ps.setInt(6, space.getSpaceid());
+            ps.setString(1, space.getSpacename());
+            ps.setInt(2, space.getSpacecapacity());
+            ps.setString(3, space.getSpacestatus());
+            ps.setString(4, space.getSoundsystem());
+            ps.setInt(5, space.getSpaceid());
 
             rowUpdated = ps.executeUpdate() > 0;
 
