@@ -33,6 +33,12 @@
     SELECT *
     FROM space
     WHERE spacestatus LIKE '%Boleh Digunakan%'
+    AND spacename LIKE '%Dewan%'
+</sql:query>
+<sql:query dataSource="${ic}" var="rm">
+    SELECT *
+    FROM room
+    WHERE spacestatus LIKE '%Boleh Digunakan%'
 </sql:query>
 <sql:query dataSource="${ic}" var="sid">
     <%
@@ -126,11 +132,13 @@
                                 <c:forEach items="${oc.rows}" var="space">
                                     <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
                                 </c:forEach>
+                                <c:forEach items="${rm.rows}" var="room">
+                                    <option value="<c:out value="${room.spaceid}"/>"><c:out value="${room.spacename}" /></option>
+                                </c:forEach>
                             </select>
                         </div>
                     </div>
                     <c:forEach items="${sid.rows}" var="staff">
-                    	<input type="hidden" name="spaceid" value="${space.spaceid}">
                         <input type="hidden" name="staffid" value="${staff.staffid}"/>
                         <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/>
                     </c:forEach>
