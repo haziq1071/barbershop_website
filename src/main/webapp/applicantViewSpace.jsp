@@ -30,6 +30,8 @@
 <sql:query dataSource="${ic}" var="oc">
     SELECT *
     from space
+    WHERE spacestatus LIKE '%Boleh Digunakan%'
+    AND spacename LIKE '%Dewan%'
 </sql:query>
 
 <sql:query dataSource="${ic}" var="ro">
@@ -93,10 +95,10 @@
     <div class="home-content">
         <div class="container">
             <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
-                <c:forEach var="space" items="${oc.rows}">
-                <input type="hidden" name="spaceid" value="${space.spaceid}">
                 <section class="wrapper top">
                     <div class="containerRoom">
+                    <c:forEach var="space" items="${oc.rows}">
+                    <input type="hidden" name="spaceid" value="${space.spaceid}">
                             <div class="text">
                                 <h2>${space.spacename}</h2>
                                 <div class="content">
@@ -109,24 +111,7 @@
                                 </div>
                             </div>
                         </c:forEach>
-                        <c:forEach var="room" items="${ro.rows}">
-                            <input type="hidden" name="spaceid" value="${room.spaceid}">
-                            <div class="text">
-                                <h2>${room.spacename}</h2>
-                                <div class="content">
-                                    <span>Kapasiti:</span>
-                                    <span>${room.spacecapacity}</span>
-                                    <span>Status:</span>
-                                    <span>${room.spacestatus}</span>
-                                    <span>Sistem Bunyi:</span>
-                                    <span>${room.soundsystem}</span>
-                                    <span>Kuantiti Meja:</span>
-                                    <span>${room.tablequantity}</span>
-                                    <span>Kuantity Kerusi:</span>
-                                    <span>${room.chairquantity}</span>
-                                </div>
-                            </div>
-                        </c:forEach>
+
                     </div>
                 </section>
         </div>
