@@ -44,14 +44,14 @@
         </li>
 
         <li>
-          <a class="main-menu" href="staffViewSpace.jsp">
+          <a class="main-menu" href="#">
             <i class='bx bx-box' ></i>
             <span class="links_name">RUANG</span>
           </a>
-          <!--ul class="sub-menu">
-            <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
-            <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-          </ul-->
+          <ul class="sub-menu">
+            <li><a href="staffViewSpace.jsp">DEWAN</a></li>
+            <li><a href="staffViewRoom.jsp">BILIK</a></li>
+          </ul>
         </li>
 
         <li>
