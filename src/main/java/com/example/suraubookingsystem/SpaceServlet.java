@@ -19,12 +19,9 @@ public class SpaceServlet extends HttpServlet {
 
     public void init() {
         sp = new SpaceDao();
-    }
-
-    public SpaceServlet() {
         rm = new RoomDao();
     }
-    
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
