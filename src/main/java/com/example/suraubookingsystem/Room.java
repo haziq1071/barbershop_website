@@ -1,17 +1,17 @@
 package com.example.suraubookingsystem;
 import java.io.Serializable;
 
-public class Lecture extends Space{
+public class Room extends Space{
 
     int tablequantity;
     int chairquantity;
 
     //default
-    public Lecture() {
+    public Room() {
         super();
     }
 
-    public Lecture(int spaceid, String spacename, int spacecapacity,
+    public Room(int spaceid, String spacename, int spacecapacity,
             String spacestatus, String soundsystem, int tablequantity, int chairquantity){
         
         super(spaceid, spacename, spacecapacity, spacestatus, soundsystem);
