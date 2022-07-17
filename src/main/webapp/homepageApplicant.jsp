@@ -33,12 +33,8 @@
         <li>
           <a class="main-menu" href="applicantViewSpace.jsp">
             <i class='bx bx-box' ></i>
-            <span class="links_name">BILIK</span>
+            <span class="links_name">RUANG</span>
           </a>
-          <!--ul class="sub-menu">
-            <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
-            <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-          </ul-->
         </li>
 
         <li>
