@@ -160,6 +160,7 @@
                             <input type="hidden" name="action" value="updateStaff">
                             <a href="staffViewAccount.jsp"><button class="btn update">Simpan</button></a>
                             <a href="staffViewAccount.jsp"><button class="btn cancel">Batal</button></a>
+
                         </div>
                     </form>
                 </div>

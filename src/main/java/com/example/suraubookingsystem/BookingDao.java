@@ -94,7 +94,6 @@ public class BookingDao {
             statement.setString(1, bookingstatus);
             statement.setInt(2, bookingid);
             int row = statement.executeUpdate();
-
         }
     }
     private void printSQLException(SQLException ex) {
