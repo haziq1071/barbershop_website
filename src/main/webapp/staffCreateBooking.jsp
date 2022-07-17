@@ -124,6 +124,7 @@
                             <span class="details">Nama Ruang</span>
                             <select class="form-control" id="spaceid" name="spaceid">
                                 <c:forEach items="${oc.rows}" var="space">
+                                	<input type="hidden" name="spaceid" value="${space.spaceid}"/>
                                     <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
                                 </c:forEach>
                             </select>
