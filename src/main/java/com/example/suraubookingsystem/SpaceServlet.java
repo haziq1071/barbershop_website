@@ -136,6 +136,7 @@ public class SpaceServlet extends HttpServlet {
             
             //Room room = new Room(spacename,spacecapacity,spacestatus,soundsystem,tablequantity,chairquantity);
             Room room = new Room();
+            
             room.setSpacename(spacename);
             room.setSpacecapacity(spacecapacity);
             room.setSpacestatus(spacestatus);

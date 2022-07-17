@@ -28,25 +28,11 @@ public class RoomDao {
     return connection;
   }
 
-    int spaceid;                // PK
-    String spacename;
-    int spacecapacity;
-    String spacestatus;
-    String soundsystem;                  
-    int tablequantity;
-    int chairquantity;
-
       public void createRoom(Room room) throws SQLException  {
 
         try (Connection connection = getConnection();
              PreparedStatement prepareStatement = connection.prepareStatement("insert into room(spacename,spacecapacity,spacestatus,soundsystem,tablequantity,chairquantity) values(?,?,?,?,?,?)");)
         {
-            spacename = room.getSpacename();
-            spacecapacity = room.getSpacecapacity();
-            spacestatus = room.getSpacestatus();
-            soundsystem = room.getSoundsystem();
-            tablequantity = room.getTablequantity();
-            chairquantity = room.getChairquantity();
 
             prepareStatement.setString(1, room.getSpacename());
             prepareStatement.setInt(2, room.getSpacecapacity());
