@@ -18,7 +18,7 @@ public class Lecture extends Space{
         this.tablequantity = tablequantity;
         this.chairquantity = chairquantity;
     }
-
+    //
     public int getTablequantity() {
         return tablequantity;
     }
