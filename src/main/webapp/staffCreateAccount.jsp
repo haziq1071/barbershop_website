@@ -52,7 +52,7 @@
                             </div>
                             <div class="input-field input-box">
                                 <label class="details">Kad Pengenalan Tanpa(-)</label>
-                                <input type="number" name="staffic"placeholder="xxxxxx-xx-xxxx" required>
+                                <input type="text" name="staffic" pattern="[0-9]" required>
                             </div>
                             <div class="input-field">
                                 <label class="details">Tarikh Lahir</label>
@@ -69,7 +69,7 @@
 
                             <div class="input-field input-box">
                                 <label class="details">Nombor Telefon Tanpa(-)</label>
-                                <input type="number" name="staffphone" required>
+                                <input type="text" name="staffphone" pattern="[0-9]" required>
                             </div>
                             <div class="input-field">
                                 <label class="details">Jawatan</label>
