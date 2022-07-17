@@ -180,7 +180,7 @@ public class SpaceServlet extends HttpServlet {
 
         private void deleteRoom(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-            sp.deleteSpace(spaceid);
+            rm.deleteRoom(spaceid);
             response.sendRedirect("staffViewRoom.jsp");
         }
     }
