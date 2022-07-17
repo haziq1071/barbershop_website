@@ -88,8 +88,6 @@
         <div class="container">
             <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
 
-            <form action="" method="post">
-
                 <section class="wrapper top">
                     <div class="containerRoom">
 
@@ -128,8 +126,6 @@
                         </c:forEach>
                     </div>
                 </section>
-            </form>
-
         </div>
     </div>
 </section>
