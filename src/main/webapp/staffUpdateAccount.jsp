@@ -42,9 +42,6 @@
     SELECT * FROM staff WHERE staffid=?
     <sql:param value="${jstaffid}" />
 </sql:query>
-    <sql:query dataSource="${ic}" var="st">
-        SELECT staffid,staffname from staff
-    </sql:query>
 <div class="sidebar">
     <div class="logo-details">
         <img src="logoWhite.png">
@@ -105,7 +102,7 @@
                 <div class="rightbox">
                     <form action="StaffServlet" method="post">
                         <div class="profile tabShow">
-                            <h1>MAKLUMAT STAF</h1>
+                            <h1>MAKLUMAT STAFF</h1>
                             <input type="hidden" name="staffid" value="${staff.staffid}"/>
                             <h2>Nama Penuh</h2>
                             <input type="text" class="input"  name="staffname" value = "${staff.staffname}">
@@ -122,19 +119,12 @@
                             <h2>Jawatan</h2>
                             <input type="text" class="input" name="staffrole" value = "${staff.staffrole}">
                             <h2>ID Penyelia</h2>
-                            <select class="form-control" id="supervisorid" name="supervisorid">
-                                <c:forEach items="${st.rows}" var="staff">
-                                    <option><c:out value="${staff.staffid}" /> - <c:out value="${staff.staffname}" /></option>
-                                </c:forEach>
-                            </select>
-                            <c:forEach var="staff" items="${oc.rows}">
+                            <input type="text" class="input" name="supervisorid" value = "${staff.supervisorid}">
                             <h2>Nombor Staf</h2>
                             <input type="text" class="input" name="staffusername" value = "${staff.staffusername}">
                             <h2>Kata Laluan</h2>
                             <input type="password" class="input" name="staffpassword" value = "${staff.staffpassword}">
-                            </c:forEach>
                             <input type="hidden" name="action" value="updateStaff">
-
                             <a href="staffViewAccount.jsp"><button class="btn update">Simpan</button></a>
                             <a href="staffViewAccount.jsp"><button class="btn cancel">Batal</button></a>
                         </div>
