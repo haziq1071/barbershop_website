@@ -266,8 +266,7 @@ nav .sidebar-button i{
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
   .wrapper {
-  /*
-  background-image: url("hall-1.jpg");*/
+
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -394,8 +393,7 @@ nav .sidebar-button i{
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
   .wrapper {
-  /*
-  background-image: url("hall-1.jpg");*/
+
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
