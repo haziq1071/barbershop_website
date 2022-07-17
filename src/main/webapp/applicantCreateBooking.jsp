@@ -30,7 +30,9 @@
         password="edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"/>
 
 <sql:query dataSource="${ic}" var="oc">
-  SELECT spaceid,spacename from space
+  SELECT *
+  FROM space
+  WHERE spacestatus LIKE '%Boleh Digunakan%'
 </sql:query>
 <sql:query dataSource="${ic}" var="aid">
   <%
@@ -126,7 +128,6 @@
           <input type="hidden" name="action" value="applicantcreatebooking">
           <div class="button">
             <input type="submit" value="TEMPAH" formaction="BookingServlet">
-            <!--input type="submit" value="TEMPAH" formaction="BookingServlet" onclick="return confirm('Tempahan telah berjaya dibuat!');"-->
           </div>
         </form>
       </div>
