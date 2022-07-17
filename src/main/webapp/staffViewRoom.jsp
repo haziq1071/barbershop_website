@@ -111,7 +111,7 @@
                         <span>${room.soundsystem}</span> 
                         <span>Kuantiti Meja:</span>
                         <span>${room.tablequantity}</span>
-                        <span>Sistem Bunyi:</span>
+                        <span>Kuantity Kerusi:</span>
                         <span>${room.chairquantity}</span>
                       </div>
                       <input type="hidden" name="action" value="deleteRoom">
