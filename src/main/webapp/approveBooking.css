@@ -386,7 +386,7 @@ tr:nth-child(even){
     background-color: #4CAF50;
 }
 .reject {
-    background-color: #f80000;
+    background: linear-gradient(to right, #ff0000,#990000);
 }
 
 button {
@@ -394,7 +394,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px;
+    padding: 5px;
     color: #ffffff;
 }
 button:hover{
