@@ -125,7 +125,6 @@
                             <select class="form-control" id="spaceid" name="spaceid">
                                 <c:forEach items="${oc.rows}" var="space">
                                     <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
-                                    <input type="hidden" name="spaceid" value="${space.spaceid}"/>
                                 </c:forEach>
                             </select>
                         </div>
@@ -134,6 +133,10 @@
                         <input type="hidden" name="staffid" value="${staff.staffid}"/>
                         <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/>
                     </c:forEach>
+                    <c:forEach items="${oc.rows}" var="room">
+                        <input type="hidden" name="spaceid" value="${room.spaceid}"/>
+                    </c:forEach>
+                                                        
                     <input type="hidden" name="action" value="staffcreatebooking">
                     <div class="button">
                         <input type="submit" value="TEMPAH" formaction="BookingServlet">
