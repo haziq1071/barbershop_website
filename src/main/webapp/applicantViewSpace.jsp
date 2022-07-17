@@ -38,7 +38,7 @@
         <li>
             <a class="main-menu" href="applicantViewSpace.jsp">
                 <i class='bx bx-box' ></i>
-                <span class="links_name">RUANGAN</span>
+                <span class="links_name">RUANG</span>
             </a>
         </li>
 
@@ -77,7 +77,7 @@
     </nav>
     <div class="home-content">
         <div class="container">
-            <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
+            <header class="main_title" style="font-size: xx-large">SENARAI DEWAN</header>
             <c:forEach var="space" items="${oc.rows}">
                 <form action="" method="post">
                     <input type="hidden" name="spaceid" value="${space.spaceid}">
@@ -92,10 +92,6 @@
                                     <span>${space.spacestatus}</span>
                                     <span>Sistem Bunyi:</span>
                                     <span>${space.soundsystem}</span>
-                                    <span>Kuantiti Meja:</span>
-                                    <span>${space.tablequantity}</span>
-                                    <span>Kuantiti Kerusi:</span>
-                                    <span>${space.chairquantity}</span>
                                 </div>
                                 </div>
                         </div>
