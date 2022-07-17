@@ -118,7 +118,7 @@
                 <tr>
                     <th>NO. TEMPAHAN</th>
                     <th>NAMA RUANG</th>
-                    <th>TARIKH MEMBUAT TEMPAHAN</th>
+                    <th>TARIKH TEMPAHAN</th>
                     <th>TARIKH AKTIVITI</th>
                     <th>PERINCIAN AKTIVITI</th>
                     <th>STATUS</th>
