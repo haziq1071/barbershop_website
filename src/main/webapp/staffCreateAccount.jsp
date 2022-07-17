@@ -52,7 +52,7 @@
                             </div>
                             <div class="input-field input-box">
                                 <label class="details">Kad Pengenalan Tanpa(-)</label>
-                                <input type="text" name="staffic" pattern="[0-9]" required>
+                                <input type="text" name="staffic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" placeholder="xxxxxx-xx-xxxx" required>
                             </div>
                             <div class="input-field">
                                 <label class="details">Tarikh Lahir</label>
@@ -69,7 +69,7 @@
 
                             <div class="input-field input-box">
                                 <label class="details">Nombor Telefon Tanpa(-)</label>
-                                <input type="text" name="staffphone" pattern="[0-9]" required>
+                                <input type="text" name="staffphone" pattern="[0-9]{3}-[0-9]{7}" placeholder="xxx-xxxxxxx" required>
                             </div>
                             <div class="input-field">
                                 <label class="details">Jawatan</label>
@@ -120,7 +120,7 @@
                         <input type="hidden" name="action" value="signupStaff">
 
                         <div class="button staff">
-                            <input type="submit" value="DAFTAR" formaction="StaffServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
+                            <input type="submit" value="DAFTAR" formaction="StaffServlet">
                         </div>
                     </div>
                 </div>
