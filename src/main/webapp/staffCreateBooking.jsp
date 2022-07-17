@@ -124,13 +124,13 @@
                             <span class="details">Nama Ruang</span>
                             <select class="form-control" id="spaceid" name="spaceid">
                                 <c:forEach items="${oc.rows}" var="space">
-                                	<input type="hidden" name="spaceid" value="${space.spaceid}"/>
                                     <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
                                 </c:forEach>
                             </select>
                         </div>
                     </div>
                     <c:forEach items="${sid.rows}" var="staff">
+                    	<input type="hidden" name="spaceid" value="${space.spaceid}">
                         <input type="hidden" name="staffid" value="${staff.staffid}"/>
                         <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/>
                     </c:forEach>
