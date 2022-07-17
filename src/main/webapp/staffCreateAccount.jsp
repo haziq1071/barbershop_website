@@ -25,32 +25,6 @@
     <div class="logo-details">
         <img src="logoWhite.png">
     </div>
-    <ul class="nav-links">
-        <li>
-            <a class="main-menu" href="#">
-                <i class='bx bx-home'></i>
-                <span class="links_name">LAMAN UTAMA</span>
-            </a>
-        </li>
-        <li>
-            <a class="main-menu" href="#">
-                <i class='bx bx-box' ></i>
-                <span class="links_name">RUANG</span>
-            </a>
-        </li>
-        <li>
-            <a class="main-menu" href="#">
-                <i class='bx bx-bookmark'></i>
-                <span class="links_name">TEMPAHAN</span>
-            </a>
-        </li>
-        <li>
-            <a class="main-menu" href="#">
-                <i class='bx bx-user'></i>
-                <span class="links_name">AKAUN</span>
-            </a>
-        </li>
-    </ul>
 </div>
 <section class="home-section">
     <nav>
@@ -77,8 +51,8 @@
                                 <input type="text" name="staffname"required>
                             </div>
                             <div class="input-field input-box">
-                                <label class="details">Kad Pengenalan</label>
-                                <input type="text" name="staffic"placeholder="xxxxxx-xx-xxxx" required>
+                                <label class="details">Kad Pengenalan Tanpa(-)</label>
+                                <input type="number" name="staffic"placeholder="xxxxxx-xx-xxxx" required>
                             </div>
                             <div class="input-field">
                                 <label class="details">Tarikh Lahir</label>
@@ -94,8 +68,8 @@
                             </div>
 
                             <div class="input-field input-box">
-                                <label class="details">Nombor Telefon</label>
-                                <input type="text" name="staffphone" required>
+                                <label class="details">Nombor Telefon Tanpa(-)</label>
+                                <input type="number" name="staffphone" required>
                             </div>
                             <div class="input-field">
                                 <label class="details">Jawatan</label>
