@@ -1,17 +1,29 @@
 package com.example.suraubookingsystem;
-import java.io.Serializable;
+//import java.io.Serializable;
+//public class Space implements Serializable{
+public abstract class Space{
 
-public class Space implements Serializable{
-
-    private static final long serialVersionUID = 1L;
+    //private static final long serialVersionUID = 1L;
     private int spaceid;
-    private String spacetype;
     private String spacename;
     private int spacecapacity;
     private String spacestatus;
     private String soundsystem;
 
-    public Space() {}
+    public Space() {
+
+    }
+
+    public Space(int spaceid, String spacename, int spacecapacity, 
+            String spacestatus, String soundsystem) {
+        
+        this.spaceid = spaceid;
+        this.spacename = spacename;
+        this.spacecapacity = spacecapacity;
+        this.spacestatus = spacestatus;
+        this.soundsystem = soundsystem;
+
+    }
 
     public int getSpaceid() {
         return spaceid;
@@ -19,14 +31,6 @@ public class Space implements Serializable{
 
     public void setSpaceid(int spaceid) {
         this.spaceid = spaceid;
-    }
-
-    public String getSpacetype() {
-        return spacetype;
-    }
-
-    public void setSpacetype(String spacetype) {
-        this.spacetype = spacetype;
     }
 
     public String getSpacename() {
