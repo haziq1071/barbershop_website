@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-    <title> View Space </title>
+    <title> View Room </title>
     <link rel="stylesheet" href="spaceHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -95,7 +95,7 @@
     <div class="container">
     <a href="staffCreateRoom.jsp"><button class="add">TAMBAH BILIK</button></a>
       <header class="main_title" style="font-size: xx-large">SENARAI BILIK</header>
-      	  <c:forEach var="space" items="${oc.rows}">
+      	  <c:forEach var="room" items="${oc.rows}">
       	  <form action="" method="post">
       	  <input type="hidden" name="spaceid" value="${room.spaceid}">
           <section class="wrapper top">
