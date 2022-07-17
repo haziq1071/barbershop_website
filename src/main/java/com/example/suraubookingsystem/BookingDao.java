@@ -46,7 +46,7 @@ public class BookingDao {
 
     public void applicantcreatebooking(Booking booking, Space space, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGSTATUS,EVENTDATE,SPACEID,APPLICANTID) VALUES (?,?,?,?,?)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGSTATUS,EVENTDATE,SPACEID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,CURRENT_DATE)");)
         {
             preparedStatement.setString(1, booking.getBookingdescription());
             preparedStatement.setString(2, booking.getBookingstatus());
@@ -80,9 +80,9 @@ public class BookingDao {
     public void staffapprovedbooking(int bookingid) throws SQLException, FileNotFoundException {
         String bookingstatus="Diluluskan";
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=? WHERE BOOKINGID=?");) {
+             PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=?WHERE BOOKINGID=?");) {
             statement.setString(1, bookingstatus);
-            statement.setInt(2, bookingid);
+            statement.setInt(3, bookingid);
             int row = statement.executeUpdate();
 
         }
