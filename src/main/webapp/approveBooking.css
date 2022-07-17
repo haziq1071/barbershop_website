@@ -384,6 +384,7 @@ tr:nth-child(even){
 
 .approve {
     background: linear-gradient(to right, #009ffd,#2a2a72);
+    border-radius: 10px;
 }
 .reject {
     background: linear-gradient(to right, #ff0000,#990000);
