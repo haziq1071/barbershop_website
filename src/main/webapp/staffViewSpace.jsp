@@ -29,6 +29,7 @@
 
 <sql:query dataSource="${ic}" var="oc">
   SELECT * from space
+  WHERE spacename Like '%Dewan%'
 </sql:query>
 
   <div class="sidebar">
