@@ -134,7 +134,6 @@ public class SpaceServlet extends HttpServlet {
             int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
             int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));        
             
-            //Room room = new Room(spacename,spacecapacity,spacestatus,soundsystem,tablequantity,chairquantity);
             Room room = new Room();
             
             room.setSpacename(spacename);
@@ -181,7 +180,7 @@ public class SpaceServlet extends HttpServlet {
 
         private void deleteRoom(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-            sp.deleteSpace(spaceid);
+            rm.deleteSpace(spaceid);
             response.sendRedirect("staffViewRoom.jsp");
         }
     }
