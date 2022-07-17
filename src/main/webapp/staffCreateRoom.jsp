@@ -110,6 +110,14 @@
 									<label class="details">Sistem Bunyi</label>
 									<input type="text" name="soundsystem" >
 								</div>
+								<div class="input-field input-box">
+									<label class="details">Kuantiti Meja</label> 
+									<input type="text" name="tablequantity">
+								</div>
+								<div class="input-field input-box">
+									<label class="details">Kuantiti Kerusi</label>
+									<input type="text" name="chairquantity" >
+								</div>
 							</div>
 							<input type="hidden" name="action" value="createRoom">
 							<div class="button staff">
