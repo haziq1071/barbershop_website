@@ -49,14 +49,14 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a class="main-menu" href="#">
+            <a class="main-menu" href="homepageStaff.jsp">
                 <i class='bx bx-home'></i>
                 <span class="links_name">LAMAN UTAMA</span>
             </a>
         </li>
 
         <li>
-            <a class="main-menu" href="viewSpace.jsp">
+            <a class="main-menu" href="staffViewSpace.jsp">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">RUANG</span>
             </a>
@@ -68,9 +68,8 @@
                 <span class="links_name">TEMPAHAN</span>
             </a>
             <ul class="sub-menu">
-                <li><a href="#">TEMPAH RUANG</a></li>
-                <li><a href="#">LIHAT TEMPAHAN</a></li>
-                <li><a href="#">PADAM TEMPAHAN</a></li>
+                <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+                <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
             </ul>
         </li>
 

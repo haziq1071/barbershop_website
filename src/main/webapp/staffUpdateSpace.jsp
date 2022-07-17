@@ -55,17 +55,10 @@
         </li>
 
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="staffViewSpace.jsp">
             <i class='bx bx-box' ></i>
-            <span class="links_name" >BILIK</span>
+            <span class="links_name" >RUANG</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
-            <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-            <li><a href="viewRoom.jsp">LIHAT INFO BILIK</a></li>
-            <li><a href="updateRoom.jsp">KEMASKINI INFO BILIK</a></li>
-            <li><a href="deleteRoom.jsp">PADAM INFO BILIK</a></li>
-          </ul>
         </li>
 
         <li>
@@ -73,26 +66,18 @@
             <i class='bx bx-bookmark'></i>
             <span class="links_name" >TEMPAHAN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="staffBooking.html">TEMPAH BILIK</a></li>
-            <li><a href="staffViewBooking.html">LIHAT TEMPAHAN</a></li>
-            <li><a href="staffUpdateBooking.html">KEMASKINI TEMPAHAN</a></li>
-            <li><a href="staffDeleteBooking.html">PADAM TEMPAHAN</a></li>
-            <li><a href="staffApproveBooking.html">SAHKAN TEMPAHAN</a></li>
-          </ul>
+            <ul class="sub-menu">
+                <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+                <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
+            </ul>
         </li>
 
         
        <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="staffViewAccount.jsp">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="viewStaff.html">LIHAT AKAUN</a></li>
-            <li><a href="updateStaff.html">KEMASKINI AKAUN</a></li>
-            <li><a href="deleteStaff.html">PADAM AKAUN</a></li>
-          </ul>
         </li>
         
         <li class="log_out">

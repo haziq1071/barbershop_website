@@ -64,7 +64,7 @@
         <li>
             <a class="main-menu" href="staffViewSpace.jsp">
                 <i class='bx bx-box' ></i>
-                <span class="links_name">RUANGAN</span>
+                <span class="links_name">RUANG</span>
             </a>
         </li>
 

@@ -58,11 +58,6 @@
 					<i class='bx bx-user'></i>
 					<span class="links_name">AKAUN</span>
 				</a>
-				<ul class="sub-menu">
-					<li><a href="viewStaff.html">LIHAT AKAUN</a></li>
-					<li><a href="updateStaff.html">KEMASKINI AKAUN</a></li>
-					<li><a href="deleteStaff.html">PADAM AKAUN</a></li>
-				</ul>
 			</li>
 
 			<li class="log_out">

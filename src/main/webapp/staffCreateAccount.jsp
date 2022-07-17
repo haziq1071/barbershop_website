@@ -27,13 +27,13 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a class="main-menu" href="homepageStaff.jsp">
+            <a class="main-menu" href="#">
                 <i class='bx bx-home'></i>
                 <span class="links_name">LAMAN UTAMA</span>
             </a>
         </li>
         <li>
-            <a class="main-menu" href="staffViewSpace.jsp">
+            <a class="main-menu" href="#">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">RUANG</span>
             </a>

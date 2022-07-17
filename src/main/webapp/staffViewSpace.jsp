@@ -60,11 +60,8 @@
             <span class="links_name">TEMPAHAN</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="staffBooking.html">TEMPAH BILIK</a></li>
-            <li><a href="staffViewBooking.html">LIHAT TEMPAHAN</a></li>
-            <li><a href="staffUpdateBooking.html">KEMASKINI TEMPAHAN</a></li>
-            <li><a href="staffDeleteBooking.html">PADAM TEMPAHAN</a></li>
-            <li><a href="staffApproveBooking.html">SAHKAN TEMPAHAN</a></li>
+            <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+            <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
           </ul>
         </li>
 
