@@ -32,6 +32,7 @@
   WHERE spacename Like '%Dewan%'
 </sql:query>
 
+
   <div class="sidebar">
     <div class="logo-details">
       <img src="logoWhite.png">
