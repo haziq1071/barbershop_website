@@ -117,7 +117,7 @@
                       <input type="hidden" name="action" value="deleteRoom">
                       <button class="update" onclick="form.action='staffUpdateRoom.jsp'">KEMASKINI</button>
                       <button class="delete" formaction="SpaceServlet"
-                      onclick="return confirm('Pasti padam dewan <c:out value="${space.spacename}"/> ?');">PADAM</button>    
+                      onclick="return confirm('Pasti padam dewan <c:out value="${room.spacename}"/> ?');">PADAM</button>    
                  </div>
                 </div>
           </section>
