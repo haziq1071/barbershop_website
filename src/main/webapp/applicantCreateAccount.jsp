@@ -20,32 +20,6 @@
   <div class="logo-details">
     <img src="logoWhite.png">
   </div>
-  <ul class="nav-links">
-    <li>
-      <a class="main-menu" href="#">
-        <i class='bx bx-home'></i>
-        <span class="links_name">LAMAN UTAMA</span>
-      </a>
-    </li>
-    <li>
-      <a class="main-menu" href="#">
-        <i class='bx bx-box' ></i>
-        <span class="links_name">RUANGAN</span>
-      </a>
-    </li>
-    <li>
-      <a class="main-menu" href="#">
-        <i class='bx bx-bookmark'></i>
-        <span class="links_name">TEMPAHAN</span>
-      </a>
-    </li>
-    <li>
-      <a class="main-menu" href="#">
-        <i class='bx bx-user'></i>
-        <span class="links_name">AKAUN</span>
-      </a>
-    </li>
-  </ul>
 </div>
 <section class="home-section">
   <nav>
@@ -72,7 +46,7 @@
               </div>
               <div class="input-field input-box">
                 <label class="details">Kad Pengenalan</label>
-                <input type="text" name="applicantic" placeholder="xxxxxx-xx-xxxx" required>
+                <input type="text" name="applicantic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" placeholder="xxxxxx-xx-xxxx" required>
               </div>
               <div class="input-field">
                 <label class="details">Tarikh Lahir</label>
@@ -89,7 +63,7 @@
 
               <div class="input-field input-box">
                 <label class="details">Nombor Telefon</label>
-                <input type="text" name="applicantphone" required>
+                <input type="text" name="applicantphone" pattern="[0-9]{3}-[0-9]{7}" placeholder="xxx-xxxxxxx" required>
               </div>
             </div>
           </div>
@@ -111,7 +85,7 @@
             <input type="hidden" name="action" value="signupApplicant">
 
             <div class="button applicant">
-              <input type="submit" value="Daftar" formaction="ApplicantServlet" onclick="return confirm('Akaun telah berjaya dicipta');">
+              <input type="submit" value="Daftar" formaction="ApplicantServlet">
             </div>
           </div>
         </div>
