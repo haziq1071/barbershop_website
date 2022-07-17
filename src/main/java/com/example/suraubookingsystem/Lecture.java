@@ -1,23 +1,24 @@
 package com.example.suraubookingsystem;
 import java.io.Serializable;
 
-public class Lecture implements Serializable{
+public class Lecture extends Space{
 
-    private static final long serialVersionUID = 1L;
-    private int spaceid;
-    private int tablequantity;
-    private int chairquantity;
+    int tablequantity;
+    int chairquantity;
 
-    public Lecture() {}
-
-    public int getSpaceid() {
-        return spaceid;
+    //default
+    public Lecture() {
+        super();
     }
 
-    public void setSpaceid(int spaceid) {
-        this.spaceid = spaceid;
+    public Lecture(int spaceid, String spacename, int spacecapacity,
+            String spacestatus, String soundsystem, int tablequantity, int chairquantity){
+        
+        super(spaceid, spacename, spacecapacity, spacestatus, soundsystem);
+        this.tablequantity = tablequantity;
+        this.chairquantity = chairquantity;
     }
-
+    //
     public int getTablequantity() {
         return tablequantity;
     }

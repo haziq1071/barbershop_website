@@ -11,7 +11,7 @@ import java.sql.*;
 
 @WebServlet(name = "SpaceServlet", value = "/SpaceServlet")
 public class SpaceServlet extends HttpServlet {
-
+    private static final long serialVersionUID = 1L;
     private SpaceDao sp;
     public void init() {
         sp = new SpaceDao();
@@ -59,7 +59,6 @@ public class SpaceServlet extends HttpServlet {
 
     private void createSpace(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
-        String spacetype = request.getParameter("spacetype");
         String spacename = request.getParameter("spacename");
         int spacecapacity = Integer.parseInt(request.getParameter("spacecapacity"));
         String spacestatus = request.getParameter("spacestatus");
@@ -67,7 +66,6 @@ public class SpaceServlet extends HttpServlet {
 
         Space space = new Space();
 
-        space.setSpacetype(spacetype);
         space.setSpacename(spacename);
         space.setSpacecapacity(spacecapacity);
         space.setSpacestatus(spacestatus);
@@ -83,7 +81,6 @@ public class SpaceServlet extends HttpServlet {
     private void updateSpace(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
         HttpSession session = request.getSession();
         int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-        String spacetype = request.getParameter("spacetype");
         String spacename = request.getParameter("spacename");
         int spacecapacity = Integer.parseInt(request.getParameter("spacecapacity"));
         String spacestatus = request.getParameter("spacestatus");
@@ -92,7 +89,6 @@ public class SpaceServlet extends HttpServlet {
         Space space = new Space();
 
         space.setSpaceid(spaceid);
-        space.setSpacetype(spacetype);
         space.setSpacename(spacename);
         space.setSpacecapacity(spacecapacity);
         space.setSpacestatus(spacestatus);

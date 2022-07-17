@@ -44,14 +44,14 @@
         </li>
 
         <li>
-          <a class="main-menu" href="staffViewSpace.jsp">
+          <a class="main-menu" href="#">
             <i class='bx bx-box' ></i>
             <span class="links_name">RUANG</span>
           </a>
-          <!--ul class="sub-menu">
-            <li><a href="createRoom.jsp">CIPTA INFO BILIK</a></li>
-            <li><a href="createHall.jsp">CIPTA INFO DEWAN</a></li>
-          </ul-->
+          <ul class="sub-menu">
+            <li><a href="staffViewSpace.jsp">DEWAN</a></li>
+            <li><a href="staffViewRoom.jsp">BILIK</a></li>
+          </ul>
         </li>
 
         <li>
@@ -93,8 +93,8 @@
     </nav>
   <div class="home-content">
     <div class="container">
-    <a href="staffCreateSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
-      <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
+    <a href="staffCreateSpace.jsp"><button class="add">TAMBAH DEWAN</button></a>
+      <header class="main_title" style="font-size: xx-large">SENARAI DEWAN</header>
       	  <c:forEach var="space" items="${oc.rows}">
       	  <form action="" method="post">
       	  <input type="hidden" name="spaceid" value="${space.spaceid}">
