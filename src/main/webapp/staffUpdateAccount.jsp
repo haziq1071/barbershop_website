@@ -42,6 +42,9 @@
     SELECT * FROM staff WHERE staffid=?
     <sql:param value="${jstaffid}" />
 </sql:query>
+    <sql:query dataSource="${ic}" var="st">
+        SELECT staffid,staffname from staff
+    </sql:query>
 <div class="sidebar">
     <div class="logo-details">
         <img src="logoWhite.png">
@@ -119,7 +122,12 @@
                             <h2>Jawatan</h2>
                             <input type="text" class="input" name="staffrole" value = "${staff.staffrole}">
                             <h2>ID Penyelia</h2>
-                            <input type="text" class="input" name="supervisorid" value = "${staff.supervisorid}">
+                            <select class="input" id="supervisorid" name="supervisorid" value = "${staff.supervisorid}">
+                                <option disabled selected>Pilih Penyelia</option>
+                                <c:forEach items="${st.rows}" var="staff">
+                                    <option value="<c:out value="${staff.staffid}"/>"><c:out value="${staff.staffname}" /></option>
+                                </c:forEach>
+                            </select>
                             <h2>Nombor Staf</h2>
                             <input type="text" class="input" name="staffusername" value = "${staff.staffusername}">
                             <h2>Kata Laluan</h2>
