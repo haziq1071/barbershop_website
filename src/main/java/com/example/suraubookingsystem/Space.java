@@ -1,7 +1,6 @@
 package com.example.suraubookingsystem;
-//import java.io.Serializable;
-//public class Space implements Serializable{
-public abstract class Space{
+import java.io.Serializable;
+public class Space implements Serializable{
 
     //private static final long serialVersionUID = 1L;
     private int spaceid;
