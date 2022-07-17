@@ -48,29 +48,24 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a class="main-menu" href="#">
+            <a class="main-menu" href="homepageApplicant.jsp">
                 <i class='bx bx-home'></i>
                 <span class="links_name">LAMAN UTAMA</span>
             </a>
         </li>
 
         <li>
-            <a class="main-menu" href="viewSpace.jsp">
+            <a class="main-menu" href="applicantViewSpace.jsp">
                 <i class='bx bx-box' ></i>
-                <span class="links_name">RUANG</span>
+                <span class="links_name">RUANGAN</span>
             </a>
         </li>
 
         <li>
-            <a class="main-menu" href="#">
+            <a class="main-menu" href="applicantViewBooking.jsp">
                 <i class='bx bx-bookmark'></i>
                 <span class="links_name">TEMPAHAN</span>
             </a>
-            <ul class="sub-menu">
-                <li><a href="#">TEMPAH RUANG</a></li>
-                <li><a href="#">LIHAT TEMPAHAN</a></li>
-                <li><a href="#">PADAM TEMPAHAN</a></li>
-            </ul>
         </li>
 
         <li>
