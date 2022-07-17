@@ -113,7 +113,7 @@
 							</div>
 							<input type="hidden" name="action" value="createSpace">
 							<div class="button staff">
-								<input type="submit" value="TAMBAH" formaction="SpaceServlet" onclick="return confirm('Bilik telah berjaya ditambah!');">
+								<input type="submit" value="TAMBAH" formaction="SpaceServlet">
 							</div>
 						</div>
 					</div>

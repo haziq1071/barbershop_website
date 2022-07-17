@@ -130,7 +130,6 @@
                     <input type="hidden" name="action" value="staffcreatebooking">
                     <div class="button">
                         <input type="submit" value="TEMPAH" formaction="BookingServlet">
-                        <!--input type="submit" value="TEMPAH" formaction="BookingServlet" onclick="return confirm('Tempahan telah berjaya dibuat!');"-->
                     </div>
                 </form>
             </div>
