@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> View Space </title>
+    <title> Applicant View Space </title>
     <link rel="stylesheet" href="spaceHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -30,8 +30,6 @@
 <sql:query dataSource="${ic}" var="oc">
     SELECT *
     from space
-    WHERE spacestatus LIKE '%Boleh Digunakan%'
-    AND spacename LIKE '%Dewan%'
 </sql:query>
 
 <sql:query dataSource="${ic}" var="ro">
@@ -95,12 +93,10 @@
     <div class="home-content">
         <div class="container">
             <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
-
+                <c:forEach var="space" items="${oc.rows}">
+                <input type="hidden" name="spaceid" value="${space.spaceid}">
                 <section class="wrapper top">
                     <div class="containerRoom">
-
-                        <c:forEach var="space" items="${oc.rows}">
-                            <input type="hidden" name="spaceid" value="${space.spaceid}">
                             <div class="text">
                                 <h2>${space.spacename}</h2>
                                 <div class="content">
@@ -113,7 +109,6 @@
                                 </div>
                             </div>
                         </c:forEach>
-
                         <c:forEach var="room" items="${ro.rows}">
                             <input type="hidden" name="spaceid" value="${room.spaceid}">
                             <div class="text">
