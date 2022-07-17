@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-    <title> View Space </title>
+    <title> Staff View Space </title>
     <link rel="stylesheet" href="spaceHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>

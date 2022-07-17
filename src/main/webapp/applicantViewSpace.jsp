@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> View Space </title>
+    <title> Applicant View Space </title>
     <link rel="stylesheet" href="spaceHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -12,6 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+	<%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response.setHeader("Pragma", "no-cache");
+    response.setHeader("Expires", "0");
+
+    if(session.getAttribute("applicantid")==null)
+        response.sendRedirect("index.jsp");
+    %>
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
@@ -22,7 +30,6 @@
 <sql:query dataSource="${ic}" var="oc">
     SELECT * from space
     WHERE spacestatus LIKE '%Boleh Digunakan%'
-    AND spacename LIKE '%Dewan%'
 </sql:query>
 
 <sql:query dataSource="${ic}" var="ro">
@@ -85,13 +92,10 @@
     <div class="home-content">
         <div class="container">
             <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
-
-            <form action="" method="post">
-                <input type="hidden" name="spaceid" value="${space.spaceid}">
                 <section class="wrapper top">
                     <div class="containerRoom">
-
                         <c:forEach var="space" items="${oc.rows}">
+                        <input type="hidden" name="spaceid" value="${space.spaceid}">
                             <div class="text">
                                 <h2>${space.spacename}</h2>
                                 <div class="content">
@@ -106,6 +110,7 @@
                         </c:forEach>
 
                         <c:forEach var="room" items="${ro.rows}">
+                        <input type="hidden" name="spaceid" value="${room.spaceid}">
                             <div class="text">
                                 <h2>${room.spacename}</h2>
                                 <div class="content">
@@ -124,8 +129,6 @@
                         </c:forEach>
                     </div>
                 </section>
-            </form>
-
         </div>
     </div>
 </section>
