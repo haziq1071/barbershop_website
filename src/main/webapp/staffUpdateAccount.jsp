@@ -68,7 +68,7 @@
             </a>
             <ul class="sub-menu">
                 <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
-                <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
+                <li><a href="staffApproveBooking.jsp">PENGESAHAN TEMPAHAN</a></li>
             </ul>
         </li>
 
