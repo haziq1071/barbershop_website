@@ -93,8 +93,8 @@
     </nav>
   <div class="home-content">
     <div class="container">
-    <a href="staffCreateRoom.jsp"><button class="add">TAMBAH DEWAN</button></a>
-      <header class="main_title" style="font-size: xx-large">SENARAI DEWAN</header>
+    <a href="staffCreateRoom.jsp"><button class="add">TAMBAH BILIK</button></a>
+      <header class="main_title" style="font-size: xx-large">SENARAI BILIK</header>
       	  <c:forEach var="space" items="${oc.rows}">
       	  <form action="" method="post">
       	  <input type="hidden" name="spaceid" value="${room.spaceid}">
