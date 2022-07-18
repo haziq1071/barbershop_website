@@ -9,7 +9,7 @@ app.use(cors({
 }))
 
 app.get('/', (req, res) => {
-    res.send("Surau Booking System database")
+    res.send("Surau Booking System Staffs database")
 })
 
 app.get('/staffs', (req, res) => {
