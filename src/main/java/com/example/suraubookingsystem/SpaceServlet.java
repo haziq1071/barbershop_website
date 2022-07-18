@@ -53,10 +53,10 @@ public class SpaceServlet extends HttpServlet {
                     createRoom(request, response);
                     break;
                 case "updateRoom":
-                    updateSpace(request, response);
+                    updateRoom(request, response);
                     break;
                 case "deleteRoom":
-                    deleteSpace(request, response);
+                    deleteRoom(request, response);
                     break;
             }
         } catch (SQLException ex) {
