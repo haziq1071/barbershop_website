@@ -2,7 +2,7 @@ package com.example.suraubookingsystem;
 import java.io.Serializable;
 import java.sql.Date;
 public class Applicant implements Serializable {
-
+//
     public int applicantid;
     public String applicantname;
     public String applicantic;
