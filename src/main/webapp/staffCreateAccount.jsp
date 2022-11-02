@@ -75,20 +75,9 @@
                                 <label class="details">Jawatan</label>
                                 <select name="staffrole" required>
                                     <option disabled selected>Pilih Jawatan</option>
-                                    <option value="Nazir">Nazir</option>
-                                    <option value="Timbalan Nazir">Timbalan Nazir</option>
-                                    <option value="Imam 1">Imam 1</option>
-                                    <option value="Imam 2">Imam 2</option>
-                                    <option value="Bilal 1">Bilal 1</option>
-                                    <option value="Bilal 2">Bilal 2</option>
-                                    <option value="Bendahari">Bendahari</option>
-                                    <option value="Setiausaha">Setiausaha</option>
-                                    <option value="Pembantu Setiausaha">Pembantu Setiausaha</option>
-                                    <option value="AJK">AJK</option>
-                                    <option value="Siak 1">Siak 1</option>
-                                    <option value="Siak 2">Siak 2</option>
-                                    <option value="Pemeriksa Kira-kira 1">Pemeriksa Kira-kira 1</option>
-                                    <option value="Pemeriksa Kira-kira 2">Pemeriksa Kira-kira 2</option>
+                                    <option value="Ketua Admin">Ketua Admin</option>
+                                    <option value="Admin 1">Admin 1</option>
+                                    <option value="Admin 2">Admin 2</option>
                                 </select>
                             </div>
                             <div class="input-field">
