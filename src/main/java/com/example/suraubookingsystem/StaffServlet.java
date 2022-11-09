@@ -95,7 +95,8 @@ public class StaffServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         String staffusername = request.getParameter("staffusername");
-        String staffpassword = request.getParameter("staffpassword");  
+        String staffpassword = request.getParameter("staffpassword");
+        String staffrole = request.getParameter("staffrole");
 
         try {
 
@@ -105,7 +106,7 @@ public class StaffServlet extends HttpServlet {
             String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"; //ni password dri heroku database
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
-            String sql  ="SELECT staffid,staffname,staffusername,staffpassword from staff";
+            String sql  ="SELECT staffid,staffname,staffusername,staffpassword,staffrole from staff";
 
             if (conn != null){
                 DatabaseMetaData dm = conn.getMetaData();
@@ -119,7 +120,7 @@ public class StaffServlet extends HttpServlet {
                 ResultSet res = statement.executeQuery(sql);
 
                 while (res.next()){
-                    if(staffusername.equals(res.getString("staffusername")) && staffpassword.equals(res.getString("staffpassword")))
+                    if(staffusername.equals(res.getString("staffusername")) && staffpassword.equals(res.getString("staffpassword")) && staffrole.equals(("Ketua Admin")))
                     {
 
                         Staff staff = new Staff();
@@ -128,15 +129,40 @@ public class StaffServlet extends HttpServlet {
                         staff.setStaffname(res.getString(2));
                         staff.setStaffusername(res.getString(3));
                         staff.setStaffpassword(res.getString(4));
+                        staff.setStaffrole(res.getString(5));
 
                         session.setAttribute("staffid", staff.getStaffid());
                         session.setAttribute("staffname", staff.getStaffname());
                         session.setAttribute("staffusername",staff.getStaffusername());
                         session.setAttribute("staffpassword",staff.getStaffpassword());
+                        session.setAttribute("staffrole",staff.getStaffrole());
+
+                        response.sendRedirect("homepageLeadStaff.jsp");
+
+                    }
+
+                    else if(staffusername.equals(res.getString("staffusername")) && staffpassword.equals(res.getString("staffpassword")))
+                    {
+
+                        Staff staff = new Staff();
+
+                        staff.setStaffid(res.getInt(1));
+                        staff.setStaffname(res.getString(2));
+                        staff.setStaffusername(res.getString(3));
+                        staff.setStaffpassword(res.getString(4));
+                        staff.setStaffrole(res.getString(5));
+
+                        session.setAttribute("staffid", staff.getStaffid());
+                        session.setAttribute("staffname", staff.getStaffname());
+                        session.setAttribute("staffusername",staff.getStaffusername());
+                        session.setAttribute("staffpassword",staff.getStaffpassword());
+                        session.setAttribute("staffrole",staff.getStaffrole());
 
                         response.sendRedirect("homepageStaff.jsp");
 
-                    }else{
+                    }
+
+                    else{
 
                         out.println("User not exist");
 
