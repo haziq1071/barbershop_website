@@ -68,7 +68,6 @@ public class StaffServlet extends HttpServlet {
 		Date staffdateofbirth = Date.valueOf(request.getParameter("staffdateofbirth"));
 		String staffusername = request.getParameter("staffusername");
 		String staffpassword = request.getParameter("staffpassword"); 
-		int supervisorid = Integer.parseInt(request.getParameter("supervisorid"));
 
         Staff staff = new Staff();
 
@@ -81,7 +80,6 @@ public class StaffServlet extends HttpServlet {
 		staff.setStaffdateofbirth(staffdateofbirth);
 		staff.setStaffusername(staffusername);
 		staff.setStaffpassword(staffpassword);
-		staff.setSupervisorid(supervisorid);
 		
 		st.signupStaff(staff);
         response.sendRedirect("index.jsp");
@@ -181,7 +179,6 @@ public class StaffServlet extends HttpServlet {
         staff.setStaffdateofbirth(staffdateofbirth);
         staff.setStaffusername(staffusername);
         staff.setStaffpassword(staffpassword);
-        staff.setSupervisorid(supervisorid);
 
         st.updateStaff(staff);
         session.removeAttribute("staff");

@@ -33,7 +33,7 @@ public class StaffDao {
     
     // try-with-resource statement will auto close the connection.
     try (Connection connection = getConnection();
-    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword,supervisorid) values(?,?,?,?,?,?,?,?,?,?)");)
+    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?,?)");)
     {
         preparedStatement.setString(1, staff.getStaffrole());
         preparedStatement.setString(2, staff.getStaffname());
@@ -44,7 +44,6 @@ public class StaffDao {
         preparedStatement.setDate(7, staff.getStaffdateofbirth());
         preparedStatement.setString(8, staff.getStaffusername());
         preparedStatement.setString(9, staff.getStaffpassword());
-        preparedStatement.setLong(10, staff.getSupervisorid());
 
         out.println(preparedStatement);
         preparedStatement.executeUpdate();
@@ -67,8 +66,7 @@ public class StaffDao {
           statement.setDate(7, staff.getStaffdateofbirth());
           statement.setString(8, staff.getStaffusername());
           statement.setString(9, staff.getStaffpassword());
-          statement.setLong(10, staff.getSupervisorid());
-          statement.setInt(11, staff.getStaffid());
+          statement.setInt(10, staff.getStaffid());
 
           rowUpdated = statement.executeUpdate() > 0;
         }

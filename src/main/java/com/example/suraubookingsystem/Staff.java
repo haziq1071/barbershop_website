@@ -13,7 +13,6 @@ public class Staff implements Serializable{
 	public Date staffdateofbirth;
 	public String staffusername;
 	public String staffpassword; 
-	public int supervisorid;
 	
 	public Staff() {
     }
@@ -98,12 +97,5 @@ public class Staff implements Serializable{
 		this.staffpassword = staffpassword;
 	}
 
-	public int getSupervisorid() {
-		return supervisorid;
-	}
-
-	public void setSupervisorid(int supervisorid) {
-		this.supervisorid = supervisorid;
-	}
 }
 
