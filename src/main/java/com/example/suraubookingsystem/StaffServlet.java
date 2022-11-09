@@ -120,7 +120,7 @@ public class StaffServlet extends HttpServlet {
                 ResultSet res = statement.executeQuery(sql);
 
                 while (res.next()){
-                    if(staffusername.equals(res.getString("staffusername")) && staffpassword.equals(res.getString("staffpassword")) && staffrole.equals(("Ketua Admin")))
+                    if(staffusername.equals(res.getString("staffusername")) && staffpassword.equals(res.getString("staffpassword")))
                     {
 
                         Staff staff = new Staff();
@@ -136,6 +136,8 @@ public class StaffServlet extends HttpServlet {
                         session.setAttribute("staffusername",staff.getStaffusername());
                         session.setAttribute("staffpassword",staff.getStaffpassword());
                         session.setAttribute("staffrole",staff.getStaffrole());
+
+                        staffrole = "Ketua Admin";
 
                         response.sendRedirect("homepageLeadStaff.jsp");
 
