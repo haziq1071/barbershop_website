@@ -138,32 +138,12 @@ public class StaffServlet extends HttpServlet {
                         session.setAttribute("staffrole",staff.getStaffrole());
 
                         //if session.setAttribute("staffrole",staff.getStaffrole());
-                        if (session.getAttribute("staffrole").equals("Ketua Admin"));
+                        if (session.getAttribute("staffrole").equals("Ketua Admin")){
 
-                        response.sendRedirect("homepageLeadStaff.jsp");
-
-                    }
-
-                    else if(staffusername.equals(res.getString("staffusername")) && staffpassword.equals(res.getString("staffpassword")))
-                    {
-
-                        Staff staff = new Staff();
-
-                        staff.setStaffid(res.getInt(1));
-                        staff.setStaffname(res.getString(2));
-                        staff.setStaffusername(res.getString(3));
-                        staff.setStaffpassword(res.getString(4));
-                        staff.setStaffrole(res.getString(5));
-
-                        session.setAttribute("staffid", staff.getStaffid());
-                        session.setAttribute("staffname", staff.getStaffname());
-                        session.setAttribute("staffusername",staff.getStaffusername());
-                        session.setAttribute("staffpassword",staff.getStaffpassword());
-                        session.setAttribute("staffrole",staff.getStaffrole());
-
-                        response.sendRedirect("homepageStaff.jsp");
-
-                    }
+                            response.sendRedirect("homepageLeadStaff.jsp");}
+                        else {
+                            response.sendRedirect("homepageStaff.jsp");}
+                        }
 
                     else{
 
