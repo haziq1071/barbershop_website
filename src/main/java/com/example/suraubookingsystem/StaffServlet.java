@@ -137,7 +137,8 @@ public class StaffServlet extends HttpServlet {
                         session.setAttribute("staffpassword",staff.getStaffpassword());
                         session.setAttribute("staffrole",staff.getStaffrole());
 
-                        staffrole = "Ketua Admin";
+                        //if session.setAttribute("staffrole",staff.getStaffrole());
+                        if (session.getAttribute("staffrole").equals("Ketua Admin"));
 
                         response.sendRedirect("homepageLeadStaff.jsp");
 
