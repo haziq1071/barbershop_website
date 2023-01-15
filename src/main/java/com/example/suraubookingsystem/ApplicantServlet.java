@@ -93,9 +93,9 @@ public class ApplicantServlet extends HttpServlet{
         try {
 
             Class.forName("org.postgresql.Driver"); // ni stay
-            String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379"; //ni url dri heroku database
-            String user = "dnzxqagexabepj"; //ni user dri heroku database
-            String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294"; //ni password dri heroku database
+            String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railways";
+            String user = "postgres";
+            String pass = "ETymgiO6aGYvyXf5fkei";
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
             String sql  ="SELECT applicantid, applicantname, applicantusername, applicantpassword from applicant";

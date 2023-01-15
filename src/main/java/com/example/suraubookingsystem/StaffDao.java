@@ -7,17 +7,25 @@ import java.sql.SQLException;
 import static java.lang.System.out;
 
 public class StaffDao {
-  
-  String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
-  String user = "dnzxqagexabepj";
-  String pass = "edb330e6fe55ed3bb6d1ee1eb3c1f995e6b205eb5d464bee634abc3345b2d294";
+
+    String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railways";
+    String user = "postgres";
+    String pass = "ETymgiO6aGYvyXf5fkei";
   
   protected Connection getConnection()
   {
     Connection connection = null;
     try {
-      Class.forName("org.postgresql.Driver");
-      connection = DriverManager.getConnection(dbURL, user, pass);
+        Class.forName("org.postgresql.Driver");
+        connection = DriverManager.getConnection(dbURL, user, pass);
+
+        /*
+        if (connection != null) {
+            System.out.println("Connection Established");
+        } else {
+            System.out.println("Connection Failed");
+        }*/
+    
     } catch (SQLException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
@@ -25,6 +33,10 @@ public class StaffDao {
         // TODO Auto-generated catch block
         e.printStackTrace();
     }
+    /*
+    } catch (Exception e) {
+        System.out.println(e);
+    }*/
     return connection;
   }
   
@@ -33,7 +45,8 @@ public class StaffDao {
     
     // try-with-resource statement will auto close the connection.
     try (Connection connection = getConnection();
-    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?,?)");)
+    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffid,staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(staffid_seq.NEXTVAL,?,?,?,?,?,?,?,?,?)");)
+   // PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?,?)");)
     {
         preparedStatement.setString(1, staff.getStaffrole());
         preparedStatement.setString(2, staff.getStaffname());
@@ -55,7 +68,7 @@ public class StaffDao {
     public boolean updateStaff(Staff staff) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE staff set staffrole=?,staffname=?,staffic=?,staffaddress=?,staffphone=?,staffemail=?,staffdateofbirth=?,staffusername=?,staffpassword=?,supervisorid=?where staffid=?");)
+             PreparedStatement statement = connection.prepareStatement("UPDATE staff set staffrole=?,staffname=?,staffic=?,staffaddress=?,staffphone=?,staffemail=?,staffdateofbirth=?,staffusername=?,staffpassword=? where staffid=?");)
         {
           statement.setString(1, staff.getStaffrole());
           statement.setString(2, staff.getStaffname());
