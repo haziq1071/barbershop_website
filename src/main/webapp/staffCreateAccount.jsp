@@ -15,9 +15,9 @@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" --->
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
-        url="jdbc:postgresql://localhost:5432/postgres"
+        url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railways"
         user="postgres"
-        password="postgres"/>
+        password="ETymgiO6aGYvyXf5fkei"/>
 
 <sql:query dataSource="${ic}" var="oc">
     SELECT staffid,staffname from staff
