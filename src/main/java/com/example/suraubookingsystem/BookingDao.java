@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import static java.lang.System.out;
 
 public class BookingDao {
-    String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railways";
+    String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railway";
     String user = "postgres";
     String pass = "ETymgiO6aGYvyXf5fkei";
    
