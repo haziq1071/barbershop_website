@@ -19,13 +19,6 @@ public class StaffDao {
         Class.forName("org.postgresql.Driver");
         connection = DriverManager.getConnection(dbURL, user, pass);
 
-        /*
-        if (connection != null) {
-            System.out.println("Connection Established");
-        } else {
-            System.out.println("Connection Failed");
-        }*/
-    
     } catch (SQLException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
@@ -33,10 +26,6 @@ public class StaffDao {
         // TODO Auto-generated catch block
         e.printStackTrace();
     }
-    /*
-    } catch (Exception e) {
-        System.out.println(e);
-    }*/
     return connection;
   }
   
@@ -45,8 +34,7 @@ public class StaffDao {
     
     // try-with-resource statement will auto close the connection.
     try (Connection connection = getConnection();
-    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffid,staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(staffid_seq.NEXTVAL,?,?,?,?,?,?,?,?,?)");)
-   // PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?,?)");)
+    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?,?)");)
     {
         preparedStatement.setString(1, staff.getStaffrole());
         preparedStatement.setString(2, staff.getStaffname());
