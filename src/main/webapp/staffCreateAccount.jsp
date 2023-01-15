@@ -14,7 +14,7 @@
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
-        url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railways"
+        url="postgresql://postgres:ETymgiO6aGYvyXf5fkei@containers-us-west-141.railway.app:7894/railway"
         user="postgres"
         password="ETymgiO6aGYvyXf5fkei"/>
 
