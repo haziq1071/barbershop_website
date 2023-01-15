@@ -104,7 +104,7 @@ public class StaffServlet extends HttpServlet {
         try {
 
             Class.forName("org.postgresql.Driver"); // ni stay
-            String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railways";
+            String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railway";
             String user = "postgres";
             String pass = "ETymgiO6aGYvyXf5fkei";
             Connection conn = DriverManager.getConnection(dbURL, user, pass);

@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import static java.lang.System.out;
 public class ApplicantDao {
-  //String dbURL = "jdbc:postgresql://ec2-52-72-56-59.compute-1.amazonaws.com:5432/d274lnoegak379";
   String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railway";
   String user = "postgres";
   String pass = "ETymgiO6aGYvyXf5fkei";
