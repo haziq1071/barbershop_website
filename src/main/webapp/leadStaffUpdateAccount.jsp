@@ -38,16 +38,6 @@
             session.setAttribute("staffid", jstaffid);
         }
     %>
-    <sql:query dataSource="${ic}" var="sv">
-        <c:set var="jstaffid" value="<%=jstaffid%>"/>
-        Select m.staffid AS "Supervisorid", m.staffname AS "Supervisor"
-        from staff s
-        join staff m
-        on s.supervisorid = m.staffid
-        WHERE s.staffid=?
-        <sql:param value="${jstaffid}" />
-    </sql:query>
-
 
     <c:set var="jstaffid" value="<%=jstaffid%>"/>
     SELECT staffid,staffname,staffic,staffdateofbirth,staffaddress,staffemail,staffphone,staffrole,staffusername,staffpassword
@@ -147,8 +137,8 @@
                                 <input type="text" class="input" name="staffpassword" value = "${staff.staffpassword}">
                             </c:forEach>
                             <input type="hidden" name="action" value="updateStaff">
-                            <a href="staffViewAccount.jsp"><button class="btn update">Simpan</button></a>
-                            <a href="staffViewAccount.jsp"><button class="btn cancel">Batal</button></a>
+                            <a href="leadStaffViewAccount.jsp"><button class="btn update">Simpan</button></a>
+                            <a href="leadStaffViewAccount.jsp"><button class="btn cancel">Batal</button></a>
 
                         </div>
                     </form>
