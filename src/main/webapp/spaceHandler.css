@@ -412,6 +412,17 @@ nav .sidebar-button i{
   margin-bottom: 5px;
 }
 
+.text-hall {
+  background: #3f9cc1;
+  padding: 20px;
+  width: 750px;
+  height: 350px;
+  position: absolute;
+  right: 30px;
+  color: white;
+  margin-bottom: 5px;
+}
+
 .content {
   display: grid;
   grid-template-columns: repeat(2, 0.3fr);

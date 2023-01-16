@@ -100,7 +100,7 @@
       	  <input type="hidden" name="spaceid" value="${space.spaceid}">
           <section class="wrapper top">
                 <div class="containerRoom">
-                 <div class="text">
+                 <div class="text-hall">
                     <h2>${space.spacename}</h2>
                       <div class="content">
                         <span>Kapasiti:</span>
