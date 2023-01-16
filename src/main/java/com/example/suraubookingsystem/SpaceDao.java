@@ -13,7 +13,7 @@ public class SpaceDao {
     String pass = "ETymgiO6aGYvyXf5fkei";
 
     protected Connection getConnection()
-  {
+    {
     Connection connection = null;
     try {
       Class.forName("org.postgresql.Driver");

@@ -1,13 +1,13 @@
 package com.example.suraubookingsystem;
 import java.io.Serializable;
-public class Space implements Serializable{
 
+public class Space implements Serializable{
     //private static final long serialVersionUID = 1L;
-    private int spaceid;
-    private String spacename;
-    private int spacecapacity;
-    private String spacestatus;
-    private String soundsystem;
+    public int spaceid;
+    public String spacename;
+    public int spacecapacity;
+    public String spacestatus;
+    public String soundsystem;
 
     public Space() {
 
