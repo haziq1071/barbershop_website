@@ -89,6 +89,8 @@ public class RoomServlet extends HttpServlet {
         int roomcapacity = Integer.parseInt(request.getParameter("roomcapacity"));
         String roomstatus = request.getParameter("roomstatus");
         String roomsoundsystem = request.getParameter("roomsoundsystem");
+        int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
+        int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));
 
         Room room = new Room();
 
@@ -97,6 +99,8 @@ public class RoomServlet extends HttpServlet {
         room.setRoomcapacity(roomcapacity);
         room.setRoomstatus(roomstatus);
         room.setRoomsoundsystem(roomsoundsystem);
+        room.setTablequantity(tablequantity);
+        room.setChairquantity(chairquantity);
 
         rm.updateRoom(room);
 
