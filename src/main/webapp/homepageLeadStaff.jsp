@@ -54,7 +54,7 @@
 
          <li>
           <a class="main-menu" href="manageStaffAccount.jsp">
-            <i class='bx bx-user'></i>
+            <i class='bx bx-contact' ></i>
             <span class="links_name">URUS AKAUN</span>
           </a>
         </li>
