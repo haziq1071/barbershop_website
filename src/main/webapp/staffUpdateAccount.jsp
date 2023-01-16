@@ -140,17 +140,6 @@
                             <h2>Jawatan</h2>
                             <input type="text" class="input" name="staffrole" value = "${staff.staffrole}">
 
-                            <h2>Penyelia</h2>
-
-                            <select class="input" id="supervisorid" name="supervisorid">
-                                <c:forEach var="staff" items="${sv.rows}">
-                                    <option value="<c:out value="${staff.Supervisorid}"/>"><c:out value="${staff.Supervisor}" /></option>
-                                </c:forEach>
-                                <c:forEach items="${st.rows}" var="staff">
-                                    <option value="<c:out value="${staff.staffid}"/>"><c:out value="${staff.staffname}" /></option>
-                                </c:forEach>
-                            </select>
-
                             <c:forEach var="staff" items="${oc.rows}">
                                 <h2>Nombor Staf</h2>
                                 <input type="text" class="input" name="staffusername" value = "${staff.staffusername}">

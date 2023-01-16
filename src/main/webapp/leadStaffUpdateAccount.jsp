@@ -4,7 +4,7 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <title> View Staff Profile </title>
+    <title> Update Staff Form </title>
     <link rel="stylesheet" href="accountHandler.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
@@ -38,6 +38,15 @@
             session.setAttribute("staffid", jstaffid);
         }
     %>
+    <sql:query dataSource="${ic}" var="sv">
+        <c:set var="jstaffid" value="<%=jstaffid%>"/>
+        Select m.staffid AS "Supervisorid", m.staffname AS "Supervisor"
+        from staff s
+        join staff m
+        on s.supervisorid = m.staffid
+        WHERE s.staffid=?
+        <sql:param value="${jstaffid}" />
+    </sql:query>
 
 
     <c:set var="jstaffid" value="<%=jstaffid%>"/>
@@ -47,8 +56,9 @@
     <sql:param value="${jstaffid}" />
 </sql:query>
 
-
-
+<sql:query dataSource="${ic}" var="st">
+    SELECT staffid,staffname from staff
+</sql:query>
 <div class="sidebar">
     <div class="logo-details">
         <img src="logoWhite.png">
@@ -67,9 +77,9 @@
                 <span class="links_name">RUANG</span>
             </a>
             <ul class="sub-menu">
-                <li><a href="staffViewSpace.jsp">DEWAN</a></li>
-                <li><a href="staffViewRoom.jsp">BILIK</a></li>
-            </ul>
+                <li><a href="leadStaffViewSpace.jsp">DEWAN</a></li>
+                <li><a href="leadStaffViewRoom.jsp">BILIK</a></li>
+          </ul>
         </li>
 
         <li>
@@ -78,8 +88,8 @@
                 <span class="links_name">TEMPAHAN</span>
             </a>
             <ul class="sub-menu">
-                <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
-                <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
+                <li><a href="leadStaffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+                <li><a href="leadStaffApproveBooking.jsp">PENGESAHAN TEMPAHAN</a></li>
             </ul>
         </li>
 
@@ -111,36 +121,34 @@
         <div class="home-content">
             <div class="container-staff">
                 <div class="rightbox">
-                    <form action="" method="post">
+                    <form action="StaffServlet" method="post">
                         <div class="profile tabShow">
                             <h1>MAKLUMAT STAFF</h1>
-                            <input type="hidden" name="staffid" value="${staff.staffid}">
-                            <h2>NAMA PENUH</h2>
-                            <p class="input">${staff.staffname}</p>
+                            <input type="hidden" name="staffid" value="${staff.staffid}"/>
+                            <h2>Nama Penuh</h2>
+                            <input type="text" class="input"  name="staffname" value = "${staff.staffname}">
                             <h2>Kad Pengenalan</h2>
-                            <p class="input">${staff.staffic}</p>
+                            <input type="text" class="input" name="staffic" value = "${staff.staffic}">
                             <h2>Tarikh Lahir</h2>
-                            <p class="input">${staff.staffdateofbirth}</p>
+                            <input type="date" class="input" name="staffdateofbirth" value ="${staff.staffdateofbirth}">
                             <h2>Alamat</h2>
-                            <p class="input">${staff.staffaddress}</p>
+                            <input type="text" class="input" name="staffaddress" value = "${staff.staffaddress}">
                             <h2>Email</h2>
-                            <p class="input">${staff.staffemail}</p>
+                            <input type="text" class="input" name="staffemail" value = "${staff.staffemail}">
                             <h2>Nombor Telefon</h2>
-                            <p class="input">${staff.staffphone}</p>
+                            <input type="text" class="input" name="staffphone" value = "${staff.staffphone}">
                             <h2>Jawatan</h2>
-                            <p class="input">${staff.staffrole}</p>
+                            <input type="text" class="input" name="staffrole" value = "${staff.staffrole}">
 
                             <c:forEach var="staff" items="${oc.rows}">
                                 <h2>Nombor Staf</h2>
-                                <p class="input">${staff.staffusername}</p>
+                                <input type="text" class="input" name="staffusername" value = "${staff.staffusername}">
                                 <h2>Kata Laluan</h2>
-                                <p class="input">${staff.staffpassword}</p>
+                                <input type="text" class="input" name="staffpassword" value = "${staff.staffpassword}">
                             </c:forEach>
-
-                            <input type="hidden" name="action" value="deleteStaff">
-                            <button class="btn update" onclick="form.action='leadStaffUpdateAccount.jsp'">KEMASKINI</button>
-                            <button class="btn cancel" formaction="StaffServlet"
-                                    onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >PADAM</button>
+                            <input type="hidden" name="action" value="updateStaff">
+                            <a href="staffViewAccount.jsp"><button class="btn update">Simpan</button></a>
+                            <a href="staffViewAccount.jsp"><button class="btn cancel">Batal</button></a>
 
                         </div>
                     </form>
