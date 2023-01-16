@@ -50,7 +50,7 @@ public class SpaceDao {
     public boolean updateSpace(Space space) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=? where spaceid=?");)
+             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=?where spaceid=?");)
         {
             ps.setString(1, space.getSpacename());
             ps.setInt(2, space.getSpacecapacity());
