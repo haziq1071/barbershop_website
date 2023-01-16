@@ -1,32 +1,21 @@
 package com.example.suraubookingsystem;
 import java.io.Serializable;
+
 public class Room implements Serializable{
 
-	private int roomid;
-    private String roomname;
-    private int roomcapacity;
-    private String roomstatus;
-    private String roomsoundsystem;
-    private int tablequantity;
-    private int chairquantity;
+	public int roomid;
+    public String roomname;
+    public int roomcapacity;
+    public String roomstatus;
+    public String roomsoundsystem;
+    public int tablequantity;
+    public int chairquantity;
 
     //default
     public Room() {
 
     }
-/*
-    public Room(int roomid, String roomname, int roomcapacity,
-            String roomstatus, String roomsoundsystem, int tablequantity, int chairquantity){
-        
-        this.roomid = roomid;
-        this.roomname = roomname;
-        this.roomcapacity = roomcapacity;
-        this.roomstatus = roomstatus;
-        this.roomsoundsystem = roomsoundsystem;
-        this.tablequantity = tablequantity;
-        this.chairquantity = chairquantity;
-    }*/
-    //
+
     public int getRoomid() {
         return roomid;
     }

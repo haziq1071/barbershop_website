@@ -13,7 +13,6 @@ public class Space implements Serializable{
 
     }
 
- 
     public int getSpaceid() {
         return spaceid;
     }

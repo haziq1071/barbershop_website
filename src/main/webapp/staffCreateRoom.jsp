@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<title>Create Room Form</title>
-<link rel="stylesheet" href="createspace.css">
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
-	rel='stylesheet'>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Create Room Form</title>
+	<link rel="stylesheet" href="createspace.css">
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
+		rel='stylesheet'>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
+<sql:setDataSource
+        var="ic"
+        driver="org.postgresql.Driver"
+        url="postgresql://postgres:ETymgiO6aGYvyXf5fkei@containers-us-west-141.railway.app:7894/railway"
+        user="postgres"
+        password="ETymgiO6aGYvyXf5fkei"/>
+<sql:query dataSource="${ic}" var="oc">
+    SELECT roomid,roomname from room
+</sql:query>
+<!--
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
@@ -19,7 +28,7 @@
 
     if(session.getAttribute("staffid")==null)
         response.sendRedirect("index.jsp");
-  %>
+  %>-->
 	<div class="sidebar">
 		<div class="logo-details">
 			<img src="logoWhite.png">
@@ -129,7 +138,6 @@
 			</div>
 		</div>
 	</section>
-
 </body>
 </html>
 
