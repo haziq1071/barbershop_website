@@ -36,8 +36,8 @@
             <span class="links_name">RUANG</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="staffViewSpace.jsp">DEWAN</a></li>
-            <li><a href="staffViewRoom.jsp">BILIK</a></li>
+            <li><a href="leadStaffViewSpace.jsp">DEWAN</a></li>
+            <li><a href="leadStaffViewRoom.jsp">BILIK</a></li>
           </ul>
         </li>
 
@@ -47,8 +47,8 @@
             <span class="links_name">TEMPAHAN</span>
           </a>
           <ul class="sub-menu">
-            <li><a href="staffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
-            <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
+            <li><a href="leadStaffViewBooking.jsp">LIHAT TEMPAHAN</a></li>
+            <li><a href="leadStaffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
           </ul>
         </li>
 
