@@ -31,7 +31,6 @@
     SELECT *
     from space
     WHERE spacestatus LIKE '%Boleh Digunakan%'
-    AND spacename LIKE '%Dewan%'
 </sql:query>
 
 <sql:query dataSource="${ic}" var="ro">
