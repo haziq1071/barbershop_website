@@ -25,7 +25,7 @@
         driver="org.postgresql.Driver"
         url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
         user="postgres"
-        password="ETymgiO6aGYvyXf5fkei"/>/>
+        password="ETymgiO6aGYvyXf5fkei"/>
 
 <sql:query dataSource="${ic}" var="oc">
     SELECT *
