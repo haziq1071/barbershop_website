@@ -13,17 +13,7 @@ public class Space implements Serializable{
 
     }
 
-    public Space(int spaceid, String spacename, int spacecapacity, 
-            String spacestatus, String soundsystem) {
-        
-        this.spaceid = spaceid;
-        this.spacename = spacename;
-        this.spacecapacity = spacecapacity;
-        this.spacestatus = spacestatus;
-        this.soundsystem = soundsystem;
-
-    }
-
+ 
     public int getSpaceid() {
         return spaceid;
     }

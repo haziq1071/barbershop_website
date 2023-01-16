@@ -14,7 +14,7 @@ public class Room implements Serializable{
     public Room() {
 
     }
-
+/*
     public Room(int roomid, String roomname, int roomcapacity,
             String roomstatus, String roomsoundsystem, int tablequantity, int chairquantity){
         
@@ -25,7 +25,7 @@ public class Room implements Serializable{
         this.roomsoundsystem = roomsoundsystem;
         this.tablequantity = tablequantity;
         this.chairquantity = chairquantity;
-    }
+    }*/
     //
     public int getRoomid() {
         return roomid;

@@ -11,10 +11,10 @@ import java.sql.*;
 
 @WebServlet(name = "SpaceServlet", value = "/SpaceServlet")
 public class SpaceServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+//  private static final long serialVersionUID = 1L;
     private SpaceDao sp;
 
-    HttpSession session = null;
+//  HttpSession session = null;
 
     public void init() {
         sp = new SpaceDao();

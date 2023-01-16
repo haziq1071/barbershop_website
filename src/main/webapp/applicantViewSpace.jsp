@@ -37,7 +37,7 @@
 <sql:query dataSource="${ic}" var="ro">
     SELECT *
     from room
-    WHERE spacestatus LIKE '%Boleh Digunakan%'
+    WHERE roomstatus LIKE '%Boleh Digunakan%'
 </sql:query>
 
 <div class="sidebar">

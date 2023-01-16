@@ -18,6 +18,7 @@ public class SpaceDao {
     try {
       Class.forName("org.postgresql.Driver");
       connection = DriverManager.getConnection(dbURL, user, pass);
+      
     } catch (SQLException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
