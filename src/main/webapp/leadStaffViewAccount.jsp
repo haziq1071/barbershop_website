@@ -55,7 +55,7 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a class="main-menu" href="homepageStaff.jsp">
+            <a class="main-menu" href="homepageLeadStaff.jsp">
                 <i class='bx bx-home'></i>
                 <span class="links_name">LAMAN UTAMA</span>
             </a>
@@ -84,7 +84,7 @@
         </li>
 
         <li>
-            <a class="main-menu" href="staffViewAccount.jsp">
+            <a class="main-menu" href="leadStaffViewAccount.jsp">
                 <i class='bx bx-user'></i>
                 <span class="links_name">AKAUN</span>
             </a>
@@ -130,7 +130,7 @@
                             <h2>Jawatan</h2>
                             <p class="input">${staff.staffrole}</p>
 
-                               <c:forEach var="staff" items="${oc.rows}">
+                            <c:forEach var="staff" items="${oc.rows}">
                                 <h2>Nombor Staf</h2>
                                 <p class="input">${staff.staffusername}</p>
                                 <h2>Kata Laluan</h2>

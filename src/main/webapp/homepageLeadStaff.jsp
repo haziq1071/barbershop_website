@@ -60,7 +60,7 @@
         </li>
 
         <li>
-          <a class="main-menu" href="staffViewAccount.jsp">
+          <a class="main-menu" href="leadStaffViewAccount.jsp">
             <i class='bx bx-user'></i>
             <span class="links_name">AKAUN</span>
           </a>
