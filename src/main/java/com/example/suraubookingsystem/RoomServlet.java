@@ -72,6 +72,8 @@ public class RoomServlet extends HttpServlet {
         room.setRoomcapacity(roomcapacity);
         room.setRoomstatus(roomstatus);
         room.setRoomsoundsystem(roomsoundsystem);
+        room.setTablequantity(tablequantity);
+        room.setChairquantity(chairquantity);
 
         rm.createRoom(room);
         response.sendRedirect("staffViewRoom.jsp");
