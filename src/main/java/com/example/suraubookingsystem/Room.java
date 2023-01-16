@@ -1,24 +1,71 @@
 package com.example.suraubookingsystem;
 import java.io.Serializable;
+public class Room implements Serializable{
 
-public class Room extends Space{
-
-    int tablequantity;
-    int chairquantity;
+	private int roomid;
+    private String roomname;
+    private int roomcapacity;
+    private String roomstatus;
+    private String roomsoundsystem;
+    private int tablequantity;
+    private int chairquantity;
 
     //default
     public Room() {
-        super();
+
     }
 
-    public Room(int spaceid, String spacename, int spacecapacity,
-            String spacestatus, String soundsystem, int tablequantity, int chairquantity){
+    public Room(int roomid, String roomname, int roomcapacity,
+            String roomstatus, String roomsoundsystem, int tablequantity, int chairquantity){
         
-        super(spaceid, spacename, spacecapacity, spacestatus, soundsystem);
+        this.roomid = roomid;
+        this.roomname = roomname;
+        this.roomcapacity = roomcapacity;
+        this.roomstatus = roomstatus;
+        this.roomsoundsystem = roomsoundsystem;
         this.tablequantity = tablequantity;
         this.chairquantity = chairquantity;
     }
     //
+    public int getRoomid() {
+        return roomid;
+    }
+
+    public void setRoomid(int roomid) {
+        this.roomid = roomid;
+    }
+
+    public String getRoomname() {
+        return roomname;
+    }
+
+    public void setRoomname(String roomname) {
+        this.roomname = roomname;
+    }
+
+    public int getRoomcapacity() {
+        return roomcapacity;
+    }
+
+    public void setRoomcapacity(int roomcapacity) {
+        this.roomcapacity = roomcapacity;
+    }
+
+    public String getRoomstatus() {
+        return roomstatus;
+    }
+
+    public void setRoomstatus(String roomstatus) {
+        this.roomstatus = roomstatus;
+    }
+
+    public String getRoomsoundsystem() {
+        return roomsoundsystem;
+    }
+
+    public void setRoomsoundsystem(String roomsoundsystem) {
+        this.roomsoundsystem = roomsoundsystem;
+    }
     public int getTablequantity() {
         return tablequantity;
     }

@@ -1,5 +1,5 @@
-<!--%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %-->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,16 +116,16 @@
                 <section class="wrapper top">
                     <div class="containerRoom">
                       <c:forEach var="room" items="${ro.rows}">
-                            <input type="hidden" name="spaceid" value="${room.spaceid}">
+                            <input type="hidden" name="roomid" value="${room.roomid}">
                             <div class="text">
-                                <h2>${room.spacename}</h2>
+                                <h2>${room.roomname}</h2>
                                 <div class="content">
                                     <span>Kapasiti:</span>
-                                    <span>${room.spacecapacity}</span>
+                                    <span>${room.roomcapacity}</span>
                                     <span>Status:</span>
-                                    <span>${room.spacestatus}</span>
+                                    <span>${room.roomstatus}</span>
                                     <span>Sistem Bunyi:</span>
-                                    <span>${room.soundsystem}</span>
+                                    <span>${room.roomsoundsystem}</span>
                                     <span>Kuantiti Meja:</span>
                                     <span>${room.tablequantity}</span>
                                     <span>Kuantity Kerusi:</span>

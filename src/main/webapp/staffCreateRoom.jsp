@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<title>Create Space Form</title>
+<title>Create Room Form</title>
 <link rel="stylesheet" href="createspace.css">
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
 	rel='stylesheet'>
@@ -92,15 +92,15 @@
 							<div class="fields">
 								<div class="input-field input-box">
 									<label class="details">Nama</label> 
-									<input type="text" name="spacename">
+									<input type="text" name="roomname">
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name="spacecapacity" >
+									<input type="text" name="roomcapacity" >
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Status</label>
-									<select	name="spacestatus" >
+									<select	name="roomstatus" >
 										<option disabled selected>Pilih Status</option>
 										<option value="Boleh Digunakan">Boleh Digunakan</option>
 										<option value="Sedang Diselenggara">Sedang Diselenggara</option>
@@ -108,7 +108,7 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Sistem Bunyi</label>
-									<input type="text" name="soundsystem" >
+									<input type="text" name="roomsoundsystem" >
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kuantiti Meja</label> 
@@ -121,7 +121,7 @@
 							</div>
 							<input type="hidden" name="action" value="createRoom">
 							<div class="button staff">
-								<input type="submit" value="TAMBAH" formaction="SpaceServlet">
+								<input type="submit" value="TAMBAH" formaction="RoomServlet">
 							</div>
 						</div>
 					</div>

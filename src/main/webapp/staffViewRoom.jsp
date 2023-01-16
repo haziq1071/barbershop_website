@@ -1,5 +1,5 @@
-<!--%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %-->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,18 +97,18 @@
       <header class="main_title" style="font-size: xx-large">SENARAI BILIK</header>
       	  <c:forEach var="room" items="${oc.rows}">
       	  <form action="" method="post">
-      	  <input type="hidden" name="spaceid" value="${room.spaceid}">
+      	  <input type="hidden" name="roomid" value="${room.roomid}">
           <section class="wrapper top">
                 <div class="containerRoom">
                  <div class="text">
-                    <h2>${room.spacename}</h2>
+                    <h2>${room.roomname}</h2>
                       <div class="content">
                         <span>Kapasiti:</span>
-                        <span>${room.spacecapacity}</span>
+                        <span>${room.roomcapacity}</span>
                         <span>Status:</span>
-                        <span>${room.spacestatus}</span>
+                        <span>${room.roomstatus}</span>
                         <span>Sistem Bunyi:</span>
-                        <span>${room.soundsystem}</span> 
+                        <span>${room.roomsoundsystem}</span>
                         <span>Kuantiti Meja:</span>
                         <span>${room.tablequantity}</span>
                         <span>Kuantity Kerusi:</span>
@@ -116,8 +116,8 @@
                       </div>
                       <input type="hidden" name="action" value="deleteRoom">
                       <button class="update" onclick="form.action='staffUpdateRoom.jsp'">KEMASKINI</button>
-                      <button class="delete" formaction="SpaceServlet"
-                      onclick="return confirm('Pasti padam <c:out value="${room.spacename}"/> ?');">PADAM</button>    
+                      <button class="delete" formaction="RoomServlet"
+                      onclick="return confirm('Pasti padam <c:out value="${room.roomname}"/> ?');">PADAM</button>
                  </div>
                 </div>
           </section>

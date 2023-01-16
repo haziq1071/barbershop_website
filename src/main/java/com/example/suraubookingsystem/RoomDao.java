@@ -31,13 +31,13 @@ public class RoomDao {
       public void createRoom(Room room) throws SQLException  {
 
         try (Connection connection = getConnection();
-             PreparedStatement prepareStatement = connection.prepareStatement("insert into room(spacename,spacecapacity,spacestatus,soundsystem,tablequantity,chairquantity) values(?,?,?,?,?,?)");)
+             PreparedStatement prepareStatement = connection.prepareStatement("insert into room(roomname,roomcapacity,roomstatus,roomsoundsystem,tablequantity,chairquantity) values(?,?,?,?,?,?)");)
         {
 
-            prepareStatement.setString(1, room.getSpacename());
-            prepareStatement.setInt(2, room.getSpacecapacity());
-            prepareStatement.setString(3, room.getSpacestatus());
-            prepareStatement.setString(4, room.getSoundsystem());
+            prepareStatement.setString(1, room.getRoomname());
+            prepareStatement.setInt(2, room.getRoomcapacity());
+            prepareStatement.setString(3, room.getRoomstatus());
+            prepareStatement.setString(4, room.getRoomsoundsystem());
             prepareStatement.setInt(5, room.getTablequantity());
             prepareStatement.setInt(6, room.getChairquantity());
 
@@ -52,15 +52,15 @@ public class RoomDao {
     public boolean updateRoom(Room room) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("UPDATE room SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=?,tablequantity=?,chairquantity=?where spaceid=?");)
+             PreparedStatement ps = connection.prepareStatement("UPDATE room SET roomname=?,roomcapacity=?,roomstatus=?,roomsoundsystem=?,tablequantity=?,chairquantity=?where roomid=?");)
         {
-            ps.setString(1, room.getSpacename());
-            ps.setInt(2, room.getSpacecapacity());
-            ps.setString(3, room.getSpacestatus());
-            ps.setString(4, room.getSoundsystem());
+            ps.setString(1, room.getRoomname());
+            ps.setInt(2, room.getRoomcapacity());
+            ps.setString(3, room.getRoomstatus());
+            ps.setString(4, room.getRoomsoundsystem());
             ps.setInt(5, room.getTablequantity());
             ps.setInt(6, room.getChairquantity());
-            ps.setInt(7, room.getSpaceid());
+            ps.setInt(7, room.getRoomid());
 
             rowUpdated = ps.executeUpdate() > 0;
 
@@ -68,11 +68,11 @@ public class RoomDao {
         return rowUpdated;
     }
 
-    public boolean deleteRoom(int spaceid) throws SQLException {
+    public boolean deleteRoom(int roomid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("delete from room where spaceid=?");) {
-            ps.setInt(1, spaceid);
+             PreparedStatement ps = connection.prepareStatement("delete from room where roomid=?");) {
+            ps.setInt(1, roomid);
             rowDeleted = ps.executeUpdate() > 0;
         }
         return rowDeleted;

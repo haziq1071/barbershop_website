@@ -139,8 +139,6 @@
 
                             <input type="hidden" name="action" value="deleteStaff">
                             <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">KEMASKINI</button>
-                            <button class="btn cancel" formaction="StaffServlet"
-                                    onclick="return confirm('Adakah anda yakin untuk padam akaun anda?');" >PADAM</button>
 
                         </div>
                     </form>
