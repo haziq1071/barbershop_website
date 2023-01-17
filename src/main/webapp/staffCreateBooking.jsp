@@ -119,9 +119,9 @@
                             <span class="details">Tarikh Aktiviti</span>
                             <input type="date" name="eventdate" >
                         </div>
-                        <div class="input-box">
+                        <div class="input-box" class="form-control">
                             <span class="details">Masa Aktiviti</span>
-                            <select class="form-control" id="bookingtime" name="bookingtime">
+                            <select id="bookingtime" name="bookingtime">
                                     <option disabled selected>Pilih Masa</option>
                                     <option value="8:00 - 10:00">8:00 - 10:00</option>
                                     <option value="10:00 - 12:00">10:00 - 12:00</option>
@@ -137,9 +137,9 @@
                             <span class="details">Perincian Aktiviti</span>
                             <input type="text" name="bookingdescription">
                         </div>
-                        <div class="input-box">
+                        <div class="input-box" class="form-control">
                             <span class="details">Ruang Tempahan</span>
-                            <select class="form-control" id="spaceid" id="roomid" name="spaceid" name="roomid">
+                            <select id="spaceid" id="roomid" name="spaceid" name="roomid">
                             	<option disabled selected>Pilih Ruang</option>
                                 <c:forEach items="${oc.rows}" var="space">
                                     <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
