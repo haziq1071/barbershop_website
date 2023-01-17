@@ -30,9 +30,12 @@
         password="ETymgiO6aGYvyXf5fkei"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    SELECT *
-    FROM space
+    SELECT * FROM space
     WHERE spacestatus LIKE '%Boleh Digunakan%'
+</sql:query>
+<sql:query dataSource="${ic}" var="rc">
+    SELECT * FROM room
+    WHERE roomstatus LIKE '%Boleh Digunakan%'
 </sql:query>
 <sql:query dataSource="${ic}" var="sid">
     <%
@@ -117,14 +120,31 @@
                             <input type="date" name="eventdate" >
                         </div>
                         <div class="input-box">
+                            <span class="details">Masa Aktiviti</span>
+                            <select class="form-control" id="bookingtime" name="bookingtime">
+                                    <option disabled selected>Pilih Masa</option>
+                                    <option value="8:00 - 10:00">8:00 - 10:00</option>
+                                    <option value="10:00 - 12:00">10:00 - 12:00</option>
+                                    <option value="12:00 - 14:00">12:00 - 14:00</option>
+                                    <option value="14:00 - 16:00">14:00 - 16:00</option>
+                                    <option value="16:00 - 18:00">16:00 - 18:00</option>
+                                    <option value="18:00 - 20:00">18:00 - 20:00</option>
+                                    <option value="20:00 - 22:00">20:00 - 22:00</option>
+                                    <option value="22:00 - 00:00">22:00 - 00:00</option>
+                            </select>
+                        </div>
+                        <div class="input-box">
                             <span class="details">Perincian Aktiviti</span>
                             <input type="text" name="bookingdescription">
                         </div>
                         <div class="input-box">
                             <span class="details">Nama Ruang</span>
-                            <select class="form-control" id="spaceid" name="spaceid">
+                            <select class="form-control" id="spaceid" id="roomid" name="spaceid" name="roomid">
                                 <c:forEach items="${oc.rows}" var="space">
                                     <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
+                                </c:forEach>
+                                <c:forEach items="${rc.rows}" var="room">
+                                    <option value="<c:out value="${room.roomid}"/>"><c:out value="${room.roomname}" /></option>
                                 </c:forEach>
                             </select>
                         </div>

@@ -70,21 +70,26 @@ public class BookingServlet extends HttpServlet {
         try{
             int staffid = Integer.parseInt(request.getParameter("staffid"));
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-            Date eventdate = Date.valueOf(request.getParameter("eventdate"));
+            int roomid = Integer.parseInt(request.getParameter("roomid"));
             String bookingdescription = request.getParameter("bookingdescription");
             String bookingstatus = request.getParameter("bookingstatus");
+            String bookingtime = request.getParameter("bookingtime");
+            Date eventdate = Date.valueOf(request.getParameter("eventdate"));
 
             Staff staff = new Staff();
             Space space = new Space();
+            Room room = new Room();
             Booking booking = new Booking();
 
             staff.setStaffid(staffid);
             space.setSpaceid(spaceid);
-            booking.setEventdate(eventdate);
+            room.setRoomid(roomid);
             booking.setBookingdescription(bookingdescription);
             booking.setBookingstatus(bookingstatus);
+            booking.setBookingtime(bookingtime);
+            booking.setEventdate(eventdate);
 
-            bd.staffcreatebooking(booking, space, staff);
+            bd.staffcreatebooking(booking, space, room, staff);
             //bd.staffcreatebooking(booking);
             //response.sendRedirect("staffViewBooking.jsp");
         } catch (Exception e) {
@@ -143,21 +148,26 @@ public class BookingServlet extends HttpServlet {
         try{
             int applicantid = Integer.parseInt(request.getParameter("applicantid"));
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-            Date eventdate = Date.valueOf(request.getParameter("eventdate"));
+            int roomid = Integer.parseInt(request.getParameter("roomid"));;
             String bookingdescription = request.getParameter("bookingdescription");
             String bookingstatus = request.getParameter("bookingstatus");
+            String bookingtime = request.getParameter("bookingtime");
+            Date eventdate = Date.valueOf(request.getParameter("eventdate"));
 
             Applicant applicant = new Applicant();
             Space space = new Space();
+            Room room = new Room();
             Booking booking = new Booking();
 
             applicant.setApplicantid(applicantid);
             space.setSpaceid(spaceid);
-            booking.setEventdate(eventdate);
+            room.setRoomid(roomid);
             booking.setBookingdescription(bookingdescription);
             booking.setBookingstatus(bookingstatus);
+            booking.setBookingtime(bookingtime);
+            booking.setEventdate(eventdate);
 
-            bd.applicantcreatebooking(booking, space, applicant);
+            bd.applicantcreatebooking(booking, space, room, applicant);
         } catch (Exception e) {
             e.printStackTrace();
         }

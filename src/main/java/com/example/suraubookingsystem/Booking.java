@@ -5,22 +5,30 @@ import java.sql.Date;
 public class Booking implements Serializable{
     private int bookingid;
     private String bookingdescription;
-    private Date eventdate;
     private Date bookingdate;
+    private String bookingtime;
     private String bookingstatus;
-    private int approveid;
+    private Date eventdate;
+    private int spaceid;
+    private int roomid;
+    private int staffid;
+    private int applicantid;
 
     public Booking() {
 
     }
 
-    public Booking(int bookingid, String bookingdescription, Date eventdate, Date bookingdate, String bookingstatus, int approveid) {
+    public Booking(int bookingid, String bookingdescription, Date bookingdate, String bookingtime, String bookingstatus, Date eventdate, int spaceid, int roomid, int staffid, int applicantid) {
         this.bookingid = bookingid;
         this.bookingdescription = bookingdescription;
-        this.eventdate = eventdate;
         this.bookingdate = bookingdate;
+        this.bookingtime = bookingtime;
         this.bookingstatus = bookingstatus;
-        this.approveid = approveid;
+        this.eventdate = eventdate;
+        this.spaceid = spaceid;
+        this.roomid = roomid;
+        this.staffid = staffid;
+        this.applicantid = applicantid;
 
     }
 
@@ -36,17 +44,17 @@ public class Booking implements Serializable{
     public void setBookingdescription(String bookingdescription) {
         this.bookingdescription = bookingdescription;
     }
-    public Date getEventdate() {
-        return eventdate;
-    }
-    public void setEventdate(Date eventdate) {
-        this.eventdate = eventdate;
-    }
     public Date getBookingdate() {
         return bookingdate;
     }
     public void setBookingdate(Date bookingdate) {
         this.bookingdate = bookingdate;
+    }
+    public String getBookingtime() {
+        return bookingtime;
+    }
+    public void setBookingtime(String bookingtime) {
+        this.bookingtime = bookingtime;
     }
     public String getBookingstatus() {
         return bookingstatus;
@@ -54,11 +62,35 @@ public class Booking implements Serializable{
     public void setBookingstatus(String bookingstatus) {
         this.bookingstatus = bookingstatus;
     }
-    public int getApproveid() {
-        return approveid;
+    public Date getEventdate() {
+        return eventdate;
     }
-    public void setApproveid(int approveid) {
-        this.approveid = approveid;
+    public void setEventdate(Date eventdate) {
+        this.eventdate = eventdate;
+    }
+    public int getSpaceid() {
+        return spaceid;
+    }
+    public void setSpaceid(int spaceid) {
+        this.spaceid = spaceid;
+    }
+    public int getRoomid() {
+        return roomid;
+    }
+    public void setRoomid(int roomid) {
+        this.roomid = roomid;
+    }
+    public int getStaffid() {
+        return staffid;
+    }
+    public void setStaffid(int staffid) {
+        this.staffid = staffid;
+    }
+    public int getApplicantid() {
+        return applicantid;
+    }
+    public void setApplicantid(int applicantid) {
+        this.applicantid = applicantid;
     }
 
 }

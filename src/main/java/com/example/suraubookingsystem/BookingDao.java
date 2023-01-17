@@ -28,15 +28,17 @@ public class BookingDao {
         return connection;
     }
 
-    public void staffcreatebooking(Booking booking, Space space, Staff staff) throws SQLException{
+    public void staffcreatebooking(Booking booking, Space space, Room room, Staff staff) throws SQLException{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGSTATUS,EVENTDATE,SPACEID,STAFFID,BOOKINGDATE) VALUES (?,?,?,?,?,CURRENT_DATE)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,STAFFID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
         {
             preparedStatement.setString(1, booking.getBookingdescription());
-            preparedStatement.setString(2, booking.getBookingstatus());
-            preparedStatement.setDate(3, booking.getEventdate());
-            preparedStatement.setInt(4, space.getSpaceid());
-            preparedStatement.setInt(5, staff.getStaffid());
+            preparedStatement.setString(2, booking.getBookingtime());
+            preparedStatement.setString(3, booking.getBookingstatus());
+            preparedStatement.setDate(4, booking.getEventdate());
+            preparedStatement.setInt(5, space.getSpaceid());
+            preparedStatement.setInt(6, room.getRoomid());
+            preparedStatement.setInt(7, staff.getStaffid());
             preparedStatement.executeUpdate();
         }
         catch (Exception e) {
@@ -44,15 +46,17 @@ public class BookingDao {
         }
     }
 
-    public void applicantcreatebooking(Booking booking, Space space, Applicant applicant) throws SQLException{
+    public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGSTATUS,EVENTDATE,SPACEID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,CURRENT_DATE)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
         {
             preparedStatement.setString(1, booking.getBookingdescription());
-            preparedStatement.setString(2, booking.getBookingstatus());
-            preparedStatement.setDate(3, booking.getEventdate());
-            preparedStatement.setInt(4, space.getSpaceid());
-            preparedStatement.setInt(5, applicant.getApplicantid());
+            preparedStatement.setString(2, booking.getBookingtime());
+            preparedStatement.setString(3, booking.getBookingstatus());
+            preparedStatement.setDate(4, booking.getEventdate());
+            preparedStatement.setInt(5, space.getSpaceid());
+            preparedStatement.setInt(6, room.getRoomid());
+            preparedStatement.setInt(7, applicant.getApplicantid());
             preparedStatement.executeUpdate();
         }
         catch (Exception e) {
