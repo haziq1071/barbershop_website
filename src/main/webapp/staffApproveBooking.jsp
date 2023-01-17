@@ -28,15 +28,7 @@
         user="postgres"
         password="postgres"/>
 
-<sql:query dataSource="${ic}" var="oc">
-    SELECT *
-    FROM booking b
-    JOIN space s
-    ON b.spaceid = s.spaceid
-    JOIN staff st
-    ON b.staffid = st.staffid
-    ORDER BY eventdate
-</sql:query>
+
 <sql:query dataSource="${ic}" var="ac">
     SELECT *
     FROM booking b
@@ -122,30 +114,6 @@
                         <th>STATUS TEMPAHAN</th>
                         <th>TINDAKAN</th>
                     </tr>
-                    <c:forEach var="result" items="${oc.rows}">
-                        <input type="hidden" name="bookingid" value="${result.bookingid}">
-                        <tr>
-                            <td>${result.bookingid}</td>
-                            <td>${result.staffname}</td>
-                            <td>${result.spacename}</td>
-                            <td>${result.bookingdate}</td>
-                            <td>${result.eventdate}</td>
-                            <td>${result.bookingdescription}</td>
-                            <td>${result.bookingstatus}</td>
-                            <td>
-                                <form action="" method="post">
-                                <input type="hidden" name="action" value="staffapprovedbooking">
-                                <input type="hidden" name="bookingid" value="${result.bookingid}">
-                                <button class="approve" formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')">TERIMA</button>
-                                </form>
-                                <form action="" method="post">
-                                <input type="hidden" name="action" value="staffrejectbooking">
-                                <input type="hidden" name="bookingid" value="${result.bookingid}">
-                                <button class="reject" formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk menolak tempahan ini?')">TOLAK</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </c:forEach>
                     <c:forEach var="result" items="${ac.rows}">
                         <input type="hidden" name="bookingid" value="${result.bookingid}">
                         <tr>
