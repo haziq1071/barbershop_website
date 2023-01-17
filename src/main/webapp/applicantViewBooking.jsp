@@ -27,8 +27,8 @@
         user="postgres"
         password="ETymgiO6aGYvyXf5fkei"/>/>
 <!--
-<sql:query dataSource="${ic}" var="oc">
-  <%
+sql:query dataSource="${ic}" var="oc">
+  %
     int japplicantid = 0;
     if(request.getParameter("applicantid")==null){
       japplicantid = (Integer) session.getAttribute("applicantid");
@@ -38,14 +38,14 @@
       session.setAttribute("applicantid", japplicantid);
     }
   %>
-  <c:set var="japplicantid" value="<%=japplicantid%>"/>
+  c:set var="japplicantid" value="%=japplicantid%>"/>
   SELECT bookingid, spacename, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, bookingdescription, bookingstatus
   FROM booking b
   JOIN space s
   ON b.spaceid = s.spaceid
   WHERE applicantid=?
-  <sql:param value="${japplicantid}" />
-</sql:query>-->
+  sql:param value="${japplicantid}" />
+/sql:query>-->
 
 <div class="sidebar">
   <div class="logo-details">
