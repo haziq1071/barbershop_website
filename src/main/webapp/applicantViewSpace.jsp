@@ -28,14 +28,12 @@
         password="ETymgiO6aGYvyXf5fkei"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    SELECT *
-    from space
+    SELECT * from space
     WHERE spacestatus LIKE '%Boleh Digunakan%'
 </sql:query>
 
 <sql:query dataSource="${ic}" var="ro">
-    SELECT *
-    from room
+    SELECT * from room
     WHERE roomstatus LIKE '%Boleh Digunakan%'
 </sql:query>
 
@@ -94,10 +92,10 @@
     <div class="home-content">
         <div class="container">
             <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
+                <c:forEach var="space" items="${oc.rows}">
+                <input type="hidden" name="spaceid" value="${space.spaceid}">
                 <section class="wrapper top">
                     <div class="containerRoom">
-                    <c:forEach var="space" items="${oc.rows}">
-                    <input type="hidden" name="spaceid" value="${space.spaceid}">
                             <div class="text">
                                 <h2>${space.spacename}</h2>
                                 <div class="content">
@@ -109,13 +107,13 @@
                                     <span>${space.soundsystem}</span>
                                 </div>
                             </div>
-                        </c:forEach>
                     </div>
                 </section>
+                </c:forEach>
+                <c:forEach var="room" items="${ro.rows}">
+                <input type="hidden" name="roomid" value="${room.roomid}">
                 <section class="wrapper top">
                     <div class="containerRoom">
-                      <c:forEach var="room" items="${ro.rows}">
-                            <input type="hidden" name="roomid" value="${room.roomid}">
                             <div class="text">
                                 <h2>${room.roomname}</h2>
                                 <div class="content">
@@ -131,9 +129,9 @@
                                     <span>${room.chairquantity}</span>
                                 </div>
                             </div>
-                        </c:forEach>
                     </div>
-                </section>                
+                </section>   
+            </c:forEach>             
         </div>
     </div>
 </section>
