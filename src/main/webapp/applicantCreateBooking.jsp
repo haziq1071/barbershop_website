@@ -143,11 +143,11 @@ sql:query dataSource="${ic}" var="aid">
                         </c:forEach>
                     </select>
             </div>           
-          </div>
-          <c:forEach items="${aid.rows}" var="applicant">
-            <input type="hidden" name="applicantid" value="${applicant.applicantid}"/>
-            <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/>
-          </c:forEach>
+          </div><!--
+          c:forEach items="${aid.rows}" var="applicant">
+            <input type="hidden" name="applicantid" value="${applicant.applicantid}"/>-->
+            <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/><!--
+          /c:forEach>-->
           <input type="hidden" name="action" value="applicantcreatebooking">
           <div class="button">
             <input type="submit" value="TEMPAH" formaction="BookingServlet">

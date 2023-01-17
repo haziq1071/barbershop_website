@@ -22,7 +22,7 @@ public class BookingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         HttpSession session = request.getSession();
-        session.removeAttribute("staffid");
+        session.removeAttribute("applicantid");
         session.invalidate();
         response.sendRedirect("index.jsp"); 
     }
@@ -89,10 +89,11 @@ public class BookingServlet extends HttpServlet {
     private void applicantcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
         //HttpSession session = request.getSession();
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
+        //response.setContentType("text/html");
+        //PrintWriter out = response.getWriter();
 
-        try{/*
+        //try{
+        /*
             int applicantid = Integer.parseInt(request.getParameter("applicantid"));
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
             int roomid = Integer.parseInt(request.getParameter("roomid"));;*/
@@ -119,13 +120,14 @@ public class BookingServlet extends HttpServlet {
 
             //bd.applicantcreatebooking(booking, space, room, applicant);
             bd.applicantcreatebooking(booking);
+            response.sendRedirect("applicantViewBooking.jsp");/*
         } catch (Exception e) {
             e.printStackTrace();
         }
         out.println("<script type=\"text/javascript\">");
         out.println("alert('Tempahan telah berjaya dibuat!');");
         out.println("location='applicantViewBooking.jsp';");
-        out.println("</script>");
+        out.println("</script>");*/
     }
 
     private void applicantcancelbooking(HttpServletRequest request, HttpServletResponse response)
