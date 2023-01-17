@@ -136,10 +136,10 @@ sql:query dataSource="${ic}" var="aid">
                     <select class="form-control" name="eventspace">
                      	<option disabled selected>Pilih Ruang</option>
                         <c:forEach items="${oc.rows}" var="space">
-                        <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
+                        <option value="<c:out value="${space.spacename}"/>"><c:out value="${space.spacename}" /></option>
                         </c:forEach>
                         <c:forEach items="${rc.rows}" var="room">
-                        <option value="<c:out value="${room.roomid}"/>"><c:out value="${room.roomname}" /></option>
+                        <option value="<c:out value="${room.roomname}"/>"><c:out value="${room.roomname}" /></option>
                         </c:forEach>
                     </select>
             </div>           
