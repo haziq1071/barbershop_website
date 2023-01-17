@@ -119,7 +119,7 @@
                             <span class="details">Tarikh Aktiviti</span>
                             <input type="date" name="eventdate" >
                         </div>
-                        <div class="input-box" class="form-control">
+                        <div class="input-box,form-control">
                             <span class="details">Masa Aktiviti</span>
                             <select id="bookingtime" name="bookingtime">
                                     <option disabled selected>Pilih Masa</option>
@@ -137,7 +137,7 @@
                             <span class="details">Perincian Aktiviti</span>
                             <input type="text" name="bookingdescription">
                         </div>
-                        <div class="input-box" class="form-control">
+                        <div class="input-box,form-control">
                             <span class="details">Ruang Tempahan</span>
                             <select id="spaceid" id="roomid" name="spaceid" name="roomid">
                             	<option disabled selected>Pilih Ruang</option>
