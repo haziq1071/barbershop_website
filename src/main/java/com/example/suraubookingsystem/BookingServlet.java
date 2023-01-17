@@ -35,14 +35,8 @@ public class BookingServlet extends HttpServlet {
         String action = request.getParameter("action");
         try {
             switch (action) {
-                case "staffcreatebooking":
-                    staffcreatebooking(request, response);
-                    break;
                 case "applicantcreatebooking":
                     applicantcreatebooking(request, response);
-                    break;
-                case "staffcancelbooking":
-                    staffcancelbooking(request, response);
                     break;
                 case "applicantcancelbooking":
                     applicantcancelbooking(request, response);
@@ -61,52 +55,7 @@ public class BookingServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    /*######################################################( Staff Create Booking )#############################################################*/
-    private void staffcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-        //HttpSession session = request.getSession();
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
 
-        try{
-            int staffid = Integer.parseInt(request.getParameter("staffid"));
-            int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-            int roomid = Integer.parseInt(request.getParameter("roomid"));
-            String bookingdescription = request.getParameter("bookingdescription");
-            String bookingstatus = request.getParameter("bookingstatus");
-            String bookingtime = request.getParameter("bookingtime");
-            Date eventdate = Date.valueOf(request.getParameter("eventdate"));
-
-            Staff staff = new Staff();
-            Space space = new Space();
-            Room room = new Room();
-            Booking booking = new Booking();
-
-            staff.setStaffid(staffid);
-            space.setSpaceid(spaceid);
-            room.setRoomid(roomid);
-            booking.setBookingdescription(bookingdescription);
-            booking.setBookingstatus(bookingstatus);
-            booking.setBookingtime(bookingtime);
-            booking.setEventdate(eventdate);
-
-            bd.staffcreatebooking(booking, space, room, staff);
-            //bd.staffcreatebooking(booking);
-            //response.sendRedirect("staffViewBooking.jsp");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        out.println("<script type=\"text/javascript\">");
-        out.println("alert('Tempahan telah berjaya dibuat!');");
-        out.println("location='staffViewBooking.jsp';");
-        out.println("</script>");
-    }
-      
-    private void staffcancelbooking(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
-        int bookingid = Integer.parseInt(request.getParameter("bookingid"));
-        bd.staffcancelbooking(bookingid);
-        response.sendRedirect("staffViewBooking.jsp");
-    }
 
     private void staffapprovedbooking(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {

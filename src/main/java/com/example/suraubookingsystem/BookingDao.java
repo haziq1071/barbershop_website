@@ -28,23 +28,6 @@ public class BookingDao {
         return connection;
     }
 
-    public void staffcreatebooking(Booking booking, Space space, Room room, Staff staff) throws SQLException{
-        try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,STAFFID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
-        {
-            preparedStatement.setString(1, booking.getBookingdescription());
-            preparedStatement.setString(2, booking.getBookingtime());
-            preparedStatement.setString(3, booking.getBookingstatus());
-            preparedStatement.setDate(4, booking.getEventdate());
-            preparedStatement.setInt(5, space.getSpaceid());
-            preparedStatement.setInt(6, room.getRoomid());
-            preparedStatement.setInt(7, staff.getStaffid());
-            preparedStatement.executeUpdate();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
@@ -63,15 +46,7 @@ public class BookingDao {
             e.printStackTrace();
         }
     }
-    public boolean staffcancelbooking(int bookingid) throws SQLException {
-        boolean rowDeleted;
-        try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("update BOOKING set bookingstatus = 'Dibatalkan' where BOOKINGID=?");) {
-            statement.setInt(1, bookingid);
-            rowDeleted = statement.executeUpdate() > 0;
-        }
-        return rowDeleted;
-    }
+
     public boolean applicantcancelbooking(int bookingid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
