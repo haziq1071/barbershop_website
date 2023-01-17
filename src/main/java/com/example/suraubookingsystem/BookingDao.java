@@ -1,6 +1,6 @@
-package com.example.suraubookingsystem;
+package com.example.suraubookingsystem;/*
 import javax.servlet.http.Part;
-import java.io.*;
+import java.io.*;*/
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -29,21 +29,25 @@ public class BookingDao {
     }
 
 
-    public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
+    //public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
+    public void applicantcreatebooking(Booking booking) throws SQLException{
         try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
+            // PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
+             PreparedStatement prepareStatement = connection.prepareStatement("insert into booking(bookingstatus,eventdate,eventtime,eventdescription,eventspace,bookingdate) VALUES (?,?,?,?,?,CURRENT_DATE)");)
         {
-            preparedStatement.setString(1, booking.getBookingdescription());
-            preparedStatement.setString(2, booking.getBookingtime());
-            preparedStatement.setString(3, booking.getBookingstatus());
-            preparedStatement.setDate(4, booking.getEventdate());
-            preparedStatement.setInt(5, space.getSpaceid());
-            preparedStatement.setInt(6, room.getRoomid());
-            preparedStatement.setInt(7, applicant.getApplicantid());
-            preparedStatement.executeUpdate();
+            prepareStatement.setString(1, booking.getBookingstatus());
+            prepareStatement.setDate(2, booking.getEventdate());
+            prepareStatement.setString(3, booking.getEventtime());
+            prepareStatement.setString(4, booking.getEventdescription());
+            prepareStatement.setString(5, booking.getEventspace());/*
+            prepareStatement.setInt(6, space.getSpaceid());
+            prepareStatement.setInt(7, room.getRoomid());
+            prepareStatement.setInt(8, applicant.getApplicantid());*/
+            out.println(prepareStatement);
+            prepareStatement.executeUpdate();
         }
-        catch (Exception e) {
-            e.printStackTrace();
+        catch (SQLException e) {
+            printSQLException(e);
         }
     }
 
@@ -56,7 +60,7 @@ public class BookingDao {
         }
         return rowDeleted;
     }
-    public void staffapprovedbooking(int bookingid) throws SQLException, FileNotFoundException {
+    public void staffapprovedbooking(int bookingid) throws SQLException{
         String bookingstatus="Diluluskan";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=?WHERE BOOKINGID=?");) {
@@ -66,7 +70,7 @@ public class BookingDao {
 
         }
     }
-    public void staffrejectbooking(int bookingid) throws SQLException, FileNotFoundException {
+    public void staffrejectbooking(int bookingid) throws SQLException{
         String bookingstatus="Ditolak";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=? WHERE BOOKINGID=?");) {

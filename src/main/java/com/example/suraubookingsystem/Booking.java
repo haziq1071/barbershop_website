@@ -4,15 +4,16 @@ import java.sql.Date;
 
 public class Booking implements Serializable{
     public int bookingid;
-    public String bookingdescription;
     public Date bookingdate;
-    public String bookingtime;
     public String bookingstatus;
     public Date eventdate;
+    public String eventtime;
+    public String eventdescription;
+    public String eventspace;/*
     public int spaceid;
     public int roomid;
     public int staffid;
-    public int applicantid;
+    public int applicantid;*/
 
     public Booking() {
 
@@ -38,23 +39,11 @@ public class Booking implements Serializable{
     public void setBookingid(int bookingid) {
         this.bookingid = bookingid;
     }
-    public String getBookingdescription() {
-        return bookingdescription;
-    }
-    public void setBookingdescription(String bookingdescription) {
-        this.bookingdescription = bookingdescription;
-    }
     public Date getBookingdate() {
         return bookingdate;
     }
     public void setBookingdate(Date bookingdate) {
         this.bookingdate = bookingdate;
-    }
-    public String getBookingtime() {
-        return bookingtime;
-    }
-    public void setBookingtime(String bookingtime) {
-        this.bookingtime = bookingtime;
     }
     public String getBookingstatus() {
         return bookingstatus;
@@ -68,6 +57,24 @@ public class Booking implements Serializable{
     public void setEventdate(Date eventdate) {
         this.eventdate = eventdate;
     }
+    public String getEventtime() {
+        return eventtime;
+    }
+    public void setEventtime(String eventtime) {
+        this.eventtime = eventtime;
+    }
+    public String getEventdescription() {
+        return eventdescription;
+    }
+    public void setEventdescription(String eventdescription) {
+        this.eventdescription = eventdescription;
+    }
+    public String getEventspace() {
+        return eventspace;
+    }
+    public void setEventspace(String eventspace) {
+        this.eventspace = eventspace;
+    }/*
     public int getSpaceid() {
         return spaceid;
     }
@@ -91,6 +98,6 @@ public class Booking implements Serializable{
     }
     public void setApplicantid(int applicantid) {
         this.applicantid = applicantid;
-    }
+    }*/
 
 }

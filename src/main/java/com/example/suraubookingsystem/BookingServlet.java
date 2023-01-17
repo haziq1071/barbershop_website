@@ -1,19 +1,15 @@
 package com.example.suraubookingsystem;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.*;
-import java.sql.Date;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.HttpSession;
+import java.sql.Date;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
 
-@MultipartConfig
 @WebServlet(name = "BookingServlet", value = "/BookingServlet")
 public class BookingServlet extends HttpServlet {
     //private static final long serialVersionUID = 1L;
@@ -24,14 +20,18 @@ public class BookingServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            
+        
+        HttpSession session = request.getSession();
+        session.removeAttribute("staffid");
+        session.invalidate();
+        response.sendRedirect("index.jsp"); 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-
+        PrintWriter out = response.getWriter();
         String action = request.getParameter("action");
         try {
             switch (action) {
@@ -51,8 +51,6 @@ public class BookingServlet extends HttpServlet {
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -94,29 +92,33 @@ public class BookingServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        try{
+        try{/*
             int applicantid = Integer.parseInt(request.getParameter("applicantid"));
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-            int roomid = Integer.parseInt(request.getParameter("roomid"));;
-            String bookingdescription = request.getParameter("bookingdescription");
+            int roomid = Integer.parseInt(request.getParameter("roomid"));;*/
             String bookingstatus = request.getParameter("bookingstatus");
-            String bookingtime = request.getParameter("bookingtime");
             Date eventdate = Date.valueOf(request.getParameter("eventdate"));
-
+            String eventtime = request.getParameter("eventtime");  
+            String eventdescription = request.getParameter("eventdescription");
+            String eventspace = request.getParameter("eventspace");
+            
+            /*
             Applicant applicant = new Applicant();
             Space space = new Space();
-            Room room = new Room();
+            Room room = new Room();*/
             Booking booking = new Booking();
-
+            /*
             applicant.setApplicantid(applicantid);
             space.setSpaceid(spaceid);
-            room.setRoomid(roomid);
-            booking.setBookingdescription(bookingdescription);
+            room.setRoomid(roomid);*/
             booking.setBookingstatus(bookingstatus);
-            booking.setBookingtime(bookingtime);
             booking.setEventdate(eventdate);
+            booking.setEventtime(eventtime);
+            booking.setEventdescription(eventdescription);
+            booking.setEventspace(eventspace);
 
-            bd.applicantcreatebooking(booking, space, room, applicant);
+            //bd.applicantcreatebooking(booking, space, room, applicant);
+            bd.applicantcreatebooking(booking);
         } catch (Exception e) {
             e.printStackTrace();
         }

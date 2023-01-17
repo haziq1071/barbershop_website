@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
+<!--
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
@@ -20,7 +20,7 @@
     if(session.getAttribute("applicantid")==null)
         response.sendRedirect("index.jsp");
 
-%>
+%>-->
 
 <sql:setDataSource
         var="ic"
@@ -38,7 +38,7 @@
   SELECT *
   FROM room
   WHERE roomstatus LIKE '%Boleh Digunakan%'
-</sql:query>
+</sql:query><!--
 <sql:query dataSource="${ic}" var="aid">
   <%
     int japplicantid = 0;
@@ -54,7 +54,7 @@
   <c:set var="japplicantid" value="<%=japplicantid%>"/>
   SELECT applicantid FROM applicant WHERE applicantid=?
   <sql:param value="${japplicantid}" />
-</sql:query>
+</sql:query>-->
 
 <div class="sidebar">
   <div class="logo-details">
@@ -115,7 +115,7 @@
             </div>
              <div class="input-box">
                 <span class="details">Masa Aktiviti</span>
-                    <select id="bookingtime" class="form-control" name="bookingtime">
+                    <select class="form-control" name="eventtime">
                         <option disabled selected>Pilih Masa</option>
                         <option value="8:00 - 10:00">8:00 - 10:00</option>
                         <option value="10:00 - 12:00">10:00 - 12:00</option>
@@ -129,11 +129,11 @@
             </div>
             <div class="input-box">
               <span class="details">Perincian Aktiviti</span>
-              <input type="text" name="bookingdescription">
+              <input type="text" name="eventdescription">
             </div>
             <div class="input-box">
                 <span class="details">Ruang Tempahan</span>
-                    <select id="spaceid" class="form-control" id="roomid" name="spaceid" name="roomid">
+                    <select class="form-control" name="eventspace">
                      	<option disabled selected>Pilih Ruang</option>
                         <c:forEach items="${oc.rows}" var="space">
                         <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>

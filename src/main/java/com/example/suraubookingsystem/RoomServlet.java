@@ -51,8 +51,6 @@ public class RoomServlet extends HttpServlet {
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
-
-
     }
 
     /*######################################################(CREATE ROOM)#############################################################*/
