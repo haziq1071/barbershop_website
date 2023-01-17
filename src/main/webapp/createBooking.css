@@ -466,7 +466,7 @@ form .input-box span.details{
     border: 1px solid #aaa;
     padding: 0 15px;
     width: 600px;
-     height: 50px;
+    height: 50px;
     margin: 8px 0;
 }
 
@@ -476,18 +476,6 @@ form .input-box span.details{
 #form-control select{
     color: #707070;
 }
-#form-control select{
-  height: 50px;
-  width: 600px;
-  outline: none;
-  font-size: 16px;
-  border-radius: 5px;
-  padding-left: 15px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
-  transition: all 0.3s ease;
-}
-
 
  @media(max-width: 584px){
  .container{
