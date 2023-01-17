@@ -3,21 +3,21 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class Booking implements Serializable{
-    private int bookingid;
-    private String bookingdescription;
-    private Date bookingdate;
-    private String bookingtime;
-    private String bookingstatus;
-    private Date eventdate;
-    private int spaceid;
-    private int roomid;
-    private int staffid;
-    private int applicantid;
+    public int bookingid;
+    public String bookingdescription;
+    public Date bookingdate;
+    public String bookingtime;
+    public String bookingstatus;
+    public Date eventdate;
+    public int spaceid;
+    public int roomid;
+    public int staffid;
+    public int applicantid;
 
     public Booking() {
 
     }
-
+    /*
     public Booking(int bookingid, String bookingdescription, Date bookingdate, String bookingtime, String bookingstatus, Date eventdate, int spaceid, int roomid, int staffid, int applicantid) {
         this.bookingid = bookingid;
         this.bookingdescription = bookingdescription;
@@ -30,7 +30,7 @@ public class Booking implements Serializable{
         this.staffid = staffid;
         this.applicantid = applicantid;
 
-    }
+    }*/
 
     public int getBookingid() {
         return bookingid;

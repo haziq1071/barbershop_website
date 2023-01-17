@@ -34,6 +34,11 @@
   FROM space
   WHERE spacestatus LIKE '%Boleh Digunakan%'
 </sql:query>
+<sql:query dataSource="${ic}" var="rc">
+  SELECT *
+  FROM room
+  WHERE roomstatus LIKE '%Boleh Digunakan%'
+</sql:query>
 <sql:query dataSource="${ic}" var="aid">
   <%
     int japplicantid = 0;
