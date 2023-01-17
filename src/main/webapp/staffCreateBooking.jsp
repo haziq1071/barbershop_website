@@ -138,8 +138,9 @@
                             <input type="text" name="bookingdescription">
                         </div>
                         <div class="input-box">
-                            <span class="details">Nama Ruang</span>
+                            <span class="details">Ruang Tempahan</span>
                             <select class="form-control" id="spaceid" id="roomid" name="spaceid" name="roomid">
+                            	<option disabled selected>Pilih Ruang</option>
                                 <c:forEach items="${oc.rows}" var="space">
                                     <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
                                 </c:forEach>
