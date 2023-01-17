@@ -108,18 +108,36 @@
               <span class="details">Tarikh Aktiviti</span>
               <input type="date" name="eventdate" >
             </div>
+             <div class="input-box">
+                <span class="details">Masa Aktiviti</span>
+                    <select id="bookingtime" class="form-control" name="bookingtime">
+                        <option disabled selected>Pilih Masa</option>
+                        <option value="8:00 - 10:00">8:00 - 10:00</option>
+                        <option value="10:00 - 12:00">10:00 - 12:00</option>
+                        <option value="12:00 - 14:00">12:00 - 14:00</option>
+                        <option value="14:00 - 16:00">14:00 - 16:00</option>
+                        <option value="16:00 - 18:00">16:00 - 18:00</option>
+                        <option value="18:00 - 20:00">18:00 - 20:00</option>
+                        <option value="20:00 - 22:00">20:00 - 22:00</option>
+                        <option value="22:00 - 00:00">22:00 - 00:00</option>
+                    </select>
+            </div>
             <div class="input-box">
               <span class="details">Perincian Aktiviti</span>
               <input type="text" name="bookingdescription">
             </div>
             <div class="input-box">
-              <span class="details">Nama Ruang</span>
-              <select class="form-control" id="spaceid" name="spaceid">
-                <c:forEach items="${oc.rows}" var="space">
-                  <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
-                </c:forEach>
-              </select>
-            </div>
+                <span class="details">Ruang Tempahan</span>
+                    <select id="spaceid" class="form-control" id="roomid" name="spaceid" name="roomid">
+                     	<option disabled selected>Pilih Ruang</option>
+                        <c:forEach items="${oc.rows}" var="space">
+                        <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
+                        </c:forEach>
+                        <c:forEach items="${rc.rows}" var="room">
+                        <option value="<c:out value="${room.roomid}"/>"><c:out value="${room.roomname}" /></option>
+                        </c:forEach>
+                    </select>
+            </div>           
           </div>
           <c:forEach items="${aid.rows}" var="applicant">
             <input type="hidden" name="applicantid" value="${applicant.applicantid}"/>
