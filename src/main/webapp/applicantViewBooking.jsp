@@ -26,7 +26,7 @@
         url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
         user="postgres"
         password="ETymgiO6aGYvyXf5fkei"/>/>
-
+<!--
 <sql:query dataSource="${ic}" var="oc">
   <%
     int japplicantid = 0;
@@ -45,7 +45,7 @@
   ON b.spaceid = s.spaceid
   WHERE applicantid=?
   <sql:param value="${japplicantid}" />
-</sql:query>
+</sql:query>-->
 
 <div class="sidebar">
   <div class="logo-details">
@@ -119,10 +119,11 @@
             <input type="hidden" name="bookingid" value="${result.bookingid}">
             <tr>
               <td>${result.bookingid}</td>
-              <td>${result.spacename}</td>
               <td>${result.bookingdate}</td>
+              <td>${result.eventname}</td>
               <td>${result.eventdate}</td>
-              <td>${result.bookingdescription}</td>
+              <td>${result.eventtime}</td>
+              <td>${result.eventdescription}</td>
               <td>${result.bookingstatus}</td>
               <td>
                 <input type="hidden" name="action" value="applicantcancelbooking">
