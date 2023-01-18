@@ -29,7 +29,7 @@
 
 <sql:query dataSource="${ic}" var="oc">
   <%
-    int japplicantid = 0;
+    int japplicantid;
     if(request.getParameter("applicantid")==null){
       japplicantid = (Integer) session.getAttribute("applicantid");
     }
