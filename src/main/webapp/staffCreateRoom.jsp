@@ -36,7 +36,6 @@
 <sql:query dataSource="${ic}" var="oc">
     SELECT roomid,roomname from room
 </sql:query>
-<!--
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
@@ -44,7 +43,7 @@
 
     if(session.getAttribute("staffid")==null)
         response.sendRedirect("index.jsp");
-  %>-->
+  %>
 	<div class="sidebar">
 		<div class="logo-details">
 			<img src="logoWhite.png">
@@ -139,6 +138,7 @@
 									<label class="details">Kuantiti Meja</label>
 									<input type="text" name="tablequantity" onblur="validateTableQuantity()">
 								</div>
+								
 								<div class="input-field input-box">
 									<label class="details">Kuantiti Kerusi</label>
 									<input type="text" name="chairquantity" onblur="validateChairQuantity()">
