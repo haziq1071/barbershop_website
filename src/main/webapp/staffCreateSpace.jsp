@@ -106,10 +106,6 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<c:if test="${not fn:matches(param.spacecapacity, '[a-zA-Z]')}">
-										<c:set var="validCapacity" value="true"/>
-										<c:out value="Invalid Kapasiti, Only numerical input is allowed" escapeXml="false"/>
-									</c:if>
 									<input type="text" name="spacecapacity">
 								</div>
 								<div class="input-field input-box">
