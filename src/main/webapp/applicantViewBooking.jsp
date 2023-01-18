@@ -20,7 +20,7 @@
   if(session.getAttribute("applicantid")==null)
     response.sendRedirect("index.jsp");
 
-  int applicantid = 0;
+  int applicantid;
   if(request.getParameter("applicantid")==null){
     applicantid=  Integer.parseInt(session.getAttribute("applicantid").toString());
   }else{
