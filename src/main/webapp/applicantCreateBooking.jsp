@@ -39,19 +39,7 @@
   WHERE roomstatus LIKE '%Boleh Digunakan%'
 </sql:query>
 
-<sql:query dataSource="${ic}" var="aid">
-  <%
-      int applicantid;
-      if(request.getParameter("applicantid")==null){
-      }else{
-          applicantid = Integer.parseInt(request.getParameter("applicantid"));
-          session.setAttribute("applicantid",applicantid);
-      }
-  %>
-  <c:set var="clsid" value="%=applicantid%>"/>
-  SELECT applicantid FROM applicant WHERE applicantid=?
-  <sql:param value="${clsid}" />
-</sql:query>
+
 
 <div class="sidebar">
   <div class="logo-details">
