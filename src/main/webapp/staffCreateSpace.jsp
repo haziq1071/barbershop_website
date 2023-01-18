@@ -18,7 +18,6 @@
 <sql:query dataSource="${ic}" var="oc">
     SELECT spaceid,spacename from space
 </sql:query>
-<!--
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
@@ -26,7 +25,12 @@
 
     if(session.getAttribute("staffid")==null)
         response.sendRedirect("index.jsp");
-  %>-->
+  %>
+  <c:if test="${not fn:matches(param.capacity, '[a-zA-Z]')}">
+	<c:set var="validCapacity" value="true"/>
+	<c:out value="Invalid Capacity, Only numerical input is allowed" escapeXml="false"/>
+  </c:if>
+
 	<div class="sidebar">
 		<div class="logo-details">
 			<img src="logoWhite.png">
@@ -97,12 +101,16 @@
 							<span class="title">INFORMASI DEWAN</span>
 							<div class="fields">
 								<div class="input-field input-box">
-									<label class="details">Nama</label> 
+									<label class="details">Nama</label>
 									<input type="text" name="spacename">
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name="spacecapacity" >
+									<c:if test="${not fn:matches(param.spacecapacity, '[a-zA-Z]')}">
+										<c:set var="validCapacity" value="true"/>
+										<c:out value="Invalid Kapasiti, Only numerical input is allowed" escapeXml="false"/>
+									</c:if>
+									<input type="text" name="spacecapacity">
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Status</label>
