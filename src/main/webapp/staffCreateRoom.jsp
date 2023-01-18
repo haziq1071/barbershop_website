@@ -9,6 +9,20 @@
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		function validateTableQuantity() {
+			var tableQuantity = document.getElementsByName("tablequantity")[0].value;
+			if (!/^\d+$/.test(tableQuantity)) {
+				alert("Salah data dimasukkan, hanya nombor yang dibenarkan!");
+			}
+		}
+		function validateChairQuantity() {
+			var chairQuantity = document.getElementsByName("chairquantity")[0].value;
+			if (!/^\d+$/.test(chairQuantity)) {
+				alert("Salah data dimasukkan, hanya nombor yang dibenarkan!");
+			}
+		}
+	</script>
 </head>
 <body>
 <sql:setDataSource
@@ -120,12 +134,12 @@
 									<input type="text" name="roomsoundsystem" >
 								</div>
 								<div class="input-field input-box">
-									<label class="details">Kuantiti Meja</label> 
-									<input type="text" name="tablequantity">
+									<label class="details">Kuantiti Meja</label>
+									<input type="text" name="tablequantity" onblur="validateTableQuantity()">
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kuantiti Kerusi</label>
-									<input type="text" name="chairquantity" >
+									<input type="text" name="chairquantity" onblur="validateChairQuantity()">
 								</div>
 							</div>
 							<input type="hidden" name="action" value="createRoom">
