@@ -94,9 +94,9 @@ public class BookingServlet extends HttpServlet {
 
         //try{
         /*
-            int applicantid = Integer.parseInt(request.getParameter("applicantid"));
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
             int roomid = Integer.parseInt(request.getParameter("roomid"));;*/
+            int applicantid = Integer.parseInt(request.getParameter("applicantid"));
             String bookingstatus = request.getParameter("bookingstatus");
             Date eventdate = Date.valueOf(request.getParameter("eventdate"));
             String eventtime = request.getParameter("eventtime");  
@@ -104,14 +104,14 @@ public class BookingServlet extends HttpServlet {
             String eventspace = request.getParameter("eventspace");
             
             /*
-            Applicant applicant = new Applicant();
             Space space = new Space();
             Room room = new Room();*/
+            Applicant applicant = new Applicant();
             Booking booking = new Booking();
             /*
-            applicant.setApplicantid(applicantid);
             space.setSpaceid(spaceid);
             room.setRoomid(roomid);*/
+            applicant.setApplicantid(applicantid);
             booking.setBookingstatus(bookingstatus);
             booking.setEventdate(eventdate);
             booking.setEventtime(eventtime);
@@ -119,7 +119,7 @@ public class BookingServlet extends HttpServlet {
             booking.setEventspace(eventspace);
 
             //bd.applicantcreatebooking(booking, space, room, applicant);
-            bd.applicantcreatebooking(booking);
+            bd.applicantcreatebooking(booking, applicant);
             response.sendRedirect("applicantViewBooking.jsp");/*
         } catch (Exception e) {
             e.printStackTrace();

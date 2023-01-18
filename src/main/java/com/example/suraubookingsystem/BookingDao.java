@@ -30,17 +30,17 @@ public class BookingDao {
 
 
     //public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
-    public void applicantcreatebooking(Booking booking) throws SQLException{
+    public void applicantcreatebooking(Booking booking, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
             // PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
-             PreparedStatement prepareStatement = connection.prepareStatement("insert into booking(bookingstatus,eventdate,eventtime,eventdescription,eventspace,bookingdate) VALUES (?,?,?,?,?,CURRENT_DATE)");)
+             PreparedStatement prepareStatement = connection.prepareStatement("insert into booking(bookingstatus,eventdate,eventtime,eventdescription,eventspace,applicantid,bookingdate) VALUES (?,?,?,?,?,?,CURRENT_DATE)");)
         {
             prepareStatement.setString(1, booking.getBookingstatus());
             prepareStatement.setDate(2, booking.getEventdate());
             prepareStatement.setString(3, booking.getEventtime());
             prepareStatement.setString(4, booking.getEventdescription());
-            prepareStatement.setString(5, booking.getEventspace());/*
-            prepareStatement.setInt(6, space.getSpaceid());
+            prepareStatement.setString(5, booking.getEventspace());
+            prepareStatement.setInt(6, applicant.getApplicantid());/*
             prepareStatement.setInt(7, room.getRoomid());
             prepareStatement.setInt(8, applicant.getApplicantid());*/
             out.println(prepareStatement);

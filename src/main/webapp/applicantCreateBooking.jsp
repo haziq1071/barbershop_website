@@ -11,7 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<!--
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
@@ -20,7 +19,7 @@
     if(session.getAttribute("applicantid")==null)
         response.sendRedirect("index.jsp");
 
-%>-->
+%>
 
 <sql:setDataSource
         var="ic"
@@ -38,9 +37,9 @@
   SELECT *
   FROM room
   WHERE roomstatus LIKE '%Boleh Digunakan%'
-</sql:query><!--
-sql:query dataSource="${ic}" var="aid">
-  %
+</sql:query>
+<sql:query dataSource="${ic}" var="aid">
+  <%
     int japplicantid = 0;
     
     if(request.getParameter("applicantid")==null){
@@ -51,10 +50,10 @@ sql:query dataSource="${ic}" var="aid">
       session.setAttribute("applicantid", japplicantid);
     }
   %>
-  c:set var="japplicantid" value="%=japplicantid%>"/>
+  <c:set var="japplicantid" value="%=japplicantid%>"/>
   SELECT applicantid FROM applicant WHERE applicantid=?
-  sql:param value="${japplicantid}" />
-/sql:query>-->
+  <sql:param value="${japplicantid}" />
+</sql:query>
 
 <div class="sidebar">
   <div class="logo-details">
@@ -143,11 +142,11 @@ sql:query dataSource="${ic}" var="aid">
                         </c:forEach>
                     </select>
             </div>           
-          </div><!--
-          c:forEach items="${aid.rows}" var="applicant">
-            <input type="hidden" name="applicantid" value="${applicant.applicantid}"/>-->
-            <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/><!--
-          /c:forEach>-->
+          </div>
+          <c:forEach items="${aid.rows}" var="applicant">
+            <input type="hidden" name="applicantid" value="${applicant.applicantid}"/>
+            <input type="hidden" name="bookingstatus" value="Telah Dimajukan"/>
+          </c:forEach>
           <input type="hidden" name="action" value="applicantcreatebooking">
           <div class="button">
             <input type="submit" value="TEMPAH" formaction="BookingServlet">
