@@ -11,7 +11,7 @@
 		function validateCapacity() {
 			var capacity = document.getElementsByName("spacecapacity")[0].value;
 			if (!/^\d+$/.test(capacity)) {
-				alert("Invalid Kapasiti, Only numerical input is allowed");
+				alert("Salah data dimasukkan, hanya nombor yang dibenarkan!");
 			}
 		}
 	</script>
