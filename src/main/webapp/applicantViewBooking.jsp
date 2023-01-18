@@ -39,7 +39,7 @@
     }
   %>
   <c:set var="japplicantid" value="%=japplicantid%>"/>
-  SELECT *
+  SELECT bookingid
   FROM booking
   WHERE applicantid=?
   <sql:param value="${japplicantid}" />
