@@ -39,7 +39,7 @@
     }
   %>
   <c:set var="japplicantid" value="%=japplicantid%>"/>
-  SELECT bookingid, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, eventtime, eventdescription, eventspace, bookingstatus
+  SELECT *
   FROM booking b
   WHERE applicantid=?
   <sql:param value="${japplicantid}" />
