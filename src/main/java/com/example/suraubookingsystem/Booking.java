@@ -18,20 +18,17 @@ public class Booking implements Serializable{
     public Booking() {
 
     }
-    /*
-    public Booking(int bookingid, String bookingdescription, Date bookingdate, String bookingtime, String bookingstatus, Date eventdate, int spaceid, int roomid, int staffid, int applicantid) {
+
+    public Booking(int bookingid, Date bookingdate, String bookingstatus, Date eventdate, String eventtime, String eventdescription,  String eventspace) {
         this.bookingid = bookingid;
-        this.bookingdescription = bookingdescription;
         this.bookingdate = bookingdate;
-        this.bookingtime = bookingtime;
         this.bookingstatus = bookingstatus;
         this.eventdate = eventdate;
-        this.spaceid = spaceid;
-        this.roomid = roomid;
-        this.staffid = staffid;
-        this.applicantid = applicantid;
-
-    }*/
+        this.eventtime = eventtime;
+        this.eventdescription = eventdescription;
+        this.eventspace = eventspace;
+        
+    }
 
     public int getBookingid() {
         return bookingid;

@@ -25,10 +25,10 @@
         driver="org.postgresql.Driver"
         url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
         user="postgres"
-        password="ETymgiO6aGYvyXf5fkei"/>/>
-<!--
-sql:query dataSource="${ic}" var="oc">
-  %
+        password="ETymgiO6aGYvyXf5fkei"/>
+
+<sql:query dataSource="${ic}" var="oc">
+  <%
     int japplicantid = 0;
     if(request.getParameter("applicantid")==null){
       japplicantid = (Integer) session.getAttribute("applicantid");
@@ -38,14 +38,12 @@ sql:query dataSource="${ic}" var="oc">
       session.setAttribute("applicantid", japplicantid);
     }
   %>
-  c:set var="japplicantid" value="%=japplicantid%>"/>
-  SELECT bookingid, spacename, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, bookingdescription, bookingstatus
+  <c:set var="japplicantid" value="%=japplicantid%>"/>
+  SELECT bookingid, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, eventdescription, bookingstatus
   FROM booking b
-  JOIN space s
-  ON b.spaceid = s.spaceid
   WHERE applicantid=?
-  sql:param value="${japplicantid}" />
-/sql:query>-->
+  <sql:param value="${japplicantid}" />
+</sql:query>
 
 <div class="sidebar">
   <div class="logo-details">
@@ -107,10 +105,11 @@ sql:query dataSource="${ic}" var="oc">
       <table class="container">
         <tr>
           <th>NO. TEMPAHAN</th>
-          <th>NAMA RUANG</th>
           <th>TARIKH TEMPAHAN</th>
           <th>TARIKH AKTIVITI</th>
+          <th>MASA AKTIVITI</th>
           <th>PERINCIAN AKTIVITI</th>
+          <th>RUANG TEMPAHAN</th>
           <th>STATUS</th>
           <th>BATAL TEMPAHAN</th>
         </tr>
@@ -120,10 +119,10 @@ sql:query dataSource="${ic}" var="oc">
             <tr>
               <td>${result.bookingid}</td>
               <td>${result.bookingdate}</td>
-              <td>${result.eventname}</td>
               <td>${result.eventdate}</td>
               <td>${result.eventtime}</td>
               <td>${result.eventdescription}</td>
+              <td>${result.eventspace}</td>
               <td>${result.bookingstatus}</td>
               <td>
                 <input type="hidden" name="action" value="applicantcancelbooking">

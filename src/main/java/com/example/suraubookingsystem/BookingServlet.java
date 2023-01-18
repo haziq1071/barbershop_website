@@ -1,15 +1,19 @@
 package com.example.suraubookingsystem;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
+import java.io.*;
+import java.sql.Date;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.sql.Date;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.*;
+import javax.servlet.http.Part;
 
+@MultipartConfig
 @WebServlet(name = "BookingServlet", value = "/BookingServlet")
 public class BookingServlet extends HttpServlet {
     //private static final long serialVersionUID = 1L;
@@ -21,17 +25,13 @@ public class BookingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        HttpSession session = request.getSession();
-        session.removeAttribute("applicantid");
-        session.invalidate();
-        response.sendRedirect("index.jsp"); 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
+
         String action = request.getParameter("action");
         try {
             switch (action) {
@@ -51,6 +51,8 @@ public class BookingServlet extends HttpServlet {
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -89,10 +91,10 @@ public class BookingServlet extends HttpServlet {
     private void applicantcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
         //HttpSession session = request.getSession();
-        //response.setContentType("text/html");
-        //PrintWriter out = response.getWriter();
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
 
-        //try{
+        try{
         /*
             int spaceid = Integer.parseInt(request.getParameter("spaceid"));
             int roomid = Integer.parseInt(request.getParameter("roomid"));;*/
@@ -120,14 +122,14 @@ public class BookingServlet extends HttpServlet {
 
             //bd.applicantcreatebooking(booking, space, room, applicant);
             bd.applicantcreatebooking(booking, applicant);
-            response.sendRedirect("applicantViewBooking.jsp");/*
+            //response.sendRedirect("applicantViewBooking.jsp");
         } catch (Exception e) {
             e.printStackTrace();
         }
         out.println("<script type=\"text/javascript\">");
         out.println("alert('Tempahan telah berjaya dibuat!');");
         out.println("location='applicantViewBooking.jsp';");
-        out.println("</script>");*/
+        out.println("</script>");
     }
 
     private void applicantcancelbooking(HttpServletRequest request, HttpServletResponse response)

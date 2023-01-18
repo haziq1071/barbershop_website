@@ -1,6 +1,6 @@
-package com.example.suraubookingsystem;/*
+package com.example.suraubookingsystem;
 import javax.servlet.http.Part;
-import java.io.*;*/
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -33,21 +33,19 @@ public class BookingDao {
     public void applicantcreatebooking(Booking booking, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
             // PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
-             PreparedStatement prepareStatement = connection.prepareStatement("insert into booking(bookingstatus,eventdate,eventtime,eventdescription,eventspace,applicantid,bookingdate) VALUES (?,?,?,?,?,?,CURRENT_DATE)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(bookingstatus,eventdate,eventtime,eventdescription,eventspace,applicantid,bookingdate) VALUES (?,?,?,?,?,?,CURRENT_DATE)");)
         {
-            prepareStatement.setString(1, booking.getBookingstatus());
-            prepareStatement.setDate(2, booking.getEventdate());
-            prepareStatement.setString(3, booking.getEventtime());
-            prepareStatement.setString(4, booking.getEventdescription());
-            prepareStatement.setString(5, booking.getEventspace());
-            prepareStatement.setInt(6, applicant.getApplicantid());/*
+            preparedStatement.setString(1, booking.getBookingstatus());
+            preparedStatement.setDate(2, booking.getEventdate());
+            preparedStatement.setString(3, booking.getEventtime());
+            preparedStatement.setString(4, booking.getEventdescription());
+            preparedStatement.setString(5, booking.getEventspace());
+            preparedStatement.setInt(6, applicant.getApplicantid());/*
             prepareStatement.setInt(7, room.getRoomid());
             prepareStatement.setInt(8, applicant.getApplicantid());*/
-            out.println(prepareStatement);
-            prepareStatement.executeUpdate();
-        }
-        catch (SQLException e) {
-            printSQLException(e);
+          }
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
