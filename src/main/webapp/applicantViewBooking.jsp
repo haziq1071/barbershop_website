@@ -20,7 +20,7 @@
   if(session.getAttribute("applicantid")==null)
     response.sendRedirect("index.jsp");
 
-  int applicantid = Integer.parseInt(session.getAttribute("applicantid").toString());
+
 %>
   <sql:setDataSource
         var="ic"
