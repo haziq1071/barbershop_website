@@ -13,7 +13,7 @@
 		function validateTableQuantity() {
 			var tableQuantity = document.getElementsByName("tablequantity")[0].value;
 			if (!/^\d+$/.test(tableQuantity)) {
-				alert("Salah data dimasukkan, hanya nombor yang dibenarkan!");
+				//alert("Salah data dimasukkan, hanya nombor yang dibenarkan!");
 			}
 		}
 	</script>
@@ -21,7 +21,7 @@
 		function validateChairQuantity() {
 			var chairQuantity = document.getElementsByName("chairquantity")[0].value;
 			if (!/^\d+$/.test(chairQuantity)) {
-				alert("Salah data dimasukkan, hanya nombor yang dibenarkan!");
+				//alert("Salah data dimasukkan, hanya nombor yang dibenarkan!");
 			}
 		}
 	</script>
