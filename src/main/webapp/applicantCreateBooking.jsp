@@ -15,18 +15,29 @@
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
     response.setHeader("Expires", "0");
-
     if(session.getAttribute("applicantid")==null)
         response.sendRedirect("index.jsp");
 
+    int applicantid;
+    if(request.getParameter("applicantid")==null){
+        applicantid=  Integer.parseInt(session.getAttribute("applicantid").toString());
+    }else{
+        applicantid = Integer.parseInt(request.getParameter("applicantid"));
+        session.setAttribute("applicantid",applicantid);
+    }
 %>
-
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
         url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
         user="postgres"
         password="ETymgiO6aGYvyXf5fkei"/>
+
+<sql:query dataSource="${ic}" var="aid">
+    <c:set var="clsid" value="<%=applicantid%>"/>
+    SELECT applicantid FROM applicant WHERE applicantid=?
+    <sql:param value="${clsid}" />
+</sql:query>
 
 <sql:query dataSource="${ic}" var="oc">
   SELECT *
@@ -38,6 +49,7 @@
   FROM room
   WHERE roomstatus LIKE '%Boleh Digunakan%'
 </sql:query>
+
 
 <div class="sidebar">
   <div class="logo-details">
