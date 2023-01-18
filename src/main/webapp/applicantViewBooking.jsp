@@ -19,8 +19,15 @@
   response.setHeader("Expires", "0");
   if(session.getAttribute("applicantid")==null)
     response.sendRedirect("index.jsp");
-  //
-  //int applicantid = Integer.parseInt(session.getAttribute("applicantid").toString());
+
+  int applicantid = 0;
+  if(request.getParameter("applicantid")==null){
+    applicantid=  Integer.parseInt(session.getAttribute("applicantid").toString());
+  }else{
+    applicantid = Integer.parseInt(request.getParameter("applicantid"));
+    session.setAttribute("applicantid",applicantid);
+  }
+
 %>
   <sql:setDataSource
         var="ic"
@@ -30,12 +37,12 @@
         password="ETymgiO6aGYvyXf5fkei"/>
 
 <sql:query dataSource="${ic}" var="oc">
-  <!--c:set var="japplicantid" value="%=applicantid%>"/-->
+  <c:set var="clsid" value="<%=applicantid%>"/>
   SELECT b.bookingid, b.bookingdate, b.bookingstatus, b.eventdate, b.eventtime, b.eventdescription, a.applicantname, b.eventspace
   FROM booking b
   JOIN applicant a ON b.applicantid = a.applicantid
   WHERE a.applicantid = ?
-  <!--sql:param value="${japplicantid}" /-->
+  <sql:param value="${clsid}" />
 </sql:query>
 
 <div class="sidebar">
