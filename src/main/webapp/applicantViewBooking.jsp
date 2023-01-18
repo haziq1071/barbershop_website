@@ -19,8 +19,10 @@
   response.setHeader("Expires", "0");
   if(session.getAttribute("applicantid")==null)
     response.sendRedirect("index.jsp");
+
+  int applicantid = Integer.parseInt(session.getAttribute("applicantid").toString());
 %>
-<sql:setDataSource
+  <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
         url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
@@ -28,17 +30,7 @@
         password="ETymgiO6aGYvyXf5fkei"/>
 
 <sql:query dataSource="${ic}" var="oc">
-  <%
-    int japplicantid;
-    if(request.getParameter("applicantid")==null){
-      japplicantid = (Integer) session.getAttribute("applicantid");
-    }
-    else{
-      japplicantid = Integer.parseInt(request.getParameter("applicantid"));
-      session.setAttribute("applicantid", japplicantid);
-    }
-  %>
-  <c:set var="japplicantid" value="%=japplicantid%>"/>
+  <c:set var="japplicantid" value="%=applicantid%>"/>
   SELECT b.bookingid, b.bookingdate, b.bookingstatus, b.eventdate, b.eventtime, b.eventdescription, a.applicantname, b.eventspace
   FROM booking b
   JOIN applicant a ON b.applicantid = a.applicantid
