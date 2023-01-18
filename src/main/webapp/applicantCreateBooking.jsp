@@ -35,7 +35,9 @@
 
 <sql:query dataSource="${ic}" var="aid">
     <c:set var="clsid" value="<%=applicantid%>"/>
-    SELECT applicantid FROM applicant WHERE applicantid=?
+    SELECT applicantid
+    FROM applicant
+    WHERE applicantid=?
     <sql:param value="${clsid}" />
 </sql:query>
 
