@@ -39,8 +39,6 @@
   WHERE roomstatus LIKE '%Boleh Digunakan%'
 </sql:query>
 
-
-
 <div class="sidebar">
   <div class="logo-details">
     <img src="logoWhite.png">
