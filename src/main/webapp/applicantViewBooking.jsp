@@ -39,11 +39,10 @@
     }
   %>
   <c:set var="japplicantid" value="%=japplicantid%>"/>
-  SELECT bookingid, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, eventtime, eventdescription, eventspace, bookingstatus
+  SELECT b.bookingid, b.bookingdate, b.bookingstatus, b.eventdate, b.eventtime, b.eventdescription, a.applicantname, b.eventspace
   FROM booking b
-  join applicant a
-  on b.applicantid = a.applicantid
-  WHERE a.applicantid=?
+  JOIN applicant a ON b.applicantid = a.applicantid
+  WHERE a.applicantid = ?
   <sql:param value="${japplicantid}" />
 </sql:query>
 
