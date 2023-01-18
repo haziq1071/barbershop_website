@@ -26,10 +26,6 @@
     if(session.getAttribute("staffid")==null)
         response.sendRedirect("index.jsp");
   %>
-  <c:if test="${not fn:matches(param.capacity, '[a-zA-Z]')}">
-	<c:set var="validCapacity" value="true"/>
-	<c:out value="Invalid Capacity, Only numerical input is allowed" escapeXml="false"/>
-  </c:if>
 
 	<div class="sidebar">
 		<div class="logo-details">
@@ -106,8 +102,13 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
+									<c:if test="${not fn:matches(param.spacecapacity, '[a-zA-Z]')}">
+										<c:set var="validCapacity" value="true"/>
+										<c:out value="Invalid Kapasiti, Only numerical input is allowed" escapeXml="false"/>
+									</c:if>
 									<input type="text" name="spacecapacity">
 								</div>
+
 								<div class="input-field input-box">
 									<label class="details">Status</label>
 									<select	name="spacestatus" >
