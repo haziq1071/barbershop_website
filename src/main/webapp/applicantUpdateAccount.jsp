@@ -100,21 +100,21 @@
               <h1>MAKLUMAT PEMOHON</h1>
               <input type="hidden" name="applicantid" value="${applicant.applicantid}"/>
               <h2>Nama Penuh</h2>
-              <input type="text" name="applicantname" class="input" value = "${applicant.applicantname}" >
+              <input type="text" name="applicantname" class="input" value = "${applicant.applicantname}" required>
               <h2>Kad Pengenalan</h2>
-              <input type="text" name="applicantic" class="input" value = "${applicant.applicantic}" >
+              <input type="text" name="applicantic" class="input" value = "${applicant.applicantic}" required>
               <h2>Tarikh Lahir</h2>
-              <input type="date" name="applicantdateofbirth" class="input" value = "${applicant.applicantdateofbirth}" >
+              <input type="date" name="applicantdateofbirth" class="input" value = "${applicant.applicantdateofbirth}" required>
               <h2>Alamat</h2>
-              <input type="text" name="applicantaddress" class="input" value = "${applicant.applicantaddress}" >
+              <input type="text" name="applicantaddress" class="input" value = "${applicant.applicantaddress}" required>
               <h2>Email</h2>
-              <input type="text" name="applicantemail" class="input" value = "${applicant.applicantemail}" >
+              <input type="text" name="applicantemail" class="input" value = "${applicant.applicantemail}" required>
               <h2>Nombor Telefon</h2>
-              <input type="text" name="applicantphone" class="input" value = "${applicant.applicantphone}" >
+              <input type="text" name="applicantphone" class="input" value = "${applicant.applicantphone}" required>
               <h2>Nama Pengguna</h2>
-              <input type="text" name="applicantusername" class="input" value = "${applicant.applicantusername}" >
+              <input type="text" name="applicantusername" class="input" value = "${applicant.applicantusername}" required>
               <h2>Kata Laluan</h2>
-              <input type="text" name="applicantpassword" class="input" value = "${applicant.applicantpassword}" >
+              <input type="text" name="applicantpassword" class="input" value = "${applicant.applicantpassword}" required>
 
               <input type="hidden" name="action" value="updateApplicant">
               

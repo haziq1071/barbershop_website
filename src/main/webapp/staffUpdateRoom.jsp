@@ -114,23 +114,23 @@
                       <div class="input-field input-box">
                       	<input type="hidden" name="roomid" value="${room.roomid}"/>
                         <label class="details" >Nama</label>
-                        <input type="text" name="roomname" value="${room.roomname}">
+                        <input type="text" name="roomname" value="${room.roomname}" required>
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Kapasiti</label>
-                        <input type="text" name="roomcapacity" value="${room.roomcapacity}">
+                        <input type="text" name="roomcapacity" value="${room.roomcapacity}" required>
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Status</label>
                         <c:set var = "status" scope = "session" value = "${room.roomstatus}"/>
                         <c:if test = "${status == 'Boleh Digunakan'}">
-                            <select name="roomstatus">
+                            <select name="roomstatus" required>
                                 <option value="${room.roomstatus}">${room.roomstatus}</option>
                                 <option value="Sedang Diselenggara">Sedang Diselenggara</option>
                             </select>
                         </c:if>
                         <c:if test = "${status == 'Sedang Diselenggara'}">
-                            <select name="roomstatus">
+                            <select name="roomstatus" required>
                                 <option value="${room.roomstatus}">${room.roomstatus}</option>
                                 <option value="Boleh Digunakan">Boleh Digunakan</option>
                             </select>
@@ -138,15 +138,15 @@
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Sistem Bunyi</label>
-                        <input type="text" name="roomsoundsystem" value="${room.roomsoundsystem}">
+                        <input type="text" name="roomsoundsystem" value="${room.roomsoundsystem}" required>
                       </div>
                       <div class="input-field input-box">
                         <label class="details" >Kuantiti Meja</label>
-                        <input type="text" name="tablequantity" value="${room.tablequantity}">
+                        <input type="text" name="tablequantity" value="${room.tablequantity}" required>
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Kuantiti Kerusi</label>
-                        <input type="text" name="chairquantity" value="${room.chairquantity}">
+                        <input type="text" name="chairquantity" value="${room.chairquantity}" required>
                       </div>
                           <input type="hidden" name="action" value="updateRoom">
                       <a href="staffViewRoom.jsp"><button class="update">KEMASKINI</button></a>

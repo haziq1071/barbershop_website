@@ -106,16 +106,16 @@
 							<div class="fields">
 								<div class="input-field input-box">
 									<label class="details">Nama</label>
-									<input type="text" name="spacename">
+									<input type="text" name="spacename" required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name="spacecapacity" onblur="validateCapacity()">
+									<input type="text" name="spacecapacity" onblur="validateCapacity()" required>
 								</div>
 
 								<div class="input-field input-box">
 									<label class="details">Status</label>
-									<select	name="spacestatus" >
+									<select	name="spacestatus" required>
 										<option disabled selected>Pilih Status</option>
 										<option value="Boleh Digunakan">Boleh Digunakan</option>
 										<option value="Sedang Diselenggara">Sedang Diselenggara</option>
@@ -123,7 +123,7 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Sistem Bunyi</label>
-									<input type="text" name="soundsystem" >
+									<input type="text" name="soundsystem" required>
 								</div>
 							</div>
 							<input type="hidden" name="action" value="createSpace">

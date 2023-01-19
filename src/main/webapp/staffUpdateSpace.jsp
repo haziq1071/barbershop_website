@@ -114,23 +114,23 @@
                       <div class="input-field input-box">
                       	<input type="hidden" name="spaceid" value="${space.spaceid}"/>
                         <label class="details" >Nama</label>
-                        <input type="text" name="spacename" value="${space.spacename}">
+                        <input type="text" name="spacename" value="${space.spacename}" required>
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Kapasiti</label>
-                        <input type="text" name="spacecapacity" value="${space.spacecapacity}">
+                        <input type="text" name="spacecapacity" value="${space.spacecapacity}" required>
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Status</label>
                         <c:set var = "status" scope = "session" value = "${space.spacestatus}"/>
                         <c:if test = "${status == 'Boleh Digunakan'}">
-                            <select name="spacestatus">
+                            <select name="spacestatus" required>
                                 <option value="${space.spacestatus}">${space.spacestatus}</option>
                                 <option value="Sedang Diselenggara">Sedang Diselenggara</option>
                             </select>
                         </c:if>
                         <c:if test = "${status == 'Sedang Diselenggara'}">
-                            <select name="spacestatus">
+                            <select name="spacestatus" required>
                                 <option value="${space.spacestatus}">${space.spacestatus}</option>
                                 <option value="Boleh Digunakan">Boleh Digunakan</option>
                             </select>
@@ -138,7 +138,7 @@
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Sistem Bunyi</label>
-                        <input type="text" name="soundsystem" value="${space.soundsystem}">
+                        <input type="text" name="soundsystem" value="${space.soundsystem}" required>
                       </div>
                           <input type="hidden" name="action" value="updateSpace">
                       <a href="staffViewSpace.jsp"><button class="update">KEMASKINI</button></a>

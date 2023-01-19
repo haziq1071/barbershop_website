@@ -116,15 +116,15 @@
 							<div class="fields">
 								<div class="input-field input-box">
 									<label class="details">Nama</label> 
-									<input type="text" name="roomname">
+									<input type="text" name="roomname" required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name="roomcapacity" >
+									<input type="text" name="roomcapacity" required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Status</label>
-									<select	name="roomstatus" >
+									<select	name="roomstatus" required>
 										<option disabled selected>Pilih Status</option>
 										<option value="Boleh Digunakan">Boleh Digunakan</option>
 										<option value="Sedang Diselenggara">Sedang Diselenggara</option>
@@ -132,16 +132,16 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Sistem Bunyi</label>
-									<input type="text" name="roomsoundsystem" >
+									<input type="text" name="roomsoundsystem" required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kuantiti Meja</label>
-									<input type="text" name="tablequantity" onblur="validateTableQuantity()">
+									<input type="text" name="tablequantity" onblur="validateTableQuantity()" required>
 								</div>
 								
 								<div class="input-field input-box">
 									<label class="details">Kuantiti Kerusi</label>
-									<input type="text" name="chairquantity" onblur="validateChairQuantity()">
+									<input type="text" name="chairquantity" onblur="validateChairQuantity()" required>
 								</div>
 							</div>
 							<input type="hidden" name="action" value="createRoom">

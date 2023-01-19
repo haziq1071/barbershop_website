@@ -115,25 +115,25 @@
                             <h1>MAKLUMAT STAFF</h1>
                             <input type="hidden" name="staffid" value="${staff.staffid}"/>
                             <h2>Nama Penuh</h2>
-                            <input type="text" class="input"  name="staffname" value = "${staff.staffname}">
+                            <input type="text" class="input"  name="staffname" value = "${staff.staffname}" required>
                             <h2>Kad Pengenalan</h2>
-                            <input type="text" class="input" name="staffic" value = "${staff.staffic}">
+                            <input type="text" class="input" name="staffic" value = "${staff.staffic}" required>
                             <h2>Tarikh Lahir</h2>
-                            <input type="date" class="input" name="staffdateofbirth" value ="${staff.staffdateofbirth}">
+                            <input type="date" class="input" name="staffdateofbirth" value ="${staff.staffdateofbirth}" required>
                             <h2>Alamat</h2>
-                            <input type="text" class="input" name="staffaddress" value = "${staff.staffaddress}">
+                            <input type="text" class="input" name="staffaddress" value = "${staff.staffaddress}" required>
                             <h2>Email</h2>
-                            <input type="text" class="input" name="staffemail" value = "${staff.staffemail}">
+                            <input type="text" class="input" name="staffemail" value = "${staff.staffemail}" required>
                             <h2>Nombor Telefon</h2>
-                            <input type="text" class="input" name="staffphone" value = "${staff.staffphone}">
+                            <input type="text" class="input" name="staffphone" value = "${staff.staffphone}" required>
                             <h2>Jawatan</h2>
-                            <input type="text" class="input" name="staffrole" value = "${staff.staffrole}">
+                            <input type="text" class="input" name="staffrole" value = "${staff.staffrole}" required>
 
                             <c:forEach var="staff" items="${oc.rows}">
                                 <h2>Nombor Staf</h2>
-                                <input type="text" class="input" name="staffusername" value = "${staff.staffusername}">
+                                <input type="text" class="input" name="staffusername" value = "${staff.staffusername}" required>
                                 <h2>Kata Laluan</h2>
-                                <input type="text" class="input" name="staffpassword" value = "${staff.staffpassword}">
+                                <input type="text" class="input" name="staffpassword" value = "${staff.staffpassword}" required>
                             </c:forEach>
                             <input type="hidden" name="action" value="updateStaff">
                             <a href="staffViewAccount.jsp"><button class="btn update">Simpan</button></a>
