@@ -24,9 +24,9 @@
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
-        url="jdbc:postgresql://localhost:5432/postgres"
+        url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
         user="postgres"
-        password="postgres"/>
+        password="ETymgiO6aGYvyXf5fkei"/>
 
 
 <sql:query dataSource="${ic}" var="ac">
