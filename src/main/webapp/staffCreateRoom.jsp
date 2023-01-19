@@ -16,8 +16,6 @@
 				alert("Salah kuantiti meja, hanya nombor yang dibenarkan!");
 			}
 		}
-	</script>
-	<script>
 		function validateChairQuantity() {
 			var chairQuantity = document.getElementsByName("chairquantity")[0].value;
 			if (!/^\d+$/.test(chairQuantity)) {
