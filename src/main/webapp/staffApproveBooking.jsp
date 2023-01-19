@@ -1,5 +1,5 @@
-<!--%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %-->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,13 +30,10 @@
 
 
 <sql:query dataSource="${ic}" var="ac">
-    SELECT *
-    FROM booking b
-    JOIN space s
-    ON b.spaceid = s.spaceid
-    JOIN applicant a
-    ON b.applicantid = a.applicantid
-    ORDER BY eventdate
+    SELECT b.bookingid, b.bookingdate, b.bookingstatus, b.eventdate, b.eventtime, b.eventdescription, a.applicantname, b.eventspace
+  	FROM booking b
+  	JOIN applicant a ON b.applicantid = a.applicantid
+  	WHERE a.applicantid = ?
 </sql:query>
 
 <div class="sidebar">
@@ -119,10 +116,10 @@
                         <tr>
                             <td>${result.bookingid}</td>
                             <td>${result.applicantname}</td>
-                            <td>${result.spacename}</td>
+                            <td>${result.eventspace}</td>
                             <td>${result.bookingdate}</td>
                             <td>${result.eventdate}</td>
-                            <td>${result.bookingdescription}</td>
+                            <td>${result.eventdescription}</td>
                             <td>${result.bookingstatus}</td>
                             <td>
                                 <form action="" method="post">
