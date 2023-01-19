@@ -18,11 +18,11 @@
 </head>
 <body>
 <sql:setDataSource
-        var="ic"
-        driver="org.postgresql.Driver"
-        url="postgresql://postgres:ETymgiO6aGYvyXf5fkei@containers-us-west-141.railway.app:7894/railway"
-        user="postgres"
-        password="ETymgiO6aGYvyXf5fkei"/>
+		var="ic"
+		driver="org.postgresql.Driver"
+		url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
+		user="postgres"
+		password="ETymgiO6aGYvyXf5fkei"/>
 <sql:query dataSource="${ic}" var="oc">
     SELECT spaceid,spacename from space
 </sql:query>
