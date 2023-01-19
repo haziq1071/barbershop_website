@@ -102,7 +102,7 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name="spacecapacity" required pattern="^[a-z]$" title="Kapasiti hanya nombor sahaja">
+									<input type="text" name="spacecapacity" required pattern="^[0-9]" title="Kapasiti hanya nombor sahaja">
 								</div>
 
 								<div class="input-field input-box">
