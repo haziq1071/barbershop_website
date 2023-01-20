@@ -104,7 +104,7 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kapasiti</label>
-									<input type="text" name="roomcapacity" pattern="[0-9]" title="Kapasiti hanya nombor sahaja" required>
+									<input type="text" name="roomcapacity" pattern="[0-9]+" title="Kapasiti hanya nombor sahaja" required>
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Status</label>
@@ -120,12 +120,12 @@
 								</div>
 								<div class="input-field input-box">
 									<label class="details">Kuantiti Meja</label>
-									<input type="text" name="tablequantity" pattern="[0-9]" title="Kuantiti meja hanya nombor sahaja" required>
+									<input type="text" name="tablequantity" pattern="[0-9]+" title="Kuantiti meja hanya nombor sahaja" required>
 								</div>
 								
 								<div class="input-field input-box">
 									<label class="details">Kuantiti Kerusi</label>
-									<input type="text" name="chairquantity" pattern="[0-9]" title="Kuantiti kerusi hanya nombor sahaja" required>
+									<input type="text" name="chairquantity" pattern="[0-9]+" title="Kuantiti kerusi hanya nombor sahaja" required>
 								</div>
 							</div>
 							<input type="hidden" name="action" value="createRoom">
