@@ -52,11 +52,11 @@
                             </div>
                             <div class="input-field input-box">
                                 <label class="details">Kad Pengenalan</label>
-                                <input type="text" name="staffic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" placeholder="xxxxxx-xx-xxxx" required>
+                                <input type="text" name="staffic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
                             </div>
                             <div class="input-field">
                                 <label class="details">Tarikh Lahir</label>
-                                <input type="date" name="staffdateofbirth"required>
+                                <input type="date" name="staffdateofbirth" max="2023-01-25" required>
                             </div>
                             <div class="input-field input-box">
                                 <label class="details">Alamat</label>
