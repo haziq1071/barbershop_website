@@ -39,7 +39,7 @@
               </div>
               <div class="input-field input-box">
                 <label class="details">Kad Pengenalan</label>
-                <input type="text" name="applicantic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" placeholder="xxxxxx-xx-xxxx" required>
+                <input type="text" name="applicantic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
               </div>
               <div class="input-field">
                 <label class="details">Tarikh Lahir</label>
@@ -56,7 +56,7 @@
 
               <div class="input-field input-box">
                 <label class="details">Nombor Telefon</label>
-                <input type="text" name="applicantphone" pattern="[0-9]{3}-[0-9]{7}" placeholder="xxx-xxxxxxx" required>
+                <input type="text" name="applicantphone" pattern="[0-9]{3}-[0-9]{7}" title="xxx-xxxxxxx" required>
               </div>
             </div>
           </div>

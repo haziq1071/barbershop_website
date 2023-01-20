@@ -117,15 +117,15 @@
                             <h2>Nama Penuh</h2>
                             <input type="text" class="input"  name="staffname" value = "${staff.staffname}" required>
                             <h2>Kad Pengenalan</h2>
-                            <input type="text" class="input" name="staffic" value = "${staff.staffic}" required>
+                            <input type="text" class="input" name="staffic" value = "${staff.staffic}" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
                             <h2>Tarikh Lahir</h2>
-                            <input type="date" class="input" name="staffdateofbirth" value ="${staff.staffdateofbirth}" required>
+                            <input type="date" class="input" name="staffdateofbirth" value ="${staff.staffdateofbirth}" max="2023-01-25" required>
                             <h2>Alamat</h2>
                             <input type="text" class="input" name="staffaddress" value = "${staff.staffaddress}" required>
                             <h2>Email</h2>
                             <input type="text" class="input" name="staffemail" value = "${staff.staffemail}" required>
                             <h2>Nombor Telefon</h2>
-                            <input type="text" class="input" name="staffphone" value = "${staff.staffphone}" required>
+                            <input type="text" class="input" name="staffphone" value = "${staff.staffphone}" pattern="[0-9]{3}-[0-9]{7}" title="xxx-xxxxxxx" required>
                             <h2>Jawatan</h2>
                             <input type="text" class="input" name="staffrole" value = "${staff.staffrole}" required>
 

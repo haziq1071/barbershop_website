@@ -102,15 +102,15 @@
               <h2>Nama Penuh</h2>
               <input type="text" name="applicantname" class="input" value = "${applicant.applicantname}" required>
               <h2>Kad Pengenalan</h2>
-              <input type="text" name="applicantic" class="input" value = "${applicant.applicantic}" required>
+              <input type="text" name="applicantic" class="input" value = "${applicant.applicantic}" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
               <h2>Tarikh Lahir</h2>
-              <input type="date" name="applicantdateofbirth" class="input" value = "${applicant.applicantdateofbirth}" required>
+              <input type="date" name="applicantdateofbirth" class="input" value = "${applicant.applicantdateofbirth}" max="2023-01-25" required>
               <h2>Alamat</h2>
               <input type="text" name="applicantaddress" class="input" value = "${applicant.applicantaddress}" required>
               <h2>Email</h2>
               <input type="text" name="applicantemail" class="input" value = "${applicant.applicantemail}" required>
               <h2>Nombor Telefon</h2>
-              <input type="text" name="applicantphone" class="input" value = "${applicant.applicantphone}" required>
+              <input type="text" name="applicantphone" class="input" value = "${applicant.applicantphone}" pattern="[0-9]{3}-[0-9]{7}" title="xxx-xxxxxxx" required>
               <h2>Nama Pengguna</h2>
               <input type="text" name="applicantusername" class="input" value = "${applicant.applicantusername}" required>
               <h2>Kata Laluan</h2>
