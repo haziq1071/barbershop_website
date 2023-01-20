@@ -1,5 +1,3 @@
-<!--%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %-->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -11,16 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<sql:setDataSource
-        var="ic"
-        driver="org.postgresql.Driver"
-        url="postgresql://postgres:ETymgiO6aGYvyXf5fkei@containers-us-west-141.railway.app:7894/railway"
-        user="postgres"
-        password="ETymgiO6aGYvyXf5fkei"/>
-
-<sql:query dataSource="${ic}" var="oc">
-    SELECT staffid,staffname from staff
-</sql:query>
 <div class="sidebar">
     <div class="logo-details">
         <img src="logoWhite.png">
