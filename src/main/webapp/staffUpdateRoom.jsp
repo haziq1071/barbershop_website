@@ -118,7 +118,7 @@
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Kapasiti</label>
-                        <input type="text" name="roomcapacity" value="${room.roomcapacity}" required>
+                        <input type="text" name="roomcapacity" value="${room.roomcapacity}" pattern="[0-9]+" title="Kapasiti hanya nombor sahaja" required>
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Status</label>
@@ -142,11 +142,11 @@
                       </div>
                       <div class="input-field input-box">
                         <label class="details" >Kuantiti Meja</label>
-                        <input type="text" name="tablequantity" value="${room.tablequantity}" required>
+                        <input type="text" name="tablequantity" value="${room.tablequantity}" pattern="[0-9]+" title="Kuantiti meja hanya nombor sahaja" required>
                       </div>
                       <div class="input-field input-box">
                         <label class="details">Kuantiti Kerusi</label>
-                        <input type="text" name="chairquantity" value="${room.chairquantity}" required>
+                        <input type="text" name="chairquantity" value="${room.chairquantity}" pattern="[0-9]+" title="Kuantiti kerusi hanya nombor sahaja" required>
                       </div>
                           <input type="hidden" name="action" value="updateRoom">
                       <a href="staffViewRoom.jsp"><button class="update">KEMASKINI</button></a>
