@@ -38,13 +38,10 @@
         </li>
 
         <li>
-          <a class="main-menu" href="#">
+          <a class="main-menu" href="staffApproveBooking.jsp">
             <i class='bx bx-bookmark'></i>
             <span class="links_name">TEMPAHAN</span>
           </a>
-          <ul class="sub-menu">
-            <li><a href="staffApproveBooking.jsp">SAHKAN TEMPAHAN</a></li>
-          </ul>
         </li>
 
         <li>

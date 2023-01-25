@@ -28,12 +28,14 @@
         user="postgres"
         password="UyduWFTEPVisrjXTehXg"/>
 
-
 <sql:query dataSource="${ic}" var="ac">
-    SELECT b.bookingid, b.bookingdate, b.bookingstatus, b.eventdate, b.eventtime, b.eventdescription, a.applicantname, b.eventspace
-  	FROM booking b
-  	JOIN applicant a ON b.applicantid = a.applicantid
-  	WHERE a.applicantid = ?
+    SELECT *
+    FROM booking b
+    JOIN space s
+    ON b.spaceid = s.spaceid
+    JOIN applicant a
+    ON b.applicantid = a.applicantid
+    ORDER BY eventdate
 </sql:query>
 
 <div class="sidebar">
@@ -56,13 +58,10 @@
         </li>
 
         <li>
-            <a class="main-menu" href="#">
+            <a class="main-menu" href="staffApproveBooking.jsp">
                 <i class='bx bx-bookmark'></i>
                 <span class="links_name">TEMPAHAN</span>
             </a>
-            <ul class="sub-menu">
-                <li><a href="staffApproveBooking.jsp">PENGESAHAN TEMPAHAN</a></li>
-            </ul>
         </li>
 
         <li>
@@ -100,8 +99,8 @@
                     <tr>
                         <th>NO.TEMPAHAN</th>
                         <th>NAMA PEMOHON</th>
-                        <th>NAMA RUANG</th>
                         <th>TARIKH TEMPAHAN</th>
+                        <th>RUANG TEMPAHAN</th>
                         <th>TARIKH AKTIVITI</th>
                         <th>PERINCIAN AKTIVITI</th>
                         <th>STATUS TEMPAHAN</th>
@@ -112,8 +111,8 @@
                         <tr>
                             <td>${result.bookingid}</td>
                             <td>${result.applicantname}</td>
-                            <td>${result.eventspace}</td>
                             <td>${result.bookingdate}</td>
+                            <td>${result.spacename}</td>
                             <td>${result.eventdate}</td>
                             <td>${result.eventdescription}</td>
                             <td>${result.bookingstatus}</td>
