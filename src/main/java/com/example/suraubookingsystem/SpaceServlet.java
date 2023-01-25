@@ -11,10 +11,10 @@ import java.sql.*;
 
 @WebServlet(name = "SpaceServlet", value = "/SpaceServlet")
 public class SpaceServlet extends HttpServlet {
-//  private static final long serialVersionUID = 1L;
+ //   private static final long serialVersionUID = 1L;
     private SpaceDao sp;
 
-//  HttpSession session = null;
+//    HttpSession session = null;
 
     public void init() {
         sp = new SpaceDao();
@@ -23,7 +23,7 @@ public class SpaceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    	HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
         session.removeAttribute("staffid");
         session.invalidate();
         response.sendRedirect("index.jsp");
@@ -51,11 +51,9 @@ public class SpaceServlet extends HttpServlet {
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
-
-
     }
 
-    /*######################################################(CREATE SPACE)#############################################################*/
+    /*######################################################(CREATE ROOM)#############################################################*/
 
     private void createSpace(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
 
@@ -63,6 +61,8 @@ public class SpaceServlet extends HttpServlet {
         int spacecapacity = Integer.parseInt(request.getParameter("spacecapacity"));
         String spacestatus = request.getParameter("spacestatus");
         String soundsystem = request.getParameter("soundsystem");
+        int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
+        int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));
 
         Space space = new Space();
 
@@ -70,6 +70,8 @@ public class SpaceServlet extends HttpServlet {
         space.setSpacecapacity(spacecapacity);
         space.setSpacestatus(spacestatus);
         space.setSoundsystem(soundsystem);
+        space.setTablequantity(tablequantity);
+        space.setChairquantity(chairquantity);
 
         sp.createSpace(space);
         response.sendRedirect("staffViewSpace.jsp");
@@ -85,6 +87,8 @@ public class SpaceServlet extends HttpServlet {
         int spacecapacity = Integer.parseInt(request.getParameter("spacecapacity"));
         String spacestatus = request.getParameter("spacestatus");
         String soundsystem = request.getParameter("soundsystem");
+        int tablequantity = Integer.parseInt(request.getParameter("tablequantity"));
+        int chairquantity = Integer.parseInt(request.getParameter("chairquantity"));
 
         Space space = new Space();
 
@@ -93,6 +97,8 @@ public class SpaceServlet extends HttpServlet {
         space.setSpacecapacity(spacecapacity);
         space.setSpacestatus(spacestatus);
         space.setSoundsystem(soundsystem);
+        space.setTablequantity(tablequantity);
+        space.setChairquantity(chairquantity);
 
         sp.updateSpace(space);
 

@@ -1,5 +1,4 @@
 package com.example.suraubookingsystem;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -29,15 +28,18 @@ public class SpaceDao {
     return connection;
   }
 
-    public void createSpace(Space space) throws SQLException  {
+      public void createSpace(Space space) throws SQLException  {
 
         try (Connection connection = getConnection();
-             PreparedStatement prepareStatement = connection.prepareStatement("insert into space(spacename,spacecapacity,spacestatus,soundsystem) values(?,?,?,?)");)
+             PreparedStatement prepareStatement = connection.prepareStatement("insert into space(spacename,spacecapacity,spacestatus,soundsystem,tablequantity,chairquantity) values(?,?,?,?,?,?)");)
         {
+
             prepareStatement.setString(1, space.getSpacename());
             prepareStatement.setInt(2, space.getSpacecapacity());
             prepareStatement.setString(3, space.getSpacestatus());
             prepareStatement.setString(4, space.getSoundsystem());
+            prepareStatement.setInt(5, space.getTablequantity());
+            prepareStatement.setInt(6, space.getChairquantity());
 
             out.println(prepareStatement);
             prepareStatement.executeUpdate();
@@ -50,13 +52,15 @@ public class SpaceDao {
     public boolean updateSpace(Space space) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=?where spaceid=?");)
+             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=?,tablequantity=?,chairquantity=?where spaceid=?");)
         {
             ps.setString(1, space.getSpacename());
             ps.setInt(2, space.getSpacecapacity());
             ps.setString(3, space.getSpacestatus());
             ps.setString(4, space.getSoundsystem());
-            ps.setInt(5, space.getSpaceid());
+            ps.setInt(5, space.getTablequantity());
+            ps.setInt(6, space.getChairquantity());
+            ps.setInt(7, space.getSpaceid());
 
             rowUpdated = ps.executeUpdate() > 0;
 
