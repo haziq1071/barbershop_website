@@ -31,7 +31,7 @@
         driver="org.postgresql.Driver"
         url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
         user="postgres"
-        password="ETymgiO6aGYvyXf5fkei"/>
+        password="UyduWFTEPVisrjXTehXg"/>
 
 <sql:query dataSource="${ic}" var="aid">
     <c:set var="clsid" value="<%=applicantid%>"/>
