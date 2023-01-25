@@ -43,7 +43,7 @@
               </div>
               <div class="input-field">
                 <label class="details">Tarikh Lahir</label>
-                <input type="date" name="applicantdateofbirth" max="2023-01-25" required>
+                <input type="date" name="applicantdateofbirth" max="2023-01-26" required>
               </div>
               <div class="input-field input-box">
                 <label class="details">Alamat</label>
