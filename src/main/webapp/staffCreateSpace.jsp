@@ -39,14 +39,10 @@
 				</a>
 			</li>
 			<li>
-				<a class="main-menu" href="#"> 
+				<a class="main-menu" href="staffViewSpace.jsp">
 					<i class='bx bx-box'></i>
 					<span class="links_name min">RUANG</span>
 				</a>
-				<ul class="sub-menu">
-		            <li><a href="staffViewSpace.jsp">DEWAN</a></li>
-		            <li><a href="staffViewRoom.jsp">BILIK</a></li>
-	            </ul>
 			</li>
 
 			<li>
@@ -90,11 +86,11 @@
 
 		<div class="home-content">
 			<div class="container">
-				<header class="main_title">PENAMBAHAN DEWAN</header>
+				<header class="main_title">PENAMBAHAN RUANG</header>
 				<form method="post">
 					<div class="form first">
 						<div class="details room">
-							<span class="title">INFORMASI DEWAN</span>
+							<span class="title">INFORMASI RUANG</span>
 							<div class="fields">
 								<div class="input-field input-box">
 									<label class="details">Nama</label>
@@ -117,6 +113,14 @@
 									<label class="details">Sistem Bunyi</label>
 									<input type="text" name="soundsystem" required>
 								</div>
+								<div class="input-field input-box">
+									<label class="details">Kuantiti Meja</label>
+									<input type="text" name="tablequantity" pattern="[0-9]+" title="Kuantiti meja hanya nombor sahaja" required>
+								</div>
+								<div class="input-field input-box">
+									<label class="details">Kuantiti Kerusi</label>
+									<input type="text" name="chairquantity" pattern="[0-9]+" title="Kuantiti kerusi hanya nombor sahaja" required>
+								</div>
 							</div>
 							<input type="hidden" name="action" value="createSpace">
 							<div class="button staff">
@@ -130,4 +134,5 @@
 	</section>
 </body>
 </html>
+
 

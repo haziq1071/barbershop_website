@@ -54,16 +54,12 @@
           </a>
         </li>
 
-        <li>
-          <a class="main-menu" href="#">
-            <i class='bx bx-box' ></i>
-            <span class="links_name" >RUANG</span>
-          </a>
-          <ul class="sub-menu">
-              <li><a href="staffViewSpace.jsp">DEWAN</a></li>
-              <li><a href="staffViewRoom.jsp">BILIK</a></li>
-          </ul>
-        </li>
+          <li>
+              <a class="main-menu" href="staffViewSpace.jsp">
+                  <i class='bx bx-box'></i>
+                  <span class="links_name min">RUANG</span>
+              </a>
+          </li>
 
         <li>
           <a class="main-menu" href="#">
@@ -103,16 +99,16 @@
             </div>
         </nav>
         <c:forEach var="space" items="${oc.rows}">
-      	<div class="home-content">
+        <div class="home-content">
           <div class="container">
-          	  <form action="SpaceServlet" method="post">
+              <form action="SpaceServlet" method="post">
               <header class="main_title">KEMASKINI DEWAN</header>
                 <div class="form first">
                   <div class="details room">
                     <span class="title">INFORMASI DEWAN</span>
                     <div class="fields">
                       <div class="input-field input-box">
-                      	<input type="hidden" name="spaceid" value="${space.spaceid}"/>
+                        <input type="hidden" name="spaceid" value="${space.spaceid}"/>
                         <label class="details" >Nama</label>
                         <input type="text" name="spacename" value="${space.spacename}" required>
                       </div>
@@ -140,6 +136,14 @@
                         <label class="details">Sistem Bunyi</label>
                         <input type="text" name="soundsystem" value="${space.soundsystem}" required>
                       </div>
+                        <div class="input-field input-box">
+                            <label class="details" >Kuantiti Meja</label>
+                            <input type="text" name="tablequantity" value="${space.tablequantity}" pattern="[0-9]+" title="Kuantiti meja hanya nombor sahaja" required>
+                        </div>
+                        <div class="input-field input-box">
+                            <label class="details">Kuantiti Kerusi</label>
+                            <input type="text" name="chairquantity" value="${space.chairquantity}" pattern="[0-9]+" title="Kuantiti kerusi hanya nombor sahaja" required>
+                        </div>
                           <input type="hidden" name="action" value="updateSpace">
                       <a href="staffViewSpace.jsp"><button class="update">KEMASKINI</button></a>
                       <a href="staffViewSpace.jsp"><button class="delete">BATAL</button></a>                   
