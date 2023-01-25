@@ -15,16 +15,10 @@
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     response.setHeader("Pragma", "no-cache");
     response.setHeader("Expires", "0");
+
     if(session.getAttribute("applicantid")==null)
         response.sendRedirect("index.jsp");
 
-    int applicantid;
-    if(request.getParameter("applicantid")==null){
-        applicantid=  Integer.parseInt(session.getAttribute("applicantid").toString());
-    }else{
-        applicantid = Integer.parseInt(request.getParameter("applicantid"));
-        session.setAttribute("applicantid",applicantid);
-    }
 %>
 <sql:setDataSource
         var="ic"
@@ -33,23 +27,26 @@
         user="postgres"
         password="UyduWFTEPVisrjXTehXg"/>
 
-<sql:query dataSource="${ic}" var="aid">
-    <c:set var="clsid" value="<%=applicantid%>"/>
-    SELECT applicantid
-    FROM applicant
-    WHERE applicantid=?
-    <sql:param value="${clsid}" />
-</sql:query>
-
 <sql:query dataSource="${ic}" var="oc">
   SELECT *
   FROM space
   WHERE spacestatus LIKE '%Boleh Digunakan%'
 </sql:query>
-<sql:query dataSource="${ic}" var="rc">
-  SELECT *
-  FROM room
-  WHERE roomstatus LIKE '%Boleh Digunakan%'
+<sql:query dataSource="${ic}" var="aid">
+  <%
+    int japplicantid = 0;
+    
+    if(request.getParameter("applicantid")==null){
+      japplicantid = (Integer) session.getAttribute("applicantid");
+    }
+    else{
+      japplicantid = Integer.parseInt(request.getParameter("applicantid"));
+      session.setAttribute("applicantid", japplicantid);
+    }
+  %>
+  <c:set var="japplicantid" value="<%=japplicantid%>"/>
+  SELECT applicantid FROM applicant WHERE applicantid=?
+  <sql:param value="${japplicantid}" />
 </sql:query>
 
 
@@ -130,13 +127,10 @@
             </div>
             <div class="input-box">
                 <span class="details">Ruang Tempahan</span>
-                    <select class="form-control" name="eventspace" required>
+                    <select class="form-control" id="spaceid" name="spaceid" required>
                      	<option disabled selected>Pilih Ruang</option>
                         <c:forEach items="${oc.rows}" var="space">
-                        <option value="<c:out value="${space.spacename}"/>"><c:out value="${space.spacename}" /></option>
-                        </c:forEach>
-                        <c:forEach items="${rc.rows}" var="room">
-                        <option value="<c:out value="${room.roomname}"/>"><c:out value="${room.roomname}" /></option>
+                        <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
                         </c:forEach>
                     </select>
             </div>           

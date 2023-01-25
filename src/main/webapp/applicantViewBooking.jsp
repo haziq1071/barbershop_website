@@ -17,16 +17,9 @@
   response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
   response.setHeader("Pragma", "no-cache");
   response.setHeader("Expires", "0");
+
   if(session.getAttribute("applicantid")==null)
     response.sendRedirect("index.jsp");
-
-  int applicantid;
-  if(request.getParameter("applicantid")==null){
-    applicantid=  Integer.parseInt(session.getAttribute("applicantid").toString());
-  }else{
-    applicantid = Integer.parseInt(request.getParameter("applicantid"));
-    session.setAttribute("applicantid",applicantid);
-  }
 
 %>
   <sql:setDataSource
@@ -37,12 +30,23 @@
         password="UyduWFTEPVisrjXTehXg"/>
 
 <sql:query dataSource="${ic}" var="oc">
-  <c:set var="clsid" value="<%=applicantid%>"/>
-  SELECT b.bookingid, b.bookingdate, b.bookingstatus, b.eventdate, b.eventtime, b.eventdescription, a.applicantname, b.eventspace
+  <%
+    int japplicantid = 0;
+    if(request.getParameter("applicantid")==null){
+      japplicantid = (Integer) session.getAttribute("applicantid");
+    }
+    else{
+      japplicantid = Integer.parseInt(request.getParameter("applicantid"));
+      session.setAttribute("applicantid", japplicantid);
+    }
+  %>
+  <c:set var="japplicantid" value="<%=japplicantid%>"/>
+  SELECT bookingid, spacename, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, eventtime, eventdescription, bookingstatus
   FROM booking b
-  JOIN applicant a ON b.applicantid = a.applicantid
-  WHERE a.applicantid = ?
-  <sql:param value="${clsid}" />
+  JOIN space s
+  ON b.spaceid = s.spaceid
+  WHERE applicantid=?
+  <sql:param value="${japplicantid}" />
 </sql:query>
 
 <div class="sidebar">
@@ -122,7 +126,7 @@
               <td>${result.eventdate}</td>
               <td>${result.eventtime}</td>
               <td>${result.eventdescription}</td>
-              <td>${result.eventspace}</td>
+              <td>${result.spacename}</td>
               <td>${result.bookingstatus}</td>
               <td>
                 <input type="hidden" name="action" value="applicantcancelbooking">
