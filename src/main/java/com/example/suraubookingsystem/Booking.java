@@ -9,7 +9,8 @@ public class Booking implements Serializable{
     public Date eventdate;
     public String eventtime;
     public String eventdescription;
-    public String eventspace;/*
+    //public int approveid;
+    /*
     public int spaceid;
     public int roomid;
     public int staffid;
@@ -18,15 +19,15 @@ public class Booking implements Serializable{
     public Booking() {
 
     }
-
-    public Booking(int bookingid, Date bookingdate, String bookingstatus, Date eventdate, String eventtime, String eventdescription,  String eventspace) {
+//public Booking(int bookingid, Date bookingdate, String bookingstatus, Date eventdate, String eventtime, String eventdescription, int approveid) {
+    public Booking(int bookingid, Date bookingdate, String bookingstatus, Date eventdate, String eventtime, String eventdescription) {
         this.bookingid = bookingid;
         this.bookingdate = bookingdate;
         this.bookingstatus = bookingstatus;
         this.eventdate = eventdate;
         this.eventtime = eventtime;
         this.eventdescription = eventdescription;
-        this.eventspace = eventspace;
+        //this.approveid = approveid;
         
     }
 
@@ -66,12 +67,14 @@ public class Booking implements Serializable{
     public void setEventdescription(String eventdescription) {
         this.eventdescription = eventdescription;
     }
-    public String getEventspace() {
-        return eventspace;
+    /*
+    public int getApproveid() {
+        return approveid;
     }
-    public void setEventspace(String eventspace) {
-        this.eventspace = eventspace;
-    }/*
+    public void setApproveid(int approveid) {
+        this.approveid = approveid;
+    }*/
+    /*
     public int getSpaceid() {
         return spaceid;
     }

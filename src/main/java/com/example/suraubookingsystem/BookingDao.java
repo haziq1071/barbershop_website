@@ -30,17 +30,18 @@ public class BookingDao {
 
 
     //public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
-    public void applicantcreatebooking(Booking booking, Applicant applicant) throws SQLException{
+    public void applicantcreatebooking(Booking booking, Space space, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
             // PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
-             PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(bookingstatus,eventdate,eventtime,eventdescription,eventspace,applicantid,bookingdate) VALUES (?,?,?,?,?,?,CURRENT_DATE)");)
+             PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(bookingstatus,eventdate,eventtime,eventdescription,spaceid,applicantid,bookingdate) VALUES (?,?,?,?,?,?,CURRENT_DATE)");)
         {
             preparedStatement.setString(1, booking.getBookingstatus());
             preparedStatement.setDate(2, booking.getEventdate());
             preparedStatement.setString(3, booking.getEventtime());
             preparedStatement.setString(4, booking.getEventdescription());
-            preparedStatement.setString(5, booking.getEventspace());
-            preparedStatement.setInt(6, applicant.getApplicantid());/*
+            preparedStatement.setInt(5, space.getSpaceid());
+            preparedStatement.setInt(6, applicant.getApplicantid());
+            preparedStatement.executeUpdate();/*
             prepareStatement.setInt(7, room.getRoomid());
             prepareStatement.setInt(8, applicant.getApplicantid());*/
           }
@@ -58,7 +59,7 @@ public class BookingDao {
         }
         return rowDeleted;
     }
-    public void staffapprovedbooking(int bookingid) throws SQLException{
+    public void staffapprovedbooking(int bookingid) throws SQLException, FileNotFoundException{
         String bookingstatus="Diluluskan";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=?WHERE BOOKINGID=?");) {
@@ -68,7 +69,7 @@ public class BookingDao {
 
         }
     }
-    public void staffrejectbooking(int bookingid) throws SQLException{
+    public void staffrejectbooking(int bookingid) throws SQLException, FileNotFoundException{
         String bookingstatus="Ditolak";
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement("UPDATE BOOKING SET BOOKINGSTATUS=? WHERE BOOKINGID=?");) {

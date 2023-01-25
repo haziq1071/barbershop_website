@@ -56,6 +56,50 @@ public class BookingServlet extends HttpServlet {
         }
     }
 
+      /*######################################################( Applicant Create Booking )#############################################################*/
+    private void applicantcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+
+        //HttpSession session = request.getSession();
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        try{       
+            int applicantid = Integer.parseInt(request.getParameter("applicantid"));
+            int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+            String bookingstatus = request.getParameter("bookingstatus");
+            Date eventdate = Date.valueOf(request.getParameter("eventdate"));
+            String eventtime = request.getParameter("eventtime");  
+            String eventdescription = request.getParameter("eventdescription");
+            
+            Applicant applicant = new Applicant();
+            Space space = new Space();
+            Booking booking = new Booking();
+
+            applicant.setApplicantid(applicantid);
+            space.setSpaceid(spaceid);
+            booking.setBookingstatus(bookingstatus);
+            booking.setEventdate(eventdate);
+            booking.setEventtime(eventtime);
+            booking.setEventdescription(eventdescription);
+
+            //bd.applicantcreatebooking(booking, space, room, applicant);
+            bd.applicantcreatebooking(booking, space, applicant);
+            //response.sendRedirect("applicantViewBooking.jsp");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('Tempahan telah berjaya dibuat!');");
+        out.println("location='applicantViewBooking.jsp';");
+        out.println("</script>");
+    }
+
+    private void applicantcancelbooking(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException {
+        int bookingid = Integer.parseInt(request.getParameter("bookingid"));
+        bd.applicantcancelbooking(bookingid);
+        response.sendRedirect("applicantViewBooking.jsp");
+    }
 
     private void staffapprovedbooking(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
@@ -87,55 +131,5 @@ public class BookingServlet extends HttpServlet {
         out.println("</script>");
     }
 
-    /*######################################################( Applicant Create Booking )#############################################################*/
-    private void applicantcreatebooking(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-
-        //HttpSession session = request.getSession();
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-
-        try{
-        /*
-            int spaceid = Integer.parseInt(request.getParameter("spaceid"));
-            int roomid = Integer.parseInt(request.getParameter("roomid"));;*/
-            int applicantid = Integer.parseInt(request.getParameter("applicantid"));
-            String bookingstatus = request.getParameter("bookingstatus");
-            Date eventdate = Date.valueOf(request.getParameter("eventdate"));
-            String eventtime = request.getParameter("eventtime");  
-            String eventdescription = request.getParameter("eventdescription");
-            String eventspace = request.getParameter("eventspace");
-            
-            /*
-            Space space = new Space();
-            Room room = new Room();*/
-            Applicant applicant = new Applicant();
-            Booking booking = new Booking();
-            /*
-            space.setSpaceid(spaceid);
-            room.setRoomid(roomid);*/
-            applicant.setApplicantid(applicantid);
-            booking.setBookingstatus(bookingstatus);
-            booking.setEventdate(eventdate);
-            booking.setEventtime(eventtime);
-            booking.setEventdescription(eventdescription);
-            booking.setEventspace(eventspace);
-
-            //bd.applicantcreatebooking(booking, space, room, applicant);
-            bd.applicantcreatebooking(booking, applicant);
-            //response.sendRedirect("applicantViewBooking.jsp");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        out.println("<script type=\"text/javascript\">");
-        out.println("alert('Tempahan telah berjaya dibuat!');");
-        out.println("location='applicantViewBooking.jsp';");
-        out.println("</script>");
-    }
-
-    private void applicantcancelbooking(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
-        int bookingid = Integer.parseInt(request.getParameter("bookingid"));
-        bd.applicantcancelbooking(bookingid);
-        response.sendRedirect("applicantViewBooking.jsp");
-    }
+  
 }
