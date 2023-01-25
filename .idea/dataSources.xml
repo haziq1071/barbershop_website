@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="railway@containers-us-west-109.railway.app" uuid="d5be35b4-edb2-4b63-a640-e873d8797af9">
+    <data-source source="LOCAL" name="railway@containers-us-west-141.railway.app" uuid="bf6afe78-12ee-40eb-a299-a28ce361cbe4">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://containers-us-west-109.railway.app:5909/railway</jdbc-url>
+      <jdbc-url>jdbc:postgresql://containers-us-west-141.railway.app:7894/railway</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
