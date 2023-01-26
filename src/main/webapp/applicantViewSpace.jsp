@@ -32,11 +32,6 @@
     WHERE spacestatus LIKE '%Boleh Digunakan%'
 </sql:query>
 
-<sql:query dataSource="${ic}" var="ro">
-    SELECT * from room
-    WHERE roomstatus LIKE '%Boleh Digunakan%'
-</sql:query>
-
 <div class="sidebar">
     <div class="logo-details">
         <img src="logoWhite.png">
@@ -105,33 +100,15 @@
                                     <span>${space.spacestatus}</span>
                                     <span>Sistem Bunyi:</span>
                                     <span>${space.soundsystem}</span>
+                                    <span>Kuantiti Meja:</span>
+                                    <span>${space.tablequantity}</span>
+                                    <span>Kuantity Kerusi:</span>
+                                    <span>${space.chairquantity}</span>
                                 </div>
                             </div>
                     </div>
                 </section>
                 </c:forEach>
-                <c:forEach var="room" items="${ro.rows}">
-                <input type="hidden" name="roomid" value="${room.roomid}">
-                <section class="wrapper top">
-                    <div class="containerRoom">
-                            <div class="text">
-                                <h2>${room.roomname}</h2>
-                                <div class="content">
-                                    <span>Kapasiti:</span>
-                                    <span>${room.roomcapacity}</span>
-                                    <span>Status:</span>
-                                    <span>${room.roomstatus}</span>
-                                    <span>Sistem Bunyi:</span>
-                                    <span>${room.roomsoundsystem}</span>
-                                    <span>Kuantiti Meja:</span>
-                                    <span>${room.tablequantity}</span>
-                                    <span>Kuantity Kerusi:</span>
-                                    <span>${room.chairquantity}</span>
-                                </div>
-                            </div>
-                    </div>
-                </section>   
-            </c:forEach>             
         </div>
     </div>
 </section>
