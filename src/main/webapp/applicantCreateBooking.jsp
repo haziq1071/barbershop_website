@@ -105,7 +105,7 @@
           <div class="user-details">
             <div class="input-box">
               <span class="details">Tarikh Aktiviti</span>
-              <input type="date" name="eventdate" min="2023-01-26" required>
+              <input type="date" name="eventdate" min="2023-01-27" required>
             </div>
              <div class="input-box">
                 <span class="details">Masa Aktiviti</span>
