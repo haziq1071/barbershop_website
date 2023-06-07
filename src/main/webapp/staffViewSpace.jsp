@@ -23,12 +23,12 @@
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
-        url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
+        url="postgresql://postgres:K2AVv8EYHZvPj7HrbfGt@containers-us-west-10.railway.app:7326/railway"
         user="postgres"
-        password="UyduWFTEPVisrjXTehXg"/>
+        password="K2AVv8EYHZvPj7HrbfGt"/>
 
 <sql:query dataSource="${ic}" var="oc">
-  SELECT * from space
+  SELECT * from services
 </sql:query>
 
   <div class="sidebar">
@@ -87,29 +87,24 @@
     <div class="container">
     <a href="staffCreateSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
       <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
-          <c:forEach var="space" items="${oc.rows}">
+          <c:forEach var="services" items="${oc.rows}">
           <form action="" method="post">
-          <input type="hidden" name="spaceid" value="${space.spaceid}">
+          <input type="hidden" name="serviceid" value="${services.serviceid}">
           <section class="wrapper top">
                 <div class="containerRoom">
                  <div class="text-hall">
-                    <h2>${space.spacename}</h2>
+                    <h2>${services.servicename}</h2>
                       <div class="content">
-                        <span>Kapasiti:</span>
-                        <span>${space.spacecapacity}</span>
-                        <span>Status:</span>
-                        <span>${space.spacestatus}</span>
-                        <span>Sistem Bunyi:</span>
-                        <span>${space.soundsystem}</span>
-                        <span>Kuantiti Meja:</span>
-                        <span>${space.tablequantity}</span>
-                        <span>Kuantity Kerusi:</span>
-                        <span>${space.chairquantity}</span>
+                        <span>Description:</span>
+                        <span>${services.servicedescription}</span>
+                        <span>Price:</span>
+                        <span>${services.serviceprice}</span>
+
                       </div>
-                      <input type="hidden" name="action" value="deleteSpace">
+                      <input type="hidden" name="action" value="deleteServices">
                       <button class="update" onclick="form.action='staffUpdateSpace.jsp'">KEMASKINI</button>
-                      <button class="delete" formaction="SpaceServlet"
-                      onclick="return confirm('Pasti padam <c:out value="${space.spacename}"/> ?');">PADAM</button>    
+                      <button class="delete" formaction="ServicesServlet"
+                      onclick="return confirm('Pasti padam <c:out value="${services.servicename}"/> ?');">PADAM</button>
                  </div>
                 </div>
           </section>

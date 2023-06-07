@@ -12,11 +12,11 @@
 <sql:setDataSource
 		var="ic"
 		driver="org.postgresql.Driver"
-		url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
+		url="postgresql://postgres:K2AVv8EYHZvPj7HrbfGt@containers-us-west-10.railway.app:7326/railway"
 		user="postgres"
-		password="UyduWFTEPVisrjXTehXg"/>
+		password="K2AVv8EYHZvPj7HrbfGt"/>
 <sql:query dataSource="${ic}" var="oc">
-    SELECT spaceid,spacename from space
+    SELECT serviceid,servicename from services
 </sql:query>
 <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -83,45 +83,31 @@
 
 		<div class="home-content">
 			<div class="container">
-				<header class="main_title">PENAMBAHAN RUANG</header>
+				<header class="main_title">Create Services</header>
 				<form method="post">
 					<div class="form first">
 						<div class="details room">
-							<span class="title">INFORMASI RUANG</span>
+							<span class="title">INFO</span>
 							<div class="fields">
 								<div class="input-field input-box">
-									<label class="details">Nama</label>
-									<input type="text" name="spacename" required>
-								</div>
-								<div class="input-field input-box">
-									<label class="details">Kapasiti</label>
-									<input type="text" name="spacecapacity" pattern="[0-9]+" title="Kapasiti hanya nombor sahaja" required>
+									<label class="details">Service Name</label>
+									<input type="text" name="servicename" required>
 								</div>
 
 								<div class="input-field input-box">
-									<label class="details">Status</label>
-									<select	name="spacestatus" required>
-										<option disabled selected>Pilih Status</option>
-										<option value="Boleh Digunakan">Boleh Digunakan</option>
-										<option value="Sedang Diselenggara">Sedang Diselenggara</option>
-									</select>
+									<label class="details">Description</label>
+									<input type="text"	name="servicedescription" required>
 								</div>
+
 								<div class="input-field input-box">
-									<label class="details">Sistem Bunyi</label>
-									<input type="text" name="soundsystem" required>
+									<label class="details">Price</label>
+									<input type="text" name="serviceprice" pattern="[0-9]+" title="Price only number allowed" required>
 								</div>
-								<div class="input-field input-box">
-									<label class="details">Kuantiti Meja</label>
-									<input type="text" name="tablequantity" pattern="[0-9]+" title="Kuantiti meja hanya nombor sahaja" required>
-								</div>
-								<div class="input-field input-box">
-									<label class="details">Kuantiti Kerusi</label>
-									<input type="text" name="chairquantity" pattern="[0-9]+" title="Kuantiti kerusi hanya nombor sahaja" required>
-								</div>
+
 							</div>
-							<input type="hidden" name="action" value="createSpace">
+							<input type="hidden" name="action" value="createServices">
 							<div class="button staff">
-								<input type="submit" value="TAMBAH" formaction="SpaceServlet">
+								<input type="submit" value="TAMBAH" formaction="ServicesServlet">
 							</div>
 						</div>
 					</div>

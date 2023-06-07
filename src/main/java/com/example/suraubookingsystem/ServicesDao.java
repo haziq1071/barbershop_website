@@ -5,11 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import static java.lang.System.out;
 
-public class SpaceDao {
+public class ServicesDao {
 
-    String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railway";
+    String dbURL = "postgresql://postgres:K2AVv8EYHZvPj7HrbfGt@containers-us-west-10.railway.app:7326/railway";
     String user = "postgres";
-    String pass = "UyduWFTEPVisrjXTehXg";
+    String pass = "K2AVv8EYHZvPj7HrbfGt";
 
     protected Connection getConnection()
     {
@@ -28,18 +28,17 @@ public class SpaceDao {
     return connection;
   }
 
-      public void createSpace(Space space) throws SQLException  {
+      public void createServices(Services services) throws SQLException  {
 
         try (Connection connection = getConnection();
-             PreparedStatement prepareStatement = connection.prepareStatement("insert into space(spacename,spacecapacity,spacestatus,soundsystem,tablequantity,chairquantity) values(?,?,?,?,?,?)");)
+             PreparedStatement prepareStatement = connection.prepareStatement("insert into Services(servicename,servicedescription,serviceprice) values(?,?,?)");)
         {
 
-            prepareStatement.setString(1, space.getSpacename());
-            prepareStatement.setInt(2, space.getSpacecapacity());
-            prepareStatement.setString(3, space.getSpacestatus());
-            prepareStatement.setString(4, space.getSoundsystem());
-            prepareStatement.setInt(5, space.getTablequantity());
-            prepareStatement.setInt(6, space.getChairquantity());
+            prepareStatement.setString(1, services.getServicename());
+            prepareStatement.setString(2, services.getServicedescription());
+            prepareStatement.setDouble(3, services.getServiceprice());
+
+
 
             out.println(prepareStatement);
             prepareStatement.executeUpdate();
@@ -49,18 +48,15 @@ public class SpaceDao {
         }
     }
 
-    public boolean updateSpace(Space space) throws SQLException {
+    public boolean updateServices(Services services) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("UPDATE space SET spacename=?,spacecapacity=?,spacestatus=?,soundsystem=?,tablequantity=?,chairquantity=?where spaceid=?");)
+             PreparedStatement ps = connection.prepareStatement("UPDATE services SET servicename=?,servicedescription=?,serviceprice=?where serviceid=?");)
         {
-            ps.setString(1, space.getSpacename());
-            ps.setInt(2, space.getSpacecapacity());
-            ps.setString(3, space.getSpacestatus());
-            ps.setString(4, space.getSoundsystem());
-            ps.setInt(5, space.getTablequantity());
-            ps.setInt(6, space.getChairquantity());
-            ps.setInt(7, space.getSpaceid());
+
+            ps.setString(1, services.getServicename());
+            ps.setString(2, services.getServicedescription());
+            ps.setDouble(3, services.getServiceprice());
 
             rowUpdated = ps.executeUpdate() > 0;
 
@@ -68,11 +64,11 @@ public class SpaceDao {
         return rowUpdated;
     }
 
-    public boolean deleteSpace(int spaceid) throws SQLException {
+    public boolean deleteServices(int serviceid) throws SQLException {
         boolean rowDeleted;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("delete from space where spaceid=?");) {
-            ps.setInt(1, spaceid);
+             PreparedStatement ps = connection.prepareStatement("delete from services where serviceid=?");) {
+            ps.setInt(1, serviceid);
             rowDeleted = ps.executeUpdate() > 0;
         }
         return rowDeleted;

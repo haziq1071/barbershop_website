@@ -20,27 +20,27 @@
         response.sendRedirect("index.jsp");
   %>
 	<sql:setDataSource
-        var="ic"
-        driver="org.postgresql.Driver"
-        url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
-        user="postgres"
-        password="UyduWFTEPVisrjXTehXg"/>
+            var="ic"
+            driver="org.postgresql.Driver"
+            url="postgresql://postgres:K2AVv8EYHZvPj7HrbfGt@containers-us-west-10.railway.app:7326/railway"
+            user="postgres"
+            password="K2AVv8EYHZvPj7HrbfGt"/>
 
 <sql:query dataSource="${ic}" var="oc">
     <%
-        int jspaceid = 0;
+        int jserviceid = 0;
 
-        if(request.getParameter("spaceid")==null){
-            jspaceid = (Integer) session.getAttribute("spaceid");
+        if(request.getParameter("serviceid")==null){
+            jserviceid = (Integer) session.getAttribute("serviceid");
         }
         else{
-            jspaceid = Integer.parseInt(request.getParameter("spaceid"));
-            session.setAttribute("spaceid", jspaceid);
+            jserviceid = Integer.parseInt(request.getParameter("serviceid"));
+            session.setAttribute("serviceid", jserviceid);
         }
     %>
-    <c:set var="jspaceid" value="<%=jspaceid%>"/>
-    SELECT * FROM space WHERE spaceid=?
-    <sql:param value="${jspaceid}" />
+    <c:set var="jserviceid" value="<%=jserviceid%>"/>
+    SELECT * FROM services WHERE serviceid=?
+    <sql:param value="${jserviceid}" />
 </sql:query>
   <div class="sidebar">
     <div class="logo-details">
@@ -98,50 +98,30 @@
         <c:forEach var="space" items="${oc.rows}">
         <div class="home-content">
           <div class="container">
-              <form action="SpaceServlet" method="post">
+              <form action="ServicesServlet" method="post">
               <header class="main_title">KEMASKINI DEWAN</header>
                 <div class="form first">
                   <div class="details room">
                     <span class="title">INFORMASI DEWAN</span>
                     <div class="fields">
                       <div class="input-field input-box">
-                        <input type="hidden" name="spaceid" value="${space.spaceid}"/>
-                        <label class="details" >Nama</label>
-                        <input type="text" name="spacename" value="${space.spacename}" required>
+                        <input type="hidden" name="serviceid" value="${services.serviceid}"/>
+                        <label class="details" >Service Name</label>
+                        <input type="text" name="servicename" value="${services.servicename}" required>
                       </div>
-                      <div class="input-field input-box">
-                        <label class="details">Kapasiti</label>
-                        <input type="text" name="spacecapacity" value="${space.spacecapacity}" pattern="[0-9]+" title="Kapasiti hanya nombor sahaja" required>
-                      </div>
-                      <div class="input-field input-box">
-                        <label class="details">Status</label>
-                        <c:set var = "status" scope = "session" value = "${space.spacestatus}"/>
-                        <c:if test = "${status == 'Boleh Digunakan'}">
-                            <select name="spacestatus" required>
-                                <option value="${space.spacestatus}">${space.spacestatus}</option>
-                                <option value="Sedang Diselenggara">Sedang Diselenggara</option>
-                            </select>
-                        </c:if>
-                        <c:if test = "${status == 'Sedang Diselenggara'}">
-                            <select name="spacestatus" required>
-                                <option value="${space.spacestatus}">${space.spacestatus}</option>
-                                <option value="Boleh Digunakan">Boleh Digunakan</option>
-                            </select>
-                        </c:if> 
-                      </div>
-                      <div class="input-field input-box">
-                        <label class="details">Sistem Bunyi</label>
-                        <input type="text" name="soundsystem" value="${space.soundsystem}" required>
-                      </div>
+
                         <div class="input-field input-box">
-                            <label class="details" >Kuantiti Meja</label>
-                            <input type="text" name="tablequantity" value="${space.tablequantity}" pattern="[0-9]+" title="Kuantiti meja hanya nombor sahaja" required>
+                            <label class="details">Description</label>
+                            <input type="text" name="servicedescription" value="${services.servicedescription}" required>
                         </div>
-                        <div class="input-field input-box">
-                            <label class="details">Kuantiti Kerusi</label>
-                            <input type="text" name="chairquantity" value="${space.chairquantity}" pattern="[0-9]+" title="Kuantiti kerusi hanya nombor sahaja" required>
-                        </div>
-                          <input type="hidden" name="action" value="updateSpace">
+
+                      <div class="input-field input-box">
+                        <label class="details">Price</label>
+                        <input type="text" name="serviceprice" value="${services.serviceprice}" pattern="[0-9]+" title="Price only number allowed" required>
+                      </div>
+
+
+                          <input type="hidden" name="action" value="updateServices">
                       <a href="staffViewSpace.jsp"><button class="update">KEMASKINI</button></a>
                       <a href="staffViewSpace.jsp"><button class="delete">BATAL</button></a>                   
                     </div> 
