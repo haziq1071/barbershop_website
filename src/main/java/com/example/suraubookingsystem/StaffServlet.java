@@ -25,7 +25,7 @@ public class StaffServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.removeAttribute("staffid");
         session.invalidate();
-        response.sendRedirect("dummy.jsp");
+        response.sendRedirect("index.jsp");
 	}
 
     @Override
@@ -83,7 +83,7 @@ public class StaffServlet extends HttpServlet {
 		staff.setStaffpassword(staffpassword);
 		
 		st.signupStaff(staff);
-        response.sendRedirect("dummy.jsp");
+        response.sendRedirect("index.jsp");
 		
 	}
 
@@ -191,7 +191,7 @@ public class StaffServlet extends HttpServlet {
     private void deleteStaff(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         int staffid = Integer.parseInt(request.getParameter("staffid"));
         st.deleteStaff(staffid);
-        response.sendRedirect("dummy.jsp");
+        response.sendRedirect("index.jsp");
     }
 
 }

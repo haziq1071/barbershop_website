@@ -23,7 +23,7 @@ public class ApplicantServlet extends HttpServlet{
         HttpSession session = request.getSession();
         session.removeAttribute("applicantid");
         session.invalidate();
-        response.sendRedirect("dummy.jsp");
+        response.sendRedirect("index.jsp");
     }
 
     @Override
@@ -77,7 +77,7 @@ public class ApplicantServlet extends HttpServlet{
         applicant.setApplicantpassword(applicantpassword);
 
         app.signupApplicant(applicant);
-        response.sendRedirect("dummy.jsp");
+        response.sendRedirect("index.jsp");
     }
     /*######################################################( LOGIN )#############################################################*/
 
@@ -180,7 +180,7 @@ public class ApplicantServlet extends HttpServlet{
     private void deleteApplicant(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         int applicantid = Integer.parseInt(request.getParameter("applicantid"));
         app.deleteApplicant(applicantid);
-        response.sendRedirect("dummy.jsp");
+        response.sendRedirect("index.jsp");
     }
 
 }
