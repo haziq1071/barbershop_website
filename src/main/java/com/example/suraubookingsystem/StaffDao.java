@@ -9,7 +9,7 @@ import static java.lang.System.out;
 public class StaffDao {
 
 
-    String dbURL = "jdbc:postgresql://postgres:VmRY0mmQ31AWU2EQureM@containers-us-west-10.railway.app:7321/railway";
+    String dbURL = "postgresql://postgres:VmRY0mmQ31AWU2EQureM@containers-us-west-10.railway.app:7321/railway";
     String user = "postgres";
     String pass = "VmRY0mmQ31AWU2EQureM";
   
