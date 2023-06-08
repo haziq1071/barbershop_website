@@ -67,12 +67,12 @@
 
                         <div class="fields">
                             <div class="input-field input-box">
-                                <label class="details">Nombor Staf</label>
+                                <label class="details">Staff Number</label>
                                 <input type="text" name="staffusername" required>
                             </div>
 
                             <div class="input-field input-box">
-                                <label class="details">Kata Laluan</label>
+                                <label class="details">Password</label>
                                 <input type="password" name="staffpassword"required>
                             </div>
                         </div>
