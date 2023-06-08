@@ -67,7 +67,7 @@
 
                         <div class="fields">
                             <div class="input-field input-box">
-                                <label class="details">Staff Number</label>
+                                <label class="details">Staff Username</label>
                                 <input type="text" name="staffusername" required>
                             </div>
 

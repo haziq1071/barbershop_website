@@ -36,8 +36,8 @@
             <img src="barber_logo.png">
           </div>
           <form id="staff" class="input-group" action="StaffServlet" method="POST">
-            <input type="text" class="input-field" name="staffusername" placeholder="Nombor Staf" required>
-            <input type="password" class="input-field" name="staffpassword" placeholder="Kata Laluan" required>
+            <input type="text" class="input-field" name="staffusername" placeholder="USER NAME" required>
+            <input type="password" class="input-field" name="staffpassword" placeholder="PASSWORD" required>
             <div class="input-box button">
 
               <input type="hidden" name="action" value="loginStaff">
@@ -51,13 +51,13 @@
             </div>
           </form>
           <form id="applicant" class="input-group" action="ApplicantServlet" method="POST">
-            <input type="text" class="input-field" name="applicantusername"  placeholder="Nama Pengguna" required>
-            <input type="password" class="input-field" name="applicantpassword" placeholder="Kata Laluan" required>
+            <input type="text" class="input-field" name="applicantusername"  placeholder="USER NAME" required>
+            <input type="password" class="input-field" name="applicantpassword" placeholder="PASSWORD" required>
             <div class="input-box button">
 
                <input type="hidden" name="action" value="loginApplicant">
 
-              <input type="submit" name="submit" value="Log Masuk">
+              <input type="submit" name="submit" value="Log In">
             </div>
             <div class="login-signup">
               <span class="text">Dont Have Account?

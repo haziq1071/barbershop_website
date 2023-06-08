@@ -26,7 +26,7 @@
         <li>
           <a class="main-menu" href="homepageStaff.jsp">
             <i class='bx bx-home'></i>
-            <span class="links_name">LAMAN UTAMA</span>
+            <span class="links_name">HOME PAGE</span>
           </a>
         </li>
 

@@ -33,7 +33,7 @@
 
   <div class="sidebar">
     <div class="logo-details">
-      <img src="logoWhite.png">
+      <img src="barber_logo.png">
     </div>
       <ul class="nav-links">
         <li>
