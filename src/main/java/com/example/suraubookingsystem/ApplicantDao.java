@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import static java.lang.System.out;
 public class ApplicantDao {
-  String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railway";
-  String user = "postgres";
-  String pass = "UyduWFTEPVisrjXTehXg";
+    String dbURL = "jdbc:postgresql://containers-us-west-10.railway.app:7321/postgres";
+    String user = "postgres";
+    String pass = "VmRY0mmQ31AWU2EQureM";
 
     protected Connection getConnection()
     {
