@@ -19,7 +19,7 @@
   response.setHeader("Expires", "0");
 
   if(session.getAttribute("applicantid")==null)
-    response.sendRedirect("index.jsp");
+    response.sendRedirect("dummy.jsp");
 
 %>
   <sql:setDataSource
@@ -82,7 +82,7 @@
       </a>
     </li>
     <li class="log_out">
-      <a class="main-menu" href="index.jsp">
+      <a class="main-menu" href="dummy.jsp">
         <i class='bx bx-log-out'></i>
         <span class="links_name">LOG KELUAR</span>
       </a>

@@ -26,7 +26,7 @@ public class ServicesServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.removeAttribute("staffid");
         session.invalidate();
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("dummy.jsp");
     }
 
     @Override
