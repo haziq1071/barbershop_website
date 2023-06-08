@@ -38,14 +38,14 @@ public class StaffDao {
     PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?)");)
     {
 
-        preparedStatement.setString(2, staff.getStaffname());
-        preparedStatement.setString(3, staff.getStaffic());
-        preparedStatement.setString(4, staff.getStaffaddress());
-        preparedStatement.setString(5, staff.getStaffphone());
-        preparedStatement.setString(6, staff.getStaffemail());
-        preparedStatement.setDate(7, staff.getStaffdateofbirth());
-        preparedStatement.setString(8, staff.getStaffusername());
-        preparedStatement.setString(9, staff.getStaffpassword());
+        preparedStatement.setString(1, staff.getStaffname());
+        preparedStatement.setString(2, staff.getStaffic());
+        preparedStatement.setString(3, staff.getStaffaddress());
+        preparedStatement.setString(4, staff.getStaffphone());
+        preparedStatement.setString(5, staff.getStaffemail());
+        preparedStatement.setDate(6, staff.getStaffdateofbirth());
+        preparedStatement.setString(7, staff.getStaffusername());
+        preparedStatement.setString(8, staff.getStaffpassword());
 
         out.println(preparedStatement);
         preparedStatement.executeUpdate();
@@ -59,15 +59,15 @@ public class StaffDao {
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement("UPDATE staff set staffname=?,staffic=?,staffaddress=?,staffphone=?,staffemail=?,staffdateofbirth=?,staffusername=?,staffpassword=? where staffid=?");)
         {
-          statement.setString(2, staff.getStaffname());
-          statement.setString(3, staff.getStaffic());
-          statement.setString(4, staff.getStaffaddress());
-          statement.setString(5, staff.getStaffphone());
-          statement.setString(6, staff.getStaffemail());
-          statement.setDate(7, staff.getStaffdateofbirth());
-          statement.setString(8, staff.getStaffusername());
-          statement.setString(9, staff.getStaffpassword());
-          statement.setInt(10, staff.getStaffid());
+          statement.setString(1, staff.getStaffname());
+          statement.setString(2, staff.getStaffic());
+          statement.setString(3, staff.getStaffaddress());
+          statement.setString(4, staff.getStaffphone());
+          statement.setString(5, staff.getStaffemail());
+          statement.setDate(6, staff.getStaffdateofbirth());
+          statement.setString(7, staff.getStaffusername());
+          statement.setString(8, staff.getStaffpassword());
+          statement.setInt(9, staff.getStaffid());
 
           rowUpdated = statement.executeUpdate() > 0;
         }
