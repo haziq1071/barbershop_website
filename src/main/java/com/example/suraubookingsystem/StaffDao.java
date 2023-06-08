@@ -34,9 +34,9 @@ public class StaffDao {
     
     // try-with-resource statement will auto close the connection.
     try (Connection connection = getConnection();
-    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffrole,staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?,?)");)
+    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?,?)");)
     {
-        preparedStatement.setString(1, staff.getStaffrole());
+
         preparedStatement.setString(2, staff.getStaffname());
         preparedStatement.setString(3, staff.getStaffic());
         preparedStatement.setString(4, staff.getStaffaddress());
@@ -56,9 +56,8 @@ public class StaffDao {
     public boolean updateStaff(Staff staff) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement statement = connection.prepareStatement("UPDATE staff set staffrole=?,staffname=?,staffic=?,staffaddress=?,staffphone=?,staffemail=?,staffdateofbirth=?,staffusername=?,staffpassword=? where staffid=?");)
+             PreparedStatement statement = connection.prepareStatement("UPDATE staff set staffname=?,staffic=?,staffaddress=?,staffphone=?,staffemail=?,staffdateofbirth=?,staffusername=?,staffpassword=? where staffid=?");)
         {
-          statement.setString(1, staff.getStaffrole());
           statement.setString(2, staff.getStaffname());
           statement.setString(3, staff.getStaffic());
           statement.setString(4, staff.getStaffaddress());

@@ -17,7 +17,7 @@
 <section class="home-section">
     <nav>
         <div class="sidebar-button">
-            <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
+            <span class="dashboard">DE'MACHO BARBERSHOP</span>
         </div>
         <div class="media_icons">
             <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
@@ -26,28 +26,28 @@
     </nav>
     <div class="home-content">
         <div class="contain_staff">
-            <header class="main_title">PENDAFTARAN AKAUN</header>
+            <header class="main_title">ACCOUNT REGISTRATION</header>
 
             <form class="fstaff" method="post" >
                 <div class="form first">
                     <div class="details personal">
-                        <span class="title">Maklumat Peribadi</span>
+                        <span class="title">PERSONAL INFORMATION</span>
 
                         <div class="fields">
                             <div class="input-field input-box">
-                                <label class="details">Nama Penuh</label>
+                                <label class="details">FULL NAME</label>
                                 <input type="text" name="staffname"required>
                             </div>
                             <div class="input-field input-box">
-                                <label class="details">Kad Pengenalan</label>
+                                <label class="details">IC NUMBER</label>
                                 <input type="text" name="staffic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
                             </div>
                             <div class="input-field">
-                                <label class="details">Tarikh Lahir</label>
+                                <label class="details">BIRTHDATE</label>
                                 <input type="date" name="staffdateofbirth" max="2023-01-26" required>
                             </div>
                             <div class="input-field input-box">
-                                <label class="details">Alamat</label>
+                                <label class="details">ADDRESS</label>
                                 <input type="text" name="staffaddress"required>
                             </div>
                             <div class="input-field input-box">
@@ -56,22 +56,14 @@
                             </div>
 
                             <div class="input-field input-box">
-                                <label class="details">Nombor Telefon</label>
+                                <label class="details">PHONE NUMBER</label>
                                 <input type="text" name="staffphone" pattern="[0-9]{3}-[0-9]{7}" title="xxx-xxxxxxx" required>
                             </div>
-                            <div class="input-field">
-                                <label class="details">Jawatan</label>
-                                <select name="staffrole" required>
-                                    <option disabled selected>Pilih Jawatan</option>
-                                    <option value="Ketua Admin">Ketua Admin</option>
-                                    <option value="Admin 1">Admin 1</option>
-                                    <option value="Admin 2">Admin 2</option>
-                                </select>
-                            </div>
+
                         </div>
                     </div>
                     <div class="details ID">
-                        <span class="title">Maklumat Akaun</span>
+                        <span class="title">ACCOUNT INFORMATION</span>
 
                         <div class="fields">
                             <div class="input-field input-box">

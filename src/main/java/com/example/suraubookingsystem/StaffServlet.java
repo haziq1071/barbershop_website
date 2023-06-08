@@ -60,7 +60,7 @@ public class StaffServlet extends HttpServlet {
         /*######################################################( SINGNUP )#############################################################*/
 
         private void signupStaff(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-		String staffrole = request.getParameter("staffrole"); 
+
 		String staffname = request.getParameter("staffname");
 		String staffic = request.getParameter("staffic");
 		String staffaddress = request.getParameter("staffaddress"); 
@@ -72,7 +72,7 @@ public class StaffServlet extends HttpServlet {
 
         Staff staff = new Staff();
 
-        staff.setStaffrole(staffrole);
+
         staff.setStaffname(staffname);
         staff.setStaffic(staffic);
 		staff.setStaffaddress(staffaddress);
@@ -106,7 +106,7 @@ public class StaffServlet extends HttpServlet {
             String pass = "UyduWFTEPVisrjXTehXg";
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
-            String sql  ="SELECT staffid,staffname,staffusername,staffpassword,staffrole from staff";
+            String sql  ="SELECT staffid,staffname,staffusername,staffpassword from staff";
 
             if (conn != null){
                 DatabaseMetaData dm = conn.getMetaData();
@@ -158,7 +158,6 @@ public class StaffServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         int staffid = Integer.parseInt(request.getParameter("staffid"));
-        String staffrole = request.getParameter("staffrole");
         String staffname = request.getParameter("staffname");
         String staffic = request.getParameter("staffic");
         String staffaddress = request.getParameter("staffaddress");
@@ -171,7 +170,6 @@ public class StaffServlet extends HttpServlet {
         Staff staff = new Staff();
 
         staff.setStaffid(staffid);
-        staff.setStaffrole(staffrole);
         staff.setStaffname(staffname);
         staff.setStaffic(staffic);
         staff.setStaffaddress(staffaddress);

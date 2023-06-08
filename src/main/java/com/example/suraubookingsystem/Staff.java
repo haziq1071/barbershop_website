@@ -3,8 +3,7 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class Staff implements Serializable{
-	public int staffid; 
-	public String staffrole; 
+	public int staffid;
 	public String staffname;
 	public String staffic;
 	public String staffaddress; 
@@ -23,14 +22,6 @@ public class Staff implements Serializable{
 
 	public void setStaffid(int staffid) {
 		this.staffid = staffid;
-	}
-
-	public String getStaffrole() {
-		return staffrole;
-	}
-
-	public void setStaffrole(String staffrole) {
-		this.staffrole = staffrole;
 	}
 
 	public String getStaffname() {
