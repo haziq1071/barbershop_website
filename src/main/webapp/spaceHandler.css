@@ -245,9 +245,12 @@ nav .sidebar-button i{
 }
 
 .home-section{
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(banner.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(barbershop.jpg);
+  background-color: #222;
   position: absolute;
-}
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
 .home-section .home-content{
   padding-top: 85px;
@@ -402,7 +405,7 @@ nav .sidebar-button i{
 }
 
 .text {
-  background: #3f9cc1;
+  background: #CF8A2E;
   padding: 20px;
   width: 750px;
   height: 400px;
