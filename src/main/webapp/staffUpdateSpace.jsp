@@ -95,7 +95,7 @@
               <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
             </div>
         </nav>
-        <c:forEach var="space" items="${oc.rows}">
+        <c:forEach var="services" items="${oc.rows}">
         <div class="home-content">
           <div class="container">
               <form action="ServicesServlet" method="post">
