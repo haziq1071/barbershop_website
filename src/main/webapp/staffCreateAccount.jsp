@@ -11,7 +11,7 @@
 <body>
 <div class="sidebar">
     <div class="logo-details">
-        <img src="logoWhite.png">
+        <img src="barber_logo.png">
     </div>
 </div>
 <section class="home-section">
@@ -20,8 +20,8 @@
             <span class="dashboard">DE'MACHO BARBERSHOP</span>
         </div>
         <div class="media_icons">
-            <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/surau_ar_rahman_pchg/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/demachobarber/"><i class="fab fa-facebook-f"></i></a>
+
         </div>
     </nav>
     <div class="home-content">

@@ -12,17 +12,16 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-      <img src="logoWhite.png">
+      <img src="barber_logo.png">
     </div>
   </div>
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
-        <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
+        <span class="dashboard">DE'MACHO BARBERSHOP</span>
       </div>
       <div class="media_icons">
-          <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/surau_ar_rahman_pchg/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/demachobarber/"><i class="fab fa-facebook-f"></i></a>
         </div>
     </nav>
     <div class="home-content">
@@ -30,11 +29,11 @@
           <div class="form-box">
           <div class="button-box">
             <div id="btn"></div>
-            <button type="button" class="toggle-btn" onclick="staffLogin()">STAF</button>
-            <button type="button" class="toggle-btn" onclick="applicantLogin()">PEMOHON</button>
+            <button type="button" class="toggle-btn" onclick="staffLogin()">STAFF</button>
+            <button type="button" class="toggle-btn" onclick="applicantLogin()">USER</button>
           </div>
           <div class="logo">
-            <img src="logoBlack.png">
+            <img src="barber_logo.png">
           </div>
           <form id="staff" class="input-group" action="StaffServlet" method="POST">
             <input type="text" class="input-field" name="staffusername" placeholder="Nombor Staf" required>
@@ -46,8 +45,8 @@
               <input type="submit" name="submit" value="Log Masuk">
             </div>
             <div class="login-signup">
-                <span class="text">Tiada Akaun?
-                  <a href="staffCreateAccount.jsp" class="text signup-link">Daftar Segera!</a>
+                <span class="text">Dont Have Account?
+                  <a href="staffCreateAccount.jsp" class="text signup-link">Register Now!</a>
                 </span>
             </div>
           </form>
@@ -61,8 +60,8 @@
               <input type="submit" name="submit" value="Log Masuk">
             </div>
             <div class="login-signup">
-              <span class="text">Tiada Akaun?
-                <a href="applicantCreateAccount.jsp" class="text signup-link">Daftar Segera!</a>
+              <span class="text">Dont Have Account?
+                <a href="applicantCreateAccount.jsp" class="text signup-link">Register Now!</a>
               </span>
             </div>
           </form>

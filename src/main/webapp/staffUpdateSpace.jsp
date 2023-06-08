@@ -44,7 +44,7 @@
 </sql:query>
   <div class="sidebar">
     <div class="logo-details">
-      <img src="logoWhite.png">
+      <img src="barber_logo.png">
     </div>
       <ul class="nav-links">
         <li>
@@ -121,8 +121,8 @@
 
 
                           <input type="hidden" name="action" value="updateServices">
-                      <a href="staffViewSpace.jsp"><button class="update">KEMASKINI</button></a>
-                      <a href="staffViewSpace.jsp"><button class="delete">BATAL</button></a>                   
+                      <a href="staffViewSpace.jsp"><button class="update">UPDATE</button></a>
+                      <a href="staffViewSpace.jsp"><button class="delete">DELETE</button></a>
                     </div> 
                   </div>
               </div>

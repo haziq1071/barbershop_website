@@ -130,7 +130,7 @@
                             </c:forEach>
 
                             <input type="hidden" name="action" value="deleteStaff">
-                            <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">KEMASKINI</button>
+                            <button class="btn update" onclick="form.action='staffUpdateAccount.jsp'">UPDATE</button>
 
                         </div>
                     </form>

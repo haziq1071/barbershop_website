@@ -76,17 +76,17 @@
 <section class="home-section">
     <nav>
       <div class="sidebar-button">
-        <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
+        <span class="dashboard">DE'MACHO BARBERSHOP</span>
       </div>
         <div class="media_icons">
-          <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/demachobarber/"><i class="fab fa-facebook-f"></i></a>
+
         </div>
     </nav>
   <div class="home-content">
     <div class="container">
-    <a href="staffCreateSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
-      <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
+    <a href="staffCreateSpace.jsp"><button class="add">ADD SERVICE</button></a>
+      <header class="main_title" style="font-size: xx-large">SERVICES</header>
           <c:forEach var="services" items="${oc.rows}">
           <form action="" method="post">
           <input type="hidden" name="serviceid" value="${services.serviceid}">
@@ -102,9 +102,9 @@
 
                       </div>
                       <input type="hidden" name="action" value="deleteServices">
-                      <button class="update" onclick="form.action='staffUpdateSpace.jsp'">KEMASKINI</button>
+                      <button class="update" onclick="form.action='staffUpdateSpace.jsp'">UPDATE</button>
                       <button class="delete" formaction="ServicesServlet"
-                      onclick="return confirm('Pasti padam <c:out value="${services.servicename}"/> ?');">PADAM</button>
+                      onclick="return confirm('Pasti padam <c:out value="${services.servicename}"/> ?');">DELETE</button>
                  </div>
                 </div>
           </section>
