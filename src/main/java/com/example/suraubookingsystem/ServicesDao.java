@@ -7,9 +7,9 @@ import static java.lang.System.out;
 
 public class ServicesDao {
 
-    String dbURL = "postgresql://postgres:K2AVv8EYHZvPj7HrbfGt@containers-us-west-10.railway.app:7326/railway";
+    String dbURL = "postgresql://postgres:VmRY0mmQ31AWU2EQureM@containers-us-west-10.railway.app:7321/railway";
     String user = "postgres";
-    String pass = "K2AVv8EYHZvPj7HrbfGt";
+    String pass = "VmRY0mmQ31AWU2EQureM";
 
     protected Connection getConnection()
     {

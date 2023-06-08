@@ -13,9 +13,9 @@
 <sql:setDataSource
 		var="ic"
 		driver="org.postgresql.Driver"
-		url="postgresql://postgres:K2AVv8EYHZvPj7HrbfGt@containers-us-west-10.railway.app:7326/railway"
+		url="postgresql://postgres:VmRY0mmQ31AWU2EQureM@containers-us-west-10.railway.app:7321/railway"
 		user="postgres"
-		password="K2AVv8EYHZvPj7HrbfGt"/>
+		password="VmRY0mmQ31AWU2EQureM"/>
 <sql:query dataSource="${ic}" var="oc">
     SELECT serviceid,servicename from services
 </sql:query>
