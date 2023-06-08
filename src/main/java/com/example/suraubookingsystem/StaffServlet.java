@@ -82,7 +82,7 @@ public class StaffServlet extends HttpServlet {
 		staff.setStaffusername(staffusername);
 		staff.setStaffpassword(staffpassword);
 
-        public void init(){st.signupStaff(staff);}
+            st.signupStaff(staff);
         response.sendRedirect("index.jsp");
 		
 	}
