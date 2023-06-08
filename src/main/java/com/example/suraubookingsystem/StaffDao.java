@@ -34,26 +34,27 @@ public class StaffDao {
   public void signupStaff (Staff staff) throws SQLException {
     
     // try-with-resource statement will auto close the connection.
-    try (Connection connection = getConnection();
-    PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?)");)
-    {
 
-        preparedStatement.setString(1, staff.getStaffname());
-        preparedStatement.setString(2, staff.getStaffic());
-        preparedStatement.setString(3, staff.getStaffaddress());
-        preparedStatement.setString(4, staff.getStaffphone());
-        preparedStatement.setString(5, staff.getStaffemail());
-        preparedStatement.setDate(6, staff.getStaffdateofbirth());
-        preparedStatement.setString(7, staff.getStaffusername());
-        preparedStatement.setString(8, staff.getStaffpassword());
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("insert into staff(staffname,staffic,staffaddress,staffphone,staffemail,staffdateofbirth,staffusername,staffpassword) values(?,?,?,?,?,?,?,?)");) {
 
-        out.println(preparedStatement);
-        preparedStatement.executeUpdate();
-      } catch (SQLException e) {
-          printSQLException(e);
-      }
+            preparedStatement.setString(1, staff.getStaffname());
+            preparedStatement.setString(2, staff.getStaffic());
+            preparedStatement.setString(3, staff.getStaffaddress());
+            preparedStatement.setString(4, staff.getStaffphone());
+            preparedStatement.setString(5, staff.getStaffemail());
+            preparedStatement.setDate(6, staff.getStaffdateofbirth());
+            preparedStatement.setString(7, staff.getStaffusername());
+            preparedStatement.setString(8, staff.getStaffpassword());
+
+            out.println(preparedStatement);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
     }
-  
+
+
     public boolean updateStaff(Staff staff) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
