@@ -51,7 +51,7 @@ public class ServicesDao {
     public boolean updateServices(Services services) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
-             PreparedStatement ps = connection.prepareStatement("UPDATE services SET servicename=?,servicedescription=?,serviceprice=?where serviceid=?");)
+             PreparedStatement ps = connection.prepareStatement("UPDATE services SET servicename=?,servicedescription=?,serviceprice=? where serviceid=?");)
         {
 
             ps.setString(1, services.getServicename());
