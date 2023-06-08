@@ -85,7 +85,7 @@
     </nav>
   <div class="home-content">
     <div class="container">
-    <a href="staffCreateSpace.jsp"><button class="add">TAMBAH RUANG</button></a>
+    <a href="index.jsp"><button class="add">TAMBAH RUANG</button></a>
       <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
           <c:forEach var="services" items="${oc.rows}">
           <form action="" method="post">
