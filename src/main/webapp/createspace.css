@@ -12,7 +12,7 @@
   width: 240px;
   top : 0;
   left: 0;
-  background: #0A2558;
+  background: #1D1B31;
   transition: all 0.5s ease;
   z-index: 100;
 }
@@ -108,18 +108,18 @@
 }
 
 .linkbutton{
-  background-color: #fff;
+  background-color: #9b59b6;
   border-color: #707070;
   border-width: 3px;
   border-radius: 6px;
-  color: black;
+  color: #fff;
   padding: 10px;
   width: 100%;
   text-decoration: none;
 }
 
 .linkbutton:hover{
-  background-color: #707070;
+  background-color: #71b7e6;
   border-color: #fff;
   color: #fff;
 }
@@ -245,7 +245,8 @@ nav .sidebar-button i{
 }
 
 .home-section{
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(banner.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(barbershop.jpg);
+    background-color: #222;
   position: absolute;
 }
 
