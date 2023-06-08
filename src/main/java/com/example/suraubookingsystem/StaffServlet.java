@@ -81,8 +81,8 @@ public class StaffServlet extends HttpServlet {
 		staff.setStaffdateofbirth(staffdateofbirth);
 		staff.setStaffusername(staffusername);
 		staff.setStaffpassword(staffpassword);
-		
-		st.signupStaff(staff);
+
+        public void init(){st.signupStaff(staff);}
         response.sendRedirect("index.jsp");
 		
 	}
