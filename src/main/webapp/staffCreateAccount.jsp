@@ -80,7 +80,7 @@
                         <input type="hidden" name="action" value="signupStaff">
 
                         <div class="button staff">
-                            <input type="submit" value="DAFTAR" formaction="StaffServlet">
+                            <input type="submit" value="CREATE" formaction="StaffServlet">
                         </div>
                     </div>
                 </div>
