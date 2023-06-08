@@ -72,18 +72,18 @@ public class BookingServlet extends HttpServlet {
             String eventdescription = request.getParameter("eventdescription");
             
             Applicant applicant = new Applicant();
-            Space space = new Space();
+            Services services = new Services();
             Booking booking = new Booking();
 
             applicant.setApplicantid(applicantid);
-            space.setSpaceid(spaceid);
+            services.setServiceid(spaceid);
             booking.setBookingstatus(bookingstatus);
             booking.setEventdate(eventdate);
             booking.setEventtime(eventtime);
             booking.setEventdescription(eventdescription);
 
             //bd.applicantcreatebooking(booking, space, room, applicant);
-            bd.applicantcreatebooking(booking, space, applicant);
+            bd.applicantcreatebooking(booking, services, applicant);
             //response.sendRedirect("applicantViewBooking.jsp");
         } catch (Exception e) {
             e.printStackTrace();

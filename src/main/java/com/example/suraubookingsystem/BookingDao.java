@@ -30,7 +30,7 @@ public class BookingDao {
 
 
     //public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
-    public void applicantcreatebooking(Booking booking, Space space, Applicant applicant) throws SQLException{
+    public void applicantcreatebooking(Booking booking, Services services, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
             // PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
              PreparedStatement preparedStatement = connection.prepareStatement("insert into booking(bookingstatus,eventdate,eventtime,eventdescription,spaceid,applicantid,bookingdate) VALUES (?,?,?,?,?,?,CURRENT_DATE)");)
@@ -39,7 +39,7 @@ public class BookingDao {
             preparedStatement.setDate(2, booking.getEventdate());
             preparedStatement.setString(3, booking.getEventtime());
             preparedStatement.setString(4, booking.getEventdescription());
-            preparedStatement.setInt(5, space.getSpaceid());
+            preparedStatement.setInt(5, services.getServiceid());
             preparedStatement.setInt(6, applicant.getApplicantid());
             preparedStatement.executeUpdate();/*
             prepareStatement.setInt(7, room.getRoomid());
