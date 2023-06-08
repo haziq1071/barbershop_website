@@ -8,9 +8,9 @@ import static java.lang.System.out;
 
 public class StaffDao {
 
-    String dbURL = "jdbc:postgresql://containers-us-west-141.railway.app:7894/railway";
+    String dbURL = "jpostgresql://postgres:VmRY0mmQ31AWU2EQureM@containers-us-west-10.railway.app:7321/railway";
     String user = "postgres";
-    String pass = "UyduWFTEPVisrjXTehXg";
+    String pass = "VmRY0mmQ31AWU2EQureM";
   
   protected Connection getConnection()
   {
