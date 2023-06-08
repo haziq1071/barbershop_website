@@ -248,6 +248,7 @@ nav .sidebar-button i{
   background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(barbershop.jpg);
     background-color: #222;
   position: absolute;
+    width: fit-content;
 }
 
 .home-section .home-content{
