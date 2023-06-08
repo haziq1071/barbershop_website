@@ -57,6 +57,7 @@ public class ServicesDao {
             ps.setString(1, services.getServicename());
             ps.setString(2, services.getServicedescription());
             ps.setDouble(3, services.getServiceprice());
+            ps.setInt(4, services.getServiceid());
 
             rowUpdated = ps.executeUpdate() > 0;
 
