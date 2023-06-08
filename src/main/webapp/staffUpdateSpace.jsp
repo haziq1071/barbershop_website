@@ -39,7 +39,7 @@
         }
     %>
     <c:set var="jserviceid" value="<%=jserviceid%>"/>
-    SELECT * FROM services WHERE serviceid=?
+    SELECT * FROM Services WHERE serviceid=?
     <sql:param value="${jserviceid}" />
 </sql:query>
   <div class="sidebar">
