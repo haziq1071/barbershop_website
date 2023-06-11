@@ -78,7 +78,7 @@ public class Booking implements Serializable{
     public int getServiceid() {
         return serviceid;
     }
-    public void setServiceid(int spaceid) {
+    public void setServiceid(int serviceid) {
         this.serviceid = serviceid;
     }
     public int getRoomid() {
