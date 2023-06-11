@@ -23,9 +23,9 @@
 <sql:setDataSource
         var="ic"
         driver="org.postgresql.Driver"
-        url="jdbc:postgresql://containers-us-west-141.railway.app:7894/railway"
+        url="jdbc:postgresql://containers-us-west-10.railway.app:7321/railway"
         user="postgres"
-        password="UyduWFTEPVisrjXTehXg"/>
+        password="VmRY0mmQ31AWU2EQureM"/>
 
 <sql:query dataSource="${ic}" var="oc">
   SELECT *
@@ -127,10 +127,10 @@
             </div>
             <div class="input-box">
                 <span class="details">Ruang Tempahan</span>
-                    <select class="form-control" id="spaceid" name="spaceid" required>
+                    <select class="form-control" id="serviceid" name="seviceid" required>
                      	<option disabled selected>Pilih Ruang</option>
-                        <c:forEach items="${oc.rows}" var="space">
-                        <option value="<c:out value="${space.spaceid}"/>"><c:out value="${space.spacename}" /></option>
+                        <c:forEach items="${oc.rows}" var="Sevices">
+                        <option value="<c:out value="${Services.serviceid}"/>"><c:out value="${Sevices.servicename}" /></option>
                         </c:forEach>
                     </select>
             </div>           
