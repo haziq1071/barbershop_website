@@ -28,7 +28,7 @@
         password="VmRY0mmQ31AWU2EQureM"/>
 
 <sql:query dataSource="${ic}" var="oc">
-    SELECT * from space
+    SELECT * from Services
     WHERE spacestatus LIKE '%Boleh Digunakan%'
 </sql:query>
 
@@ -87,23 +87,18 @@
     <div class="home-content">
         <div class="container">
             <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
-                <c:forEach var="space" items="${oc.rows}">
-                <input type="hidden" name="spaceid" value="${space.spaceid}">
+                <c:forEach var="Services" items="${oc.rows}">
+                <input type="hidden" name="serviceid" value="${Services.serviceid}">
                 <section class="wrapper top">
                     <div class="containerRoom">
                             <div class="text">
-                                <h2>${space.spacename}</h2>
+                                <h2>${Services.servicename}</h2>
                                 <div class="content">
                                     <span>Kapasiti:</span>
-                                    <span>${space.spacecapacity}</span>
+                                    <span>${Services.servicedescription}</span>
                                     <span>Status:</span>
-                                    <span>${space.spacestatus}</span>
-                                    <span>Sistem Bunyi:</span>
-                                    <span>${space.soundsystem}</span>
-                                    <span>Kuantiti Meja:</span>
-                                    <span>${space.tablequantity}</span>
-                                    <span>Kuantity Kerusi:</span>
-                                    <span>${space.chairquantity}</span>
+                                    <span>${Services.serviceprice}</span>
+
                                 </div>
                             </div>
                     </div>
