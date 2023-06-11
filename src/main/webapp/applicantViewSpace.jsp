@@ -29,7 +29,7 @@
 
 <sql:query dataSource="${ic}" var="oc">
     SELECT * from Services
-    WHERE spacestatus LIKE '%Boleh Digunakan%'
+
 </sql:query>
 
 <div class="sidebar">
