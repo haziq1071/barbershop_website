@@ -63,30 +63,10 @@ public class BookingServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String applicantidStr = request.getParameter("applicantid");
-        String serviceidStr = request.getParameter("serviceid");
+        try{
 
-        int applicantid;
-        if (applicantidStr != null && !applicantidStr.isEmpty()) {
-            applicantid = Integer.parseInt(applicantidStr);
-        } else {
-            // Handle the case when applicantidStr is null or empty
-            // For example, you can assign a default value or show an error message
-            applicantid = 0; // Assigning a default value of 0
-        }
-
-        int serviceid;
-        if (serviceidStr != null && !serviceidStr.isEmpty()) {
-            serviceid = Integer.parseInt(serviceidStr);
-        } else {
-            // Handle the case when serviceidStr is null or empty
-            // For example, you can assign a default value or show an error message
-            serviceid = 0; // Assigning a default value of 0
-        }
-
-
-        try{       
-
+            int applicantid = Integer.parseInt(request.getParameter("applicantid"));
+            int serviceid = Integer.parseInt(request.getParameter("serviceid"));
             String bookingstatus = request.getParameter("bookingstatus");
             Date eventdate = Date.valueOf(request.getParameter("eventdate"));
             String eventtime = request.getParameter("eventtime");  
