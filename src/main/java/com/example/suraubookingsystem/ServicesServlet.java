@@ -55,11 +55,10 @@ public class ServicesServlet extends HttpServlet {
 
     /*######################################################(CREATE ROOM)#############################################################*/
 
-    private void createServices(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
-
+    private void createServices(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         String servicename = request.getParameter("servicename");
         String servicedescription = request.getParameter("servicedescription");
-        double serviceprice = Integer.parseInt(request.getParameter("serviceprice"));
+        double serviceprice = Double.parseDouble(request.getParameter("serviceprice"));
 
         Services services = new Services();
 
@@ -69,18 +68,16 @@ public class ServicesServlet extends HttpServlet {
 
         sp.createServices(services);
         response.sendRedirect("staffViewSpace.jsp");
-
     }
 
     /*######################################################( UPDATE )#############################################################*/
 
-    private void updateServices(HttpServletRequest request, HttpServletResponse response)throws SQLException, IOException {
+    private void updateServices(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         HttpSession session = request.getSession();
         int serviceid = Integer.parseInt(request.getParameter("serviceid"));
         String servicename = request.getParameter("servicename");
         String servicedescription = request.getParameter("servicedescription");
-        double serviceprice = Integer.parseInt(request.getParameter("serviceprice"));
-
+        double serviceprice = Double.parseDouble(request.getParameter("serviceprice"));
 
         Services services = new Services();
 
@@ -89,14 +86,11 @@ public class ServicesServlet extends HttpServlet {
         services.setServicedescription(servicedescription);
         services.setServiceprice(serviceprice);
 
-
         sp.updateServices(services);
 
         session.removeAttribute("services");
         session.setAttribute("services", services);
         response.sendRedirect("staffViewSpace.jsp");
-
-
     }
 
     /*######################################################( DELETE )#############################################################*/
