@@ -31,7 +31,7 @@
 <sql:query dataSource="${ic}" var="ac">
     SELECT *
     FROM booking b
-    JOIN space s
+    JOIN service s
     ON b.serviceid = s.serviceid
     JOIN applicant a
     ON b.applicantid = a.applicantid
@@ -112,7 +112,7 @@
                             <td>${result.bookingid}</td>
                             <td>${result.applicantname}</td>
                             <td>${result.bookingdate}</td>
-                            <td>${result.spacename}</td>
+                            <td>${result.servicename}</td>
                             <td>${result.eventdate}</td>
                             <td>${result.eventdescription}</td>
                             <td>${result.bookingstatus}</td>
