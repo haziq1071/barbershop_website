@@ -40,7 +40,7 @@
 
 <div class="sidebar">
     <div class="logo-details">
-        <img src="logoWhite.png">
+        <img src="barber_logo.png">
     </div>
     <ul class="nav-links">
         <li>
@@ -53,28 +53,28 @@
         <li>
             <a class="main-menu" href="staffViewSpace.jsp">
                 <i class='bx bx-box' ></i>
-                <span class="links_name">RUANG</span>
+                <span class="links_name">SERVICE</span>
             </a>
         </li>
 
         <li>
             <a class="main-menu" href="staffApproveBooking.jsp">
                 <i class='bx bx-bookmark'></i>
-                <span class="links_name">TEMPAHAN</span>
+                <span class="links_name">BOOKING</span>
             </a>
         </li>
 
         <li>
             <a class="main-menu" href="staffViewAccount.jsp">
                 <i class='bx bx-user'></i>
-                <span class="links_name">AKAUN</span>
+                <span class="links_name">ACCOUNT</span>
             </a>
         </li>
 
         <li class="log_out">
             <a class="main-menu" href="index.jsp">
                 <i class='bx bx-log-out'></i>
-                <span class="links_name">LOG KELUAR</span>
+                <span class="links_name">LOG OUT</span>
             </a>
         </li>
     </ul>
@@ -83,27 +83,26 @@
 <section class="home-section">
     <nav>
         <div class="sidebar-button">
-            <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
+            <span class="dashboard">DE'MACHO BARBERSHOP</span>
         </div>
         <div class="media_icons">
-            <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/demachobarber/"><i class="fab fa-facebook-f"></i></a>
         </div>
     </nav>
     <div class="home-content">
         <div class="table">
             <div class="table_header">
-                <header class="main_title" style="font-size: xx-large">SENARAI TEMPAHAN</header>
+                <header class="main_title" style="font-size: xx-large">APPOINTMENT</header>
             </div>
                 <table class="container">
                     <tr>
-                        <th>NO.TEMPAHAN</th>
-                        <th>NAMA PEMOHON</th>
-                        <th>TARIKH TEMPAHAN</th>
-                        <th>RUANG TEMPAHAN</th>
-                        <th>TARIKH AKTIVITI</th>
-                        <th>PERINCIAN AKTIVITI</th>
-                        <th>STATUS TEMPAHAN</th>
+                        <th>NO.BOOKING</th>
+                        <th>APPLICANT NAME</th>
+                        <th>APPOINMENT DATE</th>
+                        <th>SERVICE NAME</th>
+                        <th>EVENT DATE</th>
+                        <th>EVENT DESCRIPTION</th>
+                        <th>BOOKING STATUS</th>
                         <th>TINDAKAN</th>
                     </tr>
                     <c:forEach var="result" items="${ac.rows}">
