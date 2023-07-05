@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Laman Utama</title>
+	<title>HOME PAGE</title>
 	<meta charset="UTF-8">
     <title> Applicant Homepage </title>
     <link rel="stylesheet" href="homePage.css">
@@ -26,34 +26,34 @@
         <li>
           <a class="main-menu" href="homepageApplicant.jsp">
             <i class='bx bx-home'></i>
-            <span class="links_name">LAMAN UTAMA</span>
+            <span class="links_name">HOME PAGE</span>
           </a>
         </li>
 
         <li>
           <a class="main-menu" href="applicantViewSpace.jsp">
             <i class='bx bx-box' ></i>
-            <span class="links_name">RUANG</span>
+            <span class="links_name">SERVICE</span>
           </a>
         </li>
 
         <li>
           <a class="main-menu" href="applicantViewBooking.jsp">
             <i class='bx bx-bookmark'></i>
-            <span class="links_name">TEMPAHAN</span>
+            <span class="links_name">BOOKING</span>
           </a>
         </li>
 
         <li>
           <a class="main-menu" href="applicantViewAccount.jsp">
             <i class='bx bx-user'></i>
-            <span class="links_name">AKAUN</span>
+            <span class="links_name">ACCOUNT</span>
           </a>
         </li>
         <li class="log_out">
           <a class="main-menu" href="index.jsp">
             <i class='bx bx-log-out'></i>
-            <span class="links_name">LOG KELUAR</span>
+            <span class="links_name">LOG OUT</span>
           </a>
         </li>
       </ul>
@@ -70,10 +70,10 @@
     </nav>
     <div class="home-content">
         <div class="container">
-	        <header class="main_title">Laman Utama</header>
+	        <header class="main_title">HOME PAGE</header>
 	        <img src="barbershop.jpg" id="image" height="250" width="450">
 	        <br><br>
-	        <p>Selamat datang ke laman rasmi Surau Ar-Rahman, Puchong Jaya! Laman ini bertujuan bagi membolehkan kakitangan, qariah dan orang ramai membuat tempahan dewan atau bilik yang terdapat di dalam Surau Ar-Rahman bagi mengadakan majlis atau kuliah. Harapan kami dari pihak Surau Ar-Rahman adalah bagi menggalakkan kehadiran orang ramai agar dapat mengeratkan ukhwah diantara saudara sesama seislam dan mengimarahkan rumah Allah SWT. InshaAllah.</p>
+	        <p>Welcome to the DE'MACHO BARBERSHOP website! .</p>
 	    </div>
 	</div>
   </section>

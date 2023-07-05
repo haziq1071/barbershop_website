@@ -40,20 +40,20 @@
         <li>
           <a class="main-menu" href="staffApproveBooking.jsp">
             <i class='bx bx-bookmark'></i>
-            <span class="links_name">TEMPAHAN</span>
+            <span class="links_name">BOOKING</span>
           </a>
         </li>
 
         <li>
           <a class="main-menu" href="staffViewAccount.jsp">
             <i class='bx bx-user'></i>
-            <span class="links_name">AKAUN</span>
+            <span class="links_name">ACCOUNT</span>
           </a>
         </li>
         <li class="log_out">
           <a class="main-menu" href="index.jsp">
             <i class='bx bx-log-out'></i>
-            <span class="links_name">LOG KELUAR</span>
+            <span class="links_name">LOG OUT</span>
           </a>
         </li>
       </ul>
