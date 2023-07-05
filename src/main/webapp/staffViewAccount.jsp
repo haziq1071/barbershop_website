@@ -41,7 +41,7 @@
 
 
     <c:set var="jstaffid" value="<%=jstaffid%>"/>
-    SELECT staffid,staffname,staffic,staffdateofbirth,staffaddress,staffemail,staffphone,staffrole,staffusername,staffpassword
+    SELECT staffid,staffname,staffic,staffdateofbirth,staffaddress,staffemail,staffphone,staffusername,staffpassword
     from staff
     WHERE staffid=?
     <sql:param value="${jstaffid}" />
