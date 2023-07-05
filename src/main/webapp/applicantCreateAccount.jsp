@@ -89,7 +89,7 @@
 <script>
   document.querySelector("form").addEventListener("submit", function(event) {
     var icNumberInput = document.getElementById("icNumber");
-    var birthdateInput = document.getElementById("birthdate");
+    var birthdateInput = document.getElementsByName("applicantdateofbirth")[0];
 
     var icNumber = icNumberInput.value;
     var selectedBirthdate = birthdateInput.value;
@@ -100,6 +100,8 @@
     if (selectedBirthdate !== icBirthdate) {
       alert("The IC number does not match the selected birthdate.");
       event.preventDefault(); // Prevent form submission
+    } else {
+      icNumberInput.value = icBirthdate; // Update IC number field with selected birthdate
     }
   });
 </script>
