@@ -127,8 +127,8 @@
                 <span class="details">SERVICES</span>
                     <select class="form-control" id="serviceid" name="seviceid" required>
                      	<option disabled selected>CHOOSE SERVICE</option>
-                        <c:forEach items="${oc.rows}" var="Sevices">
-                        <option value="<c:out value="${Services.serviceid}"/>"><c:out value="${Sevices.servicename}" /></option>
+                        <c:forEach items="${oc.rows}" var="Services">
+                        <option value="<c:out value="${Services.serviceid}"/>"><c:out value="${Services.servicename}" /></option>
                         </c:forEach>
                     </select>
             </div>           
