@@ -11,7 +11,7 @@
 <body>
 <div class="sidebar">
   <div class="logo-details">
-    <img src="logoWhite.png">
+    <img src="barber_logo.png">
   </div>
 </div>
 <section class="home-section">
@@ -26,27 +26,27 @@
   </nav>
   <div class="home-content">
     <div class="contain_applicant">
-      <header class="main_title">PENDAFTARAN AKAUN</header>
+      <header class="main_title">ACCOUNT REGISTRATION</header>
       <form class="fapplicant" method="post">
         <div class="form first">
           <div class="details personal">
-            <span class="title">Maklumat Peribadi</span>
+            <span class="title">PERSONAL INFORMATION</span>
 
             <div class="fields">
               <div class="input-field input-box">
-                <label class="details">Nama Penuh</label>
+                <label class="details">FULL NAME</label>
                 <input type="text" name="applicantname" required>
               </div>
               <div class="input-field input-box">
-                <label class="details">Kad Pengenalan</label>
+                <label class="details">IC NUMBER</label>
                 <input type="text" name="applicantic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
               </div>
               <div class="input-field">
-                <label class="details">Tarikh Lahir</label>
+                <label class="details">BIRTH DATE</label>
                 <input type="date" name="applicantdateofbirth" max="2023-01-26" required>
               </div>
               <div class="input-field input-box">
-                <label class="details">Alamat</label>
+                <label class="details">ADDRESS</label>
                 <input type="text" name="applicantaddress" required>
               </div>
               <div class="input-field input-box">
@@ -55,22 +55,22 @@
               </div>
 
               <div class="input-field input-box">
-                <label class="details">Nombor Telefon</label>
+                <label class="details">PHONE NUMBER</label>
                 <input type="text" name="applicantphone" pattern="[0-9]{3}-[0-9]{7}" title="xxx-xxxxxxx" required>
               </div>
             </div>
           </div>
           <div class="details ID">
-            <span class="title">Maklumat Akaun</span>
+            <span class="title">ACCOUNT INFORMATION</span>
 
             <div class="fields">
               <div class="input-field input-box">
-                <label class="details">Nama Pengguna</label>
+                <label class="details">USERNAME</label>
                 <input type="text" name="applicantusername" required>
               </div>
 
               <div class="input-field input-box">
-                <label class="details">Kata Laluan</label>
+                <label class="details">PASSWORD</label>
                 <input type="password" name="applicantpassword" required>
               </div>
             </div>
@@ -78,7 +78,7 @@
             <input type="hidden" name="action" value="signupApplicant">
 
             <div class="button applicant">
-              <input type="submit" value="Daftar" formaction="ApplicantServlet">
+              <input type="submit" value="CREATE" formaction="ApplicantServlet">
             </div>
           </div>
         </div>
