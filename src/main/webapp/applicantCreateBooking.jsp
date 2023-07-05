@@ -103,11 +103,11 @@
         <form method="post">
           <div class="user-details">
             <div class="input-box">
-              <span class="details">EVENT DATE</span>
+              <span class="details">BOOKING DATE</span>
               <input type="date" id="eventdate" name="eventdate"  required>
             </div>
              <div class="input-box">
-                <span class="details">EVENT TIME</span>
+                <span class="details">BOOKING TIME</span>
                     <select class="form-control" name="eventtime" required>
                         <option disabled selected>CHOOSE TIME</option>
                         <option value="8:00 - 10:00">8:00 - 10:00</option>
