@@ -42,8 +42,7 @@ public class BookingDao {
             preparedStatement.setInt(5, services.getServiceid());
             preparedStatement.setInt(6, applicant.getApplicantid());
             preparedStatement.executeUpdate();/*
-            prepareStatement.setInt(7, room.getRoomid());
-            prepareStatement.setInt(8, applicant.getApplicantid());*/
+            prepareStatement.setInt(7, applicant.getApplicantid());*/
           }
         catch (Exception e) {
             e.printStackTrace();
