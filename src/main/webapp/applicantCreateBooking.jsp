@@ -29,8 +29,8 @@
 
 <sql:query dataSource="${ic}" var="oc">
   SELECT *
-  FROM space
-  WHERE spacestatus LIKE '%Boleh Digunakan%'
+  FROM services
+
 </sql:query>
 <sql:query dataSource="${ic}" var="aid">
   <%
@@ -52,37 +52,37 @@
 
 <div class="sidebar">
   <div class="logo-details">
-    <img src="logoWhite.png">
+    <img src="barber_logo.png">
   </div>
   <ul class="nav-links">
     <li>
       <a class="main-menu" href="homepageApplicant.jsp">
         <i class='bx bx-home'></i>
-        <span class="links_name">LAMAN UTAMA</span>
+        <span class="links_name">HOME PAGE</span>
       </a>
     </li>
     <li>
       <a class="main-menu" href="applicantViewSpace.jsp">
         <i class='bx bx-box' ></i>
-        <span class="links_name">RUANG</span>
+        <span class="links_name">SERVICE</span>
       </a>
     </li>
     <li>
       <a class="main-menu" href="applicantViewBooking.jsp">
         <i class='bx bx-bookmark'></i>
-        <span class="links_name">TEMPAHAN</span>
+        <span class="links_name">BOOKING</span>
       </a>
     </li>
     <li>
       <a class="main-menu" href="applicantViewAccount.jsp">
         <i class='bx bx-user'></i>
-        <span class="links_name">AKAUN</span>
+        <span class="links_name">ACCOUNT</span>
       </a>
     </li>
     <li class="log_out">
       <a class="main-menu" href="index.jsp">
         <i class='bx bx-log-out'></i>
-        <span class="links_name">LOG KELUAR</span>
+        <span class="links_name">LOG OUT</span>
       </a>
     </li>
   </ul>
@@ -90,25 +90,24 @@
 <section class="home-section">
   <nav>
     <div class="sidebar-button">
-      <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
+      <span class="dashboard">DE'MACHO BARBERSHOP</span>
     </div>
     <div class="media_icons">
-      <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/surau_ar_rahman_pchg/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/demachobarber/"><i class="fab fa-facebook-f"></i></a>
     </div>
   </nav>
   <div class="home-content">
     <div class="container">
-      <div class="title">DAFTAR TEMPAHAN</div>
+      <div class="title">MAKE BOOKING</div>
       <div class="content">
         <form method="post">
           <div class="user-details">
             <div class="input-box">
-              <span class="details">Tarikh Aktiviti</span>
+              <span class="details">EVENT DATE</span>
               <input type="date" name="eventdate" min="2023-01-27" required>
             </div>
              <div class="input-box">
-                <span class="details">Masa Aktiviti</span>
+                <span class="details">EVENT TIME</span>
                     <select class="form-control" name="eventtime" required>
                         <option disabled selected>Pilih Masa</option>
                         <option value="8:00 - 10:00">8:00 - 10:00</option>
@@ -122,13 +121,13 @@
                     </select>
             </div>
             <div class="input-box">
-              <span class="details">Perincian Aktiviti</span>
+              <span class="details">SERVICE DESCRIPTION</span>
               <input type="text" name="eventdescription" required>
             </div>
             <div class="input-box">
-                <span class="details">Ruang Tempahan</span>
+                <span class="details">SERVICES</span>
                     <select class="form-control" id="serviceid" name="seviceid" required>
-                     	<option disabled selected>Pilih Ruang</option>
+                     	<option disabled selected>CHOOSE SERVICE</option>
                         <c:forEach items="${oc.rows}" var="Sevices">
                         <option value="<c:out value="${Services.serviceid}"/>"><c:out value="${Sevices.servicename}" /></option>
                         </c:forEach>
