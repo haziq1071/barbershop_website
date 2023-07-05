@@ -63,6 +63,8 @@ public class BookingServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
+
+
         try{       
             int applicantid = Integer.parseInt(request.getParameter("applicantid"));
             int serviceid = Integer.parseInt(request.getParameter("serviceid"));
