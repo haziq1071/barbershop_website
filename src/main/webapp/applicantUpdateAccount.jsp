@@ -118,7 +118,7 @@
 
               <input type="hidden" name="action" value="updateApplicant">
               
-              <a href="applicantViewAccount.jsp"><button class="btn update">SAVE</button></a>
+              <a href="applicantViewAccount.jsp"><button class="btn update"> SAVE </button></a>
               <a href="applicantViewAccount.jsp"><button class="btn cancel">CANCEL</button></a>
             </div>
           </form>
