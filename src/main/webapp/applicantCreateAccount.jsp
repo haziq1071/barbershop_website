@@ -39,7 +39,7 @@
               </div>
               <div class="input-field input-box">
                 <label class="details">IC NUMBER</label>
-                <input type="text" name="applicantic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
+                <input type="text" id="icNumber" name="applicantic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
               </div>
               <div class="input-field">
                 <label class="details">BIRTH DATE</label>
