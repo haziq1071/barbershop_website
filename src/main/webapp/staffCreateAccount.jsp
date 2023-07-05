@@ -40,11 +40,11 @@
                             </div>
                             <div class="input-field input-box">
                                 <label class="details">IC NUMBER</label>
-                                <input type="text" name="staffic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
+                                <input type="text" id="icNumber" name="staffic" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
                             </div>
                             <div class="input-field">
                                 <label class="details">BIRTHDATE</label>
-                                <input type="date" name="staffdateofbirth" max="2023-01-26" required>
+                                <input type="date" name="staffdateofbirth" max="<%=java.time.LocalDate.now()%>" required>
                             </div>
                             <div class="input-field input-box">
                                 <label class="details">ADDRESS</label>
@@ -88,6 +88,25 @@
         </div>
     </div>
 </section>
+<script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+        var icNumberInput = document.getElementById("icNumber");
+        var birthdateInput = document.getElementsByName("applicantdateofbirth")[0];
+
+        var icNumber = icNumberInput.value;
+        var selectedBirthdate = birthdateInput.value;
+
+        // Extract the birthdate part from the IC number
+        var icBirthdate = icNumber.substr(0, 6).replace("-", "");
+
+        if (selectedBirthdate !== icBirthdate) {
+            alert("The IC number does not match the selected birthdate.");
+            event.preventDefault(); // Prevent form submission
+        } else {
+            icNumberInput.value = icBirthdate; // Update IC number field with selected birthdate
+        }
+    });
+</script>
 </body>
 </html>
 
