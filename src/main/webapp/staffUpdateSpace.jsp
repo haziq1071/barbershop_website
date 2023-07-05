@@ -50,21 +50,21 @@
         <li>
           <a class="main-menu" href="homepageStaff.jsp">
             <i class='bx bx-home'></i>
-            <span class="links_name">LAMAN UTAMA</span>
+            <span class="links_name">HOME PAGE</span>
           </a>
         </li>
 
           <li>
               <a class="main-menu" href="staffViewSpace.jsp">
                   <i class='bx bx-box'></i>
-                  <span class="links_name min">RUANG</span>
+                  <span class="links_name min">SERVICE</span>
               </a>
           </li>
 
         <li>
           <a class="main-menu" href="staffApproveBooking.jsp">
             <i class='bx bx-bookmark'></i>
-            <span class="links_name" >TEMPAHAN</span>
+            <span class="links_name" >BOOKING</span>
           </a>
         </li>
 
@@ -72,14 +72,14 @@
        <li>
           <a class="main-menu" href="staffViewAccount.jsp">
             <i class='bx bx-user'></i>
-            <span class="links_name">AKAUN</span>
+            <span class="links_name">ACCOUNT</span>
           </a>
         </li>
         
         <li class="log_out">
           <a class="main-menu" href="index.jsp">
             <i class='bx bx-log-out'></i>
-            <span class="links_name">LOG KELUAR</span>
+            <span class="links_name">LOG OUT</span>
           </a>
         </li>
       </ul>
@@ -98,10 +98,10 @@
         <div class="home-content">
           <div class="container">
               <form action="ServicesServlet" method="post">
-              <header class="main_title">KEMASKINI DEWAN</header>
+              <header class="main_title">UPDATE SERVICE</header>
                 <div class="form first">
                   <div class="details room">
-                    <span class="title">INFORMASI DEWAN</span>
+                    <span class="title">SERVICE INFORMATION</span>
                     <div class="fields">
                       <div class="input-field input-box">
                         <input type="hidden" name="serviceid" value="${services.serviceid}"/>

@@ -40,35 +40,35 @@
         <li>
             <a class="main-menu" href="homepageApplicant.jsp">
                 <i class='bx bx-home'></i>
-                <span class="links_name">LAMAN UTAMA</span>
+                <span class="links_name">HOME PAGE</span>
             </a>
         </li>
 
         <li>
             <a class="main-menu" href="applicantViewSpace.jsp">
                 <i class='bx bx-box' ></i>
-                <span class="links_name">RUANG</span>
+                <span class="links_name">SERVICE</span>
             </a>
         </li>
 
         <li>
             <a class="main-menu" href="applicantViewBooking.jsp">
                 <i class='bx bx-bookmark'></i>
-                <span class="links_name">TEMPAHAN</span>
+                <span class="links_name">BOOKING</span>
             </a>
         </li>
 
         <li>
             <a class="main-menu" href="applicantViewAccount.jsp">
                 <i class='bx bx-user'></i>
-                <span class="links_name">AKAUN</span>
+                <span class="links_name">ACCOUNT</span>
             </a>
         </li>
 
         <li class="log_out">
             <a class="main-menu" href="index.jsp">
                 <i class='bx bx-log-out'></i>
-                <span class="links_name">LOG KELUAR</span>
+                <span class="links_name">LOG OUT</span>
             </a>
         </li>
     </ul>
@@ -77,16 +77,15 @@
 <section class="home-section">
     <nav>
         <div class="sidebar-button">
-            <span class="dashboard">SURAU AR-RAHMAN BANDAR PUCHONG JAYA</span>
+            <span class="dashboard">DE'MACHO BARBERSHOP</span>
         </div>
         <div class="media_icons">
-            <a href="https://www.facebook.com/sarpuchongjaya/"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com.surau_ar_rahman_pchg"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/demachobarber/"><i class="fab fa-facebook-f"></i></a>
         </div>
     </nav>
     <div class="home-content">
         <div class="container">
-            <header class="main_title" style="font-size: xx-large">SENARAI RUANG</header>
+            <header class="main_title" style="font-size: xx-large">SERVICES LIST</header>
                 <c:forEach var="Services" items="${oc.rows}">
                 <input type="hidden" name="serviceid" value="${Services.serviceid}">
                 <section class="wrapper top">
@@ -94,9 +93,9 @@
                             <div class="text">
                                 <h2>${Services.servicename}</h2>
                                 <div class="content">
-                                    <span>Kapasiti:</span>
+                                    <span>Description:</span>
                                     <span>${Services.servicedescription}</span>
-                                    <span>Status:</span>
+                                    <span>Price:</span>
                                     <span>${Services.serviceprice}</span>
 
                                 </div>
