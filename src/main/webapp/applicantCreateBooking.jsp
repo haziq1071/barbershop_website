@@ -104,7 +104,7 @@
           <div class="user-details">
             <div class="input-box">
               <span class="details">EVENT DATE</span>
-              <input type="date" name="eventdate" min="sysdate" required>
+              <input type="date" id="eventdate" name="eventdate"  required>
             </div>
              <div class="input-box">
                 <span class="details">EVENT TIME</span>

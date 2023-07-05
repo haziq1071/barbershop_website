@@ -43,7 +43,7 @@
               </div>
               <div class="input-field">
                 <label class="details">BIRTH DATE</label>
-                <input type="date" name="applicantdateofbirth" max="2023-01-26" required>
+                <input type="date" name="applicantdateofbirth" max="<%=java.time.LocalDate.now()%>" required>
               </div>
               <div class="input-field input-box">
                 <label class="details">ADDRESS</label>
@@ -86,6 +86,23 @@
     </div>
   </div>
 </section>
+<script>
+  document.querySelector("form").addEventListener("submit", function(event) {
+    var icNumberInput = document.getElementById("icNumber");
+    var birthdateInput = document.getElementById("birthdate");
+
+    var icNumber = icNumberInput.value;
+    var selectedBirthdate = birthdateInput.value;
+
+    // Extract the birthdate part from the IC number
+    var icBirthdate = icNumber.substr(0, 6).replace("-", "");
+
+    if (selectedBirthdate !== icBirthdate) {
+      alert("The IC number does not match the selected birthdate.");
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+</script>
 </body>
 </html>
 
