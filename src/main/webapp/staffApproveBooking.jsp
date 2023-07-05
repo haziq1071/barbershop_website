@@ -31,7 +31,7 @@
 <sql:query dataSource="${ic}" var="ac">
     SELECT *
     FROM booking b
-    JOIN service s
+    JOIN services s
     ON b.serviceid = s.serviceid
     JOIN applicant a
     ON b.applicantid = a.applicantid
