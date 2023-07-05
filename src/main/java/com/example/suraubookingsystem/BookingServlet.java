@@ -65,7 +65,7 @@ public class BookingServlet extends HttpServlet {
 
         try{       
             int applicantid = Integer.parseInt(request.getParameter("applicantid"));
-            int spaceid = Integer.parseInt(request.getParameter("spaceid"));
+            int serviceid = Integer.parseInt(request.getParameter("serviceid"));
             String bookingstatus = request.getParameter("bookingstatus");
             Date eventdate = Date.valueOf(request.getParameter("eventdate"));
             String eventtime = request.getParameter("eventtime");  
@@ -76,7 +76,7 @@ public class BookingServlet extends HttpServlet {
             Booking booking = new Booking();
 
             applicant.setApplicantid(applicantid);
-            services.setServiceid(spaceid);
+            services.setServiceid(serviceid);
             booking.setBookingstatus(bookingstatus);
             booking.setEventdate(eventdate);
             booking.setEventtime(eventtime);

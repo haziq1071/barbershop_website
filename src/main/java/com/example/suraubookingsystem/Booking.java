@@ -11,7 +11,7 @@ public class Booking implements Serializable{
     public String eventdescription;
     //public int approveid;
     /*
-    public int spaceid;
+    public int serviceid;
     public int roomid;
     public int staffid;
     public int applicantid;*/
