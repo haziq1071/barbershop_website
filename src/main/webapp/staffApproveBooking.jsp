@@ -32,7 +32,7 @@
     SELECT *
     FROM booking b
     JOIN space s
-    ON b.spaceid = s.spaceid
+    ON b.serviceid = s.serviceid
     JOIN applicant a
     ON b.applicantid = a.applicantid
     ORDER BY eventdate
@@ -46,7 +46,7 @@
         <li>
             <a class="main-menu" href="homepageStaff.jsp">
                 <i class='bx bx-home'></i>
-                <span class="links_name">LAMAN UTAMA</span>
+                <span class="links_name">HOME PAGE</span>
             </a>
         </li>
 
