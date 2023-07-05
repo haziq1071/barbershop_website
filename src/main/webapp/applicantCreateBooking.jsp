@@ -147,6 +147,16 @@
     </div>
   </div>
 </section>
+
+<script>
+    // Get tomorrow's date
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var tomorrowDate = tomorrow.toISOString().split("T")[0];
+
+    // Set the minimum date for the input field
+    document.getElementsByName("eventdate")[0].setAttribute("min", tomorrowDate);
+</script>
 </body>
 </html>
 
