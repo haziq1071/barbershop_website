@@ -104,12 +104,12 @@
           <div class="user-details">
             <div class="input-box">
               <span class="details">EVENT DATE</span>
-              <input type="date" name="eventdate" min="2023-01-27" required>
+              <input type="date" name="eventdate" min="sysdate" required>
             </div>
              <div class="input-box">
                 <span class="details">EVENT TIME</span>
                     <select class="form-control" name="eventtime" required>
-                        <option disabled selected>Pilih Masa</option>
+                        <option disabled selected>CHOOSE TIME</option>
                         <option value="8:00 - 10:00">8:00 - 10:00</option>
                         <option value="10:00 - 12:00">10:00 - 12:00</option>
                         <option value="12:00 - 14:00">12:00 - 14:00</option>
@@ -140,7 +140,7 @@
           </c:forEach>
           <input type="hidden" name="action" value="applicantcreatebooking">
           <div class="button">
-            <input type="submit" value="TEMPAH" formaction="BookingServlet">
+            <input type="submit" value="BOOK" formaction="BookingServlet">
           </div>
         </form>
       </div>
