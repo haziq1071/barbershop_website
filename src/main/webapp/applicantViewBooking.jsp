@@ -41,7 +41,7 @@
     }
   %>
   <c:set var="japplicantid" value="<%=japplicantid%>"/>
-  SELECT bookingid, spacename, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, eventtime, eventdescription, bookingstatus
+  SELECT bookingid, servicename, TO_CHAR(bookingdate, 'DD-MM-YYYY')bookingdate, TO_CHAR(eventdate, 'DD-MM-YYYY')eventdate, eventtime, eventdescription, bookingstatus
   FROM booking b
   JOIN services s
   ON b.serviceid = s.serviceid
