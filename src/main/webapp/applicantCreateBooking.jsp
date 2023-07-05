@@ -49,7 +49,20 @@
   <sql:param value="${japplicantid}" />
 </sql:query>
 
+<%
+    String applicantIdParam = request.getParameter("applicantid");
+    String serviceIdParam = request.getParameter("serviceid");
 
+    if (applicantIdParam != null && !applicantIdParam.isEmpty() && serviceIdParam != null && !serviceIdParam.isEmpty()) {
+        int applicantid = Integer.parseInt(applicantIdParam);
+        int serviceid = Integer.parseInt(serviceIdParam);
+
+        // Rest of the code
+    } else {
+        // Handle the case when the parameters are missing or empty
+        out.println("Error: Missing or empty parameters"); // Display an error message on the page
+    }
+%>
 <div class="sidebar">
   <div class="logo-details">
     <img src="barber_logo.png">
