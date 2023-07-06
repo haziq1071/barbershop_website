@@ -109,9 +109,9 @@
         <tr>
           <th>NO. BOOKING</th>
           <th>BOOKING DATE</th>
-          <th>EVENT DATE</th>
-          <th>EVENT TIME</th>
-          <th>EVENT DESCRIPTION</th>
+          <th>APPOINMENT DATE</th>
+          <th>APPOINMENT TIME</th>
+          <th>APPOINMENT DESCRIPTION</th>
           <th>SERVICE NAME</th>
           <th>STATUS</th>
           <th>CANCELLATION</th>
@@ -129,7 +129,7 @@
               <td>${result.bookingstatus}</td>
               <td>
                 <input type="hidden" name="action" value="applicantcancelbooking">
-                <button formaction="BookingServlet"  onclick="return confirm('Adakah anda yakin untuk batalkan tempahan ini?')">BATAL</button>
+                <button formaction="BookingServlet"  onclick="return confirm('ARE YOU SURE TO CANCEL?')">CANCEL</button>
               </td>
             </tr>
           </form>

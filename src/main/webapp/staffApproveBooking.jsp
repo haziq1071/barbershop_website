@@ -98,12 +98,12 @@
                     <tr>
                         <th>NO.BOOKING</th>
                         <th>APPLICANT NAME</th>
-                        <th>APPOINMENT DATE</th>
+                        <th>BOOKING DATE</th>
                         <th>SERVICE NAME</th>
-                        <th>EVENT DATE</th>
-                        <th>EVENT DESCRIPTION</th>
+                        <th>APPOINMENT DATE</th>
+                        <th>APPOINMENT DESCRIPTION</th>
                         <th>BOOKING STATUS</th>
-                        <th>TINDAKAN</th>
+                        <th>ACTION</th>
                     </tr>
                     <c:forEach var="result" items="${ac.rows}">
                         <input type="hidden" name="bookingid" value="${result.bookingid}">
@@ -119,12 +119,12 @@
                                 <form action="" method="post">
                                 <input type="hidden" name="action" value="staffapprovedbooking">
                                 <input type="hidden" name="bookingid" value="${result.bookingid}">
-                                <button class="approve" formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk meluluskan tempahan ini?')">TERIMA</button>
+                                <button class="approve" formaction="BookingServlet" onclick="return confirm('ARE YOU SURE TO ACCEPT THIS?')">ACCEPT</button>
                                 </form>
                                 <form action="" method="post">
                                 <input type="hidden" name="action" value="staffrejectbooking">
                                 <input type="hidden" name="bookingid" value="${result.bookingid}">
-                                <button class="reject" formaction="BookingServlet" onclick="return confirm('Adakah anda yakin untuk menolak tempahan ini?')">TOLAK</button>
+                                <button class="reject" formaction="BookingServlet" onclick="return confirm('ARE YOU SURE TO REJECT THIS?')">REJECT</button>
                                 </form>
                             </td>
                         </tr>
