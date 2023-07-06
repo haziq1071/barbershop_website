@@ -121,9 +121,9 @@
 
 
                                <c:forEach var="staff" items="${oc.rows}">
-                                <h2>Nombor Staf</h2>
+                                <h2>USERNAME</h2>
                                 <p class="input">${staff.staffusername}</p>
-                                <h2>Kata Laluan</h2>
+                                <h2>PASSWORD</h2>
                                 <p class="input">${staff.staffpassword}</p>
                             </c:forEach>
 
