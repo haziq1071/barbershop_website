@@ -39,11 +39,7 @@ public class BookingDao {
             preparedStatement.setDate(2, booking.getEventdate());
             preparedStatement.setString(3, booking.getEventtime());
             preparedStatement.setString(4, booking.getEventdescription());
-            if (services != null && services.getServiceid() != 0) {
-                preparedStatement.setInt(5, services.getServiceid());
-            } else {
-                preparedStatement.setNull(5, java.sql.Types.INTEGER);
-            }
+            preparedStatement.setInt(5, services.getServiceid());
             preparedStatement.setInt(6, applicant.getApplicantid());
             preparedStatement.executeUpdate();/*
             prepareStatement.setInt(7, applicant.getApplicantid());*/
