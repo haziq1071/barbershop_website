@@ -202,9 +202,8 @@ nav .sidebar-button i{
 }
 
 .home-section{
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(barbershop.jpg);
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(banner.jpg);
   position: absolute;
-  //
 }
 .home-section .home-content{
   position: relative;
