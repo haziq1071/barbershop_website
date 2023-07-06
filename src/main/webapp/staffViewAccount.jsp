@@ -136,6 +136,7 @@
             </div>
         </div>
     </c:forEach>
+
 </section>
 </body>
 </html>

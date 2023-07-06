@@ -19,7 +19,6 @@ public class ServicesServlet extends HttpServlet {
     public void init() {
         sp = new ServicesDao();
     }
-   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

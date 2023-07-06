@@ -40,7 +40,7 @@
     %>
 
     <c:set var="jstaffid" value="<%=jstaffid%>"/>
-    SELECT staffid,staffname,staffic,staffdateofbirth,staffaddress,staffemail,staffphone,staffrole,staffusername,staffpassword
+    SELECT staffid,staffname,staffic,staffdateofbirth,staffaddress,staffemail,staffphone,staffusername,staffpassword
     from staff
     WHERE staffid=?
     <sql:param value="${jstaffid}" />
@@ -51,40 +51,40 @@
 </sql:query>
 <div class="sidebar">
     <div class="logo-details">
-        <img src="logoWhite.png">
+        <img src="barber_logo.png">
     </div>
     <ul class="nav-links">
         <li>
             <a class="main-menu" href="homepageStaff.jsp">
                 <i class='bx bx-home'></i>
-                <span class="links_name">LAMAN UTAMA</span>
+                <span class="links_name">HOME PAGE</span>
             </a>
         </li>
 
         <li>
             <a class="main-menu" href="staffViewSpace.jsp">
                 <i class='bx bx-box' ></i>
-                <span class="links_name">RUANG</span>
+                <span class="links_name">SERVICE</span>
             </a>
         </li>
 
         <li>
             <a class="main-menu" href="staffApproveBooking.jsp">
                 <i class='bx bx-bookmark'></i>
-                <span class="links_name">TEMPAHAN</span>
+                <span class="links_name">BOOKING</span>
             </a>
         </li>
 
         <li>
             <a class="main-menu" href="staffViewAccount.jsp">
                 <i class='bx bx-user'></i>
-                <span class="links_name">AKAUN</span>
+                <span class="links_name">ACCOUNT</span>
             </a>
         </li>
         <li class="log_out">
             <a class="main-menu" href="index.jsp">
                 <i class='bx bx-log-out'></i>
-                <span class="links_name">LOG KELUAR</span>
+                <span class="links_name">LOG OUT</span>
             </a>
         </li>
     </ul>
@@ -105,32 +105,30 @@
                 <div class="rightbox">
                     <form action="StaffServlet" method="post">
                         <div class="profile tabShow">
-                            <h1>MAKLUMAT STAFF</h1>
+                            <h1>STAFF INFORMATION</h1>
                             <input type="hidden" name="staffid" value="${staff.staffid}"/>
-                            <h2>Nama Penuh</h2>
+                            <h2>FULL NAME</h2>
                             <input type="text" class="input"  name="staffname" value = "${staff.staffname}" required>
-                            <h2>Kad Pengenalan</h2>
+                            <h2>IC NUMBER</h2>
                             <input type="text" class="input" name="staffic" value = "${staff.staffic}" pattern="[0-9]{6}-[0-9]{2}-[0-9]{4}" title="xxxxxx-xx-xxxx" required>
-                            <h2>Tarikh Lahir</h2>
+                            <h2>BIRTHDATE</h2>
                             <input type="date" class="input" name="staffdateofbirth" value ="${staff.staffdateofbirth}" max="2023-01-25" required>
-                            <h2>Alamat</h2>
+                            <h2>ADDRESS</h2>
                             <input type="text" class="input" name="staffaddress" value = "${staff.staffaddress}" required>
                             <h2>Email</h2>
                             <input type="text" class="input" name="staffemail" value = "${staff.staffemail}" required>
-                            <h2>Nombor Telefon</h2>
+                            <h2>PHONE NUMBER</h2>
                             <input type="text" class="input" name="staffphone" value = "${staff.staffphone}" pattern="[0-9]{3}-[0-9]{7}" title="xxx-xxxxxxx" required>
-                            <h2>Jawatan</h2>
-                            <input type="text" class="input" name="staffrole" value = "${staff.staffrole}" required>
 
                             <c:forEach var="staff" items="${oc.rows}">
-                                <h2>Nombor Staf</h2>
+                                <h2>USERNAME</h2>
                                 <input type="text" class="input" name="staffusername" value = "${staff.staffusername}" required>
-                                <h2>Kata Laluan</h2>
+                                <h2>PASSWORD</h2>
                                 <input type="text" class="input" name="staffpassword" value = "${staff.staffpassword}" required>
                             </c:forEach>
                             <input type="hidden" name="action" value="updateStaff">
-                            <a href="staffViewAccount.jsp"><button class="btn update">Simpan</button></a>
-                            <a href="staffViewAccount.jsp"><button class="btn cancel">Batal</button></a>
+                            <a href="staffViewAccount.jsp"><button class="btn update">SAVE</button></a>
+                            <a href="staffViewAccount.jsp"><button class="btn cancel">CANCEL</button></a>
 
                         </div>
                     </form>
