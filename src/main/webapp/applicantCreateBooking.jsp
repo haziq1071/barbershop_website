@@ -125,7 +125,7 @@
             </div>
             <div class="input-box">
                 <span class="details">SERVICES</span>
-                    <select class="form-control" id="serviceid" name="seviceid" required>
+                    <select class="form-control" id="serviceid" name="serviceid" required>
                      	<option disabled selected>CHOOSE SERVICE</option>
                         <c:forEach items="${oc.rows}" var="Services">
                         <option value="<c:out value="${Services.serviceid}"/>"><c:out value="${Services.servicename}" /></option>
