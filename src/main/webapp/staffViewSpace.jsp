@@ -104,7 +104,7 @@
                       <input type="hidden" name="action" value="deleteServices">
                       <button class="update" onclick="form.action='staffUpdateSpace.jsp'">UPDATE</button>
                       <button class="delete" formaction="ServicesServlet"
-                      onclick="return confirm('Pasti padam <c:out value="${services.servicename}"/> ?');">DELETE</button>
+                      onclick="return confirm('CONFIRM DELETE <c:out value="${services.servicename}"/> ?');">DELETE</button>
                  </div>
                 </div>
           </section>
