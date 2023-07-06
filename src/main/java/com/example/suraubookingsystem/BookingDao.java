@@ -29,7 +29,7 @@ public class BookingDao {
     }
 
 
-    //public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
+    ///public void applicantcreatebooking(Booking booking, Space space, Room room, Applicant applicant) throws SQLException{
     public void applicantcreatebooking(Booking booking, Services services, Applicant applicant) throws SQLException{
         try (Connection connection = getConnection();
             // PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO BOOKING (BOOKINGDESCRIPTION,BOOKINGTIME,BOOKINGSTATUS,EVENTDATE,SPACEID,ROOMID,APPLICANTID,BOOKINGDATE) VALUES (?,?,?,?,?,?,?,CURRENT_DATE)");)
